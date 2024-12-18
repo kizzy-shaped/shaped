@@ -1,101 +1,130 @@
-import Image from "next/image";
+"use client"
+
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
+import Marquee from "react-fast-marquee";
+import Container from "@/components/container";
+import { useState } from "react";
+
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Partners />
+
+      <About />
+
+      <Featuring />
     </div>
   );
 }
+
+function Hero() {
+  const [hovered, setHovered] = useState(false);
+
+
+  return (
+    <div className="w-full h-[calc(100vh-132px)] bg-[#373737]">
+      <img className="w-auto h-full mx-auto  z-[2] object-contain" src="/images/home/hero_img.png" alt="" />
+
+      <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
+        <span className="text-white text-[48px] font-bold text-center">SHAPED - Curated Experiences, Tailored <br />
+          for You.</span>
+
+        <Link href={''}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="w-fit h-[60px] bg-[#555555A6] px-[22px] border-[1px] border-white text-white text-[22px] font-semibold flex items-center justify-between gap-[10px]">
+          Explore Our Services
+          <FaArrowRight className={`w-[28px] h-[28px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+function Partners() {
+
+
+  return (
+    <div className="w-full h-[196px]">
+      <Container className="flex items-center">
+        <Marquee
+          loop={0}
+          speed={50}
+          className="w-full h-fit flex"
+        >
+          {[
+            { img: '/images/home/partners/caf.png' },
+            { img: '/images/home/partners/nta.png' },
+            { img: '/images/home/partners/teen_awards.png' },
+            { img: '/images/home/partners/rocnation.png' },
+            { img: '/images/home/partners/made_in_america.png' },
+            { img: '/images/home/partners/pepsi.png' },
+            { img: '/images/home/partners/smart.png' },
+          ].map(({ img }, index) => (
+            <img className="w-auto h-[72px] mr-[72px]" src={img} alt="" key={index} />
+          ))}
+        </Marquee>
+      </Container>
+    </div>
+  )
+}
+
+function About() {
+  const [hovered, setHovered] = useState(false);
+
+
+  return (
+    <div className="w-full h-[530px]">
+      <Container className="grid grid-cols-2">
+        <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
+          <div className="text-[22px] font-medium text-black">
+            At SHAPED, we are redefining what it means to experience true luxury in the modern world. Our singular mission is to return to you the one thing that matters most—your time. Through unparalleled service and an exclusive network, we create exceptional experiences that allow you to enjoy life at its fullest, without the effort.
+          </div>
+
+          <Link href={''}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            className="w-fit h-[60px] bg-[#000000] px-[22px] text-white text-[20px] font-semibold flex items-center justify-between gap-[10px]">
+            Learn More
+            <FaArrowRight className={`w-[28px] h-[28px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
+          </Link>
+        </div>
+
+        <img className="w-auto h-[530px] object-cover ml-auto" src="/images/home/about.png" alt="" />
+      </Container>
+    </div>
+  )
+}
+
+function Featuring() {
+
+
+  return (
+    <div className="w-full h-fit py-[3vh]">
+      <Container className="flex flex-col items-center justify-center gap-[30px] py-[3vh]">
+        <span className="text-black text-[40px] font-semibold">FEATURING</span>
+
+        <div className="w-full h-[444px] grid grid-cols-3">
+          {[
+            { img: "/images/home/about.png" },
+            { img: "/images/home/about.png" },
+            { img: "/images/home/about.png" },
+          ].map(({ img }, index) => (
+            <div className="col-span-1 h-full" key={index}>
+              <img className="w-full h-full" src={img} alt="" />
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+
+
+
