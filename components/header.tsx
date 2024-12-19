@@ -32,7 +32,8 @@ function Header({ className = '' }: { className?: string }) {
                             },
                         ].map(({ label, link, dropdown }, index) => (
                             <span className="flex items-center gap-[7px] relative" key={index}>
-                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</span>)}
+                                {/* {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</span>)} */}
+                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px] `}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px] `}>{label}</span>)}
 
                                 {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
 
