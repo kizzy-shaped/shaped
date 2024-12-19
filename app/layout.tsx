@@ -2,17 +2,18 @@ import Header from "@/components/header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import Footer from "@/components/footer";
 
 // export const metadata: Metadata = {
 //   title: "Shaped | Welcome",
 //   description: "Redners different kinds of services",
 // };
 
-// export const raleway = Raleway({
-//   // variable: "--raleway",
-//   weight: ['100', '200', '300'],
-//   subsets: ["latin"],
-// });
+export const raleway = Raleway({
+  // variable: "--raleway",
+  weight: ['100', '200', '300'],
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -22,11 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // className={`w-full h-screen antialiased relative pt-[132px] ${raleway.className}`}
-        className={`w-full h-screen antialiased relative pt-[132px]`}
+        className={`w-full h-screen antialiased relative pt-[132px] ${raleway.className}`}
+      // className={`w-full h-screen antialiased relative pt-[132px]`}
       >
         <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" />
         {children}
+        <Footer />
       </body>
     </html>
   );

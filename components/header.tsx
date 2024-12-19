@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaArrowRight, FaChevronDown } from "react-icons/fa6";
 import Container from "./container";
 import { useState } from "react";
+import { raleway } from "@/app/layout";
 
 
 
@@ -31,9 +32,8 @@ function Header({ className = '' }: { className?: string }) {
                                 ]
                             },
                         ].map(({ label, link, dropdown }, index) => (
-                            <span className="flex items-center gap-[7px] relative" key={index}>
-                                {/* {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px] font-[family-name:var(--raleway)]`}>{label}</span>)} */}
-                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px] `}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px] `}>{label}</span>)}
+                            <span className={`flex items-center gap-[7px] ${raleway.className} relative`} key={index}>
+                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px]`}>{label}</Link>) : (<span className={`text-[#000000] font-semibold text-[22px]`}>{label}</span>)}
 
                                 {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
 
