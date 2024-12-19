@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-full h-screen ${raleway.variable} antialiased relative pt-[132px]`}
+        className={`w-full h-screen antialiased relative pt-[132px] ${raleway.variable}`}
       >
         <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" />
         {children}
