@@ -8,7 +8,7 @@ function Footer() {
 
 
     return (
-        <footer className="w-full h-fit">
+        <footer className="w-full h-fit bg-white">
             <Container className="py-[8vh]">
                 <div className="w-full h-fit grid grid-cols-[1fr_1fr_1fr_3fr] gap-[56px]">
                     {/* Company */}
@@ -92,7 +92,7 @@ function Footer() {
 
                 <div className="w-full h-fit mt-[4vh] relative">
                     <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" />
-                    <img className="w-full h-[127px] max-h-[127px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" />
+                    <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" />
                 </div>
             </Container>
         </footer>

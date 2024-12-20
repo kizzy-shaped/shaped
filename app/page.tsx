@@ -14,7 +14,7 @@ import { ObjectSchema, string } from 'yup'
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-white">
       <Hero />
 
       <Partners />
@@ -60,7 +60,7 @@ function Partners() {
 
 
   return (
-    <div className="w-full h-[196px]">
+    <div className="w-full h-[196px] bg-white">
       <Container className="flex items-center">
         <Marquee
           loop={0}
@@ -92,7 +92,7 @@ function About() {
 
 
   return (
-    <div className="w-full h-[530px]">
+    <div className="w-full h-[530px] bg-white">
       <Container className="grid grid-cols-2">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
           <div className="text-[22px] font-medium text-black">
@@ -134,7 +134,7 @@ function Featuring() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit py-[3vh]">
+    <div className="w-full h-fit py-[3vh] bg-white">
       <Container className="flex flex-col items-center justify-center gap-[30px] py-[3vh]">
         <span className="text-black text-[40px] font-semibold">FEATURING</span>
 
@@ -174,7 +174,7 @@ function MonthStyle() {
 
 
   return (
-    <div className="w-full h-[689px]">
+    <div className="w-full h-[689px] bg-white">
       <Container className="flex items-center justify-center">
         <div className="w-[80%] h-full relative">
           <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ'
