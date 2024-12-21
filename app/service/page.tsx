@@ -1,9 +1,9 @@
 "use client";
 
 import Container from "@/components/container";
+import { ClientsFeedback, Partners } from "@/components/homeComponents";
 import Link from "next/link";
 import { useState } from "react";
-import { ClientsFeedback, Partners } from "../page";
 
 const About = () => {
   return (

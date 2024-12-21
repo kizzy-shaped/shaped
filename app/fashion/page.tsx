@@ -1,9 +1,9 @@
 "use client";
 
 import Container from "@/components/container";
+import { ContactForm } from "@/components/homeComponents";
 import Link from "next/link";
 import { useState } from "react";
-import { ClientsFeedback, ContactForm, Partners } from "../page";
 
 const Fashion = () => {
   return (
