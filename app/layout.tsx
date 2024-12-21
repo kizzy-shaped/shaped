@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import Footer from "@/components/footer";
+import { ModalProvider } from "@/context/modal";
 
 // export const metadata: Metadata = {
 //   title: "Shaped | Welcome",
@@ -26,9 +27,11 @@ export default function RootLayout({
         className={`w-full h-screen antialiased relative pt-[132px] ${raleway.className}`}
       // className={`w-full h-screen antialiased relative pt-[132px]`}
       >
+        <ModalProvider>
         <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" />
         {children}
         <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

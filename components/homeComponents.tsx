@@ -446,44 +446,6 @@ export function ClientsFeedback() {
 }
 
 export function ContactForm() {
-  const fields: IInputTile[] = [
-    {
-      id: 0,
-      input: {
-        value: "",
-        handleChange: ({ target: { value } }) => {},
-      },
-      placeholder: "Your Name",
-      type: "text",
-    },
-    {
-      id: 1,
-      input: {
-        value: "",
-        handleChange: () => {},
-      },
-      placeholder: "Email Address",
-      type: "email",
-    },
-    {
-      id: 2,
-      input: {
-        value: "",
-        handleChange: () => {},
-      },
-      placeholder: "Your Country",
-      type: "text",
-    },
-    {
-      id: 3,
-      input: {
-        value: "",
-        handleChange: () => {},
-      },
-      placeholder: "Your Name",
-      type: "text",
-    },
-  ];
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
     initialValues: {
@@ -578,5 +540,94 @@ export function ClientsFeedbackContactForm() {
       <ClientsFeedback />
       <ContactForm />
     </>
+  );
+}
+
+export function ContactFormModal() {
+
+  const { values, errors, touched, handleChange, handleBlur } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      country: "",
+      favouriteBrand: "",
+    },
+    validationSchema: new ObjectSchema({
+      name: string().required("Name is required"),
+      email: string().required("Email is required"),
+      country: string().required("Country is required"),
+      favouriteBrand: string(),
+    }),
+    onSubmit: (data) => {},
+  });
+
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div className="w-[680px] h-fit bg-black pl-[7.5%]">
+      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
+        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+          <div className="flex flex-col gap-[12px]">
+            <div className="text-[28px] font-semibold text-white uppercase">
+              Ready to elevate your style?
+            </div>
+            <div className="text-[20px] font-medium text-white">
+              Become our client today.
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-[12px]">
+            <input
+              onChange={handleChange("name")}
+              onBlur={handleBlur("name")}
+              value={values.name}
+              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              placeholder={"Your Name"}
+              type="text"
+            />
+            <input
+              onChange={handleChange("email")}
+              onBlur={handleBlur("email")}
+              value={values.email}
+              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              placeholder={"Your Email"}
+              type="email"
+            />
+            <input
+              onChange={handleChange("country")}
+              onBlur={handleBlur("country")}
+              value={values.country}
+              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              placeholder={"Your Country"}
+              type="text"
+            />
+            <input
+              onChange={handleChange("favouriteBrand")}
+              onBlur={handleBlur("favouriteBrand")}
+              value={values.favouriteBrand}
+              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              placeholder={"Your Favorite Brand (Optional)"}
+              type="text"
+            />
+
+            <Link
+              href={""}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              className={`w-fit h-[60px] bg-white mt-[6vh] ${
+                hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+              } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px]`}
+            >
+              Contact Us
+              <FaArrowRight
+                className={`w-[28px] h-[28px] text-black ${
+                  hovered ? "ml-[4px]" : ""
+                }`}
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

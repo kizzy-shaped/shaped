@@ -4,16 +4,28 @@ import Link from "next/link";
 import { FaArrowRight, FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
-import { ChangeEventHandler, HTMLInputTypeAttribute, InputHTMLAttributes, useState } from "react";
+import { ChangeEventHandler, HTMLInputTypeAttribute, InputHTMLAttributes, useEffect, useState } from "react";
 import { useCarousel } from "@/components/carousel";
 import ReactPlayer from 'react-player'
 import { useFormik } from 'formik';
 import { ObjectSchema, string } from 'yup'
-import { About, ClientsFeedbackContactForm, Featuring, MonthStyle, Partners, Services } from "@/components/homeComponents";
+import { About, ClientsFeedbackContactForm, ContactForm, ContactFormModal, Featuring, MonthStyle, Partners, Services } from "@/components/homeComponents";
+import Modal from "@/components/modal";
+import { IoCloseSharp } from "react-icons/io5";
+import { useModal } from "@/context/modal";
 
 
 
 export default function Home() {
+  const { showModal, hideModal } = useModal();
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      showModal(<ContactFormModal />)
+    }, 3000)
+  },[])
+
   return (
     <div className="bg-white">
       <Hero />
@@ -29,6 +41,10 @@ export default function Home() {
       <Services />
 
       <ClientsFeedbackContactForm />
+
+      {/* //!Modals */}
+      <Modal containerClassName="w-[680px] rounded-[0px]" closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />} />
+                {/* //!Modals */}
     </div>
   );
 }
