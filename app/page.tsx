@@ -9,8 +9,7 @@ import { useCarousel } from "@/components/carousel";
 import ReactPlayer from 'react-player'
 import { useFormik } from 'formik';
 import { ObjectSchema, string } from 'yup'
-import { ClientsFeedbackContactForm, Featuring, MonthStyle, Partners, Services } from "@/components/homeComponents";
-import About from "./about_us/page";
+import { About, ClientsFeedbackContactForm, Featuring, MonthStyle, Partners, Services } from "@/components/homeComponents";
 
 
 
