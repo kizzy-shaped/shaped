@@ -23,8 +23,16 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       showModal(<ContactFormModal />)
-    }, 3000)
+    }, 7000)
   },[])
+  
+  // useEffect(()=> {
+  //   if(typeof window !== 'undefined'){
+  //     if (window.scrollY > window.innerHeight) {
+  //       showModal(<ContactFormModal />)
+  //     }
+  //   }
+  // }, [window.scrollY])
 
   return (
     <div className="bg-white">
