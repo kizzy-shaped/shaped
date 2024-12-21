@@ -51,7 +51,9 @@ export default function Home() {
       <ClientsFeedbackContactForm />
 
       {/* //!Modals */}
-      <Modal containerClassName="w-[680px] rounded-[0px]" closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />} />
+      <Modal containerClassName="w-[680px] rounded-[0px]" 
+      closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
+      closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white bg-red-600" />} />
                 {/* //!Modals */}
     </div>
   );

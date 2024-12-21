@@ -404,6 +404,7 @@ export function ClientsFeedback() {
             speed={50}
             className="w-full h-fit flex"
             style={{ height: "fit-content" }}
+            pauseOnHover={true}
           >
             {items.map(({ img, comments, name, rating }, index) => (
               <div
