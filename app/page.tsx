@@ -27,7 +27,7 @@ export default function Home() {
 
       <Services />
 
-      <ClientsFeedback />
+      <ClientsFeedbackContactForm />
     </div>
   );
 }
@@ -56,8 +56,8 @@ function Hero() {
   )
 }
 
-function Partners() {
 
+export function Partners() {
 
   return (
     <div className="w-full h-[196px] bg-white">
@@ -260,7 +260,7 @@ interface IInputTile {
   type: HTMLInputTypeAttribute | undefined
 }
 
-function ClientsFeedback() {
+export function ClientsFeedback() {
   const items = [
     {
       img: '/images/home/clients_feedback/client_tiwa.png', name: 'SYED AZAM', rating: 5, comments: [
@@ -295,6 +295,54 @@ function ClientsFeedback() {
       ]
     },
   ]
+
+  return (
+    <div className="w-full h-fit bg-black pl-[7.5%]">
+      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
+        <div className="text-[40px] text-white font-semibold text-center">CLIENTS' FEEDBACK</div>
+
+        <div className="w-full h-fit">
+          <Marquee
+            loop={0}
+            speed={50}
+            className="w-full h-fit flex"
+            style={{ height: 'fit-content' }}
+          >
+            {items.map(({ img, comments, name, rating }, index) => (
+              <div className="w-[689px] h-[374px] grid grid-cols-[3.5fr_6.5fr] border-[1px] border-[#ADADAD] mr-[28px]" key={index}>
+                <div className="col-span-1 h-full">
+                  <img className="w-[100%] h-[100%]" src={img} alt="" />
+                </div>
+
+                <div className="col-span-1 h-full bg-white flex flex-col justify-center gap-[12px] p-[2em]">
+                  <div className="flex flex-col gap-[0px]">
+                    {comments.map((comment, index) => (
+                      <div className="text-black text-[14px] font-semibold" key={index}>
+                        {comment}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-[4px]">
+                    {Array.from({ length: rating }).map((_, index) => (
+                      <FaStar className='text-black' key={index} />
+                    ))}
+                  </div>
+
+                  <div className="text-black text-[20px] font-semibold uppercase">
+                    {name}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function ContactForm() {
 
   const fields: IInputTile[] = [
     {
@@ -359,45 +407,7 @@ function ClientsFeedback() {
   return (
     <div className="w-full h-fit bg-black pl-[7.5%]">
       <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
-        <div className="text-[40px] text-white font-semibold text-center">CLIENTS' FEEDBACK</div>
-
-        <div className="w-full h-fit">
-          <Marquee
-            loop={0}
-            speed={50}
-            className="w-full h-fit flex"
-            style={{ height: 'fit-content' }}
-          >
-            {items.map(({ img, comments, name, rating }, index) => (
-              <div className="w-[689px] h-[374px] grid grid-cols-[3.5fr_6.5fr] border-[1px] border-[#ADADAD] mr-[28px]" key={index}>
-                <div className="col-span-1 h-full">
-                  <img className="w-[100%] h-[100%]" src={img} alt="" />
-                </div>
-
-                <div className="col-span-1 h-full bg-white flex flex-col justify-center gap-[12px] p-[2em]">
-                  <div className="flex flex-col gap-[0px]">
-                    {comments.map((comment, index) => (
-                      <div className="text-black text-[14px] font-semibold" key={index}>
-                        {comment}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-[4px]">
-                    {Array.from({ length: rating }).map((_, index) => (
-                      <FaStar className='text-black' key={index} />
-                    ))}
-                  </div>
-
-                  <div className="text-black text-[20px] font-semibold uppercase">
-                    {name}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Marquee>
-        </div>
-
+       
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
             <div className="text-[40px] font-semibold text-white uppercase">
@@ -453,6 +463,17 @@ function ClientsFeedback() {
         </div>
       </div>
     </div>
+  )
+}
+
+export function ClientsFeedbackContactForm() {
+
+
+  return (
+    <>
+    <ClientsFeedback />
+    <ContactForm />
+    </>
   )
 }
 
