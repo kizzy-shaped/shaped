@@ -1,0 +1,107 @@
+import { useModal } from "@/context/modal";
+import { IoIosCloseCircle } from "react-icons/io";
+
+export function MessageSentModal() {
+  const { hideModal } = useModal();
+
+  return (
+    <div className="w-[680px] h-[665px] bg-black pl-[7.5%]">
+      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
+        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+          <div className="flex flex-col gap-[12px]">
+            <div className="w-full flex items-center justify-between">
+              <div className="text-[28px] font-semibold text-white uppercase">
+              </div>
+
+              <IoIosCloseCircle
+                onClick={hideModal}
+                className="text-white w-[40px] h-[40px]"
+              />
+            </div>
+           
+          </div>
+
+          <div className="flex flex-col gap-[20px] items-center justify-center">
+            <div className="w-[277px] h-[266px]">
+              <svg
+                className="w-full h-full"
+                viewBox="0 0 277 276"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 145.051L70.4906 266C111.464 202.282 231.698 21.1265 272 5"
+                  stroke="#454545"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+
+            <div className="w-fit h-fit flex flex-col gap-[10px]">
+                <div className="text-white text-[32px] font-bold uppercase">MESSAGE SENT</div>
+
+                <div className="text-white text-[20px] font-medium">
+                    Thank you for contacting us. Our <br />
+                    team will reach out to you shortly.
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+export function EmailSubscribedModal() {
+  const { hideModal } = useModal();
+
+  return (
+    <div className="w-[680px] h-[665px] bg-black pl-[7.5%]">
+      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
+        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+          <div className="flex flex-col gap-[12px]">
+            <div className="w-full flex items-center justify-between">
+              <div className="text-[28px] font-semibold text-white uppercase">
+              </div>
+
+              <IoIosCloseCircle
+                onClick={hideModal}
+                className="text-white w-[40px] h-[40px]"
+              />
+            </div>
+            
+          </div>
+
+          <div className="flex flex-col gap-[20px] items-center justify-center">
+            <div className="w-[277px] h-[266px]">
+              <svg
+                className="w-full h-full"
+                viewBox="0 0 277 276"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 145.051L70.4906 266C111.464 202.282 231.698 21.1265 272 5"
+                  stroke="#454545"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+
+            <div className="w-fit h-fit flex flex-col gap-[10px]">
+                <div className="text-white text-[32px] font-bold uppercase">EMAIL SUBSCRIBED</div>
+
+                <div className="text-white text-[20px] font-medium">
+                Thank you for subscribing to our <br />
+                newsletter.
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

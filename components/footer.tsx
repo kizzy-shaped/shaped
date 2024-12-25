@@ -2,9 +2,17 @@ import Link from "next/link";
 import Container from "./container";
 import { FaInstagram } from "react-icons/fa6";
 import { FiFacebook } from "react-icons/fi";
+import { useModal } from "@/context/modal";
+import { EmailSubscribedModal } from "./shared";
 
 
 function Footer() {
+    const {showModal, hideModal} = useModal();
+
+    const submit = () => {
+        hideModal();
+    showModal(<EmailSubscribedModal />)
+      }
 
 
     return (
@@ -75,7 +83,7 @@ function Footer() {
                                 placeholder="Email Address"
                             />
 
-                            <button className="col-span-1 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
+                            <button onClick={submit} className="col-span-1 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
                         </div>
                     </div>
                     {/* Subscribe to newsletter */}

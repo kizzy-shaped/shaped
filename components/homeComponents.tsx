@@ -12,6 +12,9 @@ import { useCarousel } from "@/components/carousel";
 import ReactPlayer from "react-player";
 import { useFormik } from "formik";
 import { ObjectSchema, string } from "yup";
+import { IoIosCloseCircle } from "react-icons/io";
+import { useModal } from "@/context/modal";
+import { MessageSentModal } from "./shared";
 
 export function Partners() {
   return (
@@ -451,6 +454,7 @@ export function ClientsFeedback() {
 }
 
 export function ContactForm() {
+  const {showModal,hideModal} = useModal();
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
     initialValues: {
@@ -469,6 +473,11 @@ export function ContactForm() {
   });
 
   const [hovered, setHovered] = useState(false);
+
+  const submit = () => {
+    hideModal();
+showModal(<MessageSentModal />)
+  }
 
   return (
     <div className="w-full h-fit bg-[#F3F3F3] pl-[7.5%]">
@@ -517,8 +526,8 @@ export function ContactForm() {
               type="text"
             />
 
-            <Link
-              href={""}
+            <button
+            onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit h-[60px] bg-black mt-[6vh] ${
@@ -531,7 +540,7 @@ export function ContactForm() {
                   hovered ? "ml-[4px]" : ""
                 }`}
               />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -549,6 +558,7 @@ export function ClientsFeedbackContactForm() {
 }
 
 export function ContactFormModal() {
+  const {showModal,hideModal} = useModal()
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
     initialValues: {
@@ -568,13 +578,23 @@ export function ContactFormModal() {
 
   const [hovered, setHovered] = useState(false);
 
+
+  const submit = () => {
+    hideModal();
+showModal(<MessageSentModal />)
+  }
+
   return (
     <div className="w-[680px] h-fit bg-black pl-[7.5%]">
       <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
+            <div className="w-full flex items-center justify-between">
             <div className="text-[28px] font-semibold text-white uppercase">
               Ready to elevate your style?
+            </div>
+
+            <IoIosCloseCircle onClick={hideModal} className="text-white w-[40px] h-[40px]" />
             </div>
             <div className="text-[20px] font-medium text-white">
               Become our client today.
@@ -586,7 +606,7 @@ export function ContactFormModal() {
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#D5D5D5] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Name"}
               type="text"
             />
@@ -594,7 +614,7 @@ export function ContactFormModal() {
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#D5D5D5] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Email"}
               type="email"
             />
@@ -602,7 +622,7 @@ export function ContactFormModal() {
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#D5D5D5] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Country"}
               type="text"
             />
@@ -610,18 +630,18 @@ export function ContactFormModal() {
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className="w-full h-[55px] bg-transparent text-white border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#D5D5D5] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Favorite Brand (Optional)"}
               type="text"
             />
 
-            <Link
-              href={""}
+            <button
+            onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit h-[60px] bg-white mt-[6vh] ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-              } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px]`}
+              } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
               <FaArrowRight
@@ -629,7 +649,7 @@ export function ContactFormModal() {
                   hovered ? "ml-[4px]" : ""
                 }`}
               />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
