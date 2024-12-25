@@ -8,7 +8,7 @@ function Footer() {
 
 
     return (
-        <footer className="w-full h-fit bg-white">
+        <footer className="w-full h-fit bg-black">
             <Container className="py-[8vh]">
                 <div className="w-full h-fit grid grid-cols-[1fr_1fr_1fr_3fr] gap-[56px]">
                     {/* Company */}
@@ -52,9 +52,9 @@ function Footer() {
                             ].map(({ label, link }, index) => (<SubtitleTile text={label} key={index} />))}
 
                             <div className="flex gap-[7px]">
-                                <FaInstagram className="w-[26px] h-[26px]" color="#1E1E1E" />
+                                <FaInstagram className="w-[26px] h-[26px]" color="#AFAFAF" />
 
-                                <FiFacebook className="w-[26px] h-[26px]" color="#1E1E1E" />
+                                <FiFacebook className="w-[26px] h-[26px]" color="#AFAFAF" />
                             </div>
                         </div>
                     </div>
@@ -68,14 +68,14 @@ function Footer() {
 
                         <SubtitleTile text={'Sign up with your email to receive our news and updates'} />
 
-                        <div className="w-full h-[60px] grid grid-cols-[6.3fr_3.7fr]">
+                        <div className="w-full h-[60px] bg-transparent grid grid-cols-[6.3fr_3.7fr]">
                             <input
-                                className="col-span-1 h-full bg-[#F3F3F3] px-[16px] border-none outline-none focus:border-none focus:outline-none"
+                                className="col-span-1 h-full bg-transparent px-[16px] border-none outline-none focus:border-none focus:outline-none"
                                 type="text"
                                 placeholder="Email Address"
                             />
 
-                            <button className="col-span-1 h-full bg-black text-center text-white">SUBSCRIBE</button>
+                            <button className="col-span-1 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
                         </div>
                     </div>
                     {/* Subscribe to newsletter */}
@@ -91,8 +91,9 @@ function Footer() {
                 </div>
 
                 <div className="w-full h-fit mt-[4vh] relative">
-                    <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" />
-                    <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" />
+                    <img className="w-full h-auto" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
+                    {/* <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" /> */}
+                    {/* <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" /> */}
                 </div>
             </Container>
         </footer>
@@ -105,7 +106,7 @@ function TitleTile({ text }: { text: string }) {
 
 
     return (
-        <div className="text-[28px] font-semibold text-black uppercase">{text}</div>
+        <div className="text-[28px] font-semibold text-white uppercase">{text}</div>
     )
 }
 
@@ -113,7 +114,7 @@ function SubtitleTile({ text }: { text: string }) {
 
 
     return (
-        <div className="text-[20px] font-medium text-black">{text}</div>
+        <div className="text-[20px] font-medium text-[#AFAFAF]">{text}</div>
     )
 }
 
@@ -121,6 +122,6 @@ function LinkSubtitleTile({ text, link }: { text: string, link: string }) {
 
 
     return (
-        <Link href={link} className="text-[20px] font-medium text-black">{text}</Link>
+        <Link href={link} className="text-[20px] font-medium text-[#AFAFAF]">{text}</Link>
     )
 }

@@ -44,7 +44,7 @@ export default function Home() {
 
       <Featuring />
 
-      <MonthStyle />
+      {/* <MonthStyle /> */}
 
       <Services />
 
@@ -74,9 +74,9 @@ function Hero() {
         <Link href={''}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={`w-fit h-[60px] bg-[#555555A6] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} border-[1px] border-white text-white text-[22px] font-semibold flex items-center justify-between gap-[10px]`}>
+          className={`w-fit h-[60px] bg-[white] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}>
           Explore Our Services
-          <FaArrowRight className={`w-[28px] h-[28px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
+          <FaArrowRight className={`w-[28px] h-[28px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
         </Link>
       </div>
     </div>
