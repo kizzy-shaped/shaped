@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaArrowRight, FaStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
 import {
@@ -15,6 +15,8 @@ import { ObjectSchema, string } from "yup";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useModal } from "@/context/modal";
 import { MessageSentModal } from "./shared";
+import { FiArrowRight } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 export function Partners() {
   return (
@@ -56,7 +58,7 @@ export function About() {
 
   return (
     <div className="w-full h-[530px] bg-white">
-      <Container className="grid grid-cols-2">
+      <Container className="grid grid-cols-2 gap-[3em]">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
           <div className="text-[22px] font-medium text-black">
             At SHAPED, we are redefining what it means to experience true luxury
@@ -75,7 +77,7 @@ export function About() {
             } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
             Learn More
-            <FaArrowRight
+            <FiArrowRight
               className={`w-[28px] h-[28px] text-white ${
                 hovered ? "ml-[4px]" : ""
               }`}
@@ -85,7 +87,7 @@ export function About() {
 
         {items.map((img, index) => (
           <div
-            className="w-[599px] h-[530px] ml-auto"
+            className="w-[599px col-span-1 h-[530px] ml-auto"
             style={{
               // opacity: index === currentIndex ? 1 : 0,
               display: index === currentIndex ? "inline-block" : "none",
@@ -134,11 +136,12 @@ export function Featuring() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit py-[3vh] bg-white">
+    <div className="w-full h-fit py-[5vh] bg-white">
       <Container className="flex flex-col items-center justify-center gap-[30px] py-[3vh]">
         <span className="text-black text-[40px] font-semibold">FEATURING</span>
 
-        <div className="w-[96%] h-[444px] grid grid-cols-[366px_366px_366px] justify-between">
+        {/* <div className="w-[96%] h-[444px] grid grid-cols-[366px_366px_366px] justify-between"> */}
+        <div className="w-[96%] h-[444px] grid grid-cols-3 gap-[3em] wmin_xl:gap-[3.5em] wmin_3xl:gap-[5em] justify-between">
           {items.map(({ img, desc, title }, index) => (
             <div
               className="col-span-1 h-full relative overflow-hidden rounded-[24px]"
@@ -200,6 +203,8 @@ export function MonthStyle() {
 }
 
 export function Services() {
+  const router = useRouter();
+
   const items = [
     {
       img: "/images/home/services/alteration.png",
@@ -264,7 +269,7 @@ export function Services() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit bg-[#F3F3F3BF] my-[3em]">
+    <div className="w-full h-fit bg-white my-[3em]">
       <Container className=" grid grid-cols-2 gap-[54px] py-[5em]">
         <div className="col-span-1 h-fit text-[40px] font-semibold text-black">
           OUR SERVICES
@@ -277,7 +282,10 @@ export function Services() {
 
         {items.map(({ desc, img, title }, index) => (
           <div
-            className="col-span-1 h-[684px] relative overflow-hidden rounded-[24px]"
+          onClick={() => {
+            hoveredIndex === index && router.push(`/services/${index}`)
+          }}
+            className={`col-span-1 hmax_800:h-[80vh] hmin_800:h-[684px]  hmin_800:bg-green-700 relative overflow-hidden rounded-[24px] ${hoveredIndex === index?'cursor-pointer':''}`}
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
@@ -285,18 +293,18 @@ export function Services() {
             <img className="w-full h-full" src={img} alt="" />
 
             {hoveredIndex !== index && (
-              <div className="text-[22px] font-semibold bg-gradient-to-b from-[#00000000] to-[#000000] text-white uppercase text-center w-full h-[25%] absolute bottom-0 left-0 z-[3]">
+              <div className="text-[22px] font-semibold bg-gradient-to-b from-[#00000000] to-[#000000] text-white uppercase w-full h-fit pt-[3em] pb-[2em] pl-[2em] absolute bottom-0 left-0 z-[3]">
                 {title}
               </div>
             )}
 
             <div
-              className={`absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-[#00000000] to-[#000000] text-white  transition-transform duration-500 p-[2em] ${
+              className={`absolute bottom-0 left-0 w-full h-fit bg-gradient-to-b from-[#00000000] to-[#000000] text-white  transition-transform duration-500 p-[2em] ${
                 hoveredIndex === index ? "translate-y-0" : "translate-y-full"
               }`}
             >
               <div className="w-full h-full flex flex-col gap-[20px] justify-end relative">
-              <div className="w-full h-fit flex justify-center absolute top-[30%]">
+              {/* <div className="w-full h-fit flex justify-center absolute top-[30%]">
                 <Link href={'/services/1'} className="w-[96px] h-[96px] block cursor-pointer">
                   <svg
                     className="w-full h-full"
@@ -320,7 +328,7 @@ export function Services() {
                     />
                   </svg>
                 </Link>
-              </div>
+              </div> */}
 
               <div className="text-[22px] font-semibold text-white uppercase">
                 {title}
@@ -397,7 +405,7 @@ export function ClientsFeedback() {
   return (
     <div className="w-full h-fit bg-[#F3F3F3]">
       <div className="w-full h-fit py-[7vh] flex flex-col gap-[5vh]">
-        <div className="text-[40px] text-white font-semibold text-center">
+        <div className="text-[40px] text-black font-semibold text-center">
           CLIENTS' FEEDBACK
         </div>
 
@@ -497,7 +505,7 @@ showModal(<MessageSentModal />)
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className="w-full h-[55px] bg-transparent text-[#373737] text-[24px] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Name *"}
               type="text"
             />
@@ -505,7 +513,7 @@ showModal(<MessageSentModal />)
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className="w-full h-[55px] bg-transparent text-[#373737] text-[24px] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Email *"}
               type="email"
             />
@@ -513,7 +521,7 @@ showModal(<MessageSentModal />)
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className="w-full h-[55px] bg-transparent text-[#373737] text-[24px] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Country *"}
               type="text"
             />
@@ -521,7 +529,7 @@ showModal(<MessageSentModal />)
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className="w-full h-[55px] bg-transparent text-[#373737] text-[24px] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5]"
               placeholder={"Your Favorite Brand"}
               type="text"
             />
@@ -535,7 +543,7 @@ showModal(<MessageSentModal />)
               } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
-              <FaArrowRight
+              <FiArrowRight
                 className={`w-[28px] h-[28px] text-white ${
                   hovered ? "ml-[4px]" : ""
                 }`}
@@ -644,7 +652,7 @@ showModal(<MessageSentModal />)
               } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
-              <FaArrowRight
+              <FiArrowRight
                 className={`w-[28px] h-[28px] text-black ${
                   hovered ? "ml-[4px]" : ""
                 }`}

@@ -28,7 +28,8 @@ export default function RootLayout({
       // className={`w-full h-screen antialiased relative pt-[132px]`}
       >
         <ModalProvider>
-        <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" />
+        {/* <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" /> */}
+        <Header className="bg-white h-[132px] fixed top-0 left-0 z-[40]" />
         {children}
         <Footer />
         </ModalProvider>

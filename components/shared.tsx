@@ -5,9 +5,9 @@ export function MessageSentModal() {
   const { hideModal } = useModal();
 
   return (
-    <div className="w-[680px] h-[665px] bg-black pl-[7.5%]">
-      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
-        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+    <div className="w-[680px] h-fit bg-black">
+      <div className="w-full h-fit py-[2vh] pb-[5vh] flex flex-col gap-[3vh]">
+        <div className="w-full h-full flex flex-col gap-[12px] mt-[0vh]">
           <div className="flex flex-col gap-[12px]">
             <div className="w-full flex items-center justify-between">
               <div className="text-[28px] font-semibold text-white uppercase">
@@ -15,7 +15,7 @@ export function MessageSentModal() {
 
               <IoIosCloseCircle
                 onClick={hideModal}
-                className="text-white w-[40px] h-[40px]"
+                className="text-white w-[40px] h-[40px] mr-[2vh]"
               />
             </div>
            
@@ -58,9 +58,9 @@ export function EmailSubscribedModal() {
   const { hideModal } = useModal();
 
   return (
-    <div className="w-[680px] h-[665px] bg-black pl-[7.5%]">
-      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
-        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+    <div className="w-[680px] h-fit bg-black pl-[7.5%]">
+      <div className="w-full h-fit py-[2vh] pb-[5vh] flex flex-col gap-[3vh]">
+        <div className="w-full h-full flex flex-col gap-[12px] mt-[0vh]">
           <div className="flex flex-col gap-[12px]">
             <div className="w-full flex items-center justify-between">
               <div className="text-[28px] font-semibold text-white uppercase">
@@ -68,7 +68,7 @@ export function EmailSubscribedModal() {
 
               <IoIosCloseCircle
                 onClick={hideModal}
-                className="text-white w-[40px] h-[40px]"
+                className="text-white w-[40px] h-[40px] mr-[2vh]"
               />
             </div>
             

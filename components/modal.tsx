@@ -18,14 +18,14 @@ const Modal = ({ containerClassName, closeBtnClassName, closeBtn }:
                     <div onClick={(e: React.MouseEvent) => {
                         e.stopPropagation();
                     }} className={`bg-white shadow-lg w-[90%] max-w-lg p-0 relative ${containerClassName ? containerClassName : ''}`}>
-                        {modal.showCloseButton && (
+                        {/* {modal.showCloseButton && (
                             <button
                                 className={`absolute top-2 right-2 text-gray-500 hover:text-gray-800 ${closeBtnClassName ? closeBtnClassName : ''}`}
                                 onClick={hideModal}
                             >
                                 {closeBtn ? closeBtn : <FaTimes className='w-full h-full' />}
                             </button>
-                        )}
+                        )} */}
                         {modal.content}
                     </div>
                 </div>

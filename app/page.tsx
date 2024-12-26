@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { FaArrowRight, FaStar } from "react-icons/fa6";
+import {FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
 import { ChangeEventHandler, HTMLInputTypeAttribute, InputHTMLAttributes, useEffect, useState } from "react";
@@ -13,6 +13,7 @@ import { About, ClientsFeedbackContactForm, ContactForm, ContactFormModal, Featu
 import Modal from "@/components/modal";
 import { IoCloseSharp } from "react-icons/io5";
 import { useModal } from "@/context/modal";
+import { FiArrowRight } from "react-icons/fi";
 
 
 
@@ -68,15 +69,14 @@ function Hero() {
       <img className="w-auto h-full mx-auto  z-[2] object-contain" src="/images/home/hero_img.png" alt="" />
 
       <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
-        <span className="text-white text-[48px] font-bold text-center">SHAPED - Curated Experiences, Tailored <br />
-          for You.</span>
+        <span className="text-white text-[48px] font-bold text-center">Curated Experiences, Tailored for You</span>
 
         <Link href={''}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={`w-fit h-[60px] bg-[white] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}>
           Explore Our Services
-          <FaArrowRight className={`w-[28px] h-[28px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
+          <FiArrowRight className={`w-[28px] h-[28px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
         </Link>
       </div>
     </div>
