@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import Footer from "@/components/footer";
 import { ModalProvider } from "@/context/modal";
+import HeaderProvider from "@/context/header";
 
 // export const metadata: Metadata = {
 //   title: "Shaped | Welcome",
@@ -24,14 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-full h-screen antialiased relative pt-[132px] ${raleway.className}`}
+        className={`w-full h-screen antialiased relative wmin_390:pt-[132px] wmax_390:pt-[100px] ${raleway.className}`}
       // className={`w-full h-screen antialiased relative pt-[132px]`}
       >
         <ModalProvider>
-        {/* <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" /> */}
-        <Header className="bg-white h-[132px] fixed top-0 left-0 z-[40]" />
-        {children}
-        <Footer />
+          <HeaderProvider>
+            {/* <Header className="bg-white h-[132px] fixed top-0 left-0 z-[100]" /> */}
+            <Header className="bg-white wmax_390:h-[100px] wmin_390:h-[132px] fixed top-0 left-0 z-[40]" />
+            {children}
+            {/* <Footer /> */}
+          </HeaderProvider>
         </ModalProvider>
       </body>
     </html>

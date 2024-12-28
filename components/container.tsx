@@ -5,7 +5,7 @@ function Container({ className, children }: { className?: string, children: Reac
 
 
     return (
-        <div className={`w-[97%] wmax_xl:w-[95%] wmin_xl:w-[93%] wmin_3xl:w-[85%] h-full mx-auto ${className}`}>{children}</div>
+        <div className={`wmax_390:w-[100%] wmax_xl:w-[85%] wmin_xl:w-[80%] wmin_3xl:w-[85%] h-full mx-auto ${className}`}>{children}</div>
     )
 }
 

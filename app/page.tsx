@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import {FaStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
 import { ChangeEventHandler, HTMLInputTypeAttribute, InputHTMLAttributes, useEffect, useState } from "react";
@@ -19,14 +19,15 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
-
+  // const timeout = 15000;
+  const timeout = 3000;
 
   useEffect(() => {
     setTimeout(() => {
-      showModal(<ContactFormModal />)
-    }, 7000)
-  },[])
-  
+      // showModal(<ContactFormModal />)
+    }, timeout)
+  }, [])
+
   // useEffect(()=> {
   //   if(typeof window !== 'undefined'){
   //     if (window.scrollY > window.innerHeight) {
@@ -39,7 +40,7 @@ export default function Home() {
     <div className="bg-white">
       <Hero />
 
-      <Partners />
+      {/* <Partners /> */}
 
       <About />
 
@@ -49,13 +50,14 @@ export default function Home() {
 
       <Services />
 
-      <ClientsFeedbackContactForm />
+      {/* <ClientsFeedbackContactForm /> */}
 
       {/* //!Modals */}
-      <Modal containerClassName="w-[680px] rounded-[0px]" 
-      closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
-      closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white bg-red-600" />} />
-                {/* //!Modals */}
+      <Modal containerClassName="w-[680px] rounded-[0px]"
+      // closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
+      // closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />}
+      />
+      {/* //!Modals */}
     </div>
   );
 }
@@ -65,18 +67,23 @@ function Hero() {
 
 
   return (
-    <div className="w-full h-[calc(100vh-132px)] bg-[#373737]">
-      <img className="w-auto h-full mx-auto  z-[2] object-contain" src="/images/home/hero_img.png" alt="" />
+    <div className="w-full wmin_390:h-[calc(100vh-132px)] wmax_360:!h-[65vh] wmin_360:wmax_390:!h-[80vh] bg-[#373737] relative">
+      {/* Mobile */}
+      <img className="w-[90%] h-auto mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[5%] wmin_xl:hidden" src="/images/home/hero_img_mobile.png" alt="" />
+      {/* Mobile */}
+      {/* Desktop */}
+      <img className="w-[90%] h-[80%] z-[2] object-contain absolute left-[5%] bottom-[0] wmax_xl:hidden" src="/images/home/hero_img.png" alt="" />
+      {/* Desktop */}
 
-      <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
-        <span className="text-white text-[48px] font-bold text-center">Curated Experiences, Tailored for You</span>
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 wmax_xl:left-[5%] z-[3]">
+        <span className="text-white wmax_xl:text-[22px] wmin_xl:text-[48px] font-bold text-center">Curated Experiences, Tailored for You</span>
 
         <Link href={''}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={`w-fit h-[60px] bg-[white] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}>
+          className={`w-fit h-[60px] bg-[white] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}>
           Explore Our Services
-          <FiArrowRight className={`w-[28px] h-[28px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
+          <FiArrowRight className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
         </Link>
       </div>
     </div>

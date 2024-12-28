@@ -57,10 +57,10 @@ export function About() {
   const currentIndex = useCarousel(items, interval);
 
   return (
-    <div className="w-full h-[530px] bg-white">
-      <Container className="grid grid-cols-2 gap-[3em]">
+    <div className="w-full h-[530px] bg-white wmin_lg:pt-[10vh] wmax_lg:pt-[3vh]">
+      <Container className="wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="text-[22px] font-medium text-black">
+          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-black">
             At SHAPED, we are redefining what it means to experience true luxury
             in the modern world. Our singular mission is to return to you the
             one thing that matters most—your time. Through unparalleled service
@@ -72,15 +72,13 @@ export function About() {
             href={""}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`w-fit h-[60px] bg-[#000000] ${
-              hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-            } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+            className={`w-fit h-[60px] bg-[#000000] ${hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+              } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
             Learn More
             <FiArrowRight
-              className={`w-[28px] h-[28px] text-white ${
-                hovered ? "ml-[4px]" : ""
-              }`}
+              className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${hovered ? "ml-[4px]" : ""
+                }`}
             />
           </Link>
         </div>
@@ -136,15 +134,15 @@ export function Featuring() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit py-[5vh] bg-white">
+    <div className="w-full h-fit pt-[15vh] wmin_lg:pb-[5vh] wmax_lg:pb-[2vh] bg-white">
       <Container className="flex flex-col items-center justify-center gap-[30px] py-[3vh]">
         <span className="text-black text-[40px] font-semibold">FEATURING</span>
 
         {/* <div className="w-[96%] h-[444px] grid grid-cols-[366px_366px_366px] justify-between"> */}
-        <div className="w-[96%] h-[444px] grid grid-cols-3 gap-[3em] wmin_xl:gap-[3.5em] wmin_3xl:gap-[5em] justify-between">
+        <div className="w-[96%] wmin_lg:h-[444px] wmax_lg:h-fit grid wmin_lg:grid-cols-3 wmax_lg:grid-cols-1 gap-[3em] wmin_xl:gap-[3.5em] wmin_3xl:gap-[5em] justify-between">
           {items.map(({ img, desc, title }, index) => (
             <div
-              className="col-span-1 h-full relative overflow-hidden rounded-[24px]"
+              className="col-span-1 wmin_lg:h-full wmax_375:h-[350px] wmin_375:wmax_lg:h-[389px] relative overflow-hidden rounded-[24px]"
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -158,9 +156,8 @@ export function Featuring() {
               )}
 
               <div
-                className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#00000000] to-[#000000] text-white flex flex-col gap-[20px]  transition-transform duration-500 p-[24px] ${
-                  hoveredIndex === index ? "translate-y-0" : "translate-y-full"
-                }`}
+                className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#00000000] to-[#000000] text-white flex flex-col gap-[20px]  transition-transform duration-500 p-[24px] ${hoveredIndex === index ? "translate-y-0" : "translate-y-full"
+                  }`}
               >
                 <div className="text-[22px] font-semibold text-white uppercase">
                   {title}
@@ -269,8 +266,8 @@ export function Services() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit bg-white my-[3em]">
-      <Container className=" grid grid-cols-2 gap-[54px] py-[5em]">
+    <div className="w-full h-fit wmin_lg:bg-white wmax_lg:bg-[#F3F3F3BF] wmin_lg:my-[3em] wmax_lg:mt-[0em]">
+      <Container className=" grid wmin_lg:grid-cols-2 wmin_lg:gap-[54px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-1 h-fit text-[40px] font-semibold text-black">
           OUR SERVICES
         </div>
@@ -282,10 +279,10 @@ export function Services() {
 
         {items.map(({ desc, img, title }, index) => (
           <div
-          onClick={() => {
-            hoveredIndex === index && router.push(`/services/${index}`)
-          }}
-            className={`col-span-1 hmax_800:h-[80vh] hmin_800:h-[684px]  hmin_800:bg-green-700 relative overflow-hidden rounded-[24px] ${hoveredIndex === index?'cursor-pointer':''}`}
+            onClick={() => {
+              hoveredIndex === index && router.push(`/services/${index}`)
+            }}
+            className={`col-span-1 hmax_800:h-[80vh] hmin_800:h-[684px] wmax_375:!h-[350px] wmin_375:!wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
@@ -299,12 +296,11 @@ export function Services() {
             )}
 
             <div
-              className={`absolute bottom-0 left-0 w-full h-fit bg-gradient-to-b from-[#00000000] to-[#000000] text-white  transition-transform duration-500 p-[2em] ${
-                hoveredIndex === index ? "translate-y-0" : "translate-y-full"
-              }`}
+              className={`absolute bottom-0 left-0 w-full h-fit bg-gradient-to-b from-[#00000000] to-[#000000] text-white  transition-transform duration-500 p-[2em] ${hoveredIndex === index ? "translate-y-0" : "translate-y-full"
+                }`}
             >
               <div className="w-full h-full flex flex-col gap-[20px] justify-end relative">
-              {/* <div className="w-full h-fit flex justify-center absolute top-[30%]">
+                {/* <div className="w-full h-fit flex justify-center absolute top-[30%]">
                 <Link href={'/services/1'} className="w-[96px] h-[96px] block cursor-pointer">
                   <svg
                     className="w-full h-full"
@@ -330,12 +326,12 @@ export function Services() {
                 </Link>
               </div> */}
 
-              <div className="text-[22px] font-semibold text-white uppercase">
-                {title}
-              </div>
+                <div className="text-[22px] font-semibold text-white uppercase">
+                  {title}
+                </div>
 
-              <div className="text-[16px] font-semibold text-white">{desc}</div>
-            </div>
+                <div className="text-[16px] font-semibold text-white">{desc}</div>
+              </div>
             </div>
           </div>
         ))}
@@ -426,33 +422,33 @@ export function ClientsFeedback() {
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
                 </div> */}
                 <div className="w-[48px] h-[48px]">
-                <svg className={'w-full h-full'} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M35.9996 36C36.7952 36 37.5583 35.6839 38.1209 35.1213C38.6835 34.5587 38.9996 33.7956 38.9996 33V25.674C38.9996 24.8783 38.6835 24.1153 38.1209 23.5527C37.5583 22.9901 36.7952 22.674 35.9996 22.674H31.8356C31.8356 21.62 31.8976 20.566 32.0216 19.512C32.2076 18.396 32.5176 17.404 32.9516 16.536C33.3856 15.668 33.9446 14.985 34.6286 14.487C35.3086 13.929 36.1766 13.65 37.2326 13.65V9C35.4966 9 33.9766 9.372 32.6726 10.116C31.3776 10.8506 30.265 11.8679 29.4176 13.092C28.5644 14.4394 27.9362 15.9168 27.5576 17.466C27.1747 19.1752 26.9875 20.9225 26.9996 22.674V33C26.9996 33.7956 27.3156 34.5587 27.8783 35.1213C28.4409 35.6839 29.2039 36 29.9996 36H35.9996ZM17.9996 36C18.7952 36 19.5583 35.6839 20.1209 35.1213C20.6835 34.5587 20.9996 33.7956 20.9996 33V25.674C20.9996 24.8783 20.6835 24.1153 20.1209 23.5527C19.5583 22.9901 18.7952 22.674 17.9996 22.674H13.8356C13.8356 21.62 13.8976 20.566 14.0216 19.512C14.2096 18.396 14.5196 17.404 14.9516 16.536C15.3856 15.668 15.9446 14.985 16.6286 14.487C17.3086 13.929 18.1766 13.65 19.2326 13.65V9C17.4966 9 15.9766 9.372 14.6726 10.116C13.3776 10.8506 12.265 11.8679 11.4176 13.092C10.5644 14.4394 9.93619 15.9168 9.55757 17.466C9.17472 19.1752 8.98752 20.9225 8.99957 22.674V33C8.99957 33.7956 9.31564 34.5587 9.87825 35.1213C10.4409 35.6839 11.2039 36 11.9996 36H17.9996Z" fill="black"/>
-</svg>
+                  <svg className={'w-full h-full'} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35.9996 36C36.7952 36 37.5583 35.6839 38.1209 35.1213C38.6835 34.5587 38.9996 33.7956 38.9996 33V25.674C38.9996 24.8783 38.6835 24.1153 38.1209 23.5527C37.5583 22.9901 36.7952 22.674 35.9996 22.674H31.8356C31.8356 21.62 31.8976 20.566 32.0216 19.512C32.2076 18.396 32.5176 17.404 32.9516 16.536C33.3856 15.668 33.9446 14.985 34.6286 14.487C35.3086 13.929 36.1766 13.65 37.2326 13.65V9C35.4966 9 33.9766 9.372 32.6726 10.116C31.3776 10.8506 30.265 11.8679 29.4176 13.092C28.5644 14.4394 27.9362 15.9168 27.5576 17.466C27.1747 19.1752 26.9875 20.9225 26.9996 22.674V33C26.9996 33.7956 27.3156 34.5587 27.8783 35.1213C28.4409 35.6839 29.2039 36 29.9996 36H35.9996ZM17.9996 36C18.7952 36 19.5583 35.6839 20.1209 35.1213C20.6835 34.5587 20.9996 33.7956 20.9996 33V25.674C20.9996 24.8783 20.6835 24.1153 20.1209 23.5527C19.5583 22.9901 18.7952 22.674 17.9996 22.674H13.8356C13.8356 21.62 13.8976 20.566 14.0216 19.512C14.2096 18.396 14.5196 17.404 14.9516 16.536C15.3856 15.668 15.9446 14.985 16.6286 14.487C17.3086 13.929 18.1766 13.65 19.2326 13.65V9C17.4966 9 15.9766 9.372 14.6726 10.116C13.3776 10.8506 12.265 11.8679 11.4176 13.092C10.5644 14.4394 9.93619 15.9168 9.55757 17.466C9.17472 19.1752 8.98752 20.9225 8.99957 22.674V33C8.99957 33.7956 9.31564 34.5587 9.87825 35.1213C10.4409 35.6839 11.2039 36 11.9996 36H17.9996Z" fill="black" />
+                  </svg>
 
                 </div>
 
-                  <div className="flex flex-col gap-[0px] items-center">
-                    {comments.map((comment, index) => (
-                      <div
-                        className="text-black text-[14px] font-semibold text-center"
-                        key={index}
-                      >
-                        {comment}
-                      </div>
-                    ))}
-                  </div>
+                <div className="flex flex-col gap-[0px] items-center">
+                  {comments.map((comment, index) => (
+                    <div
+                      className="text-black text-[14px] font-semibold text-center"
+                      key={index}
+                    >
+                      {comment}
+                    </div>
+                  ))}
+                </div>
 
-                  {/* <div className="flex gap-[4px]">
+                {/* <div className="flex gap-[4px]">
                     {Array.from({ length: rating }).map((_, index) => (
                       <FaStar className="text-black" key={index} />
                     ))}
                   </div> */}
 
-                  <div className="text-black text-[20px] font-semibold uppercase">
-                    {name}
-                  </div>
+                <div className="text-black text-[20px] font-semibold uppercase">
+                  {name}
                 </div>
+              </div>
             ))}
           </Marquee>
         </div>
@@ -462,7 +458,7 @@ export function ClientsFeedback() {
 }
 
 export function ContactForm() {
-  const {showModal,hideModal} = useModal();
+  const { showModal, hideModal } = useModal();
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
     initialValues: {
@@ -477,14 +473,14 @@ export function ContactForm() {
       country: string().required("Country is required"),
       favouriteBrand: string(),
     }),
-    onSubmit: (data) => {},
+    onSubmit: (data) => { },
   });
 
   const [hovered, setHovered] = useState(false);
 
   const submit = () => {
     hideModal();
-showModal(<MessageSentModal />)
+    showModal(<MessageSentModal />)
   }
 
   return (
@@ -535,18 +531,16 @@ showModal(<MessageSentModal />)
             />
 
             <button
-            onClick={submit}
+              onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit h-[60px] bg-black mt-[6vh] ${
-                hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-              } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+              className={`w-fit h-[60px] bg-black mt-[6vh] ${hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+                } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
               <FiArrowRight
-                className={`w-[28px] h-[28px] text-white ${
-                  hovered ? "ml-[4px]" : ""
-                }`}
+                className={`w-[28px] h-[28px] text-white ${hovered ? "ml-[4px]" : ""
+                  }`}
               />
             </button>
           </div>
@@ -566,7 +560,7 @@ export function ClientsFeedbackContactForm() {
 }
 
 export function ContactFormModal() {
-  const {showModal,hideModal} = useModal()
+  const { showModal, hideModal } = useModal()
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
     initialValues: {
@@ -581,7 +575,7 @@ export function ContactFormModal() {
       country: string().required("Country is required"),
       favouriteBrand: string(),
     }),
-    onSubmit: (data) => {},
+    onSubmit: (data) => { },
   });
 
   const [hovered, setHovered] = useState(false);
@@ -589,20 +583,20 @@ export function ContactFormModal() {
 
   const submit = () => {
     hideModal();
-showModal(<MessageSentModal />)
+    showModal(<MessageSentModal />)
   }
 
   return (
-    <div className="w-[680px] h-fit bg-black pl-[7.5%]">
-      <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
-        <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
+    <div className="w-[680px] h-fit bg-black">
+      <div className="w-full h-fit pb-[3vh] flex flex-col gap-[3vh]">
+        <div className="w-full h-fit px-[4vh] flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
             <div className="w-full flex items-center justify-between">
-            <div className="text-[28px] font-semibold text-white uppercase">
-              Ready to elevate your style?
-            </div>
+              <div className="text-[28px] font-semibold text-white uppercase">
+                Ready to elevate your style?
+              </div>
 
-            <IoIosCloseCircle onClick={hideModal} className="text-white w-[40px] h-[40px]" />
+              <IoIosCloseCircle onClick={hideModal} className="text-white w-[40px] h-[40px]" />
             </div>
             <div className="text-[20px] font-medium text-white">
               Become our client today.
@@ -644,18 +638,16 @@ showModal(<MessageSentModal />)
             />
 
             <button
-            onClick={submit}
+              onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit h-[60px] bg-white mt-[6vh] ${
-                hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-              } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+              className={`w-fit h-[60px] bg-white mt-[6vh] ${hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+                } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
               <FiArrowRight
-                className={`w-[28px] h-[28px] text-black ${
-                  hovered ? "ml-[4px]" : ""
-                }`}
+                className={`w-[28px] h-[28px] text-black ${hovered ? "ml-[4px]" : ""
+                  }`}
               />
             </button>
           </div>

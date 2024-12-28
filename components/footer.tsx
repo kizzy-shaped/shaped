@@ -9,12 +9,12 @@ import { EmailSubscribedModal } from "./shared";
 
 
 function Footer() {
-    const {showModal, hideModal} = useModal();
+    const { showModal, hideModal } = useModal();
 
     const submit = () => {
         hideModal();
-    showModal(<EmailSubscribedModal />)
-      }
+        showModal(<EmailSubscribedModal />)
+    }
 
 
     return (
@@ -78,14 +78,14 @@ function Footer() {
 
                         <SubtitleTile text={'Sign up with your email to receive our news and updates'} />
 
-                        <div className="w-full h-[60px] bg-transparent grid grid-cols-[6.3fr_3.7fr]">
+                        <div className="w-full h-[60px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
                             <input
-                                className="col-span-1 h-full bg-[#282828] px-[16px] border-none outline-none focus:border-none focus:outline-none"
+                                className="col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#282828] px-[16px] border-none outline-none focus:border-none focus:outline-none"
                                 type="text"
                                 placeholder="Email Address"
                             />
 
-                            <button onClick={submit} className="col-span-1 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
+                            <button onClick={submit} className="col-start-2 -col-end-1 row-start-1 row-end-2 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
                         </div>
                     </div>
                     {/* Subscribe to newsletter */}

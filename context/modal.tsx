@@ -1,14 +1,14 @@
-'use client'
+// modal.tsx
+'use client';
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface ModalInstance {
     content: ReactNode;
-    id: number;
     showCloseButton: boolean;
 }
 
 interface ModalContextType {
-    modals: ModalInstance[];
+    modal: ModalInstance | null;
     showModal: (content: ReactNode, showCloseButton?: boolean) => void;
     hideModal: () => void;
 }
@@ -16,22 +16,18 @@ interface ModalContextType {
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
-    const [modals, setModals] = useState<ModalInstance[]>([]);
-    let modalId = 0;
+    const [modal, setModal] = useState<ModalInstance | null>(null);
 
     const showModal = (content: ReactNode, showCloseButton = true) => {
-        setModals((prev) => [
-            ...prev,
-            { content, id: modalId++, showCloseButton },
-        ]);
+        setModal({ content, showCloseButton });
     };
 
     const hideModal = () => {
-        setModals((prev) => prev.slice(0, -1)); // Remove the last modal
+        setModal(null);
     };
 
     return (
-        <ModalContext.Provider value={{ modals, showModal, hideModal }}>
+        <ModalContext.Provider value={{ modal, showModal, hideModal }}>
             {children}
         </ModalContext.Provider>
     );
