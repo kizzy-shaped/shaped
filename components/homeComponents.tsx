@@ -218,41 +218,41 @@ export function Services() {
       title: `EXCLUSIVE COLLECTION`,
       desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
     },
-    {
-      img: "/images/home/services/fashion.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    {
-      img: "/images/home/services/garment.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
+    // {
+    //   img: "/images/home/services/fashion.png",
+    //   title: `EXCLUSIVE COLLECTION`,
+    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+    // },
+    // {
+    //   img: "/images/home/services/garment.png",
+    //   title: `EXCLUSIVE COLLECTION`,
+    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+    // },
     {
       img: "/images/home/services/gathering_celebration.png",
       title: `EXCLUSIVE COLLECTION`,
       desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
     },
-    {
-      img: "/images/home/services/lifestyle_concierge.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    {
-      img: "/images/home/services/personal.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
+    // {
+    //   img: "/images/home/services/lifestyle_concierge.png",
+    //   title: `EXCLUSIVE COLLECTION`,
+    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+    // },
+    // {
+    //   img: "/images/home/services/personal.png",
+    //   title: `EXCLUSIVE COLLECTION`,
+    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+    // },
     {
       img: "/images/home/services/travel_jet.png",
       title: `EXCLUSIVE COLLECTION`,
       desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
     },
-    {
-      img: "/images/home/services/styling.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
+    // {
+    //   img: "/images/home/services/styling.png",
+    //   title: `EXCLUSIVE COLLECTION`,
+    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+    // },
     {
       img: "/images/home/services/private_corperate.png",
       title: `EXCLUSIVE COLLECTION`,
@@ -283,7 +283,8 @@ export function Services() {
               hoveredIndex === index && router.push(`/services/${index}`)
             }}
             // wmin_lg:hmax_800:h-[80vh]
-            className={`col-span-1 wmin_lg:hmin_800:h-[684px] hmin_800:wmax_375:!h-[350px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
+            // hmin_800:wmax_375:!h-[350px]
+            className={`col-span-1 wmin_lg:hmin_800:h-[684px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
