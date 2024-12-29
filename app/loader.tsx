@@ -23,15 +23,15 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
         <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
             {progress < 100 ? (
                 <div className="w-full max-w-lg">
-                    <div className={`${progress > 90 ? 'w-[36px] mx-auto' : ''} h-[36px] bg-[#FFFFFF1F]`}>
+                    <div className={`${progress > 90 ? 'wmin_lg:w-[36px] wmax_lg:w-[30px] mx-auto' : ''} wmin_lg:h-[36px] wmax_lg:h-[30px] bg-[#FFFFFF1F]`}>
                         <div
-                            className="h-[36px] bg-white transition-all duration-75"
+                            className="wmin_lg:h-[36px] wmax_lg:h-[30px] bg-white transition-all duration-75"
                             style={{ width: progress > 90 ? '36px' : `${progress}%` }}
                         />
                     </div>
                 </div>
             ) : (
-                <div className="w-[36px] h-[36px] bg-white animate-scale-to-full"></div>
+                <div className="wmin_lg:w-[36px] wmin_lg:h-[36px] wmax_lg:w-[36px] wmax_lg:h-[30px] bg-white animate-scale-to-full"></div>
             )}
         </div>
     );
