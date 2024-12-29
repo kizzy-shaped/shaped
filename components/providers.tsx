@@ -4,10 +4,11 @@ import "../app/globals.css";
 import Footer from "@/components/footer";
 import { ModalProvider } from "@/context/modal";
 import HeaderProvider from "@/context/header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "@/app/loader";
 import Header from "./header";
 import { raleway } from "@/app/layout";
+import { usePathname } from "next/navigation";
 
 export default function Providers({
     children,
@@ -15,13 +16,17 @@ export default function Providers({
     children: React.ReactNode;
 }>) {
     const [loading, setLoading] = useState(true);
+    const path = usePathname()
 
+    useEffect(() => {
+        path != '/' && setLoading(false);
+    }, [path])
 
     return (
         <html lang="en">
             {loading ? (
-                <body className="w-full h-full">
-                    <Loader onFinish={() => setLoading(false)} />
+                <body className={`w-full h-full ${path != '/' ? 'animate-pulse' : ''} bg-black`}>
+                    {path == '/' && <Loader onFinish={() => setLoading(false)} />}
                 </body>
             ) : (
                 <body

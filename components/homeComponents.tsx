@@ -282,7 +282,8 @@ export function Services() {
             onClick={() => {
               hoveredIndex === index && router.push(`/services/${index}`)
             }}
-            className={`col-span-1 wmin_lg:hmax_800:h-[80vh] wmin_lg:hmin_800:h-[684px] hmin_800:wmax_375:!h-[350px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
+            // wmin_lg:hmax_800:h-[80vh]
+            className={`col-span-1 wmin_lg:hmin_800:h-[684px] hmin_800:wmax_375:!h-[350px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}

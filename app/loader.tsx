@@ -20,18 +20,19 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
     }, [onFinish]);
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
             {progress < 100 ? (
                 <div className="w-full max-w-lg">
-                    <div className="h-2 bg-gray-200 rounded">
+                    <div className={`${progress > 90 ? 'w-[36px] mx-auto' : ''} h-[36px] bg-[#FFFFFF1F]`}>
                         <div
-                            className="h-2 bg-green-500 rounded transition-all duration-75"
-                            style={{ width: `${progress}%` }}
+                            className="h-[36px] bg-white transition-all duration-75"
+                            style={{ width: progress > 90 ? '36px' : `${progress}%` }}
                         />
                     </div>
                 </div>
             ) : (
-                <div className="w-10 h-10 bg-green-500 rounded animate-scale-to-full"></div>
+                // <div className="w-10 h-10 bg-white rounded animate-scale-to-full"></div>
+                <div className="w-[36px] h-[36px] bg-white animate-scale-to-full"></div>
             )}
         </div>
     );

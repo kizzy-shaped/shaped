@@ -61,8 +61,14 @@ export default {
 					}
 				},
 				scaleToFull: {
-					'0%': { transform: 'scale(1)', borderRadius: '100%' },
-					'100%': { transform: 'scale(100)', borderRadius: '0%' },
+					'0%': {
+						transform: 'scale(1)',
+						// borderRadius: '100%'
+					},
+					'100%': {
+						transform: 'scale(100)',
+						// borderRadius: '0%'
+					},
 				},
 			},
 			animation: {
