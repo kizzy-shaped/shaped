@@ -14,6 +14,7 @@ import Modal from "@/components/modal";
 import { IoCloseSharp } from "react-icons/io5";
 import { useModal } from "@/context/modal";
 import { FiArrowRight } from "react-icons/fi";
+import Head from "next/head";
 
 
 
@@ -21,6 +22,11 @@ export default function Home() {
   const { showModal, hideModal } = useModal();
   // const timeout = 15000;
   const timeout = 3000;
+
+  const [title, setTitle] = useState("Welcome to My App");
+  const [description, setDescription] = useState(
+    "This is a dynamic description for my app."
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,28 +43,35 @@ export default function Home() {
   // }, [window.scrollY])
 
   return (
-    <div className="bg-white">
-      <Hero />
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <div className="bg-white">
+        <Hero />
 
-      {/* <Partners /> */}
+        {/* <Partners /> */}
 
-      <About />
+        <About />
 
-      <Featuring />
+        <Featuring />
 
-      {/* <MonthStyle /> */}
+        {/* <MonthStyle /> */}
 
-      <Services />
+        <Services />
 
-      <ClientsFeedbackContactForm />
+        <ClientsFeedbackContactForm />
 
-      {/* //!Modals */}
-      <Modal containerClassName="w-[680px] rounded-[0px]"
-      // closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
-      // closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />}
-      />
-      {/* //!Modals */}
-    </div>
+        {/* //!Modals */}
+        <Modal containerClassName="w-[680px] rounded-[0px]"
+        // closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
+        // closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />}
+        />
+        {/* //!Modals */}
+      </div>
+    </>
   );
 }
 
