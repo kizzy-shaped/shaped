@@ -57,7 +57,7 @@ export function About() {
   const currentIndex = useCarousel(items, interval);
 
   return (
-    <div className="w-full wmin_lg:h-[530px] wmax_lg:h-[309px] bg-white wmin_lg:pt-[10vh] wmax_lg:pt-[3vh]">
+    <div className="w-full wmin_lg:h-[530px] wmax_lg:h-fit bg-white wmin_lg:pt-[10vh] wmax_lg:pt-[3vh]">
       <Container className="wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
           <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-black">
@@ -85,7 +85,7 @@ export function About() {
 
         {items.map((img, index) => (
           <div
-            className="w-[599px col-span-1 wmin_lg:h-[530px] wmax_lg:h-[309px] ml-auto"
+            className="col-span-1 wmin_lg:h-[530px] wmax_lg:h-[309px] ml-auto"
             style={{
               // opacity: index === currentIndex ? 1 : 0,
               display: index === currentIndex ? "inline-block" : "none",
