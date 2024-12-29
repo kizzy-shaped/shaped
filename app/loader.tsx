@@ -31,7 +31,6 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
                     </div>
                 </div>
             ) : (
-                // <div className="w-10 h-10 bg-white rounded animate-scale-to-full"></div>
                 <div className="w-[36px] h-[36px] bg-white animate-scale-to-full"></div>
             )}
         </div>
