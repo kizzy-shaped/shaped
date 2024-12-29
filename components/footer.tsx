@@ -20,9 +20,9 @@ function Footer() {
     return (
         <footer className="w-full h-fit bg-black">
             <Container className="py-[8vh]">
-                <div className="w-full h-fit grid grid-cols-[1fr_1fr_1fr_3fr] gap-[56px]">
+                <div className="w-full h-fit grid wmin_lg:grid-cols-[1fr_1fr_1fr_3fr] wmax_lg:grid-cols-2 wmax_lg:grid-rows-3 gap-[56px]">
                     {/* Company */}
-                    <div className="col-span-1 flex flex-col gap-[24px]">
+                    <div className="wmin_lg:col-span-1 wmax_lg:col-start-1 wmax_lg:col-end-2 flex flex-col gap-[24px]">
                         <TitleTile text="compnay" />
 
                         <div className="flex flex-col gap-[24px]">
@@ -34,7 +34,7 @@ function Footer() {
                     {/* Company */}
 
                     {/* Services */}
-                    <div className="col-span-1 flex flex-col gap-[24px]">
+                    <div className="wmin_lg:col-span-1 wmax_lg:col-start-2 wmax_lg:col-end-3 flex flex-col gap-[24px]">
                         <TitleTile text="services" />
 
                         <div className="flex flex-col gap-[24px]">
@@ -50,7 +50,7 @@ function Footer() {
                     {/* Services */}
 
                     {/* Contact us */}
-                    <div className="col-span-1 flex flex-col gap-[24px]">
+                    <div className="wmin_lg:col-span-1 wmax_lg:col-start-1 wmax_lg:col-end-3 flex flex-col gap-[24px]">
                         <TitleTile text="contact us" />
 
                         <div className="flex flex-col gap-[24px]">
@@ -71,7 +71,7 @@ function Footer() {
                     {/* Contact us */}
 
                     {/* Subscribe to newsletter */}
-                    <div className="col-span-1 flex flex-col gap-[24px]">
+                    <div className="wmin_lg:col-span-1 wmax_lg:col-start-1 wmax_lg:col-end-3 flex flex-col gap-[24px]">
                         <div className="w-full flex justify-center">
                             <TitleTile text="subscribe to newsletter" />
                         </div>
@@ -91,16 +91,20 @@ function Footer() {
                     {/* Subscribe to newsletter */}
                 </div>
 
-                <div className="w-full h-fit flex justify-between mt-[4vh] border-t-[1.5px] border-t-[#D3D3D3] pt-[16px]">
+                <div className="w-full h-fit flex wmin_lg:justify-between wmax_lg:justify-center wmax_lg:gap-[20px] mt-[4vh] border-t-[1.5px] border-t-[#D3D3D3] pt-[16px]">
                     <div className="flex gap-[56px]">
                         <SubtitleTile text="Terms & Conditions" />
                         <SubtitleTile text="Privacy Policy" />
                     </div>
 
-                    <SubtitleTile text="Shaped 2024 All Right Reserved" />
+                    &copy; <SubtitleTile className="wmax_lg:hidden" text="Shaped 2024 All Right Reserved" />
                 </div>
 
-                <div className="w-full h-fit mt-[4vh] relative">
+                <div className="wmin_lg:hidden flex items-center justify-center gap-[3px]">
+                    &copy; <SubtitleTile text="Shaped 2024 All Right Reserved" />
+                </div>
+
+                <div className="w-full h-fit mt-[4vh] relative wmax_lg:hidden">
                     <img className="w-full h-auto" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
                     {/* <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" /> */}
                     {/* <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" /> */}
@@ -116,15 +120,15 @@ function TitleTile({ text }: { text: string }) {
 
 
     return (
-        <div className="text-[28px] font-semibold text-white uppercase">{text}</div>
+        <div className="wmin_lg:text-[28px] wmax_lg:text-[20px] font-semibold text-white uppercase">{text}</div>
     )
 }
 
-function SubtitleTile({ text }: { text: string }) {
+function SubtitleTile({ text, className = '' }: { text: string, className?: string }) {
 
 
     return (
-        <div className="text-[20px] font-medium text-[#AFAFAF]">{text}</div>
+        <div className={`wmin_lg:text-[20px] wmax_lg:text-[14px] font-medium text-[#AFAFAF] ${className}`}>{text}</div>
     )
 }
 
@@ -132,6 +136,6 @@ function LinkSubtitleTile({ text, link }: { text: string, link: string }) {
 
 
     return (
-        <Link href={link} className="text-[20px] font-medium text-[#AFAFAF]">{text}</Link>
+        <Link href={link} className="wmin_lg:text-[20px] wmax_lg:text-[14px] font-medium text-[#AFAFAF]">{text}</Link>
     )
 }

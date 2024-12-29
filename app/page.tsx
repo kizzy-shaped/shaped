@@ -50,7 +50,7 @@ export default function Home() {
 
       <Services />
 
-      {/* <ClientsFeedbackContactForm /> */}
+      <ClientsFeedbackContactForm />
 
       {/* //!Modals */}
       <Modal containerClassName="w-[680px] rounded-[0px]"

@@ -282,7 +282,7 @@ export function Services() {
             onClick={() => {
               hoveredIndex === index && router.push(`/services/${index}`)
             }}
-            className={`col-span-1 hmax_800:h-[80vh] hmin_800:h-[684px] wmax_375:!h-[350px] wmin_375:!wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
+            className={`col-span-1 hmax_800:h-[80vh] hmin_800:h-[684px] hmin_800:wmax_375:!h-[350px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${hoveredIndex === index ? 'cursor-pointer' : ''}`}
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
@@ -401,7 +401,7 @@ export function ClientsFeedback() {
   return (
     <div className="w-full h-fit bg-[#F3F3F3]">
       <div className="w-full h-fit py-[7vh] flex flex-col gap-[5vh]">
-        <div className="text-[40px] text-black font-semibold text-center">
+        <div className="wmin_lg:text-[40px] wmin_390:wmax_lg:text-[32px] wmax_375:text-[28px] text-black font-semibold text-center">
           CLIENTS' FEEDBACK
         </div>
 
@@ -415,20 +415,20 @@ export function ClientsFeedback() {
           >
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="w-[529px] h-[448px] bg-white flex flex-col gap-[32px] items-center justify-center p-[3em] rounded-[24px] shadow-lg shadow-[#B6B6B633] mr-[28px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-white flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-lg shadow-[#B6B6B633] wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
                 </div> */}
-                <div className="w-[48px] h-[48px]">
+                <div className="wmin_md:w-[48px] wmax_md:w-[40px] wmin_md:h-[48px] wmax_md:h-[40px]">
                   <svg className={'w-full h-full'} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M35.9996 36C36.7952 36 37.5583 35.6839 38.1209 35.1213C38.6835 34.5587 38.9996 33.7956 38.9996 33V25.674C38.9996 24.8783 38.6835 24.1153 38.1209 23.5527C37.5583 22.9901 36.7952 22.674 35.9996 22.674H31.8356C31.8356 21.62 31.8976 20.566 32.0216 19.512C32.2076 18.396 32.5176 17.404 32.9516 16.536C33.3856 15.668 33.9446 14.985 34.6286 14.487C35.3086 13.929 36.1766 13.65 37.2326 13.65V9C35.4966 9 33.9766 9.372 32.6726 10.116C31.3776 10.8506 30.265 11.8679 29.4176 13.092C28.5644 14.4394 27.9362 15.9168 27.5576 17.466C27.1747 19.1752 26.9875 20.9225 26.9996 22.674V33C26.9996 33.7956 27.3156 34.5587 27.8783 35.1213C28.4409 35.6839 29.2039 36 29.9996 36H35.9996ZM17.9996 36C18.7952 36 19.5583 35.6839 20.1209 35.1213C20.6835 34.5587 20.9996 33.7956 20.9996 33V25.674C20.9996 24.8783 20.6835 24.1153 20.1209 23.5527C19.5583 22.9901 18.7952 22.674 17.9996 22.674H13.8356C13.8356 21.62 13.8976 20.566 14.0216 19.512C14.2096 18.396 14.5196 17.404 14.9516 16.536C15.3856 15.668 15.9446 14.985 16.6286 14.487C17.3086 13.929 18.1766 13.65 19.2326 13.65V9C17.4966 9 15.9766 9.372 14.6726 10.116C13.3776 10.8506 12.265 11.8679 11.4176 13.092C10.5644 14.4394 9.93619 15.9168 9.55757 17.466C9.17472 19.1752 8.98752 20.9225 8.99957 22.674V33C8.99957 33.7956 9.31564 34.5587 9.87825 35.1213C10.4409 35.6839 11.2039 36 11.9996 36H17.9996Z" fill="black" />
                   </svg>
 
                 </div>
 
-                <div className="flex flex-col gap-[0px] items-center">
+                <div className="flex flex-col gap-[0px] wmin_md:items-center wmax_md:text-justify">
                   {comments.map((comment, index) => (
                     <div
                       className="text-black text-[14px] font-semibold text-center"
@@ -445,7 +445,7 @@ export function ClientsFeedback() {
                     ))}
                   </div> */}
 
-                <div className="text-black text-[20px] font-semibold uppercase">
+                <div className="text-black wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
                   {name}
                 </div>
               </div>
@@ -488,7 +488,7 @@ export function ContactForm() {
       <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
-            <div className="text-[40px] font-semibold text-black uppercase">
+            <div className="wmin_md:text-[40px] wmax_md:text-[24px] font-semibold text-black uppercase">
               Ready to elevate your style?
             </div>
             {/* <div className="text-[28px] font-medium text-white">
@@ -535,11 +535,11 @@ export function ContactForm() {
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit h-[60px] bg-black mt-[6vh] ${hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-                } text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+                } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
               <FiArrowRight
-                className={`w-[28px] h-[28px] text-white ${hovered ? "ml-[4px]" : ""
+                className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${hovered ? "ml-[4px]" : ""
                   }`}
               />
             </button>
