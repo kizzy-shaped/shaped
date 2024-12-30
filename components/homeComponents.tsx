@@ -20,7 +20,7 @@ import { useRouter } from "next/navigation";
 
 export function Partners() {
   return (
-    <div className="w-full h-[196px] bg-white">
+    <div className="w-full wmin_lg:h-[196px] wmax_lg:h-[110px] bg-white">
       <Container className="flex items-center">
         <Marquee loop={0} speed={50} className="w-full h-fit flex">
           {[
@@ -33,7 +33,7 @@ export function Partners() {
             { img: "/images/home/partners/smart.png" },
           ].map(({ img }, index) => (
             <img
-              className="w-auto h-[72px] mr-[72px]"
+              className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px]"
               src={img}
               alt=""
               key={index}
@@ -134,7 +134,7 @@ export function Featuring() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit pt-[15vh] wmin_lg:pb-[5vh] wmax_lg:pb-[2vh] bg-white">
+    <div className="w-full h-fit wmin_lg:pt-[15vh] wmax_lg:pt-[3vh] wmin_lg:pb-[5vh] wmax_lg:pb-[2vh] bg-white">
       <Container className="flex flex-col items-center justify-center gap-[30px] py-[3vh]">
         <span className="text-black text-[40px] font-semibold">FEATURING</span>
 
@@ -177,9 +177,9 @@ export function Featuring() {
 
 export function MonthStyle() {
   return (
-    <div className="w-full h-[689px] bg-white">
+    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[fit] bg-white wmin_lg:py-[7.5vh] wmax_lg:py-[3vh]">
       <Container className="flex items-center justify-center">
-        <div className="w-[80%] h-full relative">
+        <div className="w-[80%] h-full relative wmax_lg:hidden">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
             style={{
@@ -191,6 +191,21 @@ export function MonthStyle() {
           />
 
           <div className="text-[22px] font-semibold text-white uppercase text-center w-full absolute top-[85%] left-0 z-[3]">
+            STYLE OF THE MONTH
+          </div>
+        </div>
+        <div className="w-full h-full relative wmin_lg:hidden">
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+            style={{
+              width: "100%",
+              height: "100%",
+              maxHeight: "100%",
+              maxWidth: "100%",
+            }}
+          />
+
+          <div className="wmin_lg:text-[22px] wmax_lg:text-[20px] font-semibold text-white uppercase text-center w-full absolute bottom-[10px] left-0 z-[3]">
             STYLE OF THE MONTH
           </div>
         </div>

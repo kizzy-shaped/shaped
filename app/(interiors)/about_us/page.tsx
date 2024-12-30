@@ -27,20 +27,20 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full h-[calc(100vh-132px)] bg-[#373737]">
+    <div className="w-full wmin_390:h-[calc(100vh-132px)] wmax_360:!h-[50vh] wmin_360:wmax_390:!h-[70vh] bg-[#373737] wmax_lg:relative wmax_lg:bg-[url(/images/about/hero_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
       <img
-        className="w-auto h-full mx-auto  z-[2] object-cover"
+        className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
         src="/images/about/hero_img.png"
         alt=""
       />
 
       <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
-        <span className="text-white text-[24px] font-bold text-center">
+        <span className="text-white wmin_lg:text-[64px] wmax_lg:text-[28px] font-bold text-center uppercase">
           About Us
         </span>
-        <span className="text-white text-[48px] font-bold text-center">
+        {/* <span className="text-white text-[48px] font-bold text-center">
           Crafting Bespoke Luxury Experiences That Redefine Living.
-        </span>
+        </span> */}
       </div>
     </div>
   );
@@ -51,26 +51,26 @@ function AboutDesc() {
   return (
     <div className="w-full h-fit bg-white">
       <Container>
-      <Container className="w-[80%] py-[4vh] flex flex-col items-center gap-[28px]">
-      <div className="text-[24px] font-medium text-black text-center">
-        SHAPED is a luxury concierge service with over 12 years of experience,
-        offering bespoke solutions to elevate every aspect of your life.
-        From fashion styling and private events to travel arrangements and home
-        management, we handle the details, so you don’t have to.
-      </div>
+        <Container className="w-[80%] py-[4vh] flex flex-col items-center wmin_lg:gap-[28px] wmax_lg:gap-[24px]">
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+            SHAPED is a luxury concierge service with over 12 years of experience,
+            offering bespoke solutions to elevate every aspect of your life.
+            From fashion styling and private events to travel arrangements and home
+            management, we handle the details, so you don't have to.
+          </div>
 
-      <div className="text-[24px] font-medium text-black text-center">
-        We create seamless, luxurious experiences tailored to your needs,
-        providing access to the finest services and exclusive opportunities.
-        Whether it’s a red-carpet look or a private getaway, we simplify your
-        life with impeccable service and attention to every detail.
-      </div>
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+            We create seamless, luxurious experiences tailored to your needs,
+            providing access to the finest services and exclusive opportunities.
+            Whether it's a red-carpet look or a private getaway, we simplify your
+            life with impeccable service and attention to every detail.
+          </div>
 
-      <div className="text-[24px] font-medium text-black text-center">
-        SHAPED is your partner in luxury, making life effortless, extraordinary,
-        and uniquely yours.
-      </div>
-      </Container>
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+            SHAPED is your partner in luxury, making life effortless, extraordinary,
+            and uniquely yours.
+          </div>
+        </Container>
       </Container>
     </div>
   );
@@ -80,22 +80,22 @@ function Gallery() {
 
   return (
     <div className="w-full h-fit bg-white">
-      <Container className="grid grid-cols-2 py-[3vh]">
-        <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="text-[22px] font-medium text-black">
-          With a decade of global expertise in fashion and styling, Shaped serves top clients in entertainment.
+      <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
+        <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
+          <div className="wmin_lg:text-[22px] wmax_lg:text-[14px] font-medium text-black">
+            With a decade of global expertise in fashion and styling, Shaped serves top clients in entertainment.
           </div>
 
-          <div className="text-[22px] font-medium text-black">
-          Our clients include Rosie Huntington-Whiteley and Billy Huxley; musicians Kendrick Lamar, Wiz Kid, and Tiwa Savage, actors Joey Essex and Chloe Sims to name a few.
+          <div className="wmin_lg:text-[22px] wmax_lg:text-[14px] font-medium text-black">
+            Our clients include Rosie Huntington-Whiteley and Billy Huxley; musicians Kendrick Lamar, Wiz Kid, and Tiwa Savage, actors Joey Essex and Chloe Sims to name a few.
           </div>
 
-          <div className="text-[22px] font-medium text-black">
-          Shaped has featured in top TV shows, global campaigns, and concerts, partnering with Sony and Universal Music.
+          <div className="wmin_lg:text-[22px] wmax_lg:text-[14px] font-medium text-black">
+            Shaped has featured in top TV shows, global campaigns, and concerts, partnering with Sony and Universal Music.
           </div>
         </div>
 
-        <div className="col-span-1 h-[696px] grid grid-cols-[1fr_2fr_1fr_2fr] grid-rows-[1fr_2fr_2fr_1fr_1fr]">
+        <div className="col-span-1 wmin_lg:h-[696px] wmax_lg:h-[290px] grid grid-cols-[1fr_2fr_1fr_2fr] grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
           <div className="col-start-1 col-end-3 row-start-1 row-end-4">
             <img
               className="w-full h-full object-cover"

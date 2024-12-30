@@ -78,7 +78,7 @@ function Footer() {
 
                         <SubtitleTile text={'Sign up with your email to receive our news and updates'} />
 
-                        <div className="w-full h-[60px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
+                        <div className="w-full wmin_lg:h-[60px] wmax_lg:h-[50px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
                             <input
                                 className="col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#282828] px-[16px] border-none outline-none focus:border-none focus:outline-none"
                                 type="text"
