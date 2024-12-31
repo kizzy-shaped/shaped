@@ -55,7 +55,7 @@ function Header({ className = '' }: { className?: string }) {
         <header className={`w-full  ${className}`}>
             <Container className="wmax_390:!w-[90%] flex items-center justify-between">
                 <Link href={'/'}>
-                    <img className="w-auto wmax_xl:h-[28px] wmin_xl:h-[48px]" src='/images/shared/header_logo.png' alt="Shaped logo" />
+                    <img className="w-auto wmax_xl:h-[20px] wmin_xl:h-[35px]" src='/images/shared/header_logo.png' alt="Shaped logo" />
                 </Link>
                 {/* Desktop Navigation */}
                 <div className="h-full flex gap-[15px] items-center wmin_xl:gap-[20px] wmin_3xl:gap-[40px] wmax_xl:hidden">
@@ -75,18 +75,18 @@ function Header({ className = '' }: { className?: string }) {
                                     }
                                 }}
                                 className={`${dropdown ? 'h-full' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
-                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold text-[22px]`}>{label}</Link>) : (<div
-                                    className={`h-full flex items-center text-[#000000] font-semibold text-[22px]`}>{label}</div>)}
+                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-black text-[18px]`}>{label}</Link>) : (<div
+                                    className={`h-full flex items-center text-[#000000] font-black text-[18px]`}>{label}</div>)}
 
                                 {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
 
                                 {/* Dropdown */}
                                 {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
                                 {(dropdownVisible && dropdownState.index === id) && (
-                                    <div className="w-[100%] bg-black p-[2em] fixed top-[132px] left-[0vw]">
+                                    <div className="w-[100%] bg-black p-[2em] fixed top-[80px] left-[0vw]">
                                         <div className="w-fit grid grid-cols-3 gap-x-[2em]">
                                             {dropdown?.map(({ link, name }, index) => (
-                                                <Link className={`col-span-1 w-fit text-[20px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services${link}`} key={index}>{name}</Link>
+                                                <Link className={`col-span-1 w-fit font-black text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services${link}`} key={index}>{name}</Link>
                                             ))}
                                         </div>
                                     </div>
@@ -95,10 +95,10 @@ function Header({ className = '' }: { className?: string }) {
                             </div>
                         ))}
                     </div>
-                    <Link href={''}
+                    <Link href={'#contact_us'}
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
-                        className={`w-fit h-[60px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}>
+                        className={`w-fit h-[50px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white text-[18px] font-black flex items-center justify-between gap-[10px] rounded-[24px]`}>
                         Contact Us
                         <FiArrowRight className={`w-[28px] h-[28px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
                     </Link>
@@ -109,7 +109,7 @@ function Header({ className = '' }: { className?: string }) {
                 <div className="wmin_xl:hidden">
                     <Sheet>
                         <SheetTrigger>
-                            <button className="w-[60px] h-[52px]">
+                            <button className="w-[50px] h-[48px]">
                                 <svg className="w-full h-full" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect className="w-full h-full" fill="#F0F0F0" />
                                     <line x1="17.5" y1="17.5" x2="42.5" y2="17.5" stroke="black" stroke-width="3" stroke-linecap="round" />
@@ -156,7 +156,7 @@ function Header({ className = '' }: { className?: string }) {
                                         </div>
                                     ))}
                                 </div>
-                                <Link href={''}
+                                <Link href={'#contact_us'}
                                     onMouseEnter={() => setHovered(true)}
                                     onMouseLeave={() => setHovered(false)}
                                     className={`w-full h-[60px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>

@@ -30,11 +30,11 @@ export default function Providers({
                 </body>
             ) : (
                 <body
-                    className={`w-full h-screen antialiased relative wmin_390:pt-[132px] wmax_390:pt-[100px] ${raleway.className}`}
+                    className={`w-full h-screen antialiased relative wmin_390:pt-[80px] wmax_390:pt-[65px] ${raleway.className}`}
                 >
                     <ModalProvider>
                         <HeaderProvider>
-                            <Header className="bg-white wmax_390:h-[100px] wmin_390:h-[132px] fixed top-0 left-0 z-[40]" />
+                            <Header className="bg-white wmax_390:h-[65px] wmin_390:h-[80px] fixed top-0 left-0 z-[40]" />
                             {children}
                             <Footer />
                         </HeaderProvider>

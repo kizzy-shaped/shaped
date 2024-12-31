@@ -501,7 +501,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="w-full h-fit bg-[#F3F3F3] pl-[7.5%]">
+    <div id="contact_us" className="w-full h-fit bg-[#F3F3F3] pl-[7.5%]">
       <div className="w-[calc(100% - 7.5%)] h-fit py-[7vh] flex flex-col gap-[3vh]">
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
