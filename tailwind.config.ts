@@ -72,7 +72,7 @@ export default {
 				},
 			},
 			animation: {
-				fadeIn: 'fadeIn 1.3s ease-in-out',
+				fadeIn: 'fadeIn 0.25s ease-in-out',
 				'scale-to-full': 'scaleToFull 1s ease forwards',
 			},
 			screens: {

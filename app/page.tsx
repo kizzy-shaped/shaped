@@ -93,7 +93,7 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_390:!h-[80vh] bg-[#373737] relative ">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
       {/* Mobile */}
       {/* <img
         className="w-[90%] h-auto mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[5%] wmin_xl:hidden"
@@ -103,14 +103,8 @@ function Hero() {
       {/* Mobile */}
       {/* Desktop */}
       {/* <img className="w-[90%] h-[80%] z-[2] object-contain absolute left-[5%] bottom-[0] wmax_xl:hidden" src="/images/home/hero_img.png" alt="" /> */}
-      <div className="w-full h-full relative bg-red-800 pt-[56.25%]">
-        {/* <ReactPlayer muted loop playing
-                  url="/videos/hero.mp4"
-                  height={'100%'}
-                  width={'100%'}
-                  className="absolute z-[3] top-0 left-0 w-full h-full max-h-full object-cover hidden"
-                  style={{position:'absolute', zIndex:3, top:0, left:0, width:'100%', height:'100%'}}
-                /> */}
+      {/* Desktop */}
+      <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
           autoPlay
@@ -120,9 +114,8 @@ function Hero() {
           <source src="/videos/hero.mp4" />
         </video>
       </div>
-      {/* Desktop */}
 
-      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 wmax_xl:left-[5%] z-[3]">
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[22px] wmin_xl:text-[48px] font-bold text-center">
           Curated Experiences, Tailored for You
         </span>
