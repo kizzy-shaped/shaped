@@ -6,6 +6,8 @@ import {
   ChangeEventHandler,
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
+  MouseEventHandler,
+  useRef,
   useState,
 } from "react";
 import { useCarousel } from "@/components/carousel";
@@ -139,8 +141,10 @@ export function Featuring() {
 
   return (
     <div className="w-full h-fit wmin_lg:pt-[15vh] wmax_lg:pt-[3vh] wmin_lg:pb-[5vh] wmax_lg:pb-[2vh] bg-white">
-      <Container className="flex flex-col items-center justify-center gap-[4em] py-[3vh]">
-        <span className="text-black text-[40px] font-semibold">FEATURING</span>
+      <Container className="flex flex-col items-center justify-center wmin_md:gap-[4em] wmax_md:gap-[2.5em] py-[3vh]">
+        <span className="text-black wmin_md:text-[40px] wmax_md:text-[24px] font-black">
+          FEATURING
+        </span>
 
         {/* <div className="w-[96%] h-[444px] grid grid-cols-[366px_366px_366px] justify-between"> */}
         <div className="w-[97%] wmin_lg:h-[444px] wmax_lg:h-fit grid wmin_lg:grid-cols-3 wmax_lg:grid-cols-1 wmin_md:gap-x-[1.3em] wmin_3xl:gap-[3.5em] wmax_md:gap-y-[1.5em]">
@@ -150,7 +154,9 @@ export function Featuring() {
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
-              onClick={() => setHoveredIndex(index == hoveredIndex?null:index)}
+              onClick={() =>
+                setHoveredIndex(index == hoveredIndex ? null : index)
+              }
             >
               <img className="w-full h-full" src={img} alt="" />
 
@@ -181,40 +187,112 @@ export function Featuring() {
   );
 }
 
+function PlayBtn({className = '', onPress}:{className?: string, onPress:MouseEventHandler<HTMLSpanElement> | undefined}) {
+  return (
+    <span onClick={onPress} className={`w-[120px] h-[120px] ${className}`}>
+      <svg
+        className="w-full h-full"
+        viewBox="0 0 120 120"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="60" cy="60" r="60" fill="white" />
+        <g filter="url(#filter0_d_165_729)">
+          <path
+            d="M71 54.8038C75 57.1132 75 62.8868 71 65.1962L59 72.1244C55 74.4338 50 71.547 50 66.9282V53.0718C50 48.453 55 45.5662 59 47.8756L71 54.8038Z"
+            fill="black"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d_165_729"
+            x="26"
+            y="39.0628"
+            width="72"
+            height="73.8743"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feMorphology
+              radius="8"
+              operator="erode"
+              in="SourceAlpha"
+              result="effect1_dropShadow_165_729"
+            />
+            <feOffset dy="16" />
+            <feGaussianBlur stdDeviation="16" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.0470588 0 0 0 0 0.0470588 0 0 0 0 0.0509804 0 0 0 0.4 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_165_729"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_165_729"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </span>
+  );
+}
+
 export function MonthStyle() {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      (videoRef as any)?.current.pause();
+    } else {
+      (videoRef as any)?.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[fit] bg-white wmin_lg:py-[7.5vh] wmax_lg:py-[3vh]">
       <Container className="flex items-center justify-center">
-        <div className="w-[80%] h-full relative wmax_lg:hidden">
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-            style={{
-              width: "100%",
-              height: "100%",
-              minHeight: "100%",
-              minWidth: "100%",
-            }}
-          />
+        <div className="w-[80%] h-full relative wmax_md:hidden">
+         
+          <div className="w-full h-full relative">
+
+            {!isPlaying && <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
+              <PlayBtn onPress={() => handlePlayPause()} />
+            </div>}
+
+            <video
+            ref={videoRef}
+            controls={isPlaying}
+            onPause={() => setIsPlaying(false)}
+            onPlay={() => setIsPlaying(true)}
+            loop 
+              className="w-full h-full absolute top-0 left-0 object-cover"
+            >
+              <source src="/videos/fashion.mp4" />
+            </video>
+          </div>
 
           <div className="text-[22px] font-semibold text-white uppercase text-center w-full absolute top-[85%] left-0 z-[3]">
             STYLE OF THE MONTH
           </div>
         </div>
-        <div className="w-full h-full relative wmin_lg:hidden">
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-            style={{
-              width: "100%",
-              height: "100%",
-              maxHeight: "100%",
-              maxWidth: "100%",
-            }}
-          />
-
-          <div className="wmin_lg:text-[22px] wmax_lg:text-[20px] font-semibold text-white uppercase text-center w-full absolute bottom-[10px] left-0 z-[3]">
-            STYLE OF THE MONTH
-          </div>
-        </div>
+       
       </Container>
     </div>
   );
@@ -289,11 +367,11 @@ export function Services() {
   return (
     <div className="w-full h-fit wmin_lg:bg-white wmax_lg:bg-[#F3F3F3BF] wmin_lg:my-[3em] wmax_lg:mt-[0em]">
       <Container className=" grid wmin_lg:grid-cols-2 wmin_lg:gap-[54px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
-        <div className="col-span-1 h-fit text-[40px] font-semibold text-black">
+        <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-black">
           OUR SERVICES
         </div>
 
-        <div className="text-[24px] font-medium text-black">
+        <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-black">
           From styling to bespoke services, we've got you <br />
           covered for every occasion.
         </div>
@@ -301,7 +379,7 @@ export function Services() {
         {items.map(({ desc, img, title }, index) => (
           <div
             onClick={() => {
-              setHoveredIndex(index == hoveredIndex?null:index);
+              setHoveredIndex(index == hoveredIndex ? null : index);
               hoveredIndex === index && router.push(`/services/${index}`);
             }}
             // wmin_lg:hmax_800:h-[80vh]
@@ -429,8 +507,8 @@ export function ClientsFeedback() {
 
   return (
     <div className="w-full h-fit bg-[#F3F3F3]">
-      <div className="w-full h-fit py-[7vh] flex flex-col gap-[5vh]">
-        <div className="wmin_lg:text-[40px] wmin_390:wmax_lg:text-[32px] wmax_375:text-[28px] text-black font-semibold text-center">
+      <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pb-[1vh] flex flex-col gap-[5vh]">
+        <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-black font-black text-center">
           CLIENTS' FEEDBACK
         </div>
 
@@ -467,7 +545,7 @@ export function ClientsFeedback() {
                 <div className="flex flex-col gap-[0px] wmin_md:items-center wmax_md:text-justify">
                   {comments.map((comment, index) => (
                     <div
-                      className="text-black text-[14px] font-semibold text-center"
+                      className="text-black wmin_md:text-[14px] wmax_md:text-[12px] font-bold text-center"
                       key={index}
                     >
                       {comment}
@@ -523,7 +601,7 @@ export function ContactForm() {
 
   return (
     <div id="contact_us" className="w-full h-fit bg-[#F3F3F3] pl-[7.5%]">
-      <div className="w-[calc(100% - 7.5%)] h-fit pt-[7vh] pb-[10vh] flex flex-col gap-[3vh]">
+      <div className="w-[calc(100% - 7.5%)] h-fit wmin_md:pt-[7vh] wmin_md:pb-[10vh] wmax_md:pt-[0vh] wmax_md:pb-[3vh] flex flex-col gap-[3vh]">
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
             <div className="wmin_md:text-[40px] wmax_md:text-[24px] font-semibold text-black uppercase">
@@ -534,7 +612,7 @@ export function ContactForm() {
             </div> */}
           </div>
 
-          <div className="flex flex-col gap-[12px]">
+          <div className="flex flex-col wmin_md:gap-[12px] wmax_md:gap-[9px]">
             <input
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
@@ -580,7 +658,7 @@ export function ContactForm() {
               onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit h-[60px] bg-black mt-[6vh] ${
+              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-black wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
               } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >

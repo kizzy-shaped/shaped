@@ -159,7 +159,7 @@ function Header({ className = '' }: { className?: string }) {
                                 <Link href={'#contact_us'}
                                     onMouseEnter={() => setHovered(true)}
                                     onMouseLeave={() => setHovered(false)}
-                                    className={`w-full wmin_lg:h-[60px] wmax_lg:h-[40px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
+                                    className={`w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
                                     Contact Us
                                     <FiArrowRight className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
                                 </Link>

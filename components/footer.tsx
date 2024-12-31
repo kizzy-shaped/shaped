@@ -19,8 +19,8 @@ function Footer() {
 
     return (
         <footer className="w-full h-fit bg-black">
-            <Container className="py-[8vh]">
-                <div className="w-full h-fit grid wmin_lg:grid-cols-[1fr_1fr_1fr_3fr] wmax_lg:grid-cols-2 wmax_lg:grid-rows-3 gap-[56px]">
+            <Container className="wmin_md:py-[8vh] wmax_md:py-[4vh]">
+                <div className="w-full h-fit grid wmin_md:grid-cols-[1fr_1fr_1fr_3fr] wmax_md:grid-cols-2 wmax_md:grid-rows-3 wmin_md:gap-[56px] wmax_md:gap-y-[1.5em]">
                     {/* Company */}
                     <div className="wmin_lg:col-span-1 wmax_lg:col-start-1 wmax_lg:col-end-2 flex flex-col gap-[24px]">
                         <TitleTile text="compnay" />
@@ -78,7 +78,7 @@ function Footer() {
 
                         <SubtitleTile text={'Sign up with your email to receive our news and updates'} />
 
-                        <div className="w-full wmin_lg:h-[60px] wmax_lg:h-[50px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
+                        <div className="w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
                             <input
                                 className="col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#282828] px-[16px] border-none outline-none focus:border-none focus:outline-none"
                                 type="text"
