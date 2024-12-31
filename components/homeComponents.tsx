@@ -189,7 +189,7 @@ export function Featuring() {
 
 function PlayBtn({className = '', onPress}:{className?: string, onPress:MouseEventHandler<HTMLSpanElement> | undefined}) {
   return (
-    <span onClick={onPress} className={`w-[120px] h-[120px] ${className}`}>
+    <span onClick={onPress} className={`wmin_md:w-[90px] wmin_md:h-[90px] wmax_md:w-[60px] wmax_md:h-[60px] ${className}`}>
       <svg
         className="w-full h-full"
         viewBox="0 0 120 120"
@@ -273,7 +273,7 @@ export function MonthStyle() {
           <div className="w-full h-full relative">
 
             {!isPlaying && <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
-              <PlayBtn onPress={() => handlePlayPause()} />
+              <PlayBtn onPress={() => handlePlayPause()} className="" />
             </div>}
 
             <video
@@ -288,9 +288,9 @@ export function MonthStyle() {
             </video>
           </div>
 
-          <div className="text-[22px] font-semibold text-white uppercase text-center w-full absolute top-[85%] left-0 z-[3]">
+         {!isPlaying && <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
             STYLE OF THE MONTH
-          </div>
+          </div>}
         </div>
        
       </Container>
@@ -507,7 +507,7 @@ export function ClientsFeedback() {
 
   return (
     <div className="w-full h-fit bg-[#F3F3F3]">
-      <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pb-[1vh] flex flex-col gap-[5vh]">
+      <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pt-[3vh] wmax_md:pb-[1vh] flex flex-col wmin_md:gap-[5vh] wmax_md:gap-[3vh]">
         <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-black font-black text-center">
           CLIENTS' FEEDBACK
         </div>

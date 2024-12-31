@@ -50,6 +50,7 @@ function Header({ className = '' }: { className?: string }) {
         hovered: false,
         index: null
     })
+    const [mobiledropdownVisible, setMobiledropdownVisible] = useState(false);
 
     return (
         <header className={`w-full  ${className}`}>
@@ -107,7 +108,7 @@ function Header({ className = '' }: { className?: string }) {
 
                 {/* Mobile Navigation */}
                 <div className="wmin_xl:hidden">
-                    <Sheet>
+                   {mobiledropdownVisible && <Sheet>
                         <SheetTrigger>
                             <button className="w-[50px] h-[48px]">
                                 <svg className="w-full h-full" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +120,7 @@ function Header({ className = '' }: { className?: string }) {
                             </button>
                         </SheetTrigger>
                         <SheetContent side={'top'}>
-                            <div className="h-fit flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px] wmax_lg:relative">
+                            <div className="h-fit flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px] wmax_md:relative">
                                 <div className="h-full flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px]">
                                     {navigation.map(({ label, link, dropdown }, id) => (
                                         <div
@@ -135,6 +136,7 @@ function Header({ className = '' }: { className?: string }) {
                                                     setDropdownState(prev => ({ ...prev, index: null }))
                                                 }
                                             }}
+                                            onClick={() => setMobiledropdownVisible(false)}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
                                             {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
                                                 className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
@@ -147,7 +149,7 @@ function Header({ className = '' }: { className?: string }) {
                                                 <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
                                                     <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
                                                         {dropdown?.map(({ link, name }, index) => (
-                                                            <Link className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services/${link}`} key={index}>{name}</Link>
+                                                            <Link onClick={() => setMobiledropdownVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services/${link}`} key={index}>{name}</Link>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -165,7 +167,7 @@ function Header({ className = '' }: { className?: string }) {
                                 </Link>
                             </div>
                         </SheetContent>
-                    </Sheet>
+                    </Sheet>}
 
                 </div>
                 {/* Mobile Navigation */}

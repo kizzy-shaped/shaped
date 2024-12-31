@@ -51,22 +51,22 @@ function AboutDesc() {
   return (
     <div className="w-full h-fit bg-white">
       <Container>
-        <Container className="w-[80%] py-[4vh] flex flex-col items-center wmin_lg:gap-[28px] wmax_lg:gap-[24px]">
-          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+        <Container className="w-[80%] wmin_md:py-[8vh] wmax_md:py-[3vh] flex flex-col items-center wmin_lg:gap-[28px] wmax_lg:gap-[24px]">
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[12px] font-bold text-black text-center">
             SHAPED is a luxury concierge service with over 12 years of experience,
             offering bespoke solutions to elevate every aspect of your life.
             From fashion styling and private events to travel arrangements and home
             management, we handle the details, so you don't have to.
           </div>
 
-          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[12px] font-bold text-black text-center">
             We create seamless, luxurious experiences tailored to your needs,
             providing access to the finest services and exclusive opportunities.
             Whether it's a red-carpet look or a private getaway, we simplify your
             life with impeccable service and attention to every detail.
           </div>
 
-          <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-black text-center">
+          <div className="wmin_lg:text-[24px] wmax_lg:text-[12px] font-bold text-black text-center">
             SHAPED is your partner in luxury, making life effortless, extraordinary,
             and uniquely yours.
           </div>
@@ -95,7 +95,7 @@ function Gallery() {
           </div>
         </div>
 
-        <div className="col-span-1 wmin_lg:h-[696px] wmax_lg:h-[290px] grid grid-cols-[1fr_2fr_1fr_2fr] grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
+        <div className="col-span-1 wmin_md:h-[696px] wmax_md:h-[340px] grid wmin_md:grid-cols-[1fr_2fr_1fr_2fr] wmax_md:grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
           <div className="col-start-1 col-end-3 row-start-1 row-end-4">
             <img
               className="w-full h-full object-cover"
