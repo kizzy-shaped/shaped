@@ -137,7 +137,7 @@ function Header({ className = '' }: { className?: string }) {
                                             }}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
                                             {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
-                                                className={`h-full flex items-center text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
+                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
 
                                             {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
 
@@ -159,7 +159,7 @@ function Header({ className = '' }: { className?: string }) {
                                 <Link href={'#contact_us'}
                                     onMouseEnter={() => setHovered(true)}
                                     onMouseLeave={() => setHovered(false)}
-                                    className={`w-full h-[60px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
+                                    className={`w-full wmin_lg:h-[60px] wmax_lg:h-[40px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
                                     Contact Us
                                     <FiArrowRight className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
                                 </Link>

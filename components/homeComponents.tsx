@@ -72,7 +72,7 @@ export function About() {
             href={"/about_us"}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`w-fit h-[60px] bg-[#000000] ${
+            className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[#000000] ${
               hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
             } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
@@ -143,13 +143,14 @@ export function Featuring() {
         <span className="text-black text-[40px] font-semibold">FEATURING</span>
 
         {/* <div className="w-[96%] h-[444px] grid grid-cols-[366px_366px_366px] justify-between"> */}
-        <div className="w-[97%] wmin_lg:h-[444px] wmax_lg:h-fit grid wmin_lg:grid-cols-3 wmax_lg:grid-cols-1 wmin_xl:gap-x-[1.3em] wmin_3xl:gap-[3.5em]">
+        <div className="w-[97%] wmin_lg:h-[444px] wmax_lg:h-fit grid wmin_lg:grid-cols-3 wmax_lg:grid-cols-1 wmin_md:gap-x-[1.3em] wmin_3xl:gap-[3.5em] wmax_md:gap-y-[1.5em]">
           {items.map(({ img, desc, title }, index) => (
             <div
               className="col-span-1 wmin_lg:h-full wmax_375:h-[350px] wmin_375:wmax_lg:h-[389px] relative overflow-hidden rounded-[24px]"
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
+              onClick={() => setHoveredIndex(index == hoveredIndex?null:index)}
             >
               <img className="w-full h-full" src={img} alt="" />
 
@@ -300,6 +301,7 @@ export function Services() {
         {items.map(({ desc, img, title }, index) => (
           <div
             onClick={() => {
+              setHoveredIndex(index == hoveredIndex?null:index);
               hoveredIndex === index && router.push(`/services/${index}`);
             }}
             // wmin_lg:hmax_800:h-[80vh]

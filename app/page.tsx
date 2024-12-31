@@ -116,7 +116,7 @@ function Hero() {
       </div>
 
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
-        <span className="text-white wmax_xl:text-[22px] wmin_xl:text-[48px] font-bold text-center">
+        <span className="text-white wmax_xl:text-[18px] wmin_xl:text-[48px] font-bold text-center">
           Curated Experiences, Tailored for You
         </span>
 
@@ -124,7 +124,7 @@ function Hero() {
           href={""}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={`w-fit h-[60px] bg-[white] ${
+          className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
             hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
           } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
         >
