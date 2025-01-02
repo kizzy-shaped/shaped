@@ -95,7 +95,7 @@ function Gallery() {
           </div>
         </div>
 
-        <div className="col-span-1 wmin_md:h-[696px] wmax_md:h-[340px] grid wmin_md:grid-cols-[1fr_2fr_1fr_2fr] wmax_md:grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
+        <div className="col-span-1 wmin_md:h-[696px] wmax_md:h-[340px] grid grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
           <div className="col-start-1 col-end-3 row-start-1 row-end-4">
             <img
               className="w-full h-full object-cover"

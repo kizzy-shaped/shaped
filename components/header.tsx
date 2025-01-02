@@ -83,7 +83,7 @@ function Header({ className = '' }: { className?: string }) {
 
                 {/* Mobile Navigation */}
                 <div className="wmin_xl:hidden">
-                   {mobiledropdownVisible && <Sheet>
+                   <Sheet>
                         <SheetTrigger>
                             <button className="w-[50px] h-[48px]">
                                 <svg className="w-full h-full" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@ function Header({ className = '' }: { className?: string }) {
                                 </Link>
                             </div>
                         </SheetContent>
-                    </Sheet>}
+                    </Sheet>
 
                 </div>
                 {/* Mobile Navigation */}
