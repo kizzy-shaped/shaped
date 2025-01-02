@@ -8,7 +8,9 @@ import {
   ChangeEventHandler,
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
+  MutableRefObject,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { useCarousel } from "@/components/carousel";
@@ -92,6 +94,14 @@ export default function Home() {
 function Hero() {
   const [hovered, setHovered] = useState(false);
 
+  const videoRef = useRef<HTMLVideoElement>();
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+
   return (
     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
       {/* Mobile */}
@@ -110,6 +120,7 @@ function Hero() {
           autoPlay={true}
           loop
           muted
+          ref={videoRef as MutableRefObject<HTMLVideoElement>}
           src="/videos/hero.mp4"
         >
           {/* <source src="/videos/hero.mp4" /> */}
