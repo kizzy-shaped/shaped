@@ -33,8 +33,8 @@ import Head from "next/head";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
-  // const timeout = 15000;
-  const timeout = 3000;
+  const timeout = 15000;
+  // const timeout = 3000;
 
   const [title, setTitle] = useState("Welcome to My App");
   const [description, setDescription] = useState(
@@ -43,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      // showModal(<ContactFormModal />)
+      showModal(<ContactFormModal />)
     }, timeout);
   }, []);
 
@@ -79,7 +79,7 @@ export default function Home() {
 
         {/* //!Modals */}
         <Modal
-          containerClassName="w-[680px] rounded-[0px]"
+          containerClassName="wmin_md:w-[680px] wmax_md:bg-red-700 rounded-[0px]"
           // closeBtnClassName="w-[30px] h-[30px] text-white bg-red-600"
           // closeBtn={<IoCloseSharp onClick={hideModal} className="w-[30px] h-[30px] text-white" />}
         />

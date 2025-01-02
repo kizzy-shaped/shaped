@@ -130,19 +130,19 @@ function Gallery() {
             className="w-full wmin_390:h-[430px] wmax_390:h-[350px] relative"
             key={index}
           >
-            <img className="w-full h-full object-cover" src={galleryImages[0]} alt="" />
+            <img className="w-full h-full object-cover" src={galleryImages[index]} alt="" />
 
             <div
               className={`absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-[1] text-white  transition-transform `}
             >
               <div className="w-full h-full duration-1000  hover:animate-fadeOut hover:bg-[#00000099] flex flex-col items-center justify-center gap-[1.7em] relative">
-              <div className="text-[2.5rem] font-black text-white uppercase">
+              <div className="wmin_md:text-[2.5rem] wmax_md:text-[1.5rem] font-black text-white uppercase">
                   {title}
                 </div>
 
                 <Link
                   href={`/services?serviceId=${link}`}
-                  className="w-[70px] h-[70px] block cursor-pointer overflow-hidden rounded-full duration-500  hover:animate-fadeOut hover:bg-[#00000099]"
+                  className="wmin_md:w-[70px] wmin_md:h-[70px] wmax_md:w-[60px] wmax_md:h-[60px] block cursor-pointer overflow-hidden rounded-full duration-500  hover:animate-fadeOut hover:bg-[#00000099]"
                 >
                   <svg
                     className="w-full h-full"

@@ -712,12 +712,12 @@ export function ContactFormModal() {
   };
 
   return (
-    <div className="w-[680px] h-fit bg-black">
+    <div className="wmin_md:w-[680px] wmax_md:w-full h-fit bg-black">
       <div className="w-full h-fit pb-[3vh] flex flex-col gap-[3vh]">
-        <div className="w-full h-fit px-[4vh] flex flex-col gap-[12px] mt-[8vh] mr-auto">
+        <div className="w-full h-fit wmin_md:px-[4vh] wmax_md:px-[2vh] wmax_md:pt-[1.5vh] flex flex-col gap-[12px] wmin_md:mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
             <div className="w-full flex items-center justify-between">
-              <div className="text-[28px] font-semibold text-white uppercase">
+              <div className="wmin_md:text-[28px] wmax_md:text-[20px]  font-semibold text-white uppercase">
                 Ready to elevate your style?
               </div>
 
@@ -769,7 +769,7 @@ export function ContactFormModal() {
               onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit h-[60px] bg-white mt-[6vh] ${
+              className={`wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[3vh] ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
               } text-black text-[20px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >

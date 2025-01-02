@@ -5,7 +5,7 @@ export function MessageSentModal() {
   const { hideModal } = useModal();
 
   return (
-    <div className="w-[680px] h-fit bg-black">
+    <div className="wmin_md:w-[680px] wmax_md:w-full h-fit bg-black">
       <div className="w-full h-fit py-[2vh] pb-[5vh] flex flex-col gap-[3vh]">
         <div className="w-full h-full flex flex-col gap-[12px] mt-[0vh]">
           <div className="flex flex-col gap-[12px]">
@@ -39,9 +39,9 @@ export function MessageSentModal() {
             </div>
 
             <div className="w-fit h-fit flex flex-col gap-[10px]">
-                <div className="text-white text-[32px] font-bold uppercase">MESSAGE SENT</div>
+                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-black uppercase">MESSAGE SENT</div>
 
-                <div className="text-white text-[20px] font-medium">
+                <div className="text-white wmin_md:text-[20px] wmax_md:text-[16px] font-semibold">
                     Thank you for contacting us. Our <br />
                     team will reach out to you shortly.
                     </div>
@@ -58,7 +58,7 @@ export function EmailSubscribedModal() {
   const { hideModal } = useModal();
 
   return (
-    <div className="w-[680px] h-fit bg-black pl-[7.5%]">
+    <div className="wmin_md:w-[680px] wmax_md:w-full h-fit bg-black pl-[7.5%]">
       <div className="w-full h-fit py-[2vh] pb-[5vh] flex flex-col gap-[3vh]">
         <div className="w-full h-full flex flex-col gap-[12px] mt-[0vh]">
           <div className="flex flex-col gap-[12px]">
@@ -92,9 +92,9 @@ export function EmailSubscribedModal() {
             </div>
 
             <div className="w-fit h-fit flex flex-col gap-[10px]">
-                <div className="text-white text-[32px] font-bold uppercase">EMAIL SUBSCRIBED</div>
+                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-black uppercase">EMAIL SUBSCRIBED</div>
 
-                <div className="text-white text-[20px] font-medium">
+                <div className="text-white wmin_md:text-[20px] wmax_md:text-[16px] font-semibold">
                 Thank you for subscribing to our <br />
                 newsletter.
                     </div>
