@@ -33,7 +33,7 @@ import Head from "next/head";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
-  const timeout = 15000;
+  const timeout = 35000;
   // const timeout = 3000;
 
   const [title, setTitle] = useState("Welcome to My App");
