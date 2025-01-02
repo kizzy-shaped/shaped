@@ -41,8 +41,8 @@ function AboutDesc() {
   return (
     <div className="w-full h-fit bg-white">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-        <div className="wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-black">
-          Curated, Bespoke Fashion, Tailored Just <br />
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-black">
+          Curated, Bespoke Fashion, Tailored Just 
           for You.
         </div>
 
