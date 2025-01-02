@@ -60,6 +60,14 @@ export default {
 						opacity: '1 as any'
 					}
 				},
+				fadeOut: {
+					'0%': {
+						opacity: '1 as any'
+					},
+					'100%': {
+						opacity: '0 as any'
+					}
+				},
 				scaleToFull: {
 					'0%': {
 						transform: 'scale(1)',
@@ -73,6 +81,7 @@ export default {
 			},
 			animation: {
 				fadeIn: 'fadeIn 0.25s ease-in-out',
+				fadeOut: 'fadeOut 0.25s ease-in-out',
 				'scale-to-full': 'scaleToFull 1s ease forwards',
 			},
 			screens: {
