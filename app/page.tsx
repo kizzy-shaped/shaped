@@ -107,7 +107,7 @@ function Hero() {
       <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
-          autoPlay
+          autoPlay={true}
           loop
           muted
         >
