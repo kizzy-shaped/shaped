@@ -97,9 +97,9 @@ function Hero() {
   const videoRef = useRef<HTMLVideoElement>();
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+    if (videoRef?.current) {
+      videoRef?.current?.play();
+    } else videoRef?.current?.play();
   }, []);
 
   return (
@@ -123,7 +123,7 @@ function Hero() {
           ref={videoRef as MutableRefObject<HTMLVideoElement>}
           src="/videos/hero.mp4"
         >
-          {/* <source src="/videos/hero.mp4" /> */}
+          <source src="/videos/hero.mp4" />
         </video>
       </div>
 
