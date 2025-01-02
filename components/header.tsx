@@ -15,33 +15,8 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { navigation } from "@/constants/header";
 
-
-export const services = [
-    { name: 'styling services', link: '/styling_services' },
-    { name: 'personal shopping', link: 'link' },
-    { name: 'bespoke garment creation', link: 'link' },
-    { name: 'alteration services', link: 'link' },
-    { name: 'event management', link: 'link' },
-    { name: 'private & coporation events', link: 'link' },
-    { name: 'intimate gathering & celebration', link: 'link' },
-    { name: 'lifestyle & concierge', link: 'link' },
-    { name: 'travel & jet services', link: 'link' },
-    { name: 'Day-to-Day errands', link: 'link' },
-    { name: 'home & property management', link: 'link' },
-    { name: 'personalisation & gifting', link: 'link' },
-    { name: 'sourcing & procurement', link: 'link' },
-]
-
-export const navigation = [
-    { label: 'HOME', link: '/' },
-    { label: 'ABOUT US', link: '/about_us' },
-    { label: 'FASHION', link: '/fashion' },
-    {
-        label: 'SERVICES', link: '/services',
-        dropdown: services
-    },
-];
 
 function Header({ className = '' }: { className?: string }) {
     const { dropdownVisible, setDropdownVisible } = useHeaderContext()
@@ -86,8 +61,8 @@ function Header({ className = '' }: { className?: string }) {
                                 {(dropdownVisible && dropdownState.index === id) && (
                                     <div className="w-[100%] bg-black p-[2em] fixed top-[80px] left-[0vw]">
                                         <div className="w-fit grid grid-cols-3 gap-x-[2em]">
-                                            {dropdown?.map(({ link, name }, index) => (
-                                                <Link className={`col-span-1 w-fit font-black text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services${link}`} key={index}>{name}</Link>
+                                            {dropdown?.map(({ link, title }, index) => (
+                                                <Link className={`col-span-1 w-fit font-black text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
                                             ))}
                                         </div>
                                     </div>
@@ -148,8 +123,8 @@ function Header({ className = '' }: { className?: string }) {
                                             {(dropdownVisible && dropdownState.index === id) && (
                                                 <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
                                                     <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
-                                                        {dropdown?.map(({ link, name }, index) => (
-                                                            <Link onClick={() => setMobiledropdownVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services/${link}`} key={index}>{name}</Link>
+                                                        {dropdown?.map(({ link, title }, index) => (
+                                                            <Link onClick={() => setMobiledropdownVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
                                                         ))}
                                                     </div>
                                                 </div>

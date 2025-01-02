@@ -1,123 +1,79 @@
 "use client";
 
 import Container from "@/components/container";
-import { ClientsFeedback, Partners } from "@/components/homeComponents";
+import { ContactForm} from "@/components/homeComponents";
 import Link from "next/link";
 import { useState } from "react";
+import { useSearchParams } from 'next/navigation'
+import { IService, services } from "@/constants/services";
 
-const About = () => {
+const Service = () => {
+  const searchParams = useSearchParams()
+  const serviceId = searchParams.get('serviceId') as keyof typeof services;
+
+  const service = services.find((service) => service.link === serviceId) as IService;
+  
   return (
     <div className="bg-white">
-      <Hero />
+      <Hero service={service} />
 
-      <AboutDesc />
+      <AboutDesc service={service} />
 
-      <Gallery />
+      <Gallery service={service} />
 
-      <Partners />
-
-      <ClientsFeedback />
+      <ContactForm />
     </div>
   );
 };
 
-export default About;
+export default Service;
 
-function Hero() {
-  const [hovered, setHovered] = useState(false);
+function Hero({service}:{service: IService}) {
 
   return (
-    <div className="w-full h-[calc(100vh-132px)] bg-[#373737]">
-      <img
-        className="w-auto h-full mx-auto  z-[2] object-cover"
-        src="/images/about/hero_img.png"
-        alt=""
-      />
-
-      <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
-        <span className="text-white text-[24px] font-bold text-center">
-          About Us
-        </span>
-        <span className="text-white text-[48px] font-bold text-center">
-          Crafting Bespoke Luxury Experiences That Redefine Living.
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/hero_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
+      <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center uppercase">
+          {service?.title}
         </span>
       </div>
     </div>
   );
 }
 
-function AboutDesc() {
+function AboutDesc({service}:{service: IService}) {
 
   return (
     <div className="w-full h-fit bg-white">
-      <Container>
-      <Container className="w-[80%] py-[4vh] flex flex-col items-center gap-[28px]">
-      <div className="text-[24px] font-medium text-black text-center">
-        SHAPED is a luxury concierge service with over 12 years of experience,
-        offering bespoke solutions to elevate every aspect of your life.
-        From fashion styling and private events to travel arrangements and home
-        management, we handle the details, so you don’t have to.
-      </div>
+      <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-black">
+          {service?.desc.title}
+        </div>
 
-      <div className="text-[24px] font-medium text-black text-center">
-        We create seamless, luxurious experiences tailored to your needs,
-        providing access to the finest services and exclusive opportunities.
-        Whether it’s a red-carpet look or a private getaway, we simplify your
-        life with impeccable service and attention to every detail.
-      </div>
-
-      <div className="text-[24px] font-medium text-black text-center">
-        SHAPED is your partner in luxury, making life effortless, extraordinary,
-        and uniquely yours.
-      </div>
-      </Container>
+        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-black">
+          {service?.desc.desc}
+        </div>
       </Container>
     </div>
   );
 }
 
-function Gallery() {
+function Gallery({service}:{service: IService}) {
 
   return (
     <div className="w-full h-fit bg-white">
-      <Container className="grid grid-cols-2 py-[3vh]">
-        <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="text-[22px] font-medium text-black">
-          With a decade of global expertise in fashion and styling, Shaped serves top clients in entertainment.
-          </div>
+      <Container className="w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 wmin_md:grid-rows-2">
 
-          <div className="text-[22px] font-medium text-black">
-          Our clients include Rosie Huntington-Whiteley and Billy Huxley; musicians Kendrick Lamar, Wiz Kid, and Tiwa Savage, actors Joey Essex and Chloe Sims to name a few.
-          </div>
-
-          <div className="text-[22px] font-medium text-black">
-          Shaped has featured in top TV shows, global campaigns, and concerts, partnering with Sony and Universal Music.
-          </div>
-        </div>
-
-        <div className="col-span-1 h-[696px] grid grid-cols-[1fr_2fr_1fr_2fr] grid-rows-[1fr_2fr_2fr_1fr_1fr]">
-          <div className="col-start-1 col-end-3 row-start-1 row-end-4">
+        {service.galleryImages.map((item, index) => (
+          <div className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px]" key={index}>
             <img
               className="w-full h-full object-cover"
-              src="/images/home/featuring/collection.png"
+              src={item}
               alt=""
             />
           </div>
-          <div className="col-start-3 col-span-2 row-start-2 row-end-5">
-            <img
-              className="w-full h-full object-cover"
-              src="/images/home/featuring/quality.png"
-              alt=""
-            />
-          </div>
-          <div className="col-start-2 col-end-4 row-start-3 -row-end-1">
-            <img
-              className="w-full h-full object-cover"
-              src="/images/home/featuring/styles.png"
-              alt=""
-            />
-          </div>
-        </div>
+        ))}
+
       </Container>
     </div>
   );

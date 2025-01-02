@@ -27,15 +27,15 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-132px)] wmax_360:!h-[50vh] wmin_360:wmax_390:!h-[70vh] bg-[#373737] wmax_lg:relative wmax_lg:bg-[url(/images/about/hero_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative wmax_lg:bg-[url(/images/about/hero_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
       <img
         className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
         src="/images/about/hero_img.png"
         alt=""
       />
 
-      <div className="w-full h-fit flex flex-col items-center gap-[20px] absolute bottom-[10%] left-0 z-[3]">
-        <span className="text-white wmin_lg:text-[64px] wmax_lg:text-[28px] font-bold text-center uppercase">
+<div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
+<span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center">
           About Us
         </span>
         {/* <span className="text-white text-[48px] font-bold text-center">
