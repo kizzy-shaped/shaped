@@ -110,8 +110,9 @@ function Hero() {
           autoPlay={true}
           loop
           muted
+          src="/videos/hero.mp4"
         >
-          <source src="/videos/hero.mp4" />
+          {/* <source src="/videos/hero.mp4" /> */}
         </video>
       </div>
 
