@@ -82,7 +82,7 @@ function Gallery() {
     <div className="w-full h-fit bg-white">
       <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
         <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
-          <div className="wmin_lg:text-[22px] wmax_lg:text-[14px] font-medium text-black">
+          <div className="wmin_lg:text-[22px] wmax_lg:text-[14px] font-black text-black">
             With a decade of global expertise in fashion and styling, Shaped serves top clients in entertainment.
           </div>
 
