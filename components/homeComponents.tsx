@@ -266,9 +266,9 @@ export function MonthStyle() {
   };
 
   return (
-    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[fit] bg-white wmin_lg:py-[7.5vh] wmax_lg:py-[3vh]">
+    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh]">
       <Container className="flex items-center justify-center">
-        <div className="w-[80%] h-full relative wmax_md:hidden">
+        <div className="wmin_md:w-[80%] wmax_md:w-full h-full relative">
          
           <div className="w-full h-full relative">
 
