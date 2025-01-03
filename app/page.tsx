@@ -97,9 +97,9 @@ function Hero() {
   const videoRef = useRef<HTMLVideoElement>();
 
   useEffect(() => {
-    if (videoRef?.current) {
+    if (videoRef?.current?.paused) {
       videoRef?.current?.play();
-    } else videoRef?.current?.play();
+    } 
   }, []);
 
   return (
@@ -117,13 +117,13 @@ function Hero() {
       <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
-          autoPlay={true}
-          loop
+          autoPlay={true} playsInline={true}
+          loop preload="none"
           muted
           ref={videoRef as MutableRefObject<HTMLVideoElement>}
-          src="/videos/hero.mp4"
+          // src="/videos/hero.mp4"
         >
-          <source src="/videos/hero.mp4" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
 
