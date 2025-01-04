@@ -28,10 +28,10 @@ function Header({ className = '' }: { className?: string }) {
     const [mobiledropdownVisible, setMobiledropdownVisible] = useState(false);
 
     return (
-        <header className={`w-full  ${className}`}>
+        <header className={`w-full bg-black ${className}`}>
             <Container className="wmax_390:!w-[90%] flex items-center justify-between">
                 <Link href={'/'}>
-                    <img className="w-auto wmax_xl:h-[20px] wmin_xl:h-[35px]" src='/images/shared/header_logo.png' alt="Shaped logo" />
+                    <img className="w-auto wmax_xl:h-[20px] wmin_xl:h-[35px]" src='/images/shared/header_logo_dark.png' alt="Shaped logo" />
                 </Link>
                 {/* Desktop Navigation */}
                 <div className="h-full flex gap-[15px] items-center wmin_xl:gap-[20px] wmin_3xl:gap-[40px] wmax_xl:hidden">
@@ -51,16 +51,16 @@ function Header({ className = '' }: { className?: string }) {
                                     }
                                 }}
                                 className={`${dropdown ? 'h-full' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
-                                {!dropdown ? (<Link href={link} className={`text-[#000000] font-black text-[18px]`}>{label}</Link>) : (<div
-                                    className={`h-full flex items-center text-[#000000] font-black text-[18px]`}>{label}</div>)}
+                                {!dropdown ? (<Link href={link} className={`text-white font-black text-[18px]`}>{label}</Link>) : (<div
+                                    className={`h-full flex items-center text-white font-black text-[18px]`}>{label}</div>)}
 
-                                {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
+                                {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-white" />}
 
                                 {/* Dropdown */}
                                 {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
                                 {(dropdownVisible && dropdownState.index === id) && (
                                     <div className="w-[100%] bg-black p-[2em] fixed top-[80px] left-[0vw]">
-                                        <div className="w-fit grid grid-cols-3 gap-x-[2em]">
+                                        <div className="w-full grid grid-cols-4 wmin_3xl:gap-x-[2em] wmin_xl:wmax_3xl:gap-x-[1.5em] justify-between">
                                             {dropdown?.map(({ link, title }, index) => (
                                                 <Link className={`col-span-1 w-fit font-black text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
                                             ))}
@@ -74,9 +74,9 @@ function Header({ className = '' }: { className?: string }) {
                     <Link href={'#contact_us'}
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
-                        className={`w-fit h-[50px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white text-[18px] font-black flex items-center justify-between gap-[10px] rounded-[24px]`}>
+                        className={`w-fit h-[50px] bg-white ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black text-[18px] font-black flex items-center justify-between gap-[10px] rounded-[24px]`}>
                         Contact Us
-                        <FiArrowRight className={`w-[28px] h-[28px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
+                        <FiArrowRight className={`w-[28px] h-[28px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
                     </Link>
                 </div>
                 {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ function Header({ className = '' }: { className?: string }) {
 
                             </button>
                         </SheetTrigger>
-                        <SheetContent side={'top'}>
+                        <SheetContent className="bg-black text-white" side={'top'}>
                             <div className="h-fit flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px] wmax_md:relative">
                                 <div className="h-full flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px]">
                                     {navigation.map(({ label, link, dropdown }, id) => (
@@ -113,10 +113,10 @@ function Header({ className = '' }: { className?: string }) {
                                             }}
                                             onClick={() => setMobiledropdownVisible(false)}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
-                                            {!dropdown ? (<Link href={link} className={`text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
-                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-[#000000] font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
+                                            {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
+                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
 
-                                            {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-black" />}
+                                            {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-white" />}
 
                                             {/* Dropdown */}
                                             {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
@@ -136,9 +136,9 @@ function Header({ className = '' }: { className?: string }) {
                                 <Link href={'#contact_us'}
                                     onMouseEnter={() => setHovered(true)}
                                     onMouseLeave={() => setHovered(false)}
-                                    className={`w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-[#000000] ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
+                                    className={`w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-black flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
                                     Contact Us
-                                    <FiArrowRight className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${hovered ? 'ml-[4px]' : ''}`} />
+                                    <FiArrowRight className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${hovered ? 'ml-[4px]' : ''}`} />
                                 </Link>
                             </div>
                         </SheetContent>

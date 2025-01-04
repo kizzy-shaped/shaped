@@ -34,7 +34,7 @@ export default function Providers({
                 >
                     <ModalProvider>
                         <HeaderProvider>
-                            <Header className="bg-white wmax_390:h-[65px] wmin_390:h-[80px] fixed top-0 left-0 z-[40]" />
+                            <Header className="bg-black wmax_390:h-[65px] wmin_390:h-[80px] fixed top-0 left-0 z-[40]" />
                             {children}
                             <Footer />
                         </HeaderProvider>

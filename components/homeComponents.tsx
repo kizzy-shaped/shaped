@@ -19,10 +19,11 @@ import { useModal } from "@/context/modal";
 import { MessageSentModal } from "./shared";
 import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
+import { services } from "@/constants/services";
 
 export function Partners() {
   return (
-    <div className="w-full wmin_lg:h-[196px] wmax_lg:h-[110px] bg-white">
+    <div className="w-full wmin_lg:h-[196px] wmax_lg:h-[110px] bg-black">
       <Container className="flex items-center">
         <Marquee loop={0} speed={50} className="w-full h-fit flex">
           {[
@@ -59,10 +60,10 @@ export function About() {
   const currentIndex = useCarousel(items, interval);
 
   return (
-    <div className="w-full wmin_lg:h-fit bg-white">
+    <div className="w-full wmin_lg:h-fit bg-black">
       <Container className="h-fit wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col wmin_lg:pt-[11vh] wmax_lg:pt-[3vh]">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-bold text-black">
+          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-bold text-white">
             At SHAPED, we are redefining what it means to experience true luxury
             in the modern world. Our singular mission is to return to you the
             one thing that matters most—your time. Through unparalleled service
@@ -74,13 +75,13 @@ export function About() {
             href={"/about_us"}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[#000000] ${
+            className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${
               hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-            } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
             Learn More
             <FiArrowRight
-              className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${
+              className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${
                 hovered ? "ml-[4px]" : ""
               }`}
             />
@@ -187,9 +188,18 @@ export function Featuring() {
   );
 }
 
-function PlayBtn({className = '', onPress}:{className?: string, onPress:MouseEventHandler<HTMLSpanElement> | undefined}) {
+function PlayBtn({
+  className = "",
+  onPress,
+}: {
+  className?: string;
+  onPress: MouseEventHandler<HTMLSpanElement> | undefined;
+}) {
   return (
-    <span onClick={onPress} className={`wmin_md:w-[90px] wmin_md:h-[90px] wmax_md:w-[60px] wmax_md:h-[60px] ${className}`}>
+    <span
+      onClick={onPress}
+      className={`wmin_md:w-[90px] wmin_md:h-[90px] wmax_md:w-[60px] wmax_md:h-[60px] ${className}`}
+    >
       <svg
         className="w-full h-full"
         viewBox="0 0 120 120"
@@ -252,7 +262,6 @@ function PlayBtn({className = '', onPress}:{className?: string, onPress:MouseEve
 }
 
 export function MonthStyle() {
-
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -266,33 +275,34 @@ export function MonthStyle() {
   };
 
   return (
-    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh]">
+    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-black">
       <Container className="flex items-center justify-center">
         <div className="wmin_md:w-[80%] wmax_md:w-full h-full relative">
-         
           <div className="w-full h-full relative">
-
-            {!isPlaying && <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
-              <PlayBtn onPress={() => handlePlayPause()} className="" />
-            </div>}
+            {!isPlaying && (
+              <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
+                <PlayBtn onPress={() => handlePlayPause()} className="" />
+              </div>
+            )}
 
             <video
-            ref={videoRef}
-            controls={isPlaying}
-            onPause={() => setIsPlaying(false)}
-            onPlay={() => setIsPlaying(true)}
-            loop 
+              ref={videoRef}
+              controls={isPlaying}
+              onPause={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+              loop
               className="w-full h-full absolute top-0 left-0 object-cover"
             >
               <source src="/videos/fashion.mp4" />
             </video>
           </div>
 
-         {!isPlaying && <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
-            STYLE OF THE MONTH
-          </div>}
+          {!isPlaying && (
+            <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
+              STYLE OF THE MONTH
+            </div>
+          )}
         </div>
-       
       </Container>
     </div>
   );
@@ -301,63 +311,63 @@ export function MonthStyle() {
 export function Services() {
   const router = useRouter();
 
-  const items = [
-    {
-      img: "/images/home/services/alteration.png",
-      title: `STYLE FOR YIU`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, eum.`,
-    },
-    {
-      img: "/images/home/services/errands.png",
-      title: `HIGH QUALITY PRODUCT`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    {
-      img: "/images/home/services/event.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    // {
-    //   img: "/images/home/services/fashion.png",
-    //   title: `EXCLUSIVE COLLECTION`,
-    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    // },
-    // {
-    //   img: "/images/home/services/garment.png",
-    //   title: `EXCLUSIVE COLLECTION`,
-    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    // },
-    {
-      img: "/images/home/services/gathering_celebration.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    // {
-    //   img: "/images/home/services/lifestyle_concierge.png",
-    //   title: `EXCLUSIVE COLLECTION`,
-    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    // },
-    // {
-    //   img: "/images/home/services/personal.png",
-    //   title: `EXCLUSIVE COLLECTION`,
-    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    // },
-    {
-      img: "/images/home/services/travel_jet.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-    // {
-    //   img: "/images/home/services/styling.png",
-    //   title: `EXCLUSIVE COLLECTION`,
-    //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    // },
-    {
-      img: "/images/home/services/private_corperate.png",
-      title: `EXCLUSIVE COLLECTION`,
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
-    },
-  ];
+  // const items = [
+  //   {
+  //     img: "/images/home/services/alteration.png",
+  //     title: `STYLE FOR YIU`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, eum.`,
+  //   },
+  //   {
+  //     img: "/images/home/services/errands.png",
+  //     title: `HIGH QUALITY PRODUCT`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   },
+  //   {
+  //     img: "/images/home/services/event.png",
+  //     title: `EXCLUSIVE COLLECTION`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   },
+  //   // {
+  //   //   img: "/images/home/services/fashion.png",
+  //   //   title: `EXCLUSIVE COLLECTION`,
+  //   //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   // },
+  //   // {
+  //   //   img: "/images/home/services/garment.png",
+  //   //   title: `EXCLUSIVE COLLECTION`,
+  //   //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   // },
+  //   {
+  //     img: "/images/home/services/gathering_celebration.png",
+  //     title: `EXCLUSIVE COLLECTION`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   },
+  //   // {
+  //   //   img: "/images/home/services/lifestyle_concierge.png",
+  //   //   title: `EXCLUSIVE COLLECTION`,
+  //   //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   // },
+  //   // {
+  //   //   img: "/images/home/services/personal.png",
+  //   //   title: `EXCLUSIVE COLLECTION`,
+  //   //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   // },
+  //   {
+  //     img: "/images/home/services/travel_jet.png",
+  //     title: `EXCLUSIVE COLLECTION`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   },
+  //   // {
+  //   //   img: "/images/home/services/styling.png",
+  //   //   title: `EXCLUSIVE COLLECTION`,
+  //   //   desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   // },
+  //   {
+  //     img: "/images/home/services/private_corperate.png",
+  //     title: `EXCLUSIVE COLLECTION`,
+  //     desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, dignissimos?`,
+  //   },
+  // ];
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -365,80 +375,47 @@ export function Services() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit wmin_lg:bg-white wmax_lg:bg-[#F3F3F3BF] wmin_lg:my-[3em] wmax_lg:mt-[0em]">
-      <Container className=" grid wmin_lg:grid-cols-2 wmin_lg:gap-[54px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
-        <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-black">
-          OUR SERVICES
+    <div className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
+      <Container className=" grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
+        <div className="col-span-full flex justify-between">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+            OUR SERVICES
+          </div>
+
+          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+            From styling to bespoke services, we've got you <br />
+            covered for every occasion.
+          </div>
         </div>
 
-        <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-black">
-          From styling to bespoke services, we've got you <br />
-          covered for every occasion.
-        </div>
-
-        {items.map(({ desc, img, title }, index) => (
+        {services.map(({ desc, galleryImages, heroImage,link, title }, index) => (
           <div
-            onClick={() => {
-              setHoveredIndex(index == hoveredIndex ? null : index);
-              hoveredIndex === index && router.push(`/services/${index}`);
-            }}
-            // wmin_lg:hmax_800:h-[80vh]
-            // hmin_800:wmax_375:!h-[350px]
-            className={`col-span-1 wmin_lg:hmin_800:h-[684px] hmin_800:wmin_375:wmax_lg:h-[389px] wmax_lg:mt-[20px] relative overflow-hidden rounded-[24px] ${
-              hoveredIndex === index ? "cursor-pointer" : ""
-            }`}
+            className={`col-span-1 wmin_md:h-[75vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] relative overflow-hidden rounded-[24px]`}
             key={index}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
           >
-            <img className="w-full h-full" src={img} alt="" />
+            <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+              <img
+                className="w-full h-ful max-h-full object-cover"
+                src={heroImage}
+                alt=""
+              />
+            </div>
 
-            {hoveredIndex !== index && (
-              <div className="text-[22px] font-semibold bg-gradient-to-b from-[#00000000] to-[#000000] text-white uppercase w-full h-fit pt-[3em] pb-[2em] pl-[2em] absolute bottom-0 left-0 z-[3]">
-                {title}
-              </div>
-            )}
-
-            <div
-              className={`absolute bottom-0 left-0 w-full h-fit bg-gradient-to-b from-[#00000000] to-[#000000] text-white  transition-transform duration-500 p-[2em] ${
-                hoveredIndex === index ? "translate-y-0" : "translate-y-full"
-              }`}
-            >
-              <div className="w-full h-full flex flex-col gap-[20px] justify-end relative">
-                {/* <div className="w-full h-fit flex justify-center absolute top-[30%]">
-                <Link href={'/services/1'} className="w-[96px] h-[96px] block cursor-pointer">
-                  <svg
-                    className="w-full h-full"
-                    viewBox="0 0 96 96"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      className="w-full h-full"
-                      rx="47.5"
-                      stroke="#F3F3F3"
-                    />
-                    <path
-                      d="M31.6666 48.0001H64.3333M64.3333 48.0001L48 31.6667M64.3333 48.0001L48 64.3334"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-              </div> */}
-
-                <div className="text-[22px] font-semibold text-white uppercase">
+            <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-black flex flex-col justify-between py-[1.5em] px-[2em]">
+              <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+                <div className="text-[24px] font-semibold text-white uppercase">
                   {title}
                 </div>
 
-                <div className="text-[16px] font-semibold text-white">
-                  {desc}
+                <div className="text-[20px] font-semibold text-[#9C9C9C]">
+                  {desc?.title}
                 </div>
               </div>
+
+              <Link href={`/services?serviceId=${link}`} className="text-[22px] font-semibold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]">
+              Learn More
+              <FiArrowRight className={`w-[28px] h-[28px] text-white`} />
+              </Link>
             </div>
           </div>
         ))}
@@ -506,9 +483,9 @@ export function ClientsFeedback() {
   ];
 
   return (
-    <div className="w-full h-fit bg-[#F3F3F3]">
+    <div className="w-full h-fit bg-black">
       <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pt-[3vh] wmax_md:pb-[1vh] flex flex-col wmin_md:gap-[5vh] wmax_md:gap-[3vh]">
-        <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-black font-black text-center">
+        <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-white font-black text-center">
           CLIENTS' FEEDBACK
         </div>
 
@@ -522,7 +499,7 @@ export function ClientsFeedback() {
           >
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-white flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-lg shadow-[#B6B6B633] wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-black flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
               >
                 {/* <div className="col-span-1 h-full">
@@ -545,7 +522,7 @@ export function ClientsFeedback() {
                 <div className="flex flex-col gap-[0px] wmin_md:items-center wmax_md:text-justify">
                   {comments.map((comment, index) => (
                     <div
-                      className="text-black wmin_md:text-[14px] wmax_md:text-[12px] font-bold text-center"
+                      className="text-white wmin_md:text-[14px] wmax_md:text-[12px] font-bold text-center"
                       key={index}
                     >
                       {comment}
@@ -553,13 +530,7 @@ export function ClientsFeedback() {
                   ))}
                 </div>
 
-                {/* <div className="flex gap-[4px]">
-                    {Array.from({ length: rating }).map((_, index) => (
-                      <FaStar className="text-black" key={index} />
-                    ))}
-                  </div> */}
-
-                <div className="text-black wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
+                <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
                   {name}
                 </div>
               </div>
@@ -600,16 +571,13 @@ export function ContactForm() {
   };
 
   return (
-    <div id="contact_us" className="w-full h-fit bg-[#F3F3F3] pl-[7.5%]">
+    <div id="contact_us" className="w-full h-fit bg-black pl-[7.5%]">
       <div className="w-[calc(100% - 7.5%)] h-fit wmin_md:pt-[7vh] wmin_md:pb-[10vh] wmax_md:pt-[0vh] wmax_md:pb-[3vh] flex flex-col gap-[3vh]">
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
-            <div className="wmin_md:text-[40px] wmax_md:text-[24px] font-semibold text-black uppercase">
+            <div className="wmin_md:text-[40px] wmax_md:text-[24px] font-semibold text-white uppercase">
               Ready to elevate your style?
             </div>
-            {/* <div className="text-[28px] font-medium text-white">
-              Become our client today.
-            </div> */}
           </div>
 
           <div className="flex flex-col wmin_md:gap-[12px] wmax_md:gap-[9px]">
@@ -617,7 +585,7 @@ export function ContactForm() {
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-black"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
               placeholder={"Your Name *"}
               type="text"
             />
@@ -625,7 +593,7 @@ export function ContactForm() {
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-black"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
               placeholder={"Your Email *"}
               type="email"
             />
@@ -633,7 +601,7 @@ export function ContactForm() {
               onChange={handleChange("phoneNumber")}
               onBlur={handleBlur("phoneNumber")}
               value={values.phoneNumber}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-black"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
               placeholder={"Phone Number"}
               type="number"
             />
@@ -641,7 +609,7 @@ export function ContactForm() {
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-black"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
               placeholder={"Your Country *"}
               type="text"
             />
@@ -649,7 +617,7 @@ export function ContactForm() {
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-black"
+              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
               placeholder={"Your Favorite Brand"}
               type="text"
             />
@@ -658,13 +626,13 @@ export function ContactForm() {
               onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-black wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
+              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-              } text-white wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+              } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >
               Contact Us
               <FiArrowRight
-                className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-white ${
+                className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${
                   hovered ? "ml-[4px]" : ""
                 }`}
               />

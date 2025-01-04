@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaStar } from "react-icons/fa6";
+import { FaArrowRight, FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
 import Container from "@/components/container";
 import {
@@ -35,12 +35,11 @@ import Head from "next/head";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
-  const timeout = 35000;
-  // const timeout = 3000;
+  const timeout = 20000;
 
-  const [title, setTitle] = useState("Welcome to My App");
+  const [title, setTitle] = useState("Shaped | Home");
   const [description, setDescription] = useState(
-    "This is a dynamic description for my app."
+    "Shaped is a fashion and lifestyle brand that offers curated experiences tailored for you."
   );
 
   useEffect(() => {
@@ -64,14 +63,14 @@ export default function Home() {
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="bg-white">
+      <div className="bg-black">
         <Hero />
 
         {/* <Partners /> */}
 
         <About />
 
-        <Featuring />
+        {/* <Featuring /> */}
 
         {/* <MonthStyle /> */}
 
@@ -151,3 +150,37 @@ function Hero() {
     </div>
   );
 }
+
+// function Hero() {
+
+//   const [hovered, setHovered] = useState(false);
+
+
+//   return (
+//     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
+//       <img className="w-auto h-full mx-auto  z-[2] object-contain" src="/images/home/hero_img.png" alt="" />
+
+//       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
+//         <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center">
+//           Curated Experiences, Tailored for You
+//         </span>
+
+//         <Link
+//           href={""}
+//           onMouseEnter={() => setHovered(true)}
+//           onMouseLeave={() => setHovered(false)}
+//           className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
+//             hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+//           } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+//         >
+//           Explore Our Services
+//           <FiArrowRight
+//             className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${
+//               hovered ? "ml-[4px]" : ""
+//             }`}
+//           />
+//         </Link>
+//       </div>
+//     </div>
+//   )
+// }
