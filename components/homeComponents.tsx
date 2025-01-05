@@ -346,7 +346,7 @@ export function Services() {
                 />
               </div>
 
-              <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#282828] flex flex-col justify-between py-[1.5em] px-[2em]">
+              <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
                 <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                   <div className="text-[24px] font-bold text-white uppercase">
                     {title}
@@ -399,7 +399,7 @@ export function Services() {
                     />
                   </div>
 
-                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#282828] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
+                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                       <div className="text-[20px] font-bold text-white uppercase">
                         {title}
@@ -507,7 +507,7 @@ export function ClientsFeedback() {
           >
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#282828] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
               >
                 {/* <div className="col-span-1 h-full">
@@ -552,7 +552,7 @@ export function ClientsFeedback() {
           <div className="w-fit h-fit flex gap-[20px]">
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#282828] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
               >
                 {/* <div className="col-span-1 h-full">

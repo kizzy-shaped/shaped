@@ -80,7 +80,7 @@ function Footer() {
 
                         <div className="w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-transparent grid grid-cols-[6.3fr_0.5fr_3.7fr] grid-rows-1">
                             <input
-                                className="col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#282828] px-[16px] border-none outline-none focus:border-none focus:outline-none"
+                                className="col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#1a1a1a] px-[16px] border-none outline-none focus:border-none focus:outline-none"
                                 type="text"
                                 placeholder="Email Address"
                             />
