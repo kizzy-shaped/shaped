@@ -26,6 +26,7 @@ function Header({ className = '' }: { className?: string }) {
         index: null
     })
     const [mobiledropdownVisible, setMobiledropdownVisible] = useState(false);
+    const [drawerVisible, setdDrawerVisible] = useState(false);
 
     return (
         <header className={`w-full bg-black ${className}`}>
@@ -83,9 +84,9 @@ function Header({ className = '' }: { className?: string }) {
 
                 {/* Mobile Navigation */}
                 <div className="wmin_xl:hidden">
-                   <Sheet>
+                   <Sheet open={drawerVisible}>
                         <SheetTrigger>
-                            <button className="w-[50px] h-[48px]">
+                            <button onClick={() => setdDrawerVisible(true)} className="w-[50px] h-[48px]">
                                 <svg className="w-full h-full" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect className="w-full h-full" fill="#F0F0F0" />
                                     <line x1="17.5" y1="17.5" x2="42.5" y2="17.5" stroke="black" stroke-width="3" stroke-linecap="round" />
@@ -101,17 +102,19 @@ function Header({ className = '' }: { className?: string }) {
                                         <div
                                             onMouseEnter={() => {
                                                 if (dropdown) {
+                                                    // dropdown && setdDrawerVisible(true)
                                                     setDropdownVisible(true);
                                                     setDropdownState(prev => ({ ...prev, index: id }))
                                                 }
                                             }}
                                             onMouseLeave={() => {
                                                 if (dropdown) {
+                                                    // dropdown && setdDrawerVisible(false)
                                                     setDropdownVisible(false);
                                                     setDropdownState(prev => ({ ...prev, index: null }))
                                                 }
                                             }}
-                                            onClick={() => setMobiledropdownVisible(false)}
+                                            onClick={() => setdDrawerVisible(false)}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
                                             {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
                                                 className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
@@ -122,10 +125,10 @@ function Header({ className = '' }: { className?: string }) {
                                             {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
                                             {(dropdownVisible && dropdownState.index === id) && (
                                                 // <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
-                                                <div className="w-[100%] bg-black p-[1em] fixed wmin_lg:top-[100%] wmax_lg:top-[185px] left-[0vw]">
+                                                <div className="w-[100%] h-[75vh] pb-[1.5em] overflow-y-scroll bg-black p-[1em] fixed wmin_lg:top-[100%] wmax_lg:top-[185px] left-[0vw]">
                                                     <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
                                                         {dropdown?.map(({ link, title }, index) => (
-                                                            <Link onClick={() => setMobiledropdownVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
+                                                            <Link onClick={() => setdDrawerVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
                                                         ))}
                                                     </div>
                                                 </div>

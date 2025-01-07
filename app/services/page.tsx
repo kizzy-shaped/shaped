@@ -18,9 +18,11 @@ const Service = () => {
     <div className="bg-white">
       <Hero service={service} />
 
+      <AboutDesc service={service} />
+
       <MonthStyle />
 
-      <AboutDesc service={service} />
+      <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
 
       <Gallery service={service} />
 
