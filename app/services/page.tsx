@@ -20,9 +20,11 @@ const Service = () => {
 
       <AboutDesc service={service} />
 
-      <MonthStyle />
+      {serviceId == ("styling_services" as any) && <MonthStyle />}
 
-      <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
+      {serviceId == ("styling_services" as any) && (
+        <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
+      )}
 
       <Gallery service={service} />
 
@@ -76,7 +78,7 @@ function Gallery({ service }: { service: IService }) {
             key={index}
           >
             <img className="w-full h-full object-cover" src={item} alt="" />
-           </div>
+          </div>
         ))}
       </Container>
     </div>
