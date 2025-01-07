@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/container";
-import { ContactForm } from "@/components/homeComponents";
+import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { IService, services } from "@/constants/services";
@@ -17,6 +17,8 @@ const Service = () => {
   return (
     <div className="bg-white">
       <Hero service={service} />
+
+      <MonthStyle />
 
       <AboutDesc service={service} />
 

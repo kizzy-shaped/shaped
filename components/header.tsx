@@ -121,7 +121,8 @@ function Header({ className = '' }: { className?: string }) {
                                             {/* Dropdown */}
                                             {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
                                             {(dropdownVisible && dropdownState.index === id) && (
-                                                <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
+                                                // <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
+                                                <div className="w-[100%] bg-black p-[1em] fixed wmin_lg:top-[100%] wmax_lg:top-[185px] left-[0vw]">
                                                     <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
                                                         {dropdown?.map(({ link, title }, index) => (
                                                             <Link onClick={() => setMobiledropdownVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
