@@ -487,6 +487,15 @@ export function ClientsFeedback() {
         `I was very happy with the service and am I repeat customer thank you guys so much!`,
       ],
     },
+    {
+      img: "/images/home/clients_feedback/client_tiwa.png",
+      name: "ear Zero London",
+      rating: 5,
+      comments: [
+        `Working with Shaped Services over the years has been a truly wonderful experience! We’ve collaborated on exciting projects for their amazing VIP clients, creating bespoke, one-of-a-kind pieces that stand out`,
+        ` At Year Zero London, we love how Shaped Services listens to and caters to their clients’ unique requests, allowing us to bring our luxury magic to life.`,
+      ],
+    },
   ];
 
   return (
