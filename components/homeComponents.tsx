@@ -261,6 +261,52 @@ function PlayBtn({
   );
 }
 
+// export function MonthStyle() {
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const videoRef = useRef(null);
+
+//   const handlePlayPause = () => {
+//     if (isPlaying) {
+//       (videoRef as any)?.current.pause();
+//     } else {
+//       (videoRef as any)?.current.play();
+//     }
+//     setIsPlaying(!isPlaying);
+//   };
+
+//   return (
+//     <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-black">
+//       <Container className="flex items-center justify-center">
+//         <div className="wmin_md:w-[80%] wmax_md:w-full h-full relative">
+//           <div className="w-full h-full relative">
+//             {!isPlaying && (
+//               <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
+//                 <PlayBtn onPress={() => handlePlayPause()} className="" />
+//               </div>
+//             )}
+
+//             <video
+//               ref={videoRef}
+//               controls={isPlaying}
+//               onPause={() => setIsPlaying(false)}
+//               onPlay={() => setIsPlaying(true)}
+//               loop
+//               className="w-full h-full absolute top-0 left-0 object-cover"
+//             >
+//               <source src="/videos/fashion.mp4" />
+//             </video>
+//           </div>
+
+//           {!isPlaying && (
+//             <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
+//               STYLE OF THE MONTH
+//             </div>
+//           )}
+//         </div>
+//       </Container>
+//     </div>
+//   );
+// }
 export function MonthStyle() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
@@ -275,9 +321,9 @@ export function MonthStyle() {
   };
 
   return (
-    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-black">
+    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-white">
       <Container className="flex items-center justify-center">
-        <div className="wmin_md:w-[80%] wmax_md:w-full h-full relative">
+        <div className="wmin_md:w-[80%] wmax_md:w-full h-full wmax_md:px-[1em] relative">
           <div className="w-full h-full relative">
             {!isPlaying && (
               <div className="absolute z-[4] top-0 left-0 w-full h-full flex items-center justify-center">
@@ -448,10 +494,8 @@ export function ClientsFeedback() {
       name: "SYED AZAM",
       rating: 5,
       comments: [
-        `I've contacted SHAPED on a number of occasions to source items that were incredibly hard to find in any of the London boutiques.`,
-        ` Once I sent across the items, they were quick to respond confirming they would be able to help and provided an approximate lead time, with this they were also transparent about the fee for the service.
-       Once I agreed they got to work! And my items were ready for collection.`,
-        `I was very happy with the service and am I repeat customer thank you guys so much!`,
+        `Kizz and SHAPED were amazing for our wedding, guiding us through designs, materials, and tailoring to perfection.`,
+        `She has an incredible eye for style, pushing me out of my comfort zone in the best way. Her knack for spotting deals and sharing great finds is unmatched. Truly a 10/10 experience!`,
       ],
     },
     {
@@ -459,37 +503,14 @@ export function ClientsFeedback() {
       name: "DON MADEGA",
       rating: 4,
       comments: [
-        `I've contacted SHAPED on a number of occasions to source items that were incredibly hard to find in any of the London boutiques.`,
-        ` Once I sent across the items, they were quick to respond confirming they would be able to help and provided an approximate lead time, with this they were also transparent about the fee for the service.
-       Once I agreed they got to work! And my items were ready for collection.`,
-        `I was very happy with the service and am I repeat customer thank you guys so much!`,
+        `SHAPED has consistently delivered when sourcing hard-to-find items. `,
+        `They respond quickly, provide clear lead times, and are transparent about fees.`,
+        `I’m a happy repeat customer—thank you so much!`,
       ],
     },
     {
       img: "/images/home/clients_feedback/client_tiwa.png",
-      name: "SYED AZAM",
-      rating: 3,
-      comments: [
-        `I've contacted SHAPED on a number of occasions to source items that were incredibly hard to find in any of the London boutiques.`,
-        ` Once I sent across the items, they were quick to respond confirming they would be able to help and provided an approximate lead time, with this they were also transparent about the fee for the service.
-       Once I agreed they got to work! And my items were ready for collection.`,
-        `I was very happy with the service and am I repeat customer thank you guys so much!`,
-      ],
-    },
-    {
-      img: "/images/home/clients_feedback/client_tiwa.png",
-      name: "DON MADEGA",
-      rating: 5,
-      comments: [
-        `I've contacted SHAPED on a number of occasions to source items that were incredibly hard to find in any of the London boutiques.`,
-        ` Once I sent across the items, they were quick to respond confirming they would be able to help and provided an approximate lead time, with this they were also transparent about the fee for the service.
-       Once I agreed they got to work! And my items were ready for collection.`,
-        `I was very happy with the service and am I repeat customer thank you guys so much!`,
-      ],
-    },
-    {
-      img: "/images/home/clients_feedback/client_tiwa.png",
-      name: "ear Zero London",
+      name: "Year Zero London",
       rating: 5,
       comments: [
         `Working with Shaped Services over the years has been a truly wonderful experience! We’ve collaborated on exciting projects for their amazing VIP clients, creating bespoke, one-of-a-kind pieces that stand out`,
@@ -561,7 +582,7 @@ export function ClientsFeedback() {
           <div className="w-fit h-fit flex gap-[20px]">
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[20em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
               >
                 {/* <div className="col-span-1 h-full">

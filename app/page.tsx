@@ -25,13 +25,14 @@ import {
   Featuring,
   MonthStyle,
   Partners,
-  Services,
 } from "@/components/homeComponents";
 import Modal from "@/components/modal";
 import { IoCloseSharp } from "react-icons/io5";
 import { useModal } from "@/context/modal";
 import { FiArrowRight } from "react-icons/fi";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
+import { services } from "@/constants/services";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
@@ -184,3 +185,126 @@ function Hero() {
 //     </div>
 //   )
 // }
+
+function Services() {
+  const router = useRouter();
+
+ 
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const handleMouseEnter = (index: number) => setHoveredIndex(index);
+  const handleMouseLeave = () => setHoveredIndex(null);
+
+  return (
+    <div className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
+      {/* Deskop */}
+      <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[32px] wmin_lg:wmax_3xl:gap-x-[16px] wmin_lg:wmax_3xl:gap-y-[20px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
+        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+            OUR SERVICES
+          </div>
+
+          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+            From styling to bespoke services, we've got you <br />
+            covered for every occasion.
+          </div>
+        </div>
+
+        {services.map(
+          ({ desc, galleryImages, heroImage, link, title, overview, thumbnail }, index) => (
+            <div
+              className={`col-span-1 wmin_md:h-[18em] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[5.5fr] relative overflow-hidden rounded-[24px]`}
+              key={index}
+            >
+              {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                <img
+                  className="w-full h-ful max-h-full object-cover"
+                  src={thumbnail}
+                  alt=""
+                />
+              </div> */}
+
+              <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
+                <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+                  <div className="wmin_3xl:text-[24px] wmin_lg:wmax_3xl:text-[22px] font-bold text-white uppercase">
+                    {title}
+                  </div>
+
+                  <div className="wmin_3xl:text-[20px] wmin_lg:wmax_3xl:text-[18px] font-bold text-[#9C9C9C]">
+                    {overview}
+                  </div>
+                </div>
+
+                <Link
+                  href={`/services?serviceId=${link}`}
+                  className="wmin_3xl:text-[22px] wmin_lg:wmax_3xl:text-[20px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                >
+                  Learn More
+                  <FiArrowRight className={`w-[28px] h-[28px] text-white`} />
+                </Link>
+              </div>
+            </div>
+          )
+        )}
+      </Container>
+      {/* Deskop */}
+
+      {/* Mobile */}
+      <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">]        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+            OUR SERVICES
+          </div>
+
+          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+            From styling to bespoke services, we've got you <br />
+            covered for every occasion.
+          </div>
+        </div>
+
+        <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
+          <div className="w-fit h-fit flex gap-[20px]">
+            {services.map(
+              ({ desc, galleryImages, heroImage, link, title }, index) => (
+                <div
+                  className={`w-[90vw] h-[fit] bg-green-700 wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[30vh_30vh] relative overflow-hidden rounded-[24px]`}
+                  key={index}
+                >
+                  <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                    <img
+                      className="w-full h-full max-h-full object-cover"
+                      src={heroImage}
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
+                    <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+                      <div className="text-[20px] font-bold text-white uppercase">
+                        {title}
+                      </div>
+
+                      <div className="text-[14px] font-bold text-[#9C9C9C]">
+                        {desc?.title}
+                      </div>
+                    </div>
+
+                    <Link
+                      href={`/services?serviceId=${link}`}
+                      className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                    >
+                      Learn More
+                      <FiArrowRight
+                        className={`w-[28px] h-[28px] text-white`}
+                      />
+                    </Link>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </Container>
+      {/* Mobile */}
+    </div>
+  );
+}
