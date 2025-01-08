@@ -264,7 +264,7 @@ function Services() {
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
             {services.map(
-              ({ desc, galleryImages, heroImage, link, title }, index) => (
+              ({ desc, galleryImages, heroImage, link, title, overview }, index) => (
                 <div
                   className={`w-[90vw] h-[12em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
                   key={index}
@@ -284,7 +284,7 @@ function Services() {
                       </div>
 
                       <div className="text-[14px] font-bold text-[#9C9C9C]">
-                        {desc?.title}
+                        {overview}
                       </div>
                     </div>
 
