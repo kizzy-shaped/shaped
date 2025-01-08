@@ -114,7 +114,10 @@ function Header({ className = '' }: { className?: string }) {
                                                     setDropdownState(prev => ({ ...prev, index: null }))
                                                 }
                                             }}
-                                            onClick={() => setdDrawerVisible(false)}
+                                            onClick={() => {
+                                                !dropdown && setdDrawerVisible(false);
+                                                dropdown && setDropdownVisible(!dropdownVisible);
+                                            }}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
                                             {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
                                                 className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
