@@ -266,18 +266,18 @@ function Services() {
             {services.map(
               ({ desc, galleryImages, heroImage, link, title }, index) => (
                 <div
-                  className={`w-[90vw] h-[fit] bg-green-700 wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[30vh_30vh] relative overflow-hidden rounded-[24px]`}
+                  className={`w-[90vw] h-[12em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
                   key={index}
                 >
-                  <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                  {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img
                       className="w-full h-full max-h-full object-cover"
                       src={heroImage}
                       alt=""
                     />
-                  </div>
+                  </div> */}
 
-                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
+                  <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                       <div className="text-[20px] font-bold text-white uppercase">
                         {title}
