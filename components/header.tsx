@@ -141,6 +141,7 @@ function Header({ className = '' }: { className?: string }) {
                                     ))}
                                 </div>
                                 <Link href={'#contact_us'}
+                                onClick={() => setdDrawerVisible(false)}
                                     onMouseEnter={() => setHovered(true)}
                                     onMouseLeave={() => setHovered(false)}
                                     className={`w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${hovered ? 'pl-[22px] pr-[18px]' : 'px-[22px]'} text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-black flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}>
