@@ -133,7 +133,7 @@ function Hero() {
         </span>
 
         <Link
-          href={""}
+          href={"#services"}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
@@ -196,7 +196,7 @@ function Services() {
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
-    <div className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
+    <div id="services" className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
       {/* Deskop */}
       <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[32px] wmin_lg:wmax_3xl:gap-x-[16px] wmin_lg:wmax_3xl:gap-y-[20px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
