@@ -1,23 +1,22 @@
 // Animate css
-import "animate.css";
-import EventHandler from './events'
+// import "animate.css";
+import EventHandler from "./events";
 
 interface IAnimationFrame {
-    initialState: Keyframe;
-    finalState: Keyframe;
-    options?: KeyframeAnimationOptions; // Ensure this is optional if not all frames have options
-  }
+  initialState: Keyframe;
+  finalState: Keyframe;
+  options?: KeyframeAnimationOptions; // Ensure this is optional if not all frames have options
+}
 
-
-export default class Handler {
+export default class AnimationHandler {
   currentItemIndex = 0;
   activePgSection = "";
 
   animate = (element: HTMLDivElement, animationFrame: IAnimationFrame) => {
     element.animate(
-        [animationFrame.initialState, animationFrame.finalState],
-        animationFrame.options || {} // Default to an empty object if no options are provided
-      );
+      [animationFrame.initialState, animationFrame.finalState],
+      animationFrame.options || {} // Default to an empty object if no options are provided
+    );
   };
 
   delay = (time: number, fnToRn: Function) => {
@@ -29,7 +28,7 @@ export default class Handler {
   };
 
   showItem = (index: number, slider: HTMLDivElement) => {
-    let items = Array.from(slider.children) as HTMLElement[]; 
+    let items = Array.from(slider.children) as HTMLElement[];
     let itemWidth = items[0].offsetWidth;
 
     let offset = -index * itemWidth;
@@ -56,7 +55,10 @@ export default class Handler {
     this.showItem(this.currentItemIndex, slider);
   };
 
-  useIntersectionObserver = (who: HTMLDivElement | HTMLDivElement[], classToAdd: string) => {
+  useIntersectionObserver = (
+    who: HTMLElement | HTMLDivElement[],
+    classToAdd: string
+  ) => {
     let options = {
       threshold: 0.1,
     };
@@ -96,27 +98,37 @@ export default class Handler {
     }
   };
 
-  useWindowScroll = (who: HTMLDivElement, classToAdd: string, classToRemove: string) => {
+  useWindowScroll = (
+    who: HTMLDivElement,
+    classToAdd: string,
+    classToRemove: string
+  ) => {
     // Adding the default class in order for animate css to function
-    who.classList.add("animate__animated");
+    if (who && who?.classList) {
 
-    let revealPoint = 50;
+      let revealPoint = 50;
 
-    function reveal() {
-      let revealTop = who.getBoundingClientRect().top;
-      if (revealTop < window.innerHeight - revealPoint) {
-        who.classList.remove(classToRemove);
-        who.classList.add(classToAdd);
-      } else {
-        who.classList.remove(classToAdd);
-        who.classList.add(classToRemove);
+      function reveal() {
+        let revealTop = who.getBoundingClientRect().top;
+        if (revealTop < window.innerHeight - revealPoint) {
+          who.classList.remove(classToRemove);
+          who.classList.add(classToAdd);
+        } else {
+          who.classList.remove(classToAdd);
+          who.classList.add(classToRemove);
+        }
+        console.log({who: who?.classList[who?.classList?.length-1]})
       }
-    }
 
-    window.addEventListener("scroll", reveal);
+      window.addEventListener("scroll", reveal);
+    }
   };
 
-  revealOnScroll = (who: HTMLDivElement, classToAdd: string, leavingClass: string) => {
+  revealOnScroll = (
+    who: HTMLDivElement,
+    classToAdd: string,
+    leavingClass: string
+  ) => {
     const { useIntersectionObserver, useWindowScroll } = this;
     // If there's a leaving class to add when the element is leaving the viewport,
     // we want to use the window scroll event to reveal the element else we want

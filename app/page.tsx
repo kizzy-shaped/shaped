@@ -33,6 +33,8 @@ import { FiArrowRight } from "react-icons/fi";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { services } from "@/constants/services";
+import AnimationHandler from "@/utils/animations";
+import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
 export default function Home() {
   const { showModal, hideModal } = useModal();
@@ -45,7 +47,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      showModal(<ContactFormModal />)
+      showModal(<ContactFormModal />);
     }, timeout);
   }, []);
 
@@ -99,7 +101,7 @@ function Hero() {
   useEffect(() => {
     if (videoRef?.current?.paused) {
       videoRef?.current?.play();
-    } 
+    }
   }, []);
 
   return (
@@ -117,8 +119,10 @@ function Hero() {
       <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
-          autoPlay={true} playsInline={true}
-          loop preload="none"
+          autoPlay={true}
+          playsInline={true}
+          loop
+          preload="none"
           muted
           ref={videoRef as MutableRefObject<HTMLVideoElement>}
           // src="/videos/hero.mp4"
@@ -138,7 +142,7 @@ function Hero() {
           onMouseLeave={() => setHovered(false)}
           className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
             hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-          } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+          } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px] animate-tada repeat-infinite delay-1000 hover:animate-none`}
         >
           Explore Our Services
           <FiArrowRight
@@ -155,7 +159,6 @@ function Hero() {
 // function Hero() {
 
 //   const [hovered, setHovered] = useState(false);
-
 
 //   return (
 //     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
@@ -187,16 +190,17 @@ function Hero() {
 // }
 
 function Services() {
-  const router = useRouter();
-
- 
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const handleMouseEnter = (index: number) => setHoveredIndex(index);
-  const handleMouseLeave = () => setHoveredIndex(null);
+  const isVisible = useMultiRevealOnScroll({
+    threshold: 0.1, // Trigger reveal when 50% of an element is visible
+    offset: 0, // No offset
+    rootMargin: "0px", // Default margin
+  });
 
   return (
-    <div id="services" className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
+    <div
+      id="services"
+      className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]"
+    >
       {/* Deskop */}
       <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[32px] wmin_lg:wmax_3xl:gap-x-[16px] wmin_lg:wmax_3xl:gap-y-[20px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
@@ -211,10 +215,31 @@ function Services() {
         </div>
 
         {services.map(
-          ({ desc, galleryImages, heroImage, link, title, overview, thumbnail }, index) => (
+          (
+            {
+              desc,
+              galleryImages,
+              heroImage,
+              link,
+              title,
+              overview,
+              thumbnail,
+            },
+            index
+          ) => (
             <div
               className={`col-span-1 wmin_md:h-[18em] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[5.5fr] relative overflow-hidden rounded-[24px]`}
               key={index}
+              id={`service-${index}`}
+              data-reveal-on-scroll
+              style={{
+                opacity: isVisible[`service-${index}`] ? 1 : 0.85,
+                transform: isVisible[`service-${index}`]
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+                transition:
+                  "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+              }}
             >
               {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
@@ -250,7 +275,9 @@ function Services() {
       {/* Deskop */}
 
       {/* Mobile */}
-      <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">]        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
+      <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
+        {" "}
+        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
           <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
             OUR SERVICES
           </div>
@@ -260,14 +287,23 @@ function Services() {
             covered for every occasion.
           </div>
         </div>
-
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
             {services.map(
-              ({ desc, galleryImages, heroImage, link, title, overview }, index) => (
+              (
+                { desc, galleryImages, heroImage, link, title, overview },
+                index
+              ) => (
                 <div
                   className={`w-[90vw] h-[12em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
                   key={index}
+                  id={`service-${index}`}
+                  data-reveal-on-scroll
+                  style={{
+                    opacity: isVisible[`service-${index}`] ? 1 : 0.85,
+                    transition:
+                      "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                  }}
                 >
                   {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img

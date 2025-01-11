@@ -7,6 +7,8 @@ import {
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
   MouseEventHandler,
+  MutableRefObject,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -20,6 +22,10 @@ import { MessageSentModal } from "./shared";
 import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { services } from "@/constants/services";
+import AnimationHandler from "@/utils/animations";
+import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
+import { useMultiRevealOnScroll } from "./hooks/useMultiRevealOnScroll";
+import is from "@/utils/viewport";
 
 export function Partners() {
   return (
@@ -49,6 +55,19 @@ export function Partners() {
 }
 
 export function About() {
+  let isMobile = is("max", 769);
+  // const [thresold, setThresold] = useState(0.1)
+
+  // useEffect(() => {
+  //   isMobile ? setThresold(0.01): setThresold(0.25)
+  // }, [isMobile])
+
+  const isVisible = useMultiRevealOnScroll({
+    threshold: 0.1,  // Trigger reveal when 50% of an element is visible
+    offset: 0,       // No offset
+    rootMargin: '0px', // Default margin
+  });
+ 
   const [hovered, setHovered] = useState(false);
   const interval = 2000;
   const items = [
@@ -60,7 +79,13 @@ export function About() {
   const currentIndex = useCarousel(items, interval);
 
   return (
-    <div className="w-full wmin_lg:h-fit bg-black">
+    <div className={`w-full wmin_lg:h-fit bg-black`} id="about" data-reveal-on-scroll 
+    style={{
+      opacity: isVisible[`about`] ? 1 : 0.85,
+      transform: isVisible[`about`] ? 'translateY(0)' : 'translateY(20px)',
+      transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+    }}
+    >
       <Container className="h-fit wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col wmin_lg:pt-[11vh] wmax_lg:pt-[3vh]">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
           <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-bold text-white">
@@ -77,7 +102,7 @@ export function About() {
             onMouseLeave={() => setHovered(false)}
             className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${
               hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px] animate-jello delay-1000 repeat-infinite hover:animate-none`}
           >
             Learn More
             <FiArrowRight
@@ -100,7 +125,7 @@ export function About() {
               key={index}
             >
               <img
-                className={`w-full h-full object-cover animate-fadeIn ease-in-out transition-all rounded-[24px]`}
+                className={`w-full h-full object-cover ${index === currentIndex?'animate-fadeIn':'animate-fadeOut'} ease-in-out delay-0 transition-all rounded-[24px]`}
                 style={{
                   display: index === currentIndex ? "inline-block" : "none",
                   transition: "all 0.35 ease-in-out",
@@ -356,13 +381,13 @@ export function MonthStyle() {
 
 export function Services() {
   const router = useRouter();
+  const isVisible = useMultiRevealOnScroll({
+    threshold: 0.5,  // Trigger reveal when 50% of an element is visible
+    offset: 0,       // No offset
+    rootMargin: '0px', // Default margin
+  });
 
  
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const handleMouseEnter = (index: number) => setHoveredIndex(index);
-  const handleMouseLeave = () => setHoveredIndex(null);
-
   return (
     <div className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
       {/* Deskop */}
@@ -383,6 +408,13 @@ export function Services() {
             <div
               className={`col-span-1 wmin_md:h-[75vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] relative overflow-hidden rounded-[24px]`}
               key={index}
+              id={`service-${index}`}
+              data-reveal-on-scroll 
+              style={{
+                opacity: isVisible[`service-${index}`] ? 1 : 0,
+                transform: isVisible[`service-${index}`] ? 'translateY(0)' : 'translateY(50px)',
+                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+              }}
             >
               <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
@@ -518,6 +550,11 @@ export function ClientsFeedback() {
       ],
     },
   ];
+  const isVisible = useMultiRevealOnScroll({
+    threshold: 0.25,  // Trigger reveal when 50% of an element is visible
+    offset: 0,       // No offset
+    rootMargin: '0px', // Default margin
+  });
 
   return (
     <div className="w-full h-fit bg-black">
@@ -539,6 +576,13 @@ export function ClientsFeedback() {
               <div
                 className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
+                data-reveal-on-scroll 
+                id={`client-${index}`}
+              style={{
+                opacity: isVisible[`client-${index}`] ? 1 : 0.85,
+                transform: isVisible[`client-${index}`] ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+              }}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
@@ -582,8 +626,16 @@ export function ClientsFeedback() {
           <div className="w-fit h-fit flex gap-[20px]">
             {items.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[20em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[22em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
+                id={`client-${index}`}
+                data-reveal-on-scroll 
+              style={{
+                opacity: isVisible[`client-${index}`] ? 1 : 0.85,
+                fontSize: isVisible[`client-${index}`] ? '1rem' : '0.85rem',
+                transform: isVisible[`client-${index}`] ? 'scale(1)' : 'scale(0.95)',
+                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+              }}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
@@ -710,7 +762,7 @@ export function ContactForm() {
               onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
+              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] animate-bounce repeat-infinite delay-1000 hover:animate-none ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
               } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >

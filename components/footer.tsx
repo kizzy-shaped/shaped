@@ -39,12 +39,12 @@ function Footer() {
 
                         <div className="flex flex-col gap-[24px]">
                             {[
-                                { label: 'Fashion', link: '/about_us' },
-                                { label: 'Styling', link: '/become_client' },
-                                { label: 'Personal Shopping', link: '/become_client' },
-                                { label: 'Bespoke Garment Creation', link: '/become_client' },
-                                { label: 'And so on', link: '/become_client' },
-                            ].map(({ label, link }, index) => (<SubtitleTile text={label} key={index} />))}
+                                { label: 'Fashion', link: 'fashion_services' },
+                                { label: 'Styling', link: 'styling_services' },
+                                { label: 'Personal Shopping', link: 'personal_services' },
+                                { label: 'Bespoke Garment Creation', link: 'bespoke_garment_creation' },
+                                { label: 'And so on', link: 'fashion_services' },
+                            ].map(({ label, link }, index) => (<LinkSubtitleTile link={`/services?serviceId=${link}`} text={label} key={index} />))}
                         </div>
                     </div>
                     {/* Services */}
@@ -57,9 +57,9 @@ function Footer() {
                             {[
                                 { label: 'info@shapedservices.com', link: 'mailto:info@shapedservices.com' },
                                 {
-                                    label: `128 City Road,London, EC1V 2NX, UK`, link: '/become_client'
+                                    label: `128 City Road,London, EC1V 2NX, UK`, link: '#contact_us'
                                 },
-                            ].map(({ label, link }, index) => (<SubtitleTile text={label} key={index} />))}
+                            ].map(({ label, link }, index) => (<LinkSubtitleTile link={`${link}`} text={label} key={index} />))}
 
                             <div className="flex gap-[7px]">
                                 <FaInstagram className="w-[26px] h-[26px]" color="#AFAFAF" />
@@ -85,7 +85,7 @@ function Footer() {
                                 placeholder="Email Address"
                             />
 
-                            <button onClick={submit} className="col-start-2 -col-end-1 row-start-1 row-end-2 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
+                            <button onClick={submit} className="col-start-2 -col-end-1 row-start-1 row-end-2 h-full bg-white text-black text-center rounded-[20px] font-semibold animate-bounce repeat-infinite delay-1000 hover:animate-none">SUBSCRIBE</button>
                         </div>
                     </div>
                     {/* Subscribe to newsletter */}
@@ -93,8 +93,8 @@ function Footer() {
 
                 <div className="w-full h-fit flex wmin_lg:justify-between wmax_lg:justify-center wmax_lg:gap-[20px] mt-[4vh] border-t-[1.5px] border-t-[#D3D3D3] pt-[16px]">
                     <div className="flex gap-[56px]">
-                        <SubtitleTile text="Terms & Conditions" />
-                        <SubtitleTile text="Privacy Policy" />
+                        <LinkSubtitleTile link="/terms_conditions" text="Terms & Conditions" />
+                        <LinkSubtitleTile link="/privacy_policy" text="Privacy Policy" />
                     </div>
 
                     &copy; <SubtitleTile className="wmax_lg:hidden" text="Shaped 2024 All Right Reserved" />
@@ -105,7 +105,7 @@ function Footer() {
                 </div>
 
                 <div className="w-full h-fit mt-[4vh] relative wmax_lg:hidden">
-                    <img className="w-full h-auto" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
+                    <img className="w-full h-auto animate-jello repeat-infinite delay-1000 hover:animate-none" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
                     {/* <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" /> */}
                     {/* <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" /> */}
                 </div>

@@ -78,11 +78,95 @@ export default {
 						// borderRadius: '0%'
 					},
 				},
+				jello: {
+					'0%, 100%': {
+					  transform: 'translateX(0)',
+					},
+					'25%': {
+					  transform: 'translateX(-10px) skewX(-10deg)',
+					},
+					'50%': {
+					  transform: 'translateX(10px) skewX(10deg)',
+					},
+					'75%': {
+					  transform: 'translateX(-5px) skewX(-5deg)',
+					},
+				  },
+				  wobble: {
+					'0%': {
+					  transform: 'rotate(0deg)',
+					},
+					'15%': {
+					  transform: 'rotate(3deg)',
+					},
+					'30%': {
+					  transform: 'rotate(-3deg)',
+					},
+					'45%': {
+					  transform: 'rotate(3deg)',
+					},
+					'60%': {
+					  transform: 'rotate(-3deg)',
+					},
+					'75%': {
+					  transform: 'rotate(2deg)',
+					},
+					'90%': {
+					  transform: 'rotate(-2deg)',
+					},
+					'100%': {
+					  transform: 'rotate(0deg)',
+					},
+				  },
+				  tada: {
+					'0%': {
+					  transform: 'scale(1) rotate(0deg)',
+					},
+					'10%': {
+					  transform: 'scale(1.1) rotate(-10deg)',
+					},
+					'20%': {
+					  transform: 'scale(1.1) rotate(10deg)',
+					},
+					'30%': {
+					  transform: 'scale(1.1) rotate(-10deg)',
+					},
+					'40%': {
+					  transform: 'scale(1.1) rotate(10deg)',
+					},
+					'50%': {
+					  transform: 'scale(1.1) rotate(0deg)',
+					},
+					'100%': {
+					  transform: 'scale(1) rotate(0deg)',
+					},
+				  },
+				  swing: {
+					'20%': {
+					  transform: 'rotate(15deg)',
+					},
+					'40%': {
+					  transform: 'rotate(-10deg)',
+					},
+					'60%': {
+					  transform: 'rotate(5deg)',
+					},
+					'80%': {
+					  transform: 'rotate(-5deg)',
+					},
+					'100%': {
+					  transform: 'rotate(0deg)',
+					},
+				  },
 			},
 			animation: {
 				fadeIn: 'fadeIn 0.25s ease-in-out',
 				fadeOut: 'fadeOut 0.25s ease-in-out',
 				'scale-to-full': 'scaleToFull 1s ease forwards',
+				jello: 'jello 0.75s ease-in-out',
+				wobble: 'wobble 1s ease-in-out',
+				tada: 'tada 1s ease forwards',
+				swing: 'swing 1s ease-in-out',
 			},
 			screens: {
 				xs: '320px',

@@ -32,8 +32,8 @@ export function MessageSentModal() {
                 <path
                   d="M5 145.051L70.4906 266C111.464 202.282 231.698 21.1265 272 5"
                   stroke="#454545"
-                  stroke-width="10"
-                  stroke-linecap="round"
+                  strokeWidth="10"
+                  strokeLinecap="round"
                 />
               </svg>
             </div>
@@ -85,8 +85,8 @@ export function EmailSubscribedModal() {
                 <path
                   d="M5 145.051L70.4906 266C111.464 202.282 231.698 21.1265 272 5"
                   stroke="#454545"
-                  stroke-width="10"
-                  stroke-linecap="round"
+                  strokeWidth="10"
+                  strokeLinecap="round"
                 />
               </svg>
             </div>

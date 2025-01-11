@@ -89,8 +89,8 @@ function Header({ className = '' }: { className?: string }) {
                             <button onClick={() => setdDrawerVisible(true)} className="w-[50px] h-[48px]">
                                 <svg className="w-full h-full" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect className="w-full h-full" fill="#F0F0F0" />
-                                    <line x1="17.5" y1="17.5" x2="42.5" y2="17.5" stroke="black" stroke-width="3" stroke-linecap="round" />
-                                    <line x1="17.5" y1="31.5" x2="42.5" y2="31.5" stroke="black" stroke-width="3" stroke-linecap="round" />
+                                    <line x1="17.5" y1="17.5" x2="42.5" y2="17.5" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                                    <line x1="17.5" y1="31.5" x2="42.5" y2="31.5" stroke="black" strokeWidth="3" strokeLinecap="round" />
                                 </svg>
 
                             </button>
