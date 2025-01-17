@@ -65,7 +65,8 @@ export const services: IService[] = [
   },
   {
     link: "bespoke_garment_creation",
-    title: "The Perfect Piece, Every Time.",
+    // title: "The Perfect Piece, Every Time.",
+    title: "Bespoke Garment Creation",
     thumbnail: '/images/home/services/bespoke_garment.png',
     overview: 'Unique pieces crafted to make you stand out, tailored to every detail.',
    desc: {
@@ -251,3 +252,21 @@ export const services: IService[] = [
     ],
   },
 ];
+
+export const shaped_education = {
+  link: "shaped_education",
+  title: "shaped education",
+  thumbnail: '/images/home/services/sourcing.png',
+  overview: 'We are designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences.',
+ desc: {
+    title: "Access the Unobtainable.",
+    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
+  },
+  heroImage: "/images/fashion/hero_img.png",
+  galleryImages: [
+    "/images/home/services/styling.png",
+    "/images/home/services/personal.png",
+    "/images/home/services/bespoke_garment.png",
+    "/images/home/services/alteration.png",
+  ],
+};

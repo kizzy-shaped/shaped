@@ -43,7 +43,7 @@ function Footer() {
                                 { label: 'Styling', link: 'styling_services' },
                                 { label: 'Personal Shopping', link: 'personal_services' },
                                 { label: 'Bespoke Garment Creation', link: 'bespoke_garment_creation' },
-                                { label: 'And so on', link: 'fashion_services' },
+                                // { label: 'And so on', link: 'fashion_services' },
                             ].map(({ label, link }, index) => (<LinkSubtitleTile link={`/services?serviceId=${link}`} text={label} key={index} />))}
                         </div>
                     </div>
@@ -85,7 +85,7 @@ function Footer() {
                                 placeholder="Email Address"
                             />
 
-                            <button onClick={submit} className="col-start-2 -col-end-1 row-start-1 row-end-2 h-full bg-white text-black text-center rounded-[20px] font-semibold animate-bounce repeat-infinite delay-1000 hover:animate-none">SUBSCRIBE</button>
+                            <button onClick={submit} className="col-start-2 -col-end-1 row-start-1 row-end-2 h-full bg-white text-black text-center rounded-[20px] font-semibold">SUBSCRIBE</button>
                         </div>
                     </div>
                     {/* Subscribe to newsletter */}
@@ -105,7 +105,7 @@ function Footer() {
                 </div>
 
                 <div className="w-full h-fit mt-[4vh] relative wmax_lg:hidden">
-                    <img className="w-full h-auto animate-jello repeat-infinite delay-1000 hover:animate-none" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
+                    <img className="w-full h-auto" src="/images/shared/dark_footer_logo.png" alt="Footer Logo" />
                     {/* <img className="w-full h-auto" src="/images/shared/footer_logo.png" alt="Footer Logo" /> */}
                     {/* <img className="w-full h-[127px] max-h-[100px] absolute bottom-0 left-0 z-[3]" src="/images/shared/footer_clip_path.png" alt="Footer Logo" /> */}
                 </div>

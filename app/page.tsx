@@ -32,7 +32,7 @@ import { useModal } from "@/context/modal";
 import { FiArrowRight } from "react-icons/fi";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
-import { services } from "@/constants/services";
+import { services, shaped_education } from "@/constants/services";
 import AnimationHandler from "@/utils/animations";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
@@ -106,6 +106,7 @@ function Hero() {
 
   return (
     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
+      {/* Using Hero Img */}
       {/* Mobile */}
       {/* <img
         className="w-[90%] h-auto mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[5%] wmin_xl:hidden"
@@ -116,7 +117,23 @@ function Hero() {
       {/* Desktop */}
       {/* <img className="w-[90%] h-[80%] z-[2] object-contain absolute left-[5%] bottom-[0] wmax_xl:hidden" src="/images/home/hero_img.png" alt="" /> */}
       {/* Desktop */}
-      <div className="w-full h-full relative">
+{/* Using Hero Img */}
+
+{/* Using Showcase Img */}
+      {/* Mobile */}
+      <img
+        className="w-full h-full mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[0%] wmin_xl:hidden"
+        src="/images/home/showcase_img_mobile.png"
+        alt=""
+      />
+      {/* Mobile */}
+      {/* Desktop */}
+      <img className="w-full h-full z-[2] object-cover bg-no-repeat absolute left-[0%] bottom-[0] wmax_xl:hidden" src="/images/home/showcase_img.png" alt="" />
+      {/* Desktop */}
+      {/* Using Showcase Img */}
+
+      {/* Video */}
+      {/* <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
           autoPlay={true}
@@ -129,7 +146,8 @@ function Hero() {
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
-      </div>
+      </div> */}
+      {/* Video */}
 
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-black text-center">
@@ -142,7 +160,7 @@ function Hero() {
           onMouseLeave={() => setHovered(false)}
           className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
             hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-          } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px] animate-tada repeat-infinite delay-1000 hover:animate-none`}
+          } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
         >
           Explore Our Services
           <FiArrowRight
@@ -214,7 +232,7 @@ function Services() {
           </div>
         </div>
 
-        {services.map(
+        {services.filter((_, index) => index == 0 || index > 4).concat([shaped_education]).map(
           (
             {
               desc,
@@ -289,13 +307,13 @@ function Services() {
         </div>
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
-            {services.map(
+            {services.filter((_, index) => index == 0 || index > 4).concat([shaped_education]).map(
               (
                 { desc, galleryImages, heroImage, link, title, overview },
                 index
               ) => (
                 <div
-                  className={`w-[90vw] h-[12em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
+                  className={`w-[90vw] h-[14em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
                   key={index}
                   id={`service-${index}`}
                   data-reveal-on-scroll
@@ -313,7 +331,7 @@ function Services() {
                     />
                   </div> */}
 
-                  <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
+                  <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                       <div className="text-[20px] font-bold text-white uppercase">
                         {title}

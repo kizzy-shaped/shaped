@@ -26,6 +26,7 @@ import AnimationHandler from "@/utils/animations";
 import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
 import { useMultiRevealOnScroll } from "./hooks/useMultiRevealOnScroll";
 import is from "@/utils/viewport";
+import { clients_feedbacks } from "@/constants/clients_feedbacks";
 
 export function Partners() {
   return (
@@ -102,7 +103,7 @@ export function About() {
             onMouseLeave={() => setHovered(false)}
             className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${
               hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px] animate-jello delay-1000 repeat-infinite hover:animate-none`}
+            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
             Learn More
             <FiArrowRight
@@ -520,36 +521,7 @@ interface IInputTile {
 }
 
 export function ClientsFeedback() {
-  const items = [
-    {
-      img: "/images/home/clients_feedback/client_tiwa.png",
-      name: "SYED AZAM",
-      rating: 5,
-      comments: [
-        `Kizz and SHAPED were amazing for our wedding, guiding us through designs, materials, and tailoring to perfection.`,
-        `She has an incredible eye for style, pushing me out of my comfort zone in the best way. Her knack for spotting deals and sharing great finds is unmatched. Truly a 10/10 experience!`,
-      ],
-    },
-    {
-      img: "/images/home/clients_feedback/client_wizkid.png",
-      name: "DON MADEGA",
-      rating: 4,
-      comments: [
-        `SHAPED has consistently delivered when sourcing hard-to-find items. `,
-        `They respond quickly, provide clear lead times, and are transparent about fees.`,
-        `I’m a happy repeat customer—thank you so much!`,
-      ],
-    },
-    {
-      img: "/images/home/clients_feedback/client_tiwa.png",
-      name: "Year Zero London",
-      rating: 5,
-      comments: [
-        `Working with Shaped Services over the years has been a truly wonderful experience! We’ve collaborated on exciting projects for their amazing VIP clients, creating bespoke, one-of-a-kind pieces that stand out`,
-        ` At Year Zero London, we love how Shaped Services listens to and caters to their clients’ unique requests, allowing us to bring our luxury magic to life.`,
-      ],
-    },
-  ];
+  
   const isVisible = useMultiRevealOnScroll({
     threshold: 0.25,  // Trigger reveal when 50% of an element is visible
     offset: 0,       // No offset
@@ -572,9 +544,9 @@ export function ClientsFeedback() {
             style={{ height: "fit-content" }}
             pauseOnHover={true}
           >
-            {items.map(({ img, comments, name, rating }, index) => (
+            {clients_feedbacks.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[448px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[570px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
                 data-reveal-on-scroll 
                 id={`client-${index}`}
@@ -624,23 +596,23 @@ export function ClientsFeedback() {
         {/* Mobile */}
         <div className="wmin_md:hidden w-full h-fit overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
-            {items.map(({ img, comments, name, rating }, index) => (
+            {clients_feedbacks.map(({ img, comments, name, rating }, index) => (
               <div
-                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[22em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
+                className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[33em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
                 id={`client-${index}`}
                 data-reveal-on-scroll 
               style={{
                 opacity: isVisible[`client-${index}`] ? 1 : 0.85,
-                fontSize: isVisible[`client-${index}`] ? '1rem' : '0.85rem',
-                transform: isVisible[`client-${index}`] ? 'scale(1)' : 'scale(0.95)',
+                // fontSize: isVisible[`client-${index}`] ? '1rem' : '0.8rem',
+                // transform: isVisible[`client-${index}`] ? 'scale(1)' : 'scale(0.98)',
                 transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
               }}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
                 </div> */}
-                <div className="wmin_md:w-[48px] wmax_md:w-[40px] wmin_md:h-[48px] wmax_md:h-[40px]">
+                <div className="wmin_md:w-[48px] wmax_md:w-[40px] wmin_md:h-[48px] wmax_md:h-[35px]">
                   <svg
                     className={"w-full h-full"}
                     viewBox="0 0 48 48"
@@ -657,7 +629,7 @@ export function ClientsFeedback() {
                 <div className="flex flex-col gap-[0px] wmin_md:items-center wmax_md:text-justify">
                   {comments.map((comment, index) => (
                     <div
-                      className="text-white wmin_md:text-[14px] wmax_md:text-[12px] font-bold text-center"
+                      className="text-white wmin_md:text-[14px] wmax_md:text-[10px] font-bold text-center"
                       key={index}
                     >
                       {comment}
@@ -665,7 +637,7 @@ export function ClientsFeedback() {
                   ))}
                 </div>
 
-                <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
+                <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[14px] font-semibold uppercase">
                   {name}
                 </div>
               </div>
@@ -678,7 +650,7 @@ export function ClientsFeedback() {
   );
 }
 
-export function ContactForm() {
+export function ContactForm({headline = 'Ready to elevate your style?'}:{headline?: string}) {
   const { showModal, hideModal } = useModal();
 
   const { values, errors, touched, handleChange, handleBlur } = useFormik({
@@ -712,7 +684,7 @@ export function ContactForm() {
         <div className="w-[calc(92.5%)] h-fit flex flex-col gap-[12px] mt-[8vh] mr-auto">
           <div className="flex flex-col gap-[12px]">
             <div className="wmin_md:text-[40px] wmax_md:text-[24px] font-semibold text-white uppercase">
-              Ready to elevate your style?
+              {headline}
             </div>
           </div>
 
