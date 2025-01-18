@@ -214,6 +214,8 @@ function Services() {
     rootMargin: "0px", // Default margin
   });
 
+  const [hovered, setHovered] = useState<null | number>(null);
+
   return (
     <div
       id="services"
@@ -226,7 +228,7 @@ function Services() {
             OUR SERVICES
           </div>
 
-          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-[#9C9C9C]">
             From styling to bespoke services, we've got you <br />
             covered for every occasion.
           </div>
@@ -279,11 +281,13 @@ function Services() {
                 </div>
 
                 <Link
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
                   href={`/services?serviceId=${link}`}
                   className="wmin_3xl:text-[22px] wmin_lg:wmax_3xl:text-[20px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                 >
                   Learn More
-                  <FiArrowRight className={`w-[28px] h-[28px] text-white`} />
+                  <FiArrowRight className={`w-[28px] h-[28px] ${hovered == index?'ml-[7px]':''} text-white`} />
                 </Link>
               </div>
             </div>
@@ -343,12 +347,15 @@ function Services() {
                     </div>
 
                     <Link
+                    onMouseEnter={() => setHovered(index)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => setHovered(hovered==index?null:index)}
                       href={`/services?serviceId=${link}`}
                       className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                     >
                       Learn More
                       <FiArrowRight
-                        className={`w-[28px] h-[28px] text-white`}
+                        className={`w-[28px] h-[28px] text-white ${hovered == index?"ml-[4px]":''}`}
                       />
                     </Link>
                   </div>

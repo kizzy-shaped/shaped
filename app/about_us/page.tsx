@@ -27,10 +27,10 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative wmax_lg:bg-[url(/images/about/hero_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative wmax_lg:bg-[url(/images/about/showcase_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
       <img
         className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
-        src="/images/about/hero_img.png"
+        src="/images/about/showcase_img.png"
         alt=""
       />
 
@@ -95,25 +95,25 @@ function Gallery() {
           </div>
         </div>
 
-        <div className="col-span-1 wmin_md:h-[696px] wmax_md:h-[340px] grid grid-rows-[1fr_2fr_2fr_1fr_1fr] wmax_lg:order-1">
+        <div className="col-span-1 wmin_md:h-[696px] wmax_md:h-[340px] grid grid-rows-[1fr_1.2fr_1.2fr_1fr_1fr] wmax_lg:order-1">
           <div className="col-start-1 col-end-3 row-start-1 row-end-4">
             <img
               className="w-full h-full object-cover"
-              src="/images/home/featuring/collection.png"
+              src="/images/about/styles.png"
               alt=""
             />
           </div>
           <div className="col-start-3 col-span-2 row-start-2 row-end-5">
             <img
               className="w-full h-full object-cover"
-              src="/images/home/featuring/quality.png"
+              src="/images/about/image2.png"
               alt=""
             />
           </div>
           <div className="col-start-2 col-end-4 row-start-3 -row-end-1">
             <img
               className="w-full h-full object-cover"
-              src="/images/home/featuring/styles.png"
+              src="/images/about/image3.png"
               alt=""
             />
           </div>

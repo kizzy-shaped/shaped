@@ -14,7 +14,7 @@ const Fashion = () => {
 
       <Gallery />
 
-      <MonthStyle />
+      {/* <MonthStyle /> */}
 
       <ContactForm />
     </div>
@@ -27,7 +27,7 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/hero_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/showcase_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-black text-center">
           FASHION SERVICES
@@ -123,8 +123,55 @@ function Gallery() {
   ]
 
   return (
-    <div className="w-full h-fit bg-white">
-      <div className="w-full h-fit flex flex-col">
+    <div className="w-full h-fit bg-black">
+      {/* Desktop */}
+      <Container className="w-full h-fit grid grid-rows-[464px_464px] grid-cols-[1fr_0.5fr_0.5fr_1fr] gap-[0.5em] wmax_lg:hidden">
+       <div className="col-span-1 row-span-1 w-full h-full">
+        <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+       </div>
+       <div className="col-span-2 row-span-1 w-full h-full">
+        <img className="w-full h-full bg-cover" src="/images/fashion/image2.png" alt="" />
+       </div>
+       <div className="col-span-1 row-span-1 w-full h-full flex items-center justify-center">
+        <div className="italic font-medium text-white w-[90%] m-auto text-center">
+        Elevate your wardrobe with personalized services that blend craftsmanship, style, and precision—tailored to bring your vision to life.
+        </div>
+       </div>
+       <div className="col-span-2 row-span-1 w-full h-full">
+        <img className="w-full h-full bg-cover" src="/images/fashion/image3.png" alt="" />
+       </div>
+       <div className="col-span-2 row-span-1 w-full h-full">
+        <img className="w-full h-full bg-cover" src="/images/fashion/image4.png" alt="" />
+       </div>
+      </Container>
+      {/* Desktop */}
+
+      {/* Mobile */}
+      <Container className="w-fll h-fit overflow-x-scroll wmin_lg:hidden">
+        <div className="w-fit h-[354px] flex gap-[1em]">
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+          <div className="w-[90vw] h-full">
+            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          </div>
+        </div>
+      </Container>
+      {/* Mobile */}
+
+      {/* <div className="w-full h-fit flex flex-col">
         {services.map(({title, galleryImages, link}, index) => (
           <div
             className="w-full wmin_390:h-[430px] wmax_390:h-[350px] relative"
@@ -170,7 +217,7 @@ function Gallery() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

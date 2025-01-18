@@ -734,7 +734,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onClick={submit}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] animate-bounce repeat-infinite delay-1000 hover:animate-none ${
+              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
                 hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
               } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
             >

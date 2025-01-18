@@ -52,7 +52,7 @@ function Header({ className = '' }: { className?: string }) {
                                     }
                                 }}
                                 className={`${dropdown ? 'h-full' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
-                                {!dropdown ? (<Link href={link} className={`text-white font-black text-[18px]`}>{label}</Link>) : (<div
+                                {!dropdown ? (<Link href={link} className={`text-white font-black text-[18px]`}>{label}</Link>) : dropdown && label.toLowerCase() == 'fashion' ? (<Link href={'/fashion'} className={`h-full flex items-center text-white font-black text-[18px]`}>{label}</Link>) : (<div
                                     className={`h-full flex items-center text-white font-black text-[18px]`}>{label}</div>)}
 
                                 {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-white" />}
@@ -119,7 +119,8 @@ function Header({ className = '' }: { className?: string }) {
                                                 dropdown && setDropdownVisible(!dropdownVisible);
                                             }}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
-                                            {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : (<div
+                                            {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : dropdown && label.toLowerCase() == 'fashion' ? (<Link href="/fashion"
+                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</Link>):  (<div
                                                 className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
 
                                             {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-white" />}
