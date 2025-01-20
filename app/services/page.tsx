@@ -15,7 +15,7 @@ const Service = () => {
   ) as IService;
 
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       <Hero service={service} />
 
       <AboutDesc service={service} />
@@ -56,9 +56,14 @@ function AboutDesc({ service }: { service: IService }) {
           {service?.desc.title}
         </div>
 
-        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white">
+        {!service?.desc?.list ? (<div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white">
           {service?.desc.desc}
-        </div>
+        </div>) : (service?.desc?.desc as string[])?.map((text, index) => (<div
+         className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white"
+         key={index}
+         >
+          {text}
+        </div>))}
       </Container>
     </div>
   );

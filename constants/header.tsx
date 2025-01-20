@@ -11,5 +11,6 @@ export const navigation = [
         dropdown: services.filter((_, index) => index > 4)
     },
     { label: 'PORTFOLIO', link: '/portfolio' },
-    { label: 'EDUCATION', link: '/education' },
+    // { label: 'EDUCATION', link: '/education' },
+    { label: 'EDUCATION', link: '/services?serviceId=shaped_education' },
 ];

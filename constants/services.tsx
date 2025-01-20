@@ -4,7 +4,8 @@ export interface IService {
   overview: string;
   desc: {
     title: string;
-    desc: string;
+    desc: string | string[];
+    list?: boolean
   };
   heroImage: string;
   galleryImages: string[];
@@ -206,8 +207,8 @@ export const services: IService[] = [
     thumbnail: '/images/home/services/home_and_property.png',
     overview: 'We manage design, maintenance, and renovations to keep your home luxurious and pristine.',
    desc: {
-      title: "Luxury in the Everyday.",
-      desc: "AFrom grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
+      title: "Your Home, Perfectly Curated.",
+      desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
     },
     heroImage: "/images/services/home_property/hero_img.png",
     galleryImages: [
@@ -259,8 +260,10 @@ export const shaped_education = {
   thumbnail: '/images/home/services/sourcing.png',
   overview: 'We are designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences.',
  desc: {
-    title: "Access the Unobtainable.",
-    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
+    title: "Empowering Teams to Redefine Luxury Service",
+    desc: [`SHAPED Education is designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences. Our focus is on cultivating the creativity and precision necessary to offer truly personalised services that leave a lasting impression on your most discerning clients. `,
+
+  `By perfecting the art of styling and personal shopping, SHAPED Education empowers retail staff to elevate their craft and exceed the highest expectations in luxury service. To learn more about how SHAPED Education can enhance your team's expertise, contact us today and take the first step towards elevating your service.`]
   },
   heroImage: "/images/services/education/hero_img.png",
   galleryImages: [
