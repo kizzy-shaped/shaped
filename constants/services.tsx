@@ -10,6 +10,7 @@ export interface IService {
   heroImage: string;
   galleryImages: string[];
   thumbnail: string;
+  formHeadline?: string;
 }
 
 export const services: IService[] = [
@@ -63,6 +64,7 @@ export const services: IService[] = [
       "/images/services/personal/gallery3.png",
       "/images/services/personal/gallery4.png",
     ],
+    formHeadline: 'Find Your Perfect Style Match Today'
   },
   {
     link: "bespoke_garment_creation",
@@ -81,6 +83,7 @@ export const services: IService[] = [
       "/images/services/bespoke/hero_img.png",
       "/images/services/bespoke/gallery4.png",
     ],
+    formHeadline: 'Step into Style with Custom Creations'
   },
   {
     link: "alteration_services",
@@ -115,6 +118,7 @@ export const services: IService[] = [
       "/images/home/services/bespoke_garment.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline:'Let’s Bring Your Vision to Life'
   },
   {
     link: "private_coporation_events",
@@ -132,6 +136,7 @@ export const services: IService[] = [
       "/images/home/services/bespoke_garment.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline: 'Crafting Moments That Matter'
   },
   {
     link: "intimate_gathering_celebration",
@@ -149,6 +154,7 @@ export const services: IService[] = [
       "/images/home/services/bespoke_garment.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline: 'Create Memories, We Handle the Details'
   },
   {
     link: "lifestyle_concierge",
@@ -166,6 +172,7 @@ export const services: IService[] = [
       "/images/services/lifestyle_concierge/gallery3.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline: 'Your Every Need, Seamlessly Managed'
   },
   {
     link: "travel_jet_services",
@@ -183,6 +190,7 @@ export const services: IService[] = [
       "/images/services/travel_jet/gallery3.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline:'Experience Seamless Luxury Travel'
   },
   {
     link: "day_to_day_errands",
@@ -217,6 +225,7 @@ export const services: IService[] = [
       "/images/services/home_property/gallery3.png",
       "/images/services/home_property/gallery4.png",
     ],
+    formHeadline:'Luxury Living Starts at Home'
   },
   {
     link: "personalisation_gifting",
@@ -234,6 +243,7 @@ export const services: IService[] = [
       "/images/home/services/bespoke_garment.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline:'Make Every Gift Unforgettable'
   },
   {
     link: "sourcing_procurement",
@@ -251,10 +261,11 @@ export const services: IService[] = [
       "/images/home/services/bespoke_garment.png",
       "/images/home/services/alteration.png",
     ],
+    formHeadline:'Let Us Source the Extraordinary for You'
   },
 ];
 
-export const shaped_education = {
+export const shaped_education: IService = {
   link: "shaped_education",
   title: "shaped education",
   thumbnail: '/images/home/services/sourcing.png',
@@ -272,4 +283,5 @@ export const shaped_education = {
     "/images/services/education/gallery3.png",
     "/images/services/education/gallery4.png",
   ],
+formHeadline:'Let’s Shape the Future of Your Team—Contact Us'
 };

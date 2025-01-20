@@ -27,6 +27,7 @@ import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
 import { useMultiRevealOnScroll } from "./hooks/useMultiRevealOnScroll";
 import is from "@/utils/viewport";
 import { clients_feedbacks } from "@/constants/clients_feedbacks";
+import Modal from "./modal";
 
 export function Partners() {
   return (
@@ -653,7 +654,7 @@ export function ClientsFeedback() {
 export function ContactForm({headline = 'Ready to elevate your style?'}:{headline?: string}) {
   const { showModal, hideModal } = useModal();
 
-  const { values, errors, touched, handleChange, handleBlur } = useFormik({
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -668,15 +669,15 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
       country: string().required("Country is required"),
       favouriteBrand: string(),
     }),
-    onSubmit: (data) => {},
+    onSubmit: (data) => {
+      console.log({data})
+      // hideModal();
+      showModal(<MessageSentModal />);
+    },
   });
 
   const [hovered, setHovered] = useState(false);
 
-  const submit = () => {
-    hideModal();
-    showModal(<MessageSentModal />);
-  };
 
   return (
     <div id="contact_us" className="w-full h-fit bg-black pl-[7.5%]">
@@ -731,7 +732,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
             />
 
             <button
-              onClick={submit}
+              onClick={() =>handleSubmit()}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
@@ -748,6 +749,8 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
           </div>
         </div>
       </div>
+
+      <Modal />
     </div>
   );
 }

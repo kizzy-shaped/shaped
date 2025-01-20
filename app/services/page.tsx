@@ -28,7 +28,7 @@ const Service = () => {
 
       <Gallery service={service} />
 
-      <ContactForm />
+      <ContactForm headline={service?.formHeadline} />
     </div>
   );
 };

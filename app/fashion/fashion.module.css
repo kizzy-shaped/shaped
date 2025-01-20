@@ -1,0 +1,14 @@
+
+
+@media screen and (max-width: 1024px) {
+    .slide .transition-container {
+        /* display: none; */
+    }
+    
+    .slide:active .transition-container,
+    .slide:hover .transition-container,
+    .slide:focus .transition-container
+    {
+        /* display: flex; */
+    }
+}

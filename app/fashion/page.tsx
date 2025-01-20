@@ -1,7 +1,12 @@
 "use client";
 
+// import styles from './fashion.module.css';
+import "./fashion.module.css";
+
 import Container from "@/components/container";
 import { ContactForm, MonthStyle } from "@/components/homeComponents";
+import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -37,13 +42,35 @@ function Hero() {
   );
 }
 
+const TransitionConatiner = ({
+  condion,
+  text,
+}: {
+  condion?: boolean;
+  text: string;
+}) => (
+  <div
+    className="transition-container w-full h-1/2 flex flex-col items-center justify-end pb-[2.5em] absolute bottom-0 left-0 z-10 bg-gradient-to-b from-[#00000010] to-[#000000] transition-all duration-75 ease-in"
+    style={{
+      opacity: condion ? 1 : 0,
+      bottom: condion ? 0 : -30,
+    }}
+  >
+    <span className="w-fit h-fit italic text-white font-bold text-[32px]">
+      {text}
+    </span>
+    <span className="w-fit h-fit flex items-center gap-[0.5em] text-white font-medium text-[24px]">
+      <ArrowRight className="text-white" /> Learn More
+    </span>
+  </div>
+);
+
 function AboutDesc() {
   return (
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
         <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-white">
-          Curated, Bespoke Fashion, Tailored Just 
-          for You.
+          Curated, Bespoke Fashion, Tailored Just for You.
         </div>
 
         <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white">
@@ -59,113 +86,156 @@ function AboutDesc() {
 }
 
 function Gallery() {
-  const services = [
-    {
-      link: "styling_services",
-      title: "styling services",
-      desc: {
-        title: "Unleash Your Signature Style.",
-        desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
-      },
-      heroImage: "/images/fashion/hero_img.png",
-      galleryImages: [
-        "/images/home/featuring/collection.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/styles.png",
-      ],
-    },
-    {
-      link: "personal_shopping",
-      title: "personal shopping",
-     desc: {
-        title: "Unleash Your Signature Style.",
-        desc: "Let SHAPED help you unlock your personal style with our exclusive styling services. Whether you're looking to refine your look, update your wardrobe, or experiment with new trends, our expert stylists curate outfits that reflect your individuality and bring out the best in you. From casual chic to formal elegance, we ensure every look is crafted to perfection, leaving you confident and effortlessly stylish.",
-      },
-      heroImage: "/images/fashion/hero_img.png",
-      galleryImages: [
-        "/images/home/featuring/collection.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/styles.png",
-      ],
-    },
-    {
-      link: "bespoke_garment_creation",
-      title: "The Perfect Piece, Every Time.",
-     desc: {
-        title: "Unleash Your Signature Style.",
-        desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
-      },
-      heroImage: "/images/fashion/hero_img.png",
-      galleryImages: [
-        "/images/home/featuring/collection.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/styles.png",
-      ],
-    },
-    {
-      link: "alteration_services",
-      title: "alteration_services",
-     desc: {
-        title: "One-of-a-Kind, Just for You.",
-        desc: "When off-the-rack doesn’t cut it, SHAPED offers bespoke garment creation that is tailored to your exact specifications. From luxurious fabrics to custom silhouettes, we craft each garment to fit your body and your vision. Whether it’s for a wedding, a corporate event, or a milestone celebration, we create one-of-a-kind pieces designed to make you stand out. Every stitch, every detail, made just for you.",
-      },
-      heroImage: "/images/fashion/hero_img.png",
-      galleryImages: [
-        "/images/home/featuring/collection.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/quality.png",
-        "/images/home/featuring/styles.png",
-      ],
-    },
-  ]
+  const [currentGalleyIndex, setCurrentGalleyIndex] = useState<null | number>(
+    null
+  );
+
+  const isVisible = useMultiRevealOnScroll({
+    threshold: 0.1, // Trigger reveal when 50% of an element is visible
+    offset: 0, // No offset
+    rootMargin: "0px", // Default margin
+  });
 
   return (
     <div className="w-full h-fit bg-black">
       {/* Desktop */}
       <Container className="w-full h-fit grid grid-rows-[464px_464px] grid-cols-[1fr_0.5fr_0.5fr_1fr] gap-[0.5em] wmax_lg:hidden">
-       <div className="col-span-1 row-span-1 w-full h-full">
-        <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
-       </div>
-       <div className="col-span-2 row-span-1 w-full h-full">
-        <img className="w-full h-full bg-cover" src="/images/fashion/image2.png" alt="" />
-       </div>
-       <div className="col-span-1 row-span-1 w-full h-full flex items-center justify-center">
-        <div className="italic font-medium text-white w-[90%] m-auto text-center">
-        Elevate your wardrobe with personalized services that blend craftsmanship, style, and precision—tailored to bring your vision to life.
+        <div
+          onMouseEnter={() => setCurrentGalleyIndex(0)}
+          onMouseLeave={() => setCurrentGalleyIndex(null)}
+          className="col-span-1 row-span-1 w-full h-full cursor-pointer relative"
+        >
+          <img
+            className="w-full h-full bg-cover"
+            src="/images/fashion/image1.png"
+            alt=""
+          />
+
+          <TransitionConatiner
+            text="Styling Services"
+            condion={currentGalleyIndex == 0}
+          />
         </div>
-       </div>
-       <div className="col-span-2 row-span-1 w-full h-full">
-        <img className="w-full h-full bg-cover" src="/images/fashion/image3.png" alt="" />
-       </div>
-       <div className="col-span-2 row-span-1 w-full h-full">
-        <img className="w-full h-full bg-cover" src="/images/fashion/image4.png" alt="" />
-       </div>
+        <div
+          onMouseEnter={() => setCurrentGalleyIndex(1)}
+          onMouseLeave={() => setCurrentGalleyIndex(null)}
+          className="col-span-2 row-span-1 w-full h-full relative"
+        >
+          <img
+            className="w-full h-full bg-cover"
+            src="/images/fashion/image2.png"
+            alt=""
+          />
+
+          <TransitionConatiner
+            text="Personal Shopping"
+            condion={currentGalleyIndex == 1}
+          />
+        </div>
+        <div className="col-span-1 row-span-1 w-full h-full flex items-center justify-center">
+          <div className="italic font-medium text-white w-[90%] m-auto text-center">
+            Elevate your wardrobe with personalized services that blend
+            craftsmanship, style, and precision—tailored to bring your vision to
+            life.
+          </div>
+        </div>
+        <div
+          onMouseEnter={() => setCurrentGalleyIndex(2)}
+          onMouseLeave={() => setCurrentGalleyIndex(null)}
+          className="col-span-2 row-span-1 w-full h-full relative"
+        >
+          <img
+            className="w-full h-full bg-cover"
+            src="/images/fashion/image3.png"
+            alt=""
+          />
+
+          <TransitionConatiner
+            text="Bespoke Garment Creation"
+            condion={currentGalleyIndex == 2}
+          />
+        </div>
+        <div
+          onMouseEnter={() => setCurrentGalleyIndex(3)}
+          onMouseLeave={() => setCurrentGalleyIndex(null)}
+          className="col-span-2 row-span-1 w-full h-full relative"
+        >
+          <img
+            className="w-full h-full bg-cover"
+            src="/images/fashion/image4.png"
+            alt=""
+          />
+
+          <TransitionConatiner
+            text="Alteration Services"
+            condion={currentGalleyIndex == 3}
+          />
+        </div>
       </Container>
       {/* Desktop */}
 
       {/* Mobile */}
       <Container className="w-fll h-fit overflow-x-scroll wmin_lg:hidden">
-        <div className="w-fit h-[354px] flex gap-[1em]">
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+        <div className="slide w-fit h-[360px] flex gap-[1em]">
+          <div 
+          id={`service-0`}
+          data-reveal-on-scroll
+          className="w-[90vw] h-full relative">
+            <img
+              className="w-full h-full bg-cover"
+              src="/images/fashion/image1.png"
+              alt=""
+            />
+
+            <TransitionConatiner
+              text="Styling Services"
+              condion={ isVisible[`service-0`]  as unknown as boolean}
+            />
           </div>
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          <div 
+          id={`service-1`}
+          data-reveal-on-scroll
+          className="w-[90vw] h-full relative">
+            <img
+              className="w-full h-full bg-cover"
+              src="/images/fashion/image2.png"
+              alt=""
+            />
+
+            <TransitionConatiner
+              text="Styling Services"
+              condion={ isVisible[`service-1`]  as unknown as boolean}
+            />
           </div>
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          <div 
+          id={`service-2`}
+          data-reveal-on-scroll
+          className="w-[90vw] h-full relative">
+            <img
+              className="w-full h-full bg-cover"
+              src="/images/fashion/image3.png"
+              alt=""
+            />
+
+            <TransitionConatiner
+              text="Styling Services"
+              condion={ isVisible[`service-2`]  as unknown as boolean}
+            />
           </div>
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
-          </div>
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
-          </div>
-          <div className="w-[90vw] h-full">
-            <img className="w-full h-full bg-cover" src="/images/fashion/image1.png" alt="" />
+          <div 
+          id={`service-3`}
+          data-reveal-on-scroll
+          className="w-[90vw] h-full relative">
+            <img
+              className="w-full h-full bg-cover"
+              src="/images/fashion/image4.png"
+              alt=""
+            />
+
+            <TransitionConatiner
+              text="Styling Services"
+              condion={ isVisible[`service-3`]  as unknown as boolean}
+            />
           </div>
         </div>
       </Container>

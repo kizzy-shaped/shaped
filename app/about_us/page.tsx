@@ -99,21 +99,21 @@ function Gallery() {
           <div className="col-start-1 col-end-3 row-start-1 row-end-4">
             <img
               className="w-full h-full object-cover"
-              src="/images/about/styles.png"
+              src="/images/about/gallery1.png"
               alt=""
             />
           </div>
           <div className="col-start-3 col-span-2 row-start-2 row-end-5">
             <img
               className="w-full h-full object-cover"
-              src="/images/about/image2.png"
+              src="/images/about/gallery2.png"
               alt=""
             />
           </div>
           <div className="col-start-2 col-end-4 row-start-3 -row-end-1">
             <img
               className="w-full h-full object-cover"
-              src="/images/about/image3.png"
+              src="/images/about/gallery3.png"
               alt=""
             />
           </div>
