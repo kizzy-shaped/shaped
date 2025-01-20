@@ -121,19 +121,19 @@ function Hero() {
 
 {/* Using Showcase Img */}
       {/* Mobile */}
-      <img
+      {/* <img
         className="w-full h-full mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[0%] wmin_xl:hidden"
         src="/images/home/showcase_img_mobile.png"
         alt=""
-      />
+      /> */}
       {/* Mobile */}
       {/* Desktop */}
-      <img className="w-full h-full z-[2] object-cover bg-no-repeat absolute left-[0%] bottom-[0] wmax_xl:hidden" src="/images/home/showcase_img.png" alt="" />
+      {/* <img className="w-full h-full z-[2] object-cover bg-no-repeat absolute left-[0%] bottom-[0] wmax_xl:hidden" src="/images/home/showcase_img.png" alt="" /> */}
       {/* Desktop */}
       {/* Using Showcase Img */}
 
       {/* Video */}
-      {/* <div className="w-full h-full relative">
+      <div className="w-full h-full relative">
         <video
           className="w-full h-full absolute top-0 left-0 object-cover"
           autoPlay={true}
@@ -144,9 +144,9 @@ function Hero() {
           ref={videoRef as MutableRefObject<HTMLVideoElement>}
           // src="/videos/hero.mp4"
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/hero_vid.mp4" type="video/mp4" />
         </video>
-      </div> */}
+      </div>
       {/* Video */}
 
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
