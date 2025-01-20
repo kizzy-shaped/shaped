@@ -14,7 +14,7 @@ const About = () => {
 
       <Gallery />
 
-      <Partners />
+      {/* <Partners /> */}
 
       <ClientsFeedbackContactForm />
     </div>
