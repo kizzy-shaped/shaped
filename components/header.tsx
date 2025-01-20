@@ -120,16 +120,26 @@ function Header({ className = '' }: { className?: string }) {
                                             }}
                                             className={`${dropdown ? 'wmin_lg:h-full wmax_lg:h-fit' : 'h-fit'} flex items-center gap-[7px] cursor-pointer ${raleway.className} relative`} key={id}>
                                             {!dropdown ? (<Link href={link} className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}>{label}</Link>) : dropdown && label.toLowerCase() == 'fashion' ? (<Link href="/fashion"
-                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</Link>):  (<div
-                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relativ' : ''}`}>{label}</div>)}
+                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] wmax_lg:relative}`}>{label}</Link>):  (<div
+                                                className={`wmax_md:w-full h-full flex items-center wmax_md:justify-between text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px] ${dropdown ? 'wmax_lg:relative' : ''}`}>{label}</div>)}
 
                                             {dropdown && <FaChevronDown className="w-[16px] h-[16px] text-white" />}
 
                                             {/* Dropdown */}
                                             {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
-                                            {(dropdownVisible && dropdownState.index === id) && (
+                                            {/* {(dropdownVisible && dropdownState.index === id) && (
                                                 // <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
                                                 <div className="w-[100%] h-[75vh] pb-[1.5em] overflow-y-scroll bg-black p-[1em] fixed wmin_lg:top-[100%] wmax_lg:top-[185px] left-[0vw]">
+                                                    <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
+                                                        {dropdown?.map(({ link, title }, index) => (
+                                                            <Link onClick={() => setdDrawerVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )} */}
+                                            {(dropdownVisible && dropdownState.index === id) && (
+                                                // <div className="w-[100%] bg-black p-[2em] fixed wmin_lg:top-[100%] wmax_lg:top-[100px] left-[0vw]">
+                                                <div className={`w-[100%] h-[75vh] pb-[1.5em] overflow-y-scroll bg-black p-[1em] pt-0 fixed ${label.toLowerCase() == 'fashion' ? 'wmin_lg:top-[0%]':'wmin_lg:top-[100%]'} wmax_lg:top-[185px] left-[0vw] wmax_lg:z-10`} style={{top: label.toLowerCase() == 'fashion'?'150px':'200px'}}>
                                                     <div className="w-fit grid wmin_md:grid-cols-3 wmax_md:grid-cols-1 gap-x-[2em] wmax_lg:overflow-hidden">
                                                         {dropdown?.map(({ link, title }, index) => (
                                                             <Link onClick={() => setdDrawerVisible(false)} className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`} href={`/services?serviceId=${link}`} key={index}>{title}</Link>
