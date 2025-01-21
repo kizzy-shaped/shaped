@@ -6,7 +6,7 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[32px] wmax_md:text-[28px] font-black text-white ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[32px] wmax_md:text-[28px] font-bold text-white ${className}`}>{children}</div>;
   
   export const Subheading = ({
     children,
@@ -30,5 +30,5 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-black text-white inline-block ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-bold text-white inline-block ${className}`}>{children}</div>;
   

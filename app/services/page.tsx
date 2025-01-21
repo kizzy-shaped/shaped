@@ -40,7 +40,7 @@ function Hero({ service }: { service: IService }) {
     // <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/hero_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-cover bg-no-repeat wmax_lg:bg-center" style={{backgroundImage: `url(${service?.heroImage})`}}>
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
-        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-black text-center uppercase">
+        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center uppercase">
           {service?.title}
         </span>
       </div>
@@ -52,14 +52,14 @@ function AboutDesc({ service }: { service: IService }) {
   return (
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmax_lg:items-center wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-white wmax_lg:text-center">
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white wmax_lg:text-center">
           {service?.desc.title}
         </div>
 
-        {!service?.desc?.list ? (<div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white">
+        {!service?.desc?.list ? (<div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-white">
           {service?.desc.desc}
         </div>) : (service?.desc?.desc as string[])?.map((text, index) => (<div
-         className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white"
+         className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-white"
          key={index}
          >
           {text}

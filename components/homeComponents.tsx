@@ -98,7 +98,7 @@ export function About() {
     >
       <Container className="h-fit wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col wmin_lg:pt-[11vh] wmax_lg:pt-[3vh]">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-bold text-white">
+          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-white">
             At SHAPED, we are redefining what it means to experience true luxury
             in the modern world. Our singular mission is to return to you the
             one thing that matters most, your time. Through unparalleled service
@@ -178,7 +178,7 @@ export function Featuring() {
   return (
     <div className="w-full h-fit wmin_lg:pt-[15vh] wmax_lg:pt-[3vh] wmin_lg:pb-[5vh] wmax_lg:pb-[2vh] bg-white">
       <Container className="flex flex-col items-center justify-center wmin_md:gap-[4em] wmax_md:gap-[2.5em] py-[3vh]">
-        <span className="text-black wmin_md:text-[40px] wmax_md:text-[24px] font-black">
+        <span className="text-black wmin_md:text-[40px] wmax_md:text-[24px] font-bold">
           FEATURING
         </span>
 
@@ -333,7 +333,7 @@ function PlayBtn({
 //           </div>
 
 //           {!isPlaying && (
-//             <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
+//             <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-bold text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
 //               STYLE OF THE MONTH
 //             </div>
 //           )}
@@ -379,7 +379,7 @@ export function MonthStyle() {
           </div>
 
           {!isPlaying && (
-            <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-black text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
+            <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-bold text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
               STYLE OF THE MONTH
             </div>
           )}
@@ -403,7 +403,7 @@ export function Services() {
       {/* Deskop */}
       <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
-          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-bold text-white">
             OUR SERVICES
           </div>
 
@@ -461,7 +461,7 @@ export function Services() {
 
       {/* Mobile */}
       <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">]        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
-          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-bold text-white">
             OUR SERVICES
           </div>
 
@@ -540,7 +540,7 @@ export function ClientsFeedback() {
   return (
     <div className="w-full h-fit bg-black">
       <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pt-[3vh] wmax_md:pb-[1vh] flex flex-col wmin_md:gap-[5vh] wmax_md:gap-[3vh]">
-        <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-white font-black text-center">
+        <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-white font-bold text-center">
           CLIENTS' FEEDBACK
         </div>
 

@@ -75,20 +75,20 @@ function Header({ className = "" }: { className?: string }) {
                 {!dropdown ? (
                   <Link
                     href={link}
-                    className={`text-white font-black text-[18px]`}
+                    className={`text-white font-bold text-[18px]`}
                   >
                     {label}
                   </Link>
                 ) : dropdown && label.toLowerCase() == "fashion" ? (
                   <Link
                     href={"/fashion"}
-                    className={`h-full flex items-center text-white font-black text-[18px]`}
+                    className={`h-full flex items-center text-white font-bold text-[18px]`}
                   >
                     {label}
                   </Link>
                 ) : (
                   <div
-                    className={`h-full flex items-center text-white font-black text-[18px]`}
+                    className={`h-full flex items-center text-white font-bold text-[18px]`}
                   >
                     {label}
                   </div>
@@ -105,7 +105,7 @@ function Header({ className = "" }: { className?: string }) {
                     <div className="w-full grid grid-cols-4 wmin_3xl:gap-x-[2em] wmin_xl:wmax_3xl:gap-x-[1.5em] justify-between">
                       {dropdown?.map(({ link, title }, index) => (
                         <Link
-                          className={`col-span-1 w-fit font-black text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
+                          className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
                           href={`/services?serviceId=${link}`}
                           key={index}
                         >
@@ -125,7 +125,7 @@ function Header({ className = "" }: { className?: string }) {
             onMouseLeave={() => setHovered(false)}
             className={`w-fit h-[50px] bg-white ${
               hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-            } text-black text-[18px] font-black flex items-center justify-between gap-[10px] rounded-[24px]`}
+            } text-black text-[18px] font-bold flex items-center justify-between gap-[10px] rounded-[24px]`}
           >
             Contact Us
             <FiArrowRight
@@ -303,7 +303,7 @@ function Header({ className = "" }: { className?: string }) {
                   onMouseLeave={() => setHovered(false)}
                   className={`w-full wmin_md:h-[60px] wmax_md:h-[40px] bg-white ${
                     hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
-                  } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-black flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}
+                  } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-bold flex items-center wmin_lg:justify-between gap-[10px] rounded-[24px]`}
                 >
                   Contact Us
                   <FiArrowRight

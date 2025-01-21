@@ -150,7 +150,7 @@ function Hero() {
       {/* Video */}
 
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[7%] left-0 wmax_xl:left-[5%] z-[3]">
-        <span className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-black text-center" style={{fontWeight:'bolder'}}>
+        <span className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-bold text-center" style={{fontWeight:'bolder'}}>
           Curated Experiences, Tailored for You
         </span>
 
@@ -224,7 +224,7 @@ function Services() {
       {/* Deskop */}
       <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[32px] wmin_lg:wmax_3xl:gap-x-[16px] wmin_lg:wmax_3xl:gap-y-[20px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
-          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-bold text-white">
             OUR SERVICES
           </div>
 
@@ -300,7 +300,7 @@ function Services() {
       <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         {" "}
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
-          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-black text-white">
+          <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-bold text-white">
             OUR SERVICES
           </div>
 

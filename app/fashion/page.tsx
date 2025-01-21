@@ -34,7 +34,7 @@ function Hero() {
   return (
     <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/showcase_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
-        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-black text-center">
+        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center">
           FASHION SERVICES
         </span>
       </div>
@@ -69,11 +69,11 @@ function AboutDesc() {
   return (
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-bold text-white">
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white">
           Curated, Bespoke Fashion, Tailored Just for You.
         </div>
 
-        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-bold text-white">
+        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-white">
           At SHAPED, we believe that your style should be as unique as you are.
           Our Fashion Services are designed to give you a seamless, luxurious
           experience—whether you're seeking expert styling, personal shopping,
@@ -253,7 +253,7 @@ function Gallery() {
               className={`absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-[1] text-white  transition-transform `}
             >
               <div className="w-full h-full duration-1000  hover:animate-fadeOut hover:bg-[#00000099] flex flex-col items-center justify-center gap-[1.7em] relative">
-              <div className="wmin_md:text-[2.5rem] wmax_md:text-[1.5rem] font-black text-white uppercase">
+              <div className="wmin_md:text-[2.5rem] wmax_md:text-[1.5rem] font-bold text-white uppercase">
                   {title}
                 </div>
 

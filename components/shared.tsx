@@ -39,7 +39,7 @@ export function MessageSentModal() {
             </div>
 
             <div className="w-fit h-fit flex flex-col gap-[10px]">
-                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-black uppercase">MESSAGE SENT</div>
+                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-bold uppercase">MESSAGE SENT</div>
 
                 <div className="text-white wmin_md:text-[20px] wmax_md:text-[16px] font-semibold">
                     Thank you for contacting us. Our <br />
@@ -92,7 +92,7 @@ export function EmailSubscribedModal() {
             </div>
 
             <div className="w-fit h-fit flex flex-col gap-[10px]">
-                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-black uppercase">EMAIL SUBSCRIBED</div>
+                <div className="text-white wmin_md:text-[32px] wmax_md:text-[24px] font-bold uppercase">EMAIL SUBSCRIBED</div>
 
                 <div className="text-white wmin_md:text-[20px] wmax_md:text-[16px] font-semibold">
                 Thank you for subscribing to our <br />
