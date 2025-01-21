@@ -43,9 +43,9 @@ export const services: IService[] = [
     heroImage: "/images/services/styling/hero_img.png",
     galleryImages: [
       "/images/services/styling/gallery1.png",
-      "/images/home/showcase_img.png",
+      // "/images/home/showcase_img.png",
       "/images/services/styling/gallery3.png",
-      "/images/services/styling/gallery4.png",
+      // "/images/services/styling/gallery4.png",
     ],
   },
   {

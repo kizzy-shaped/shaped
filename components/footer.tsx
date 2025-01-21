@@ -101,7 +101,7 @@ function Footer() {
                 </div>
 
                 <div className="wmin_lg:hidden flex items-center justify-center gap-[3px]">
-                    &copy; <SubtitleTile text="Shaped 2024 All Right Reserved" />
+                    &copy; <SubtitleTile text="Shaped 2025 All Right Reserved" />
                 </div>
 
                 <div className="w-full h-fit mt-[4vh] relative wmax_lg:hidden">
