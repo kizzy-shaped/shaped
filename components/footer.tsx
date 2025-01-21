@@ -27,7 +27,7 @@ function Footer() {
 
                         <div className="flex flex-col gap-[24px]">
                             {[
-                                { label: 'About Us', link: '/about_us' }, { label: 'Become a Client', link: '/become_client' }
+                                { label: 'About Us', link: '/about_us' }, { label: 'Become a Client', link: '#contact_us' }
                             ].map(({ label, link }, index) => (<LinkSubtitleTile text={label} link={link} key={index} />))}
                         </div>
                     </div>
