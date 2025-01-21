@@ -203,7 +203,7 @@ function Gallery() {
             />
 
             <TransitionConatiner
-              text="Styling Services"
+              text="Personal Shopping"
               condion={ isVisible[`service-1`]  as unknown as boolean}
             />
           </div>
@@ -218,7 +218,7 @@ function Gallery() {
             />
 
             <TransitionConatiner
-              text="Styling Services"
+              text="Bespoke Garment Creation"
               condion={ isVisible[`service-2`]  as unknown as boolean}
             />
           </div>
@@ -233,7 +233,7 @@ function Gallery() {
             />
 
             <TransitionConatiner
-              text="Styling Services"
+              text="Alteration Services"
               condion={ isVisible[`service-3`]  as unknown as boolean}
             />
           </div>
