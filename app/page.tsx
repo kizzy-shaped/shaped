@@ -304,7 +304,7 @@ function Services() {
             OUR SERVICES
           </div>
 
-          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+          <div className="wmin_md:text-[24px] wmax_xl:text-[14px] font-medium text-white">
             From styling to bespoke services, we've got you <br />
             covered for every occasion.
           </div>
