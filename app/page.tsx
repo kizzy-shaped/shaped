@@ -149,8 +149,8 @@ function Hero() {
       </div>
       {/* Video */}
 
-      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
-        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-black text-center">
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[7%] left-0 wmax_xl:left-[5%] z-[3]">
+        <span className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-black text-center" style={{fontWeight:'bolder'}}>
           Curated Experiences, Tailored for You
         </span>
 

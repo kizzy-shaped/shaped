@@ -93,7 +93,7 @@ export function About() {
           <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-bold text-white">
             At SHAPED, we are redefining what it means to experience true luxury
             in the modern world. Our singular mission is to return to you the
-            one thing that matters most—your time. Through unparalleled service
+            one thing that matters most, your time. Through unparalleled service
             and an exclusive network, we create exceptional experiences that
             allow you to enjoy life at its fullest, without the effort.
           </div>

@@ -16,6 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { navigation } from "@/constants/header";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function Header({ className = "" }: { className?: string }) {
   const { dropdownVisible, setDropdownVisible } = useHeaderContext();
@@ -147,10 +148,14 @@ function Header({ className = "" }: { className?: string }) {
             <SheetTrigger
               onClick={(event) => {
                 setdDrawerVisible(true);
+                setDropdownState((prev) => ({ ...prev, index: null }));
               }}
+              className="flex "
             >
-              <button className="w-[50px] h-[48px]">
-                <svg
+              {/* <button className="w-[50px] h-[48px]"> */}
+              <button className="w-[35px] h-[35px]">
+              <RxHamburgerMenu className="text-white w-full h-full" />
+                {/* <svg
                   className="w-full h-full"
                   viewBox="0 0 60 52"
                   fill="none"
@@ -175,7 +180,7 @@ function Header({ className = "" }: { className?: string }) {
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
-                </svg>
+                </svg> */}
               </button>
             </SheetTrigger>
             <SheetContent className="bg-black text-white" side={"top"}>
@@ -183,27 +188,27 @@ function Header({ className = "" }: { className?: string }) {
                 <div className="h-full flex flex-col wmin_lg:gap-[15px] wmax_lg:gap-[20px] wmin_xl:gap-[20px] wmin_3xl:gap-[40px]">
                   {navigation.map(({ label, link, dropdown }, id) => (
                     <div
-                      onMouseEnter={() => {
-                        if (dropdown) {
-                          // dropdown && setdDrawerVisible(true)
-                          setDropdownVisible(true);
-                          setDropdownState((prev) => ({ ...prev, index: id }));
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        if (dropdown) {
-                          // dropdown && setdDrawerVisible(false)
-                          setDropdownVisible(false);
-                          setDropdownState((prev) => ({
-                            ...prev,
-                            index: null,
-                          }));
-                        }
-                      }}
-                      onClick={() => {
-                        !dropdown && setdDrawerVisible(false);
-                        dropdown && setDropdownVisible(!dropdownVisible);
-                      }}
+                      // onMouseEnter={() => {
+                      //   if (dropdown) {
+                      //     // dropdown && setdDrawerVisible(true)
+                      //     setDropdownVisible(true);
+                      //     setDropdownState((prev) => ({ ...prev, index: id }));
+                      //   }
+                      // }}
+                      // onMouseLeave={() => {
+                      //   if (dropdown) {
+                      //     // dropdown && setdDrawerVisible(false)
+                      //     setDropdownVisible(false);
+                      //     setDropdownState((prev) => ({
+                      //       ...prev,
+                      //       index: null,
+                      //     }));
+                      //   }
+                      // }}
+                      // onClick={() => {
+                      //   !dropdown && setdDrawerVisible(false);
+                      //   dropdown && setDropdownVisible(!dropdownVisible);
+                      // }}
                       className={`${
                         dropdown ? "wmin_lg:h-full wmax_lg:h-fit" : "h-fit"
                       } flex items-center gap-[7px] cursor-pointer ${
@@ -213,6 +218,7 @@ function Header({ className = "" }: { className?: string }) {
                     >
                       {!dropdown ? (
                         <Link
+                        onClick={() => setdDrawerVisible(false)}
                           href={link}
                           className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}
                         >
@@ -236,7 +242,13 @@ function Header({ className = "" }: { className?: string }) {
                       )}
 
                       {dropdown && (
-                        <FaChevronDown className="w-[16px] h-[16px] text-white" />
+                        <FaChevronDown  onClick={() => {
+                          // !dropdown && setdDrawerVisible(false);
+                          // dropdown && setDropdownVisible(!dropdownVisible);
+                          // setDropdownVisible(!dropdownVisible);
+                          setDropdownVisible(true);
+                          setDropdownState((prev) => ({ ...prev, index: id === dropdownState.index ? null : id }));
+                        }} className="w-[16px] h-[16px] text-white" />
                       )}
 
                       {/* Dropdown */}

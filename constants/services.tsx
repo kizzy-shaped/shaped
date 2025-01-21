@@ -44,7 +44,7 @@ export const services: IService[] = [
     galleryImages: [
       "/images/services/styling/gallery1.png",
       "/images/home/showcase_img.png",
-      "/images/services/styling/hero_img.png",
+      "/images/services/styling/gallery3.png",
       "/images/services/styling/gallery4.png",
     ],
   },
@@ -165,7 +165,7 @@ export const services: IService[] = [
       title: "Effortless Living, Unmatched Luxury.",
       desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
     },
-    heroImage: "/images/services/lifestyle_concierge/hero_img.png",
+    heroImage: "/images/fashion/hero_img.png",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -267,12 +267,12 @@ export const services: IService[] = [
 
 export const shaped_education: IService = {
   link: "shaped_education",
-  title: "shaped education",
+  title: "education",
   thumbnail: '/images/home/services/sourcing.png',
   overview: 'We are designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences.',
  desc: {
     title: "Empowering Teams to Redefine Luxury Service",
-    desc: [`SHAPED Education is designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences. Our focus is on cultivating the creativity and precision necessary to offer truly personalised services that leave a lasting impression on your most discerning clients. `,
+    desc: [`Education is designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences. Our focus is on cultivating the creativity and precision necessary to offer truly personalised services that leave a lasting impression on your most discerning clients. `,
 
   `By perfecting the art of styling and personal shopping, SHAPED Education empowers retail staff to elevate their craft and exceed the highest expectations in luxury service. To learn more about how SHAPED Education can enhance your team's expertise, contact us today and take the first step towards elevating your service.`]
   },
