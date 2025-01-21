@@ -26,7 +26,7 @@ const Service = () => {
         <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
       )}
 
-      {<Gallery service={service} />}
+{serviceId != ("styling_services" as any) &&<Gallery service={service} />}
 
       <ContactForm headline={service?.formHeadline} />
     </div>
