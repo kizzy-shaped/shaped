@@ -23,7 +23,7 @@ function Footer() {
                 <div className="w-full h-fit grid wmin_md:grid-cols-[1fr_1fr_1fr_3fr] wmax_md:grid-cols-2 wmax_md:grid-rows-3 wmin_md:gap-[56px] wmax_md:gap-y-[1.5em]">
                     {/* Company */}
                     <div className="wmin_lg:col-span-1 wmax_lg:col-start-1 wmax_lg:col-end-2 flex flex-col gap-[24px]">
-                        <TitleTile text="compnay" />
+                        <TitleTile text="company" />
 
                         <div className="flex flex-col gap-[24px]">
                             {[
@@ -39,12 +39,12 @@ function Footer() {
 
                         <div className="flex flex-col gap-[24px]">
                             {[
-                                { label: 'Fashion', link: 'fashion_services' },
-                                { label: 'Styling', link: 'styling_services' },
-                                { label: 'Personal Shopping', link: 'personal_services' },
-                                { label: 'Bespoke Garment Creation', link: 'bespoke_garment_creation' },
+                                { label: 'Fashion', link: '/fashion' },
+                                { label: 'Portfolio', link: '/portfolio' },
+                                { label: 'Education', link: '/services?serviceId=shaped_education' },
+                                // { label: 'Bespoke Garment Creation', link: 'bespoke_garment_creation' },
                                 // { label: 'And so on', link: 'fashion_services' },
-                            ].map(({ label, link }, index) => (<LinkSubtitleTile link={`/services?serviceId=${link}`} text={label} key={index} />))}
+                            ].map(({ label, link }, index) => (<LinkSubtitleTile link={link} text={label} key={index} />))}
                         </div>
                     </div>
                     {/* Services */}
@@ -97,7 +97,7 @@ function Footer() {
                         <LinkSubtitleTile link="/privacy_policy" text="Privacy Policy" />
                     </div>
 
-                    &copy; <SubtitleTile className="wmax_lg:hidden" text="Shaped 2024 All Right Reserved" />
+                    &copy; <SubtitleTile className="wmax_lg:hidden" text="Shaped 2025 All Right Reserved" />
                 </div>
 
                 <div className="wmin_lg:hidden flex items-center justify-center gap-[3px]">

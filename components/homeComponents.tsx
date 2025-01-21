@@ -97,8 +97,8 @@ export function About() {
     }}
     >
       <Container className="h-fit wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col wmin_lg:pt-[11vh] wmax_lg:pt-[3vh]">
-        <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center">
-          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-white">
+        <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center wmax_xl:items-center">
+          <div className="wmin_xl:text-[22px] wmax_xl:text-[15px] font-medium text-white wmax_xl:text-center">
             At SHAPED, we are redefining what it means to experience true luxury
             in the modern world. Our singular mission is to return to you the
             one thing that matters most, your time. Through unparalleled service
