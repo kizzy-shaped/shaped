@@ -105,7 +105,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative ">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:flex wmax_lg:items-center wmax_lg:justify-center">
       {/* Using Hero Img */}
       {/* Mobile */}
       {/* <img
@@ -117,9 +117,9 @@ function Hero() {
       {/* Desktop */}
       {/* <img className="w-[90%] h-[80%] z-[2] object-contain absolute left-[5%] bottom-[0] wmax_xl:hidden" src="/images/home/hero_img.png" alt="" /> */}
       {/* Desktop */}
-{/* Using Hero Img */}
+      {/* Using Hero Img */}
 
-{/* Using Showcase Img */}
+      {/* Using Showcase Img */}
       {/* Mobile */}
       {/* <img
         className="w-full h-full mx-auto mt-auto z-[2] object-cover absolute bottom-0 left-[0%] wmin_xl:hidden"
@@ -149,7 +149,7 @@ function Hero() {
       </div>
       {/* Video */}
 
-      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[7%] left-0 wmax_xl:left-[5%] z-[3]">
+      {/* <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[7%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-bold text-center" style={{fontWeight:'bolder'}}>
           Curated Experiences, Tailored for You
         </span>
@@ -169,6 +169,32 @@ function Hero() {
             }`}
           />
         </Link>
+      </div> */}
+      <div className="w-full h-full flex items-center justify-center absolute top-0 left-0">
+        <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] wmin_lg:absolute wmin_lg:bottom-[7%] wmin_lg:left-0 wmax_xl:left-[5%] wmin_lg:z-[3]">
+          <span
+            className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-bold text-center"
+            style={{ fontWeight: "bolder" }}
+          >
+            Curated Experiences, Tailored for You
+          </span>
+
+          <Link
+            href={"#services"}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-[white] ${
+              hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+            } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+          >
+            Explore Our Services
+            <FiArrowRight
+              className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${
+                hovered ? "ml-[4px]" : ""
+              }`}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -234,34 +260,37 @@ function Services() {
           </div>
         </div>
 
-        {services.filter((_, index) => index == 0 || index > 4).concat([shaped_education]).map(
-          (
-            {
-              desc,
-              galleryImages,
-              heroImage,
-              link,
-              title,
-              overview,
-              thumbnail,
-            },
-            index
-          ) => (
-            <div
-              className={`col-span-1 wmin_md:h-[18em] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[5.5fr] relative overflow-hidden rounded-[24px]`}
-              key={index}
-              id={`service-${index}`}
-              data-reveal-on-scroll
-              style={{
-                opacity: isVisible[`service-${index}`] ? 1 : 0.85,
-                transform: isVisible[`service-${index}`]
-                  ? "translateY(0)"
-                  : "translateY(20px)",
-                transition:
-                  "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
-              }}
-            >
-              {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+        {services
+          .filter((_, index) => index == 0 || index > 4)
+          .concat([shaped_education])
+          .map(
+            (
+              {
+                desc,
+                galleryImages,
+                heroImage,
+                link,
+                title,
+                overview,
+                thumbnail,
+              },
+              index
+            ) => (
+              <div
+                className={`col-span-1 wmin_md:h-[18em] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[5.5fr] relative overflow-hidden rounded-[24px]`}
+                key={index}
+                id={`service-${index}`}
+                data-reveal-on-scroll
+                style={{
+                  opacity: isVisible[`service-${index}`] ? 1 : 0.85,
+                  transform: isVisible[`service-${index}`]
+                    ? "translateY(0)"
+                    : "translateY(20px)",
+                  transition:
+                    "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                }}
+              >
+                {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
                   className="w-full h-ful max-h-full object-cover"
                   src={thumbnail}
@@ -269,30 +298,34 @@ function Services() {
                 />
               </div> */}
 
-              <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
-                <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                  <div className="wmin_3xl:text-[24px] wmin_lg:wmax_3xl:text-[22px] font-bold text-white uppercase">
-                    {title}
+                <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
+                  <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+                    <div className="wmin_3xl:text-[24px] wmin_lg:wmax_3xl:text-[22px] font-bold text-white uppercase">
+                      {title}
+                    </div>
+
+                    <div className="wmin_3xl:text-[20px] wmin_lg:wmax_3xl:text-[18px] font-bold text-[#9C9C9C]">
+                      {overview}
+                    </div>
                   </div>
 
-                  <div className="wmin_3xl:text-[20px] wmin_lg:wmax_3xl:text-[18px] font-bold text-[#9C9C9C]">
-                    {overview}
-                  </div>
+                  <Link
+                    onMouseEnter={() => setHovered(index)}
+                    onMouseLeave={() => setHovered(null)}
+                    href={`/services?serviceId=${link}`}
+                    className="wmin_3xl:text-[22px] wmin_lg:wmax_3xl:text-[20px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                  >
+                    Learn More
+                    <FiArrowRight
+                      className={`w-[28px] h-[28px] ${
+                        hovered == index ? "ml-[7px]" : ""
+                      } text-white`}
+                    />
+                  </Link>
                 </div>
-
-                <Link
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
-                  href={`/services?serviceId=${link}`}
-                  className="wmin_3xl:text-[22px] wmin_lg:wmax_3xl:text-[20px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
-                >
-                  Learn More
-                  <FiArrowRight className={`w-[28px] h-[28px] ${hovered == index?'ml-[7px]':''} text-white`} />
-                </Link>
               </div>
-            </div>
-          )
-        )}
+            )
+          )}
       </Container>
       {/* Deskop */}
 
@@ -311,23 +344,26 @@ function Services() {
         </div>
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
-            {services.filter((_, index) => index == 0 || index > 4).concat([shaped_education]).map(
-              (
-                { desc, galleryImages, heroImage, link, title, overview },
-                index
-              ) => (
-                <div
-                  className={`w-[90vw] h-[14em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
-                  key={index}
-                  id={`service-${index}`}
-                  data-reveal-on-scroll
-                  style={{
-                    opacity: isVisible[`service-${index}`] ? 1 : 0.85,
-                    transition:
-                      "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
-                  }}
-                >
-                  {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+            {services
+              .filter((_, index) => index == 0 || index > 4)
+              .concat([shaped_education])
+              .map(
+                (
+                  { desc, galleryImages, heroImage, link, title, overview },
+                  index
+                ) => (
+                  <div
+                    className={`w-[90vw] h-[14em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
+                    key={index}
+                    id={`service-${index}`}
+                    data-reveal-on-scroll
+                    style={{
+                      opacity: isVisible[`service-${index}`] ? 1 : 0.85,
+                      transition:
+                        "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                    }}
+                  >
+                    {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img
                       className="w-full h-full max-h-full object-cover"
                       src={heroImage}
@@ -335,33 +371,37 @@ function Services() {
                     />
                   </div> */}
 
-                  <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
-                    <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                      <div className="text-[20px] font-bold text-white uppercase">
-                        {title}
+                    <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
+                      <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+                        <div className="text-[20px] font-bold text-white uppercase">
+                          {title}
+                        </div>
+
+                        <div className="text-[14px] font-bold text-[#9C9C9C]">
+                          {overview}
+                        </div>
                       </div>
 
-                      <div className="text-[14px] font-bold text-[#9C9C9C]">
-                        {overview}
-                      </div>
+                      <Link
+                        onMouseEnter={() => setHovered(index)}
+                        onMouseLeave={() => setHovered(null)}
+                        onClick={() =>
+                          setHovered(hovered == index ? null : index)
+                        }
+                        href={`/services?serviceId=${link}`}
+                        className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                      >
+                        Learn More
+                        <FiArrowRight
+                          className={`w-[28px] h-[28px] text-white ${
+                            hovered == index ? "ml-[4px]" : ""
+                          }`}
+                        />
+                      </Link>
                     </div>
-
-                    <Link
-                    onMouseEnter={() => setHovered(index)}
-                    onMouseLeave={() => setHovered(null)}
-                    onClick={() => setHovered(hovered==index?null:index)}
-                      href={`/services?serviceId=${link}`}
-                      className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
-                    >
-                      Learn More
-                      <FiArrowRight
-                        className={`w-[28px] h-[28px] text-white ${hovered == index?"ml-[4px]":''}`}
-                      />
-                    </Link>
                   </div>
-                </div>
-              )
-            )}
+                )
+              )}
           </div>
         </div>
       </Container>

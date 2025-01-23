@@ -106,6 +106,14 @@ export function About() {
             allow you to enjoy life at its fullest, without the effort.
           </div>
 
+          {/* <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-white wmax_xl:text-center">
+          In today’s fast-paced, digital-first age, where automation often takes precedence, we offer something refreshingly different: a level of personalised service that can’t be replicated by a screen. With SHAPED, you unlock a world of access to the finest experts, exclusive destinations, and bespoke experiences across the globe—curated just for you. Whatever your request, from the extraordinary to the most intricate detail, we’re here to make it happen with flawless precision
+          </div>
+
+          <div className="wmin_xl:text-[22px] wmax_xl:text-[14px] font-medium text-white wmax_xl:text-center">
+          Our dedicated in-house specialists work seamlessly together to anticipate and fulfill your every need, bringing a bespoke approach to every aspect of your life. From everyday errands to rare, once-in-a-lifetime moments, SHAPED provides an all-encompassing lifestyle experience, effortlessly blending luxury with personalisation. With us, you can fully immerse in life, knowing that we’ve got every detail handled—today, tomorrow, and beyond.
+          </div> */}
+
           <Link
             href={"/about_us"}
             onMouseEnter={() => setHovered(true)}
