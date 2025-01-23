@@ -3,7 +3,7 @@
 import Container from "@/components/container";
 import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { IService, services, shaped_education } from "@/constants/services";
 
 const Service = () => {
@@ -14,7 +14,9 @@ const Service = () => {
     (service) => service.link === serviceId
   ) as IService;
 
-  return (
+  if(!service) return notFound();
+
+  else return (
     <div className="bg-black">
       <Hero service={service} />
 
