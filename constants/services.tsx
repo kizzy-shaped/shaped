@@ -23,7 +23,8 @@ export const services: IService[] = [
       title: "Curated, Bespoke Fashion, Tailored Just for You",
       desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
     },
-    heroImage: "/images/fashion/hero_img.png",
+    // heroImage: "/images/fashion/hero_img.png",
+    heroImage: "/images/services_base_imgs/fashion.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -59,7 +60,8 @@ export const services: IService[] = [
       // desc: "Let SHAPED help you unlock your personal style with our exclusive styling services. Whether you're looking to refine your look, update your wardrobe, or experiment with new trends, our expert stylists curate outfits that reflect your individuality and bring out the best in you. From casual chic to formal elegance, we ensure every look is crafted to perfection, leaving you confident and effortlessly stylish.",
       desc: "With SHAPED’s personal shopping service, finding the perfect item has never been easier. Our team of experts will guide you through the latest collections, sourcing everything from high-end pieces to exclusive fashion finds that align with your unique taste and lifestyle. Whether you're shopping for everyday essentials or a statement piece for a special occasion, we ensure you’re always a step ahead of the trends.",
     },
-    heroImage: "/images/services/personal/hero_img.png",
+    // heroImage: "/images/services/personal/hero_img.png",
+    heroImage: "/images/services_base_imgs/personalisation.jpg",
     galleryImages: [
       "/images/home/showcase_img.png",
       "/images/services/personal/hero_img.png",
@@ -115,7 +117,8 @@ export const services: IService[] = [
       // desc: "No wardrobe is complete without the perfect fit. SHAPED’s alteration services are designed to ensure your clothes fit you like they were made for you. From simple adjustments to complex tailoring, our expert team will refine every garment to enhance its shape and style, ensuring your clothing is a true reflection of your taste and body. Experience the art of tailoring with precision, care, and a perfect fit.",
       desc: "At SHAPED, we believe every detail counts when it comes to crafting unforgettable experiences. Whether you’re hosting an intimate gathering, a grand celebration, or a corporate event, we specialise in designing bespoke events that perfectly reflect your vision and style. From exclusive venue selection to personalised experiences, we handle every aspect with precision and elegance, ensuring that your event unfolds flawlessly. With SHAPED, you can relax and immerse yourself in the moments that matter most, knowing every detail is taken care of.",
     },
-    heroImage: "/images/services/events/hero_img.png",
+    // heroImage: "/images/services/events/hero_img.png",
+    heroImage: "/images/services_base_imgs/event.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -134,7 +137,8 @@ export const services: IService[] = [
       // desc: "From private parties to high-profile corporate events, SHAPED delivers exceptional event management services. Our team works closely with you to create an experience that is perfectly tailored to your needs. Whether it’s sourcing the ideal location, designing the perfect ambiance, or curating unforgettable experiences, we make sure every aspect of your event is executed to perfection, with you at the center of it all.",
       desc: "From private parties to high-profile corporate events, SHAPED delivers exceptional event management services. Our team works closely with you to create an experience that is perfectly tailored to your needs. Whether it’s sourcing the ideal location, designing the perfect ambiance, or curating unforgettable experiences, we make sure every aspect of your event is executed to perfection, with you at the center of it all.",
     },
-    heroImage: "/images/fashion/hero_img.png",
+    // heroImage: "/images/fashion/hero_img.png",
+    heroImage: "/images/services_base_imgs/private_corporate.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -153,7 +157,8 @@ export const services: IService[] = [
       // desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
       desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
     },
-    heroImage: "/images/services/intimate_gathering/hero_img.png",
+    // heroImage: "/images/services/intimate_gathering/hero_img.png",
+    heroImage: "/images/services_base_imgs/intimate.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -172,7 +177,8 @@ export const services: IService[] = [
       // desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
       desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
     },
-    heroImage: "/images/fashion/hero_img.png",
+    // heroImage: "/images/fashion/hero_img.png",
+    heroImage: "/images/services_base_imgs/lifestyle.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -191,7 +197,8 @@ export const services: IService[] = [
       // desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
       desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
     },
-    heroImage: "/images/services/travel_jet/hero_img.png",
+    // heroImage: "/images/services/travel_jet/hero_img.png",
+    heroImage: "/images/services_base_imgs/travel_jet.jpg",
     galleryImages: [
       "/images/services/travel_jet/gallery1.png",
       "/images/services/travel_jet/gallery2.png",
@@ -210,7 +217,8 @@ export const services: IService[] = [
       // desc: "AFrom grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
       desc: "From grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
     },
-    heroImage: "/images/fashion/hero_img.png",
+    // heroImage: "/images/fashion/hero_img.png",
+    heroImage: "/images/services_base_imgs/errands.jpg",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",
@@ -228,7 +236,8 @@ export const services: IService[] = [
       // desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
       desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
     },
-    heroImage: "/images/services/home_property/hero_img.png",
+    // heroImage: "/images/services/home_property/hero_img.png",
+    heroImage: "/images/services_base_imgs/home_property.jpg",
     galleryImages: [
       "/images/services/home_property/gallery1.png",
       "/images/services/home_property/gallery2.png",
@@ -247,7 +256,8 @@ export const services: IService[] = [
       // desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
       desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
     },
-    heroImage: "/images/services/personalization/hero_img.png",
+    // heroImage: "/images/services/personalization/hero_img.png",
+    heroImage: "/images/services_base_imgs",
     galleryImages: [
       "/images/home/services/styling.png",
       "/images/home/services/personal.png",

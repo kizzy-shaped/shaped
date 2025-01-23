@@ -71,13 +71,15 @@ function AboutDesc({ service }: { service: IService }) {
 
 function Gallery({ service }: { service: IService }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const searchParams = useSearchParams();
+  const serviceId = searchParams.get("serviceId") as keyof typeof services;
 
   const handleMouseEnter = (index: number) => setHoveredIndex(index);
   const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
     <div className="w-full h-fit bg-black">
-      <Container className="w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 wmin_md:grid-rows-2">
+      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 ${serviceId == ("styling_services" as any) ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
         {service?.galleryImages.map((item, index) => (
           <div
             className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] relative"

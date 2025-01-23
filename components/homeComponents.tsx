@@ -364,7 +364,7 @@ export function MonthStyle() {
   };
 
   return (
-    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-white">
+    <div className="w-full wmin_lg:h-[689px] wmax_lg:h-[60vh] bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-black">
       <Container className="flex items-center justify-center">
         <div className="wmin_md:w-[80%] wmax_md:w-full h-full wmax_md:px-[1em] relative">
           <div className="w-full h-full relative">
@@ -386,11 +386,11 @@ export function MonthStyle() {
             </video>
           </div>
 
-          {!isPlaying && (
+          {/* {!isPlaying && (
             <div className="wmin_md:text-[22px] wmax_md:text-[18px] font-bold text-white uppercase text-center w-full h-fit absolute bottom-[4%] left-0 z-[3]">
               STYLE OF THE MONTH
             </div>
-          )}
+          )} */}
         </div>
       </Container>
     </div>
