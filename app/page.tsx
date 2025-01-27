@@ -254,10 +254,10 @@ function Services() {
             OUR SERVICES
           </div>
 
-          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-medium text-[#9C9C9C]">
+          {/* <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-medium text-[#9C9C9C]">
             From styling to bespoke services, we've got you <br />
             covered for every occasion.
-          </div>
+          </div> */}
         </div>
 
         {services
@@ -275,7 +275,7 @@ function Services() {
               index
             ) => (
               <div
-                className={`col-span-1 wmin_md:h-[18em] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[5.5fr] relative overflow-hidden rounded-[24px]`}
+                className={`col-span-1 wmin_md:h-[77vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5_5.5fr] relative overflow-hidden rounded-[24px]`}
                 key={index}
                 id={`service-${index}`}
                 data-reveal-on-scroll
@@ -288,15 +288,15 @@ function Services() {
                     "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
                 }}
               >
-                {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
                   className="w-full h-ful max-h-full object-cover"
                   src={thumbnail}
                   alt=""
                 />
-              </div> */}
+              </div>
 
-                <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
+                <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1em] px-[2em]">
                   <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                     <div className="wmin_3xl:text-[24px] wmin_lg:wmax_3xl:text-[22px] font-bold text-white uppercase">
                       {title}
@@ -345,11 +345,11 @@ function Services() {
             {services
               .map(
                 (
-                  { desc, galleryImages, heroImage, link, title, overview },
+                  { desc, galleryImages, thumbnail, link, title, overview },
                   index
                 ) => (
                   <div
-                    className={`w-[90vw] h-[14em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[1fr] relative overflow-hidden rounded-[24px]`}
+                    className={`w-[90vw] h-[27em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[0.5fr_1fr] relative overflow-hidden rounded-[24px]`}
                     key={index}
                     id={`service-${index}`}
                     data-reveal-on-scroll
@@ -359,15 +359,15 @@ function Services() {
                         "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
                     }}
                   >
-                    {/* <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                    <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img
                       className="w-full h-full max-h-full object-cover"
-                      src={heroImage}
+                      src={thumbnail}
                       alt=""
                     />
-                  </div> */}
+                  </div>
 
-                    <div className="w-full h-full col-span-1 row-start-1 row-end-2 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
+                    <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
                       <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                         <div className="text-[20px] font-bold text-white uppercase">
                           {title}
