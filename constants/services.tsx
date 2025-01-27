@@ -16,8 +16,8 @@ export interface IService {
 export const services: IService[] = [
 //   Private & corporate events 
 {
-  link: "private_coporation_events",
-  title: "private & coporation events",
+  link: "private_coporate_events",
+  title: "private & coporate events",
   thumbnail: '/images/home/services/private.png',
   overview: 'We design every detail of your event to perfection, keeping you at the center.',
  desc: {

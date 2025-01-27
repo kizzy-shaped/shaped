@@ -785,7 +785,7 @@ export function ClientsFeedbackContactForm() {
 export function ContactFormModal() {
   const { showModal, hideModal } = useModal();
 
-  const { values, errors, touched, handleChange, handleBlur } = useFormik({
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -800,15 +800,19 @@ export function ContactFormModal() {
       country: string().required("Country is required"),
       favouriteBrand: string(),
     }),
-    onSubmit: (data) => {},
+    onSubmit: (data) => {
+      console.log({data})
+      // hideModal();
+      showModal(<MessageSentModal />);
+    },
   });
 
   const [hovered, setHovered] = useState(false);
 
-  const submit = () => {
-    hideModal();
-    showModal(<MessageSentModal />);
-  };
+  // const submit = () => {
+  //   hideModal();
+  //   showModal(<MessageSentModal />);
+  // };
 
   return (
     <div className="wmin_md:w-[680px] wmax_md:w-full h-fit bg-black">
@@ -830,7 +834,7 @@ export function ContactFormModal() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[12px]">
+          {/* <div className="flex flex-col gap-[12px]">
             <input
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
@@ -873,7 +877,7 @@ export function ContactFormModal() {
             />
 
             <button
-              onClick={submit}
+              onClick={() =>handleSubmit()}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`wmax_md:w-full wmin_md:w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[3vh] ${
@@ -883,6 +887,64 @@ export function ContactFormModal() {
               Contact Us
               <FiArrowRight
                 className={`w-[28px] h-[28px] text-black ${
+                  hovered ? "ml-[4px]" : ""
+                }`}
+              />
+            </button>
+          </div> */}
+           <div className="flex flex-col wmin_md:gap-[12px] wmax_md:gap-[9px]">
+            <input
+              onChange={handleChange("name")}
+              onBlur={handleBlur("name")}
+              value={values.name}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.name ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.name ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              placeholder={"Your Name *"}
+              type="text"
+            />
+            <input
+              onChange={handleChange("email")}
+              onBlur={handleBlur("email")}
+              value={values.email}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.email ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.email ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              placeholder={"Your Email *"}
+              type="email"
+            />
+            <input
+              onChange={handleChange("phoneNumber")}
+              onBlur={handleBlur("phoneNumber")}
+              value={values.phoneNumber}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              placeholder={"Phone Number"}
+              type="number"
+            />
+            <input
+              onChange={handleChange("country")}
+              onBlur={handleBlur("country")}
+              value={values.country}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.country ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.country ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              placeholder={"Your Country *"}
+              type="text"
+            />
+            <input
+              onChange={handleChange("favouriteBrand")}
+              onBlur={handleBlur("favouriteBrand")}
+              value={values.favouriteBrand}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              placeholder={"Your Favorite Brand"}
+              type="text"
+            />
+
+            <button
+              onClick={() =>handleSubmit()}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
+                hovered ? "pl-[22px] pr-[18px]" : "px-[22px]"
+              } text-black wmax_xl:text-[16px] wmin_xl:text-[22px] font-semibold flex items-center justify-between gap-[10px] rounded-[24px]`}
+            >
+              Contact Us
+              <FiArrowRight
+                className={`wmin_xl:w-[28px] wmin_xl:h-[28px] wmax_xl:w-[22px] wmax_xl:h-[22px] text-black ${
                   hovered ? "ml-[4px]" : ""
                 }`}
               />
