@@ -29,9 +29,7 @@ export const services: IService[] = [
   // heroImage: "/images/services_base_imgs/private_corporate.jpg",
   galleryImages: [
     "/images/services/private/gallery1.png",
-    "/images/services/private/gallery2.png",
-    "/images/services/private/gallery3.png",
-    "/images/services/private/gallery4.png",
+    "/images/services/private/gallery2.png"
   ],
   formHeadline: 'Crafting Moments That Matter'
 },
@@ -50,10 +48,8 @@ export const services: IService[] = [
   heroImage: "/images/services/travel/hero_img.png",
   // heroImage: "/images/services_base_imgs/travel_jet.jpg",
   galleryImages: [
-    "/images/services/travel_jet/gallery1.png",
-    "/images/services/travel_jet/gallery2.png",
-    "/images/services/travel_jet/gallery3.png",
-    "/images/home/services/alteration.png",
+    "/images/services/travel/gallery1.png",
+    "/images/services/travel/gallery2.png"
   ],
   formHeadline:'Experience Seamless Luxury Travel'
 },
@@ -93,10 +89,6 @@ export const services: IService[] = [
   heroImage: "/images/services/intimate_gathering/hero_img.png",
   // heroImage: "/images/services_base_imgs/intimate.jpg",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
   ],
   formHeadline: 'Create Memories, We Handle the Details'
 },

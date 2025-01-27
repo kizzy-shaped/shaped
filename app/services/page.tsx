@@ -30,7 +30,7 @@ function ServicePage() {
         <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
       )}
 
-<Gallery service={service} />
+{Number(service?.galleryImages.length > 0) && <Gallery service={service} />}
 
       <ContactForm headline={service?.formHeadline} />
     </div>
@@ -90,7 +90,7 @@ function Gallery({ service }: { service: IService }) {
 
   return (
     <div className="w-full h-fit bg-black">
-      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 ${serviceId == ("styling_services" as any) ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
+      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
         {service?.galleryImages.map((item, index) => (
           <div
             className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] relative"
