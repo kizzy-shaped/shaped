@@ -19,6 +19,7 @@ import { useFormik } from "formik";
 import { ObjectSchema, string } from "yup";
 import {
   About,
+  ClientsFeedback,
   ClientsFeedbackContactForm,
   ContactForm,
   ContactFormModal,
@@ -79,7 +80,9 @@ export default function Home() {
 
         <Services />
 
-        <ClientsFeedbackContactForm />
+        {/* <ClientsFeedbackContactForm /> */}
+        <ClientsFeedback />
+              <ContactForm />
 
         {/* //!Modals */}
         <Modal

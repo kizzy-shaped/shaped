@@ -592,7 +592,7 @@ export function ClientsFeedback() {
                   </svg>
                 </div>
 
-                <div className="flex flex-col gap-[0px] wmin_md:items-center wmax_md:text-justify">
+                <div className="flex flex-col gap-3 wmin_md:items-center wmax_md:text-justify">
                   {comments.map((comment, index) => (
                     <div
                       className="text-white wmin_md:text-[14px] wmax_md:text-[12px] font-bold text-center"
@@ -603,9 +603,9 @@ export function ClientsFeedback() {
                   ))}
                 </div>
 
-                <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
+                {/* <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[18px] font-semibold uppercase">
                   {name}
-                </div>
+                </div> */}
               </div>
             ))}
           </Marquee>
@@ -669,7 +669,7 @@ export function ClientsFeedback() {
   );
 }
 
-export function ContactForm({headline = 'Ready to elevate your style?'}:{headline?: string}) {
+export function ContactForm({headline = 'Become a member'}:{headline?: string}) {
   const { showModal, hideModal } = useModal();
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
@@ -712,7 +712,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.name ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.name ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
               placeholder={"Your Name *"}
               type="text"
             />
@@ -720,7 +720,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.email ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.email ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
               placeholder={"Your Email *"}
               type="email"
             />
@@ -728,7 +728,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onChange={handleChange("phoneNumber")}
               onBlur={handleBlur("phoneNumber")}
               value={values.phoneNumber}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Phone Number"}
               type="number"
             />
@@ -736,7 +736,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.country ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.country ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
               placeholder={"Your Country *"}
               type="text"
             />
@@ -744,7 +744,7 @@ export function ContactForm({headline = 'Ready to elevate your style?'}:{headlin
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className="w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]"
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Your Favorite Brand"}
               type="text"
             />
