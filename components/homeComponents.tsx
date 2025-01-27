@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";

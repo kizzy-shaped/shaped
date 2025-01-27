@@ -2,7 +2,7 @@
 
 import Container from "@/components/container";
 import { ContactForm, MonthStyle } from "@/components/homeComponents";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
 import { IService, services } from "@/constants/services";
 
@@ -17,6 +17,7 @@ const Service = () => {
   if(!service) return notFound();
 
   else return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="bg-black">
       <Hero service={service} />
 
@@ -32,6 +33,7 @@ const Service = () => {
 
       <ContactForm headline={service?.formHeadline} />
     </div>
+    </Suspense>
   );
 };
 
