@@ -4,13 +4,13 @@ import Container from "@/components/container";
 import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
-import { IService, services, shaped_education } from "@/constants/services";
+import { IService, services } from "@/constants/services";
 
 const Service = () => {
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
 
-  const service = services.concat([shaped_education]).find(
+  const service = services.find(
     (service) => service.link === serviceId
   ) as IService;
 
