@@ -24,11 +24,12 @@ export default function Providers({
 
     return (
         <html lang="en">
-            {loading ? (
+            {/* {loading ? (
                 <body className={`w-full h-full ${path != '/' ? 'animate-pulse' : ''} bg-black`}>
                     {path == '/' && <Loader onFinish={() => setLoading(false)} />}
                 </body>
-            ) : (
+            ) :  */}
+            (
                 <body
                     className={`w-full h-screen antialiased relative wmin_390:pt-[80px] wmax_390:pt-[65px] ${raleway.className}`}
                 >
@@ -39,7 +40,8 @@ export default function Providers({
                             <Footer />
                         </HeaderProvider>
                     </ModalProvider>
-                </body>)}
+                </body>)
+                {/* } */}
         </html>
     );
 }
