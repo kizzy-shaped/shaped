@@ -5,8 +5,10 @@ import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { Suspense, useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
 import { IService, services } from "@/constants/services";
+import exp from "constants";
 
-const Service = () => {
+function ServicePage() {
+  
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
 
@@ -17,7 +19,6 @@ const Service = () => {
   if(!service) return notFound();
 
   else return (
-    <Suspense fallback={<div>Loading...</div>}>
     <div className="bg-black">
       <Hero service={service} />
 
@@ -33,11 +34,17 @@ const Service = () => {
 
       <ContactForm headline={service?.formHeadline} />
     </div>
+  );
+}
+
+export default function Service () {
+  
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <ServicePage />
     </Suspense>
   );
-};
-
-export default Service;
+}
 
 function Hero({ service }: { service: IService }) {
   return (
