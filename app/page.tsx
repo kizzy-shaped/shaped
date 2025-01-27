@@ -32,7 +32,7 @@ import { useModal } from "@/context/modal";
 import { FiArrowRight } from "react-icons/fi";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
-import { services, shaped_education } from "@/constants/services";
+import { services} from "@/constants/services";
 import AnimationHandler from "@/utils/animations";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
@@ -261,8 +261,6 @@ function Services() {
         </div>
 
         {services
-          .filter((_, index) => index == 0 || index > 4)
-          .concat([shaped_education])
           .map(
             (
               {
@@ -345,8 +343,6 @@ function Services() {
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
             {services
-              .filter((_, index) => index == 0 || index > 4)
-              .concat([shaped_education])
               .map(
                 (
                   { desc, galleryImages, heroImage, link, title, overview },
