@@ -18,14 +18,14 @@ export const services: IService[] = [
 {
   link: "private_coporation_events",
   title: "private & coporation events",
-  thumbnail: '/images/home/services/prvate_corporate_event.png',
+  thumbnail: '/images/home/services/private.png',
   overview: 'We design every detail of your event to perfection, keeping you at the center.',
  desc: {
     title: "Crafting Moments That Last a Lifetime",
     // desc: "From private parties to high-profile corporate events, SHAPED delivers exceptional event management services. Our team works closely with you to create an experience that is perfectly tailored to your needs. Whether it’s sourcing the ideal location, designing the perfect ambiance, or curating unforgettable experiences, we make sure every aspect of your event is executed to perfection, with you at the center of it all.",
     desc: "From private parties to high-profile corporate events, SHAPED delivers exceptional event management services. Our team works closely with you to create an experience that is perfectly tailored to your needs. Whether it’s sourcing the ideal location, designing the perfect ambiance, or curating unforgettable experiences, we make sure every aspect of your event is executed to perfection, with you at the center of it all.",
   },
-  heroImage: "/images/fashion/hero_img.png",
+  heroImage: "/images/services/private/hero_img.png",
   // heroImage: "/images/services_base_imgs/private_corporate.jpg",
   galleryImages: [
     "/images/home/services/styling.png",
@@ -40,14 +40,14 @@ export const services: IService[] = [
 {
   link: "travel_jet_services",
   title: "travel & jet services",
-  thumbnail: '/images/home/services/fashion.png',
+  thumbnail: '/images/home/services/travel.png',
   overview: 'We create the perfect travel experience tailored to your needs.',
  desc: {
     title: "Jet-Set in Style",
     // desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
     desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
   },
-  heroImage: "/images/services/travel_jet/hero_img.png",
+  heroImage: "/images/services/travel/hero_img.png",
   // heroImage: "/images/services_base_imgs/travel_jet.jpg",
   galleryImages: [
     "/images/services/travel_jet/gallery1.png",
@@ -59,31 +59,31 @@ export const services: IService[] = [
 },
 // Travel and Jet services 
 // Fashion services 
-{
-  link: "fashion_services",
-  title: "fashion services",
-  thumbnail: '/images/home/services/fashion.png',
-  overview: 'Explore fashion services designed to elevate your style and wardrobe.',
-  desc: {
-    title: "Curated, Bespoke Fashion, Tailored Just for You",
-    desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
-  },
-  heroImage: "/images/fashion/hero_img.png",
-  // heroImage: "/images/services_base_imgs/fashion.jpg",
-  galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
-  ],
-},
+// {
+//   link: "fashion_services",
+//   title: "fashion services",
+//   thumbnail: '/images/home/services/fashion.png',
+//   overview: 'Explore fashion services designed to elevate your style and wardrobe.',
+//   desc: {
+//     title: "Curated, Bespoke Fashion, Tailored Just for You",
+//     desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
+//   },
+//   heroImage: "/images/fashion/hero_img.png",
+//   // heroImage: "/images/services_base_imgs/fashion.jpg",
+//   galleryImages: [
+//     "/images/home/services/styling.png",
+//     "/images/home/services/personal.png",
+//     "/images/home/services/bespoke_garment.png",
+//     "/images/home/services/alteration.png",
+//   ],
+// },
 
 // Fashion services 
 // Intimate gathering & celebration 
 {
   link: "intimate_gathering_celebration",
   title: "intimate gathering & celebration",
-  thumbnail: '/images/home/services/intimate_gathering.png',
+  thumbnail: '/images/home/services/intimate.png',
   overview: 'From venue to final touches, every detail makes your celebration extraordinary.',
  desc: {
     title: "Small Moments, Grand Impact",
@@ -105,7 +105,7 @@ export const services: IService[] = [
 {
   link: "personalisation_gifting",
   title: "personalisation & gifting",
-  thumbnail: '/images/home/services/personalization.png',
+  thumbnail: '/images/home/services/personalisation.png',
   overview: 'We ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.',
  desc: {
     title: "Gifts as Unique as You.",
@@ -192,7 +192,7 @@ export const services: IService[] = [
 {
   link: "home_property_management",
   title: "Home & Property Management",
-  thumbnail: '/images/home/services/home_and_property.png',
+  thumbnail: '/images/home/services/home.png',
   overview: 'We manage design, maintenance, and renovations to keep your home luxurious and pristine.',
  desc: {
     title: "Your Home, Perfectly Curated.",
@@ -214,7 +214,7 @@ export const services: IService[] = [
 {
   link: "day_to_day_errands",
   title: "Day-to-Day errands",
-  thumbnail: '/images/home/services/fashion.png',
+  thumbnail: '/images/home/services/errand.png',
   overview: 'Our team offers discreet, efficient service, making your daily life effortless.',
  desc: {
     title: "Luxury in the Everyday.",
@@ -235,7 +235,7 @@ export const services: IService[] = [
 {
   link: "shaped_education",
 title: "education",
-thumbnail: '/images/home/services/sourcing.png',
+thumbnail: '/images/home/services/education.png',
 overview: 'We are designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences.',
 desc: {
   title: "Empowering Teams to Redefine Luxury Service",
