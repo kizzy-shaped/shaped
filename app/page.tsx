@@ -171,7 +171,7 @@ function Hero() {
         </Link>
       </div> */}
       <div className="w-full h-full flex items-center justify-center absolute top-0 left-0">
-        <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] wmin_lg:absolute wmin_lg:bottom-[7%] wmin_lg:left-0 wmax_xl:left-[5%] wmin_lg:z-[3]">
+        <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] wmin_lg:absolute wmin_lg:bottom-[20%] wmin_lg:left-0 wmax_xl:left-[5%] wmin_lg:z-[3]">
           <span
             className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-bold text-center"
             style={{ fontWeight: "bolder" }}
