@@ -46,9 +46,11 @@ function Hero() {
 const TransitionConatiner = ({
   condion,
   text,
+  link
 }: {
   condion?: boolean;
   text: string;
+  link: string;
 }) => (
   <div
     className="transition-container w-full h-1/2 flex flex-col items-center justify-end pb-[2.5em] absolute bottom-0 left-0 z-10 bg-gradient-to-b from-[#00000010] to-[#000000] transition-all duration-75 ease-in"
@@ -57,12 +59,12 @@ const TransitionConatiner = ({
       bottom: condion ? 0 : -30,
     }}
   >
-    <span className="w-fit h-fit italic text-white font-bold text-[32px]">
+    <span className="w-fit h-fit text-white font-bold text-[32px]">
       {text}
     </span>
-    <span className="w-fit h-fit flex items-center gap-[0.5em] text-white font-medium text-[24px]">
+    <Link href={`/services?serviceId=${link}`} className="w-fit h-fit flex items-center gap-[0.5em] text-white font-medium text-[24px]">
       <ArrowRight className="text-white" /> Learn More
-    </span>
+    </Link>
   </div>
 );
 
@@ -108,11 +110,12 @@ function Gallery() {
         >
           <img
             className="w-full h-full bg-cover"
-            src="/images/fashion/image1.png"
+            src="/images/fashion/gallery1.png"
             alt=""
           />
 
           <TransitionConatiner
+          link="styling_services"
             text="Styling Services"
             condion={currentGalleyIndex == 0}
           />
@@ -124,11 +127,12 @@ function Gallery() {
         >
           <img
             className="w-full h-full bg-cover"
-            src="/images/fashion/image2.png"
+            src="/images/fashion/gallery2.png"
             alt=""
           />
 
           <TransitionConatiner
+            link="personal_shopping"
             text="Personal Shopping"
             condion={currentGalleyIndex == 1}
           />
@@ -147,11 +151,12 @@ function Gallery() {
         >
           <img
             className="w-full h-full bg-cover"
-            src="/images/fashion/image3.png"
+            src="/images/fashion/gallery3.png"
             alt=""
           />
 
           <TransitionConatiner
+          link="bespoke_garment_creation"
             text="Bespoke Garment Creation"
             condion={currentGalleyIndex == 2}
           />
@@ -163,11 +168,12 @@ function Gallery() {
         >
           <img
             className="w-full h-full bg-cover"
-            src="/images/fashion/image4.png"
+            src="/images/fashion/gallery4.png"
             alt=""
           />
 
           <TransitionConatiner
+          link="alteration_services"
             text="Alteration Services"
             condion={currentGalleyIndex == 3}
           />
@@ -184,11 +190,12 @@ function Gallery() {
           className="w-[90vw] h-full relative">
             <img
               className="w-full h-full bg-cover"
-              src="/images/fashion/image1.png"
+              src="/images/fashion/gallery1.png"
               alt=""
             />
 
             <TransitionConatiner
+            link="styling_services"
               text="Styling Services"
               condion={ isVisible[`service-0`]  as unknown as boolean}
             />
@@ -199,11 +206,12 @@ function Gallery() {
           className="w-[90vw] h-full relative">
             <img
               className="w-full h-full bg-cover"
-              src="/images/fashion/image2.png"
+              src="/images/fashion/gallery2.png"
               alt=""
             />
 
             <TransitionConatiner
+            link="personal_shopping"
               text="Personal Shopping"
               condion={ isVisible[`service-1`]  as unknown as boolean}
             />
@@ -214,11 +222,12 @@ function Gallery() {
           className="w-[90vw] h-full relative">
             <img
               className="w-full h-full bg-cover"
-              src="/images/fashion/image3.png"
+              src="/images/fashion/gallery3.png"
               alt=""
             />
 
             <TransitionConatiner
+            link="bespoke_garment_creation"
               text="Bespoke Garment Creation"
               condion={ isVisible[`service-2`]  as unknown as boolean}
             />
@@ -229,11 +238,12 @@ function Gallery() {
           className="w-[90vw] h-full relative">
             <img
               className="w-full h-full bg-cover"
-              src="/images/fashion/image4.png"
+              src="/images/fashion/gallery4.png"
               alt=""
             />
 
             <TransitionConatiner
+            link="alteration_services"
               text="Alteration Services"
               condion={ isVisible[`service-3`]  as unknown as boolean}
             />

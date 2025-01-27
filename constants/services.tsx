@@ -28,10 +28,10 @@ export const services: IService[] = [
   heroImage: "/images/services/private/hero_img.png",
   // heroImage: "/images/services_base_imgs/private_corporate.jpg",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
+    "/images/services/private/gallery1.png",
+    "/images/services/private/gallery2.png",
+    "/images/services/private/gallery3.png",
+    "/images/services/private/gallery4.png",
   ],
   formHeadline: 'Crafting Moments That Matter'
 },
