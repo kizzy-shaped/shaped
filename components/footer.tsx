@@ -62,9 +62,13 @@ function Footer() {
                             ].map(({ label, link }, index) => (<LinkSubtitleTile link={`${link}`} text={label} key={index} />))}
 
                             <div className="flex gap-[7px]">
+                                <Link href={'https://www.instagram.com/shapedservices/'} target="_blank">
                                 <FaInstagram className="w-[26px] h-[26px]" color="#AFAFAF" />
+                                </Link>
 
+                                <Link href={'https://www.instagram.com/shapedservices/'} target="_blank">
                                 <FiFacebook className="w-[26px] h-[26px]" color="#AFAFAF" />
+                                </Link>
                             </div>
                         </div>
                     </div>
