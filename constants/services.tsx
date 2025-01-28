@@ -86,7 +86,7 @@ export const services: IService[] = [
     // desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
     desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
   },
-  heroImage: "/images/services/intimate_gathering/hero_img.png",
+  heroImage: "/images/services/intimate/hero_img.png",
   // heroImage: "/images/services_base_imgs/intimate.jpg",
   galleryImages: [
   ],
@@ -104,7 +104,7 @@ export const services: IService[] = [
     // desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
     desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
   },
-  heroImage: "/images/services/personalization/hero_img.png",
+  heroImage: "/images/services/personalisation/hero_img.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
     "/images/home/services/styling.png",
@@ -129,10 +129,6 @@ export const services: IService[] = [
   heroImage: "/images/services/events/hero_img.png",
   // heroImage: "/images/services_base_imgs/event.jpg",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
   ],
   formHeadline:'Let’s Bring Your Vision to Life'
 },
@@ -152,8 +148,6 @@ export const services: IService[] = [
   galleryImages: [
     "/images/services/sourcing/gallery1.png",
     "/images/services/sourcing/gallery2.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
   ],
   formHeadline:'Let Us Source the Extraordinary for You'
 },
@@ -169,13 +163,9 @@ export const services: IService[] = [
     // desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
     desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
   },
-  heroImage: "/images/fashion/hero_img.png",
+  heroImage: "/images/services/lifestyle/hero_img.png",
   // heroImage: "/images/services_base_imgs/lifestyle.jpg",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/services/lifestyle_concierge/gallery3.png",
-    "/images/home/services/alteration.png",
   ],
   formHeadline: 'Your Every Need, Seamlessly Managed'
 },
@@ -191,13 +181,13 @@ export const services: IService[] = [
     // desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
     desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
   },
-  heroImage: "/images/services/home_property/hero_img.png",
+  heroImage: "/images/services/home/hero_img.png",
   // heroImage: "/images/services_base_imgs/home_property.jpg",
   galleryImages: [
-    "/images/services/home_property/gallery1.png",
-    "/images/services/home_property/gallery2.png",
-    "/images/services/home_property/gallery3.png",
-    "/images/services/home_property/gallery4.png",
+    "/images/services/home/gallery1.png",
+    "/images/services/home/gallery2.png",
+    "/images/services/home/gallery3.png",
+    "/images/services/home/gallery4.png",
   ],
   formHeadline:'Luxury Living Starts at Home'
 },
@@ -213,13 +203,9 @@ export const services: IService[] = [
     // desc: "AFrom grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
     desc: "From grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
   },
-  heroImage: "/images/fashion/hero_img.png",
+  heroImage: "/images/services/errand/hero_img.png",
   // heroImage: "/images/services_base_imgs/errands.jpg",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
   ],
 },
 // Day to day errands 

@@ -4,7 +4,7 @@ import Container from "@/components/container";
 import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { Suspense, useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
-import { IService, services } from "@/constants/services";
+import { fashion_services, IService, services } from "@/constants/services";
 import exp from "constants";
 
 function ServicePage() {
@@ -12,7 +12,7 @@ function ServicePage() {
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
 
-  const service = services.find(
+  const service = services.concat(fashion_services).find(
     (service) => service.link === serviceId
   ) as IService;
 
