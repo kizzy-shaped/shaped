@@ -24,7 +24,7 @@ function ServicePage() {
 
       <AboutDesc service={service} />
 
-      {serviceId == ("styling_services" as any) && <MonthStyle />}
+      {/* {serviceId == ("styling_services" as any) && <MonthStyle />} */}
 
       {serviceId == ("styling_services" as any) && (
         <div className="w-full wmin_md:h-[3em] wmax_md:h-[1.5em] bg-black"></div>
