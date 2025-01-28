@@ -678,9 +678,9 @@ export function ClientsFeedback() {
                   ))}
                 </div>
 
-                <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[14px] font-semibold uppercase">
+                {/* <div className="text-white wmin_lg:text-[20px] wmax_lg:text-[14px] font-semibold uppercase">
                   {name}
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
