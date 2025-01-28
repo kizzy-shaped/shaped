@@ -97,7 +97,7 @@ function Gallery({ service }: { service: IService }) {
       <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
         {service?.galleryImages.map((item, index) => (
           <div
-            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative"
+            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[500px] relative"
             key={index}
           >
             <img className={`w-full h-full object-cove`} src={item} alt="" />

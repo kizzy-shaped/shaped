@@ -441,7 +441,7 @@ export function Services() {
             index
           ) => (
             <div
-              className={`col-span-1 wmin_md:h-[75vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[75vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] relative overflow-hidden rounded-[24px] bg-red-700`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
@@ -462,8 +462,8 @@ export function Services() {
                 />
               </div>
 
-              <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
-                <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
+              <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a bg-green-700 flex flex-col justify-between py-[1.5em] px-[2em]">
+                <div className="w-full h-fit bg-purple-700 flex flex-col gap-[4px] justify-end relative">
                   <div className="text-[24px] font-medium text-white uppercase">
                     {title}
                   </div>

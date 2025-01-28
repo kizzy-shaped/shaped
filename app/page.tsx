@@ -277,17 +277,17 @@ function Services() {
             index
           ) => (
             <div
-              className={`col-span-1 wmin_md:h-[77vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5_5.5fr] relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[65vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] justify-start relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
               style={{
                 opacity: isVisible[`service-${index}`] ? 1 : 0.85,
-                transform: isVisible[`service-${index}`]
-                  ? "translateY(0)"
-                  : "translateY(20px)",
-                transition:
-                  "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                // transform: isVisible[`service-${index}`]
+                //   ? "translateY(0)"
+                //   : "translateY(20px)",
+                // transition:
+                //   "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
               }}
             >
               <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
@@ -300,11 +300,11 @@ function Services() {
 
               <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1em] px-[2em]">
                 <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                  <div className="wmin_3xl:text-[24px] wmin_lg:wmax_3xl:text-[22px] font-bold text-white uppercase">
+                  <div className="wmin_3xl:text-[24px] text-[20px] font-medium text-white uppercase">
                     {title}
                   </div>
 
-                  <div className="wmin_3xl:text-[20px] wmin_lg:wmax_3xl:text-[18px] font-bold text-[#9C9C9C]">
+                  <div className="wmin_3xl:text-[20px] text-[16px] font-medium text-[#9C9C9C]">
                     {overview}
                   </div>
                 </div>
@@ -313,7 +313,7 @@ function Services() {
                   onMouseEnter={() => setHovered(index)}
                   onMouseLeave={() => setHovered(null)}
                   href={`/services?serviceId=${link}`}
-                  className="wmin_3xl:text-[22px] wmin_lg:wmax_3xl:text-[20px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                  className="wmin_3xl:text-[22px] text-[18px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                 >
                   Learn More
                   <FiArrowRight
