@@ -10,7 +10,7 @@ function Page() {
 
       <MonthStyle />
 
-      <Gallery />
+      {/* <Gallery /> */}
 
       <Partners />
 
@@ -33,7 +33,7 @@ function Hero() {
         </span>
       </div> */}
 
-      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[7%] left-0 wmax_xl:left-[5%] z-[3]">
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute wmin_lg:bottom-[20%] bottom-[30%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[26px] wmin_xl:text-[48px] font-bold text-center uppercase" style={{fontWeight:'bolder'}}>
         our portfolio
         </span>

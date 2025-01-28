@@ -821,7 +821,7 @@ export function ContactFormModal() {
           <div className="flex flex-col gap-[12px]">
             <div className="w-full flex items-center justify-between">
               <div className="wmin_md:text-[28px] wmax_md:text-[20px]  font-semibold text-white uppercase">
-                Ready to elevate your style?
+                Become a member
               </div>
 
               <IoIosCloseCircle
