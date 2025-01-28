@@ -33,12 +33,16 @@ function Hero() {
 
   return (
     // <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/showcase_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-[url(/images/fashion/showcase_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative bg-[url(/images/fashion/showcase_img.png)] bg-cover bg-no-repeat wmax_lg:bg-center">
       <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute bottom-[4%] left-0 wmax_xl:left-[5%] z-[3]">
         <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center">
           FASHION SERVICES
         </span>
       </div>
+
+       {/* Overlay */}
+       <div className="w-full h-full bg-black bg-opacity-50"></div>
+      {/* Overlay */}
     </div>
   );
 }

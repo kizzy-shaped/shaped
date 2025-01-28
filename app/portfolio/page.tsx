@@ -24,7 +24,7 @@ export default Page;
 function Hero() {
   return (
     <div
-      className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] wmax_lg:relative bg-cover bg-no-repeat wmax_lg:bg-center flex items-center justify-center"
+      className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative bg-cover bg-no-repeat wmax_lg:bg-center flex items-center justify-center"
       style={{ backgroundImage: `url(/images/portfolio/hero_img.png)` }}
     >
       {/* <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px]">
@@ -38,6 +38,10 @@ function Hero() {
         our portfolio
         </span>
         </div>
+
+         {/* Overlay */}
+      <div className="w-full h-full bg-black bg-opacity-50"></div>
+      {/* Overlay */}
     </div>
   );
 }

@@ -11,6 +11,6 @@ export const navigation = [
         dropdown: services.filter(service => service.link !== 'education')
     },
     { label: 'PORTFOLIO', link: '/portfolio' },
-    { label: 'EDUCATION', link: '/education' },
-    // { label: 'EDUCATION', link: '/services?serviceId=education' },
+    // { label: 'EDUCATION', link: '/education' },
+    { label: 'EDUCATION', link: '/services?serviceId=education' },
 ];
