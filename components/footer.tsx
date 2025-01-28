@@ -66,7 +66,7 @@ function Footer() {
                                 <FaInstagram className="w-[26px] h-[26px]" color="#AFAFAF" />
                                 </Link>
 
-                                <Link href={'https://www.instagram.com/shapedservices/'} target="_blank">
+                                <Link href={'https://www.facebook.com/profile.php?id=61559023511089&mibextid=wwXIfr'} target="_blank">
                                 <FiFacebook className="w-[26px] h-[26px]" color="#AFAFAF" />
                                 </Link>
                             </div>
