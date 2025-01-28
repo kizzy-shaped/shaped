@@ -90,13 +90,13 @@ function Gallery({ service }: { service: IService }) {
 
   return (
     <div className="w-full h-fit bg-black">
-      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
+      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
         {service?.galleryImages.map((item, index) => (
           <div
-            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] relative"
+            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative"
             key={index}
           >
-            <img className="w-full h-full object-cover" src={item} alt="" />
+            <img className={`w-full h-full object-cove`} src={item} alt="" />
           </div>
         ))}
       </Container>

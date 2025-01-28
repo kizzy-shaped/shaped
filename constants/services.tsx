@@ -107,10 +107,6 @@ export const services: IService[] = [
   heroImage: "/images/services/personalisation/hero_img.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
-    "/images/home/services/styling.png",
-    "/images/home/services/personal.png",
-    "/images/home/services/bespoke_garment.png",
-    "/images/home/services/alteration.png",
   ],
   formHeadline:'Make Every Gift Unforgettable'
 },
@@ -248,10 +244,8 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/styling/hero_img.png",
     galleryImages: [
-      "/images/services/styling/gallery1.png",
-      // "/images/home/showcase_img.png",
       "/images/services/styling/gallery3.png",
-      // "/images/services/styling/gallery4.png",
+      "/images/services/styling/gallery1.png",
     ],
   },
   // Styling
@@ -267,10 +261,10 @@ export const fashion_services: IService[] = [
       desc: "With SHAPED’s personal shopping service, finding the perfect item has never been easier. Our team of experts will guide you through the latest collections, sourcing everything from high-end pieces to exclusive fashion finds that align with your unique taste and lifestyle. Whether you're shopping for everyday essentials or a statement piece for a special occasion, we ensure you’re always a step ahead of the trends.",
     },
     // heroImage: "/images/services/personal/hero_img.png",
-    heroImage: "/images/services_base_imgs/personalisation.jpg",
+    heroImage: "/images/services/personal/hero_img.png",
     galleryImages: [
-      "/images/home/showcase_img.png",
-      "/images/services/personal/hero_img.png",
+      "/images/services/personal/gallery1.png",
+      "/images/services/personal/gallery2.png",
       "/images/services/personal/gallery3.png",
       "/images/services/personal/gallery4.png",
     ],
