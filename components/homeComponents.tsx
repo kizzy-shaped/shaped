@@ -421,10 +421,10 @@ export function Services() {
             OUR SERVICES
           </div>
 
-          <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
+          {/* <div className="wmin_md:text-[24px] wmax_md:text-[14px] font-bold text-white">
             From styling to bespoke services, we've got you <br />
             covered for every occasion.
-          </div>
+          </div> */}
         </div>
 
         {services.map(
@@ -464,18 +464,18 @@ export function Services() {
 
               <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1.5em] px-[2em]">
                 <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                  <div className="text-[24px] font-bold text-white uppercase">
+                  <div className="text-[24px] font-medium text-white uppercase">
                     {title}
                   </div>
 
-                  <div className="text-[20px] font-bold text-[#9C9C9C]">
+                  <div className="text-[20px] font-medium text-[#9C9C9C]">
                     {overview}
                   </div>
                 </div>
 
                 <Link
                   href={`/services?serviceId=${link}`}
-                  className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                  className="text-[22px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                 >
                   Learn More
                   <FiArrowRight className={`w-[28px] h-[28px] text-white`} />
@@ -518,18 +518,18 @@ export function Services() {
 
                   <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[3em] py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                      <div className="text-[20px] font-bold text-white uppercase">
+                      <div className="text-[20px] font-medium text-white uppercase">
                         {title}
                       </div>
 
-                      <div className="text-[14px] font-bold text-[#9C9C9C]">
+                      <div className="text-[14px] font-medium text-[#9C9C9C]">
                         {desc?.title}
                       </div>
                     </div>
 
                     <Link
                       href={`/services?serviceId=${link}`}
-                      className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                      className="text-[22px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                     >
                       Learn More
                       <FiArrowRight
