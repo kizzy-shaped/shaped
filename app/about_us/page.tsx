@@ -13,11 +13,13 @@ const About = () => {
     <div className="bg-white">
       <Hero />
 
-      <AboutDesc />
+      {/* <AboutDesc /> */}
 
       <Gallery />
 
       {/* <Partners /> */}
+
+      <HowWeWork />
 
       <ClientsFeedbackContactForm />
     </div>
@@ -130,16 +132,16 @@ function Gallery() {
           "/images/about/gallery1.png",
           "/images/about/gallery2.png",
           `
-We create seamless, luxurious experiences tailored to your needs, providing access to the finest services and exclusive opportunities. Whether it’s a red-carpet look or a private getaway, we simplify your life with impeccable service and attention to every detail.`,
+We create seamless, luxurious experiences tailored to your needs, providing access to the finest services and exclusive opportunities. Whether it’s a red-carpet look or a private getaway, we simplify your life with impeccable service and attention to every detail.`
         ].map((item, index) => (
           <div
-            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative"
+            className={`col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative ${index ==  2? 'wmax_lg:order-4':'wmax_lg:order-2'} ${index ==  3? 'wmax_lg:order-3':'wmax_lg:order-1'}`}
             key={index}
           >
             {item.includes("/images/about/") ? (
               <img className={`w-full h-full object-cove`} src={item} alt="" />
             ) : (
-              <div className="w-full h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10">
+              <div className={`w-full h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10`}>
                 <div className="text-white text-center w-fit h-fit">{item}</div>
               </div>
             )}
@@ -148,4 +150,25 @@ We create seamless, luxurious experiences tailored to your needs, providing acce
       </Container>
     </div>
   );
+}
+
+function HowWeWork() {
+
+
+  return (
+    <div className="w-full h-fit bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-white">
+    <Container className="flex flex-col gap-4">
+     <div className="text-[24px] wmin_lg:text-[38px] font-semibold">How We Work</div>
+
+     <div className="wmin_lg:w-[80%] text-[14px] wmin_lg:text-[20px] font-semibold">
+     At SHAPED, you’ll have a dedicated lifestyle manager committed to making life effortless. From personal shopping to exclusive event planning, we handle every detail with care, so you can enjoy the luxury you deserve.
+     </div>
+
+     <div className="w-full h-[250px] wmin_lg:h-[550px] flex items-center justify-center">
+        <img className="w-full h-full object-cover hidden wmin_lg:inline-block" src="/images/about/how_we_work.png" alt=""/>
+        <img className="w-full h-full wmin_lg:hidden inline-block" src="/images/about/how_we_work_mobile.png" alt=""/>
+     </div>
+    </Container>
+  </div>
+  )
 }

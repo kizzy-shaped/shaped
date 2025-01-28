@@ -41,7 +41,7 @@ function Footer() {
                             {[
                                 { label: 'Fashion', link: '/fashion' },
                                 { label: 'Portfolio', link: '/portfolio' },
-                                { label: 'Education', link: '/services?serviceId=shaped_education' },
+                                { label: 'Education', link: '/services?serviceId=education' },
                                 // { label: 'Bespoke Garment Creation', link: 'bespoke_garment_creation' },
                                 // { label: 'And so on', link: 'fashion_services' },
                             ].map(({ label, link }, index) => (<LinkSubtitleTile link={link} text={label} key={index} />))}

@@ -17,7 +17,7 @@ export const services: IService[] = [
 //   Private & corporate events 
 {
   link: "private_coporate_events",
-  title: "private & coporate events",
+  title: "private & corporate events",
   thumbnail: '/images/home/services/private.png',
   overview: 'We design every detail of your event to perfection, keeping you at the center.',
  desc: {
@@ -200,6 +200,7 @@ export const services: IService[] = [
     desc: "From grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
   },
   heroImage: "/images/services/errand/hero_img.png",
+  formHeadline:'Simplify Your Life, One Task at a Time',
   // heroImage: "/images/services_base_imgs/errands.jpg",
   galleryImages: [
   ],
@@ -207,7 +208,7 @@ export const services: IService[] = [
 // Day to day errands 
 // Education
 {
-  link: "shaped_education",
+  link: "education",
 title: "education",
 thumbnail: '/images/home/services/education.png',
 overview: 'We are designed to refine the expertise of retail teams in styling, personal shopping, and bespoke experiences.',

@@ -8,9 +8,9 @@ export const navigation = [
      },
     {
         label: 'SERVICES', link: '/services',
-        dropdown: services
+        dropdown: services.filter(service => service.link !== 'education')
     },
     { label: 'PORTFOLIO', link: '/portfolio' },
-    // { label: 'EDUCATION', link: '/education' },
-    // { label: 'EDUCATION', link: '/services?serviceId=shaped_education' },
+    { label: 'EDUCATION', link: '/education' },
+    // { label: 'EDUCATION', link: '/services?serviceId=education' },
 ];
