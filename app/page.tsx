@@ -350,7 +350,7 @@ function Services() {
                 index
               ) => (
                 <div
-                  className={`w-[90vw] h-[27em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[0.5fr_1fr] relative overflow-hidden rounded-[24px]`}
+                  className={`w-[90vw] h-[20em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[0.5fr_0.6fr] relative overflow-hidden rounded-[24px]`}
                   key={index}
                   id={`service-${index}`}
                   data-reveal-on-scroll
@@ -368,9 +368,9 @@ function Services() {
                     />
                   </div>
 
-                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-[1em] justify-between py-[1em] px-[1.5em]">
+                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-2 wmin_lg:gap-[1em] justify-between py-1 wmin_lg:py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                      <div className="text-[20px] font-bold text-white uppercase">
+                      <div className="text-[18px] font-bold text-white uppercase">
                         {title}
                       </div>
 
@@ -386,7 +386,7 @@ function Services() {
                         setHovered(hovered == index ? null : index)
                       }
                       href={`/services?serviceId=${link}`}
-                      className="text-[22px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                      className="text-[18px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                     >
                       Learn More
                       <FiArrowRight

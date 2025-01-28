@@ -75,11 +75,11 @@ export function About() {
   // }, [isMobile])
 
   const isVisible = useMultiRevealOnScroll({
-    threshold: 0.1,  // Trigger reveal when 50% of an element is visible
-    offset: 0,       // No offset
-    rootMargin: '0px', // Default margin
+    threshold: 0.1, // Trigger reveal when 50% of an element is visible
+    offset: 0, // No offset
+    rootMargin: "0px", // Default margin
   });
- 
+
   const [hovered, setHovered] = useState(false);
   const interval = 2000;
   const items = [
@@ -91,12 +91,15 @@ export function About() {
   const currentIndex = useCarousel(items, interval);
 
   return (
-    <div className={`w-full wmin_lg:h-fit bg-black`} id="about" data-reveal-on-scroll 
-    style={{
-      opacity: isVisible[`about`] ? 1 : 0.85,
-      transform: isVisible[`about`] ? 'translateY(0)' : 'translateY(20px)',
-      transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-    }}
+    <div
+      className={`w-full wmin_lg:h-fit bg-black`}
+      id="about"
+      data-reveal-on-scroll
+      style={{
+        opacity: isVisible[`about`] ? 1 : 0.85,
+        transform: isVisible[`about`] ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+      }}
     >
       <Container className="h-fit wmin_lg:grid wmin_lg:grid-cols-2 gap-[3em] wmax_lg:flex wmax_lg:flex-col wmin_lg:pt-[11vh] wmax_lg:pt-[3vh]">
         <div className="col-span-1 h-full flex flex-col gap-[32px] justify-center wmax_xl:items-center">
@@ -145,7 +148,9 @@ export function About() {
               key={index}
             >
               <img
-                className={`w-full h-full object-cover ${index === currentIndex?'animate-fadeIn':'animate-fadeOut'} ease-in-out delay-0 transition-all rounded-[24px]`}
+                className={`w-full h-full object-cover ${
+                  index === currentIndex ? "animate-fadeIn" : "animate-fadeOut"
+                } ease-in-out delay-0 transition-all rounded-[24px]`}
                 style={{
                   display: index === currentIndex ? "inline-block" : "none",
                   transition: "all 0.35 ease-in-out",
@@ -402,12 +407,11 @@ export function MonthStyle() {
 export function Services() {
   const router = useRouter();
   const isVisible = useMultiRevealOnScroll({
-    threshold: 0.5,  // Trigger reveal when 50% of an element is visible
-    offset: 0,       // No offset
-    rootMargin: '0px', // Default margin
+    threshold: 0.5, // Trigger reveal when 50% of an element is visible
+    offset: 0, // No offset
+    rootMargin: "0px", // Default margin
   });
 
- 
   return (
     <div className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]">
       {/* Deskop */}
@@ -424,16 +428,30 @@ export function Services() {
         </div>
 
         {services.map(
-          ({ desc, galleryImages, heroImage, link, title, overview, thumbnail }, index) => (
+          (
+            {
+              desc,
+              galleryImages,
+              heroImage,
+              link,
+              title,
+              overview,
+              thumbnail,
+            },
+            index
+          ) => (
             <div
               className={`col-span-1 wmin_md:h-[75vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
-              data-reveal-on-scroll 
+              data-reveal-on-scroll
               style={{
                 opacity: isVisible[`service-${index}`] ? 1 : 0,
-                transform: isVisible[`service-${index}`] ? 'translateY(0)' : 'translateY(50px)',
-                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                transform: isVisible[`service-${index}`]
+                  ? "translateY(0)"
+                  : "translateY(50px)",
+                transition:
+                  "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
               }}
             >
               <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
@@ -470,7 +488,8 @@ export function Services() {
       {/* Deskop */}
 
       {/* Mobile */}
-      <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">]        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
+      <Container className="wmin_md:hidden grid wmin_lg:grid-cols-3 wmin_lg:gap-[32px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
+        <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
           <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-bold text-white">
             OUR SERVICES
           </div>
@@ -484,7 +503,7 @@ export function Services() {
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
             {services.map(
-              ({ desc, galleryImages, heroImage, link, title }, index) => (
+              ({ desc, galleryImages, thumbnail, link, title }, index) => (
                 <div
                   className={`w-[90vw] h-[fit] bg-green-700 wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[30vh_30vh] relative overflow-hidden rounded-[24px]`}
                   key={index}
@@ -492,7 +511,7 @@ export function Services() {
                   <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img
                       className="w-full h-full max-h-full object-cover"
-                      src={heroImage}
+                      src={thumbnail}
                       alt=""
                     />
                   </div>
@@ -540,11 +559,10 @@ interface IInputTile {
 }
 
 export function ClientsFeedback() {
-  
   const isVisible = useMultiRevealOnScroll({
-    threshold: 0.25,  // Trigger reveal when 50% of an element is visible
-    offset: 0,       // No offset
-    rootMargin: '0px', // Default margin
+    threshold: 0.25, // Trigger reveal when 50% of an element is visible
+    offset: 0, // No offset
+    rootMargin: "0px", // Default margin
   });
 
   return (
@@ -567,13 +585,16 @@ export function ClientsFeedback() {
               <div
                 className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] wmin_md:h-[570px] h-fit bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
-                data-reveal-on-scroll 
+                data-reveal-on-scroll
                 id={`client-${index}`}
-              style={{
-                opacity: isVisible[`client-${index}`] ? 1 : 0.85,
-                transform: isVisible[`client-${index}`] ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-              }}
+                style={{
+                  opacity: isVisible[`client-${index}`] ? 1 : 0.85,
+                  transform: isVisible[`client-${index}`]
+                    ? "translateY(0)"
+                    : "translateY(20px)",
+                  transition:
+                    "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                }}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
@@ -620,13 +641,14 @@ export function ClientsFeedback() {
                 className="wmin_md:w-[529px] wmax_md:w-[calc(90vw-20px)] h-[33em] bg-[#1a1a1a] flex flex-col wmin_md:gap-[32px] wmax_md:gap-[20px] items-center justify-center wmin_md:p-[3em] wmax_md:p-[1.5em] rounded-[24px] shadow-l shadow-[#B6B6B633 wmin_md:mr-[28px] wmax_md:mr-[20px]"
                 key={index}
                 id={`client-${index}`}
-                data-reveal-on-scroll 
-              style={{
-                opacity: isVisible[`client-${index}`] ? 1 : 0.85,
-                // fontSize: isVisible[`client-${index}`] ? '1rem' : '0.8rem',
-                // transform: isVisible[`client-${index}`] ? 'scale(1)' : 'scale(0.98)',
-                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-              }}
+                data-reveal-on-scroll
+                style={{
+                  opacity: isVisible[`client-${index}`] ? 1 : 0.85,
+                  // fontSize: isVisible[`client-${index}`] ? '1rem' : '0.8rem',
+                  // transform: isVisible[`client-${index}`] ? 'scale(1)' : 'scale(0.98)',
+                  transition:
+                    "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                }}
               >
                 {/* <div className="col-span-1 h-full">
                   <img className="w-[100%] h-[100%]" src={img} alt="" />
@@ -669,33 +691,37 @@ export function ClientsFeedback() {
   );
 }
 
-export function ContactForm({headline = 'Become a member'}:{headline?: string}) {
+export function ContactForm({
+  headline = "Become a member",
+}: {
+  headline?: string;
+}) {
   const { showModal, hideModal } = useModal();
 
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      country: "",
-      favouriteBrand: "",
-    },
-    validationSchema: new ObjectSchema({
-      name: string().required("Name is required"),
-      email: string().required("Email is required"),
-      phoneNumber: number(),
-      country: string().required("Country is required"),
-      favouriteBrand: string(),
-    }),
-    onSubmit: (data) => {
-      console.log({data})
-      // hideModal();
-      showModal(<MessageSentModal />);
-    },
-  });
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    useFormik({
+      initialValues: {
+        name: "",
+        email: "",
+        phoneNumber: "",
+        country: "",
+        favouriteBrand: "",
+      },
+      validationSchema: new ObjectSchema({
+        name: string().required("Name is required"),
+        email: string().required("Email is required"),
+        phoneNumber: number(),
+        country: string().required("Country is required"),
+        favouriteBrand: string(),
+      }),
+      onSubmit: (data) => {
+        console.log({ data });
+        // hideModal();
+        showModal(<MessageSentModal />);
+      },
+    });
 
   const [hovered, setHovered] = useState(false);
-
 
   return (
     <div id="contact_us" className="w-full h-fit bg-black pl-[7.5%]">
@@ -712,7 +738,13 @@ export function ContactForm({headline = 'Become a member'}:{headline?: string}) 
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.name ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.name ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.name ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.name
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Name *"}
               type="text"
             />
@@ -720,7 +752,13 @@ export function ContactForm({headline = 'Become a member'}:{headline?: string}) 
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.email ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.email ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.email ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.email
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Email *"}
               type="email"
             />
@@ -736,7 +774,13 @@ export function ContactForm({headline = 'Become a member'}:{headline?: string}) 
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.country ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.country ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.country ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.country
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Country *"}
               type="text"
             />
@@ -750,7 +794,7 @@ export function ContactForm({headline = 'Become a member'}:{headline?: string}) 
             />
 
             <button
-              onClick={() =>handleSubmit()}
+              onClick={() => handleSubmit()}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${
@@ -785,27 +829,28 @@ export function ClientsFeedbackContactForm() {
 export function ContactFormModal() {
   const { showModal, hideModal } = useModal();
 
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      country: "",
-      favouriteBrand: "",
-    },
-    validationSchema: new ObjectSchema({
-      name: string().required("Name is required"),
-      email: string().required("Email is required"),
-      phoneNumber: number(),
-      country: string().required("Country is required"),
-      favouriteBrand: string(),
-    }),
-    onSubmit: (data) => {
-      console.log({data})
-      // hideModal();
-      showModal(<MessageSentModal />);
-    },
-  });
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    useFormik({
+      initialValues: {
+        name: "",
+        email: "",
+        phoneNumber: "",
+        country: "",
+        favouriteBrand: "",
+      },
+      validationSchema: new ObjectSchema({
+        name: string().required("Name is required"),
+        email: string().required("Email is required"),
+        phoneNumber: number(),
+        country: string().required("Country is required"),
+        favouriteBrand: string(),
+      }),
+      onSubmit: (data) => {
+        console.log({ data });
+        // hideModal();
+        showModal(<MessageSentModal />);
+      },
+    });
 
   const [hovered, setHovered] = useState(false);
 
@@ -892,12 +937,18 @@ export function ContactFormModal() {
               />
             </button>
           </div> */}
-           <div className="flex flex-col wmin_md:gap-[12px] wmax_md:gap-[9px]">
+          <div className="flex flex-col wmin_md:gap-[12px] wmax_md:gap-[9px]">
             <input
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.name ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.name ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.name ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.name
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Name *"}
               type="text"
             />
@@ -905,7 +956,13 @@ export function ContactFormModal() {
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.email ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.email ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.email ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.email
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Email *"}
               type="email"
             />
@@ -921,7 +978,13 @@ export function ContactFormModal() {
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${errors?.country ? 'border-b-red-600': 'border-b-[#D5D5D5]'} outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${errors?.country ? 'placeholder:text-red-600':'placeholder:text-[#9C9C9C]'}`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+                errors?.country ? "border-b-red-600" : "border-b-[#D5D5D5]"
+              } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
+                errors?.country
+                  ? "placeholder:text-red-600"
+                  : "placeholder:text-[#9C9C9C]"
+              }`}
               placeholder={"Your Country *"}
               type="text"
             />
@@ -935,7 +998,7 @@ export function ContactFormModal() {
             />
 
             <button
-              onClick={() =>handleSubmit()}
+              onClick={() => handleSubmit()}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`w-fit wmin_md:h-[60px] wmax_md:h-[40px] bg-white wmin_md:mt-[6vh] wmax_md:mt-[2vh] ${

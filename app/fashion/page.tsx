@@ -63,10 +63,10 @@ const TransitionConatiner = ({
       bottom: condion ? 0 : -30,
     }}
   >
-    <span className="w-fit h-fit text-white font-bold text-[32px]">
+    <span className="w-fit h-fit text-white font-bold text-[22px] wmin_lg:text-[32px]">
       {text}
     </span>
-    <Link href={`/services?serviceId=${link}`} className="w-fit h-fit flex items-center gap-[0.5em] text-white font-medium text-[24px]">
+    <Link href={`/services?serviceId=${link}`} className="w-fit h-fit flex items-center gap-[0.5em] text-white font-medium text-[18px] wmin_lg:text-[24px]">
       <ArrowRight className="text-white" /> Learn More
     </Link>
   </div>
@@ -77,7 +77,7 @@ function AboutDesc() {
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
         <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white">
-          Curated, Bespoke Fashion, Tailored Just for You.
+          Curated, Bespoke Fashion, Tailored Just for You
         </div>
 
         <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-white">
@@ -201,7 +201,8 @@ function Gallery() {
             <TransitionConatiner
             link="styling_services"
               text="Styling Services"
-              condion={ isVisible[`service-0`]  as unknown as boolean}
+              // condion={ isVisible[`service-0`]  as unknown as boolean}
+              condion={true  as unknown as boolean}
             />
           </div>
           <div 
@@ -217,7 +218,8 @@ function Gallery() {
             <TransitionConatiner
             link="personal_shopping"
               text="Personal Shopping"
-              condion={ isVisible[`service-1`]  as unknown as boolean}
+              // condion={ isVisible[`service-1`]  as unknown as boolean}
+              condion={true  as unknown as boolean}
             />
           </div>
           <div 
@@ -233,7 +235,8 @@ function Gallery() {
             <TransitionConatiner
             link="bespoke_garment_creation"
               text="Bespoke Garment Creation"
-              condion={ isVisible[`service-2`]  as unknown as boolean}
+              // condion={ isVisible[`service-2`]  as unknown as boolean}
+              condion={true  as unknown as boolean}
             />
           </div>
           <div 
@@ -249,7 +252,8 @@ function Gallery() {
             <TransitionConatiner
             link="alteration_services"
               text="Alteration Services"
-              condion={ isVisible[`service-3`]  as unknown as boolean}
+              // condion={ isVisible[`service-3`]  as unknown as boolean}
+              condion={true  as unknown as boolean}
             />
           </div>
         </div>
