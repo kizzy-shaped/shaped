@@ -224,7 +224,7 @@ galleryImages: [
   "/images/services/education/gallery3.png",
   "/images/services/education/gallery4.png",
 ],
-formHeadline:'Let’s Shape the Future of Your Team—Contact Us'
+formHeadline:'Let’s Shape the Future of Your Team'
 }
 // Education
   

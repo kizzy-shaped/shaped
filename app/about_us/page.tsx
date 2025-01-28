@@ -1,7 +1,10 @@
 "use client";
 
 import Container from "@/components/container";
-import { ClientsFeedbackContactForm, Partners } from "@/components/homeComponents";
+import {
+  ClientsFeedbackContactForm,
+  Partners,
+} from "@/components/homeComponents";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -34,8 +37,8 @@ function Hero() {
         alt=""
       />
 
-<div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute wmin_lg:bottom-[20%] bottom-[30%] left-0 wmax_xl:left-[5%] z-[3]">
-<span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center uppercase">
+      <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px] absolute wmin_lg:bottom-[20%] bottom-[30%] left-0 wmax_xl:left-[5%] z-[3]">
+        <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center uppercase">
           About Us
         </span>
         {/* <span className="text-white text-[48px] font-bold text-center">
@@ -47,28 +50,28 @@ function Hero() {
 }
 
 function AboutDesc() {
-
   return (
     <div className="w-full h-fit bg-black">
       <Container>
         <Container className="w-[80%] wmin_md:py-[8vh] wmax_md:py-[3vh] flex flex-col items-center wmin_lg:gap-[28px] wmax_lg:gap-[24px]">
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white text-center">
-            SHAPED is a luxury concierge service with over 12 years of experience,
-            offering bespoke solutions to elevate every aspect of your life.
-            From fashion styling and private events to travel arrangements and home
-            management, we handle the details, so you don't have to.
+            SHAPED is a luxury concierge service with over 12 years of
+            experience, offering bespoke solutions to elevate every aspect of
+            your life. From fashion styling and private events to travel
+            arrangements and home management, we handle the details, so you
+            don't have to.
           </div>
 
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white text-center">
             We create seamless, luxurious experiences tailored to your needs,
             providing access to the finest services and exclusive opportunities.
-            Whether it's a red-carpet look or a private getaway, we simplify your
-            life with impeccable service and attention to every detail.
+            Whether it's a red-carpet look or a private getaway, we simplify
+            your life with impeccable service and attention to every detail.
           </div>
 
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white text-center">
-            SHAPED is your partner in luxury, making life effortless, extraordinary,
-            and uniquely yours.
+            SHAPED is your partner in luxury, making life effortless,
+            extraordinary, and uniquely yours.
           </div>
         </Container>
       </Container>
@@ -77,10 +80,9 @@ function AboutDesc() {
 }
 
 function Gallery() {
-
   return (
     <div className="w-full h-fit bg-black">
-      <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
+      {/* <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
         <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white">
             With a decade of global expertise in fashion and styling, Shaped serves top clients in entertainment.
@@ -118,6 +120,31 @@ function Gallery() {
             />
           </div>
         </div>
+      </Container> */}{" "}
+      <Container
+        className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 wmin_md:grid-rows-2`}
+      >
+        {[
+          `
+          SHAPED is a luxury concierge service with over 12 years of experience, offering bespoke solutions to elevate every aspect of your life. From fashion styling and private events to travel arrangements and home management, we handle the details, so you don’t have to.`,
+          "/images/about/gallery1.png",
+          "/images/about/gallery2.png",
+          `
+We create seamless, luxurious experiences tailored to your needs, providing access to the finest services and exclusive opportunities. Whether it’s a red-carpet look or a private getaway, we simplify your life with impeccable service and attention to every detail.`,
+        ].map((item, index) => (
+          <div
+            className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative"
+            key={index}
+          >
+            {item.includes("/images/about/") ? (
+              <img className={`w-full h-full object-cove`} src={item} alt="" />
+            ) : (
+              <div className="w-full h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10">
+                <div className="text-white text-center w-fit h-fit">{item}</div>
+              </div>
+            )}
+          </div>
+        ))}
       </Container>
     </div>
   );
