@@ -76,11 +76,11 @@ function AboutDesc() {
   return (
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-grey-300">
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white">
           Curated, Bespoke Fashion, Tailored Just for You
         </div>
 
-        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-white">
+        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
           At SHAPED, we believe that your style should be as unique as you are.
           Our Fashion Services are designed to give you a seamless, luxurious
           experience—whether you're seeking expert styling, personal shopping,
