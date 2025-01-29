@@ -32,7 +32,7 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:bg-[url(/images/about/showcase_img.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:bg-[url(/images/about/showcase_img_mobile.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
       <img
         className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
         src="/images/about/showcase_img.png"
