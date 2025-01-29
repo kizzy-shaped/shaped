@@ -67,7 +67,7 @@ function AboutDesc({ service }: { service: IService }) {
   return (
     <div className="w-full h-fit bg-black">
       <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmax_lg:items-center wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white wmax_lg:text-center">
+        <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-grey-300 wmax_lg:text-center">
           {service?.desc.title}
         </div>
 
