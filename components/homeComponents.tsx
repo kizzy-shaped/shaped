@@ -874,9 +874,9 @@ export function ContactFormModal() {
                 className="text-white w-[40px] h-[40px]"
               />
             </div>
-            <div className="text-[20px] font-medium text-white">
+            {/* <div className="text-[20px] font-medium text-white">
               Become our client today.
-            </div>
+            </div> */}
           </div>
 
           {/* <div className="flex flex-col gap-[12px]">
