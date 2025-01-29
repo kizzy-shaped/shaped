@@ -168,7 +168,7 @@ function HowWeWork() {
      At SHAPED, you’ll have a dedicated lifestyle manager committed to making life effortless. From personal shopping to exclusive event planning, we handle every detail with care, so you can enjoy the luxury you deserve.
      </div>
 
-     <div className="w-full h-[250px] wmin_lg:h-[550px] flex items-center justify-center">
+     <div className="w-full h-[300px] wmin_lg:h-[550px] flex items-center justify-center">
         <img className="w-full h-full object-cover hidden wmin_lg:inline-block" src="/images/about/how_we_work.png" alt=""/>
         <img className="w-full h-full wmin_lg:hidden inline-block" src="/images/about/how_we_work_mobile.png" alt=""/>
      </div>
