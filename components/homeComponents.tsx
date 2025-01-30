@@ -35,33 +35,7 @@ export function Partners() {
   return (
     <div className="w-full wmin_lg:h-[196px] wmax_lg:h-[110px] bg-black">
       <Container className="flex items-center">
-        {/* <Marquee loop={0} speed={50} className="w-full h-fit flex">
-          {[
-            // { img: "/images/home/partners/caf.png" },
-            // { img: "/images/home/partners/nta.png" },
-            // { img: "/images/home/partners/teen_awards.png" },
-            // { img: "/images/home/partners/rocnation.png" },
-            // { img: "/images/home/partners/made_in_america.png" },
-            // { img: "/images/home/partners/pepsi.png" },
-            // { img: "/images/home/partners/smart.png" },
-            { img: "/images/portfolio/king_charles.jpeg" },
-            { img: "/images/portfolio/vogue.jpeg" },
-            { img: "/images/portfolio/britain.jpeg" },
-            { img: "/images/portfolio/fashion.jpeg" },
-            { img: "/images/portfolio/bet_star.jpeg" },
-            { img: "/images/portfolio/universal.jpeg" },
-            { img: "/images/portfolio/the_fashion.jpeg" },
-            { img: "/images/portfolio/nta.jpeg" },
-          ].map(({ img }, index) => (
-            <img
-              className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px]"
-              src={img}
-              alt=""
-              key={index}
-            />
-          ))}
-        </Marquee> */}
-        <div className="w-full h-fit flex flex-wrap gap-1 wmin_md:gap-2 wmin_md:gap-y-3">
+        <Marquee loop={0} speed={50} className="w-full h-fit flex">
           {[
             // { img: "/images/home/partners/caf.png" },
             // { img: "/images/home/partners/nta.png" },
@@ -87,7 +61,34 @@ export function Partners() {
               key={index}
             />
           ))}
-        </div>
+        </Marquee>
+        {/* <div className="w-full h-fit flex flex-wrap gap-1 wmin_md:gap-2 wmin_md:gap-y-3">
+          {[
+            // { img: "/images/home/partners/caf.png" },
+            // { img: "/images/home/partners/nta.png" },
+            // { img: "/images/home/partners/teen_awards.png" },
+            // { img: "/images/home/partners/rocnation.png" },
+            // { img: "/images/home/partners/made_in_america.png" },
+            // { img: "/images/home/partners/pepsi.png" },
+            // { img: "/images/home/partners/smart.png" },
+            { img: "/images/portfolio/bbc.jpeg" },
+            { img: "/images/portfolio/vogue.jpeg" },
+            { img: "/images/portfolio/crown.jpeg" },
+            { img: "/images/portfolio/good_morning.jpeg" },
+            { img: "/images/portfolio/bet_star.jpeg" },
+            { img: "/images/portfolio/universal.jpeg" },
+            { img: "/images/portfolio/sony.jpeg" },
+            { img: "/images/portfolio/vogue.jpeg" },
+            { img: "/images/portfolio/rocnation.jpeg" },
+          ].map(({ img }, index) => (
+            <img
+              className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px]"
+              src={img}
+              alt=""
+              key={index}
+            />
+          ))}
+        </div> */}
       </Container>
     </div>
   );
