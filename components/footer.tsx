@@ -124,7 +124,7 @@ function TitleTile({ text }: { text: string }) {
 
 
     return (
-        <div className="wmin_lg:text-[28px] wmax_lg:text-[16px] font-medium text-white uppercase">{text}</div>
+        <div className="wmin_lg:text-[22px] wmax_lg:text-[16px] font-medium text-white uppercase">{text}</div>
     )
 }
 
@@ -132,7 +132,7 @@ function SubtitleTile({ text, className = '' }: { text: string, className?: stri
 
 
     return (
-        <div className={`wmin_lg:text-[20px] wmax_lg:text-[12px] font-normal text-[#AFAFAF] ${className}`}>{text}</div>
+        <div className={`wmin_lg:text-[17px] wmax_lg:text-[12px] font-normal text-[#AFAFAF] ${className}`}>{text}</div>
     )
 }
 
@@ -140,6 +140,6 @@ function LinkSubtitleTile({ text, link }: { text: string, link: string }) {
 
 
     return (
-        <Link href={link} className="wmin_lg:text-[20px] wmax_lg:text-[12px] font-normal text-[#AFAFAF]">{text}</Link>
+        <Link href={link} className="wmin_lg:text-[17px] wmax_lg:text-[12px] font-normal text-[#AFAFAF]">{text}</Link>
     )
 }

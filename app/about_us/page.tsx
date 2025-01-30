@@ -170,7 +170,7 @@ function HowWeWork() {
 
      <div className="w-full h-[430px] wmin_lg:h-[550px] flex items-center justify-center">
         <img className="w-full h-full object-cover hidden wmin_lg:inline-block" src="/images/about/how_we_work.png" alt=""/>
-        <img className="w-full h-full wmin_lg:hidden inline-block" src="/images/about/how_we_work_mobile.png" alt=""/>
+        <img className="w-full h-auto wmin_lg:hidden inline-block" src="/images/about/how_we_work_mobile.png" alt=""/>
      </div>
     </Container>
   </div>
