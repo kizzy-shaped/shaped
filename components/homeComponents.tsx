@@ -61,7 +61,7 @@ export function Partners() {
             />
           ))}
         </Marquee> */}
-        <div className="w-full h-fit flex flex-wrap gap-1 wmin_md:gap-2">
+        <div className="w-full h-fit flex flex-wrap gap-1 wmin_md:gap-2 wmin_md:gap-y-3">
           {[
             // { img: "/images/home/partners/caf.png" },
             // { img: "/images/home/partners/nta.png" },
