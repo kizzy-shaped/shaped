@@ -277,7 +277,8 @@ function Services() {
             index
           ) => (
             <div
-              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
+              // className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[300px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
@@ -292,7 +293,7 @@ function Services() {
             >
               <div className="w-full h-ful overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
-                  className="w-full h-full max-h-full object-cover"
+                  className="w-full h-full max-h-full object-cover object-contai"
                   src={thumbnail}
                   alt=""
                 />

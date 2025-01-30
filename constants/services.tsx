@@ -18,7 +18,8 @@ export const services: IService[] = [
 {
   link: "private_coporate_events",
   title: "private & corporate events",
-  thumbnail: '/images/home/services/private.png',
+  // thumbnail: '/images/home/services/private.png',
+  thumbnail: "/images/services/private/hero_img.png",
   overview: 'We design every detail of your event to perfection, keeping you at the center',
  desc: {
     title: "Crafting Moments That Last a Lifetime",
