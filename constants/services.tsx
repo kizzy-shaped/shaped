@@ -245,8 +245,8 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/styling/hero_img.png",
     galleryImages: [
-      "/images/services/styling/gallery3.png",
-      "/images/services/styling/gallery1.png",
+      // "/images/services/styling/gallery3.png",
+      // "/images/services/styling/gallery1.png",
     ],
   },
   // Styling
@@ -285,10 +285,10 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/bespoke/hero_img.png",
     galleryImages: [
-      "/images/services/bespoke/gallery1.png",
-      "/images/services/bespoke/gallery2.png",
-      "/images/services/bespoke/hero_img.png",
-      "/images/services/bespoke/gallery4.png",
+      // "/images/services/bespoke/gallery1.png",
+      // "/images/services/bespoke/gallery2.png",
+      // "/images/services/bespoke/hero_img.png",
+      // "/images/services/bespoke/gallery4.png",
     ],
     formHeadline: 'Step into Style with Custom Creations'
   },

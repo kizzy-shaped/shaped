@@ -23,10 +23,16 @@ export default Page;
 
 function Hero() {
   return (
-    <div
-      className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative bg-cover bg-no-repeat wmax_lg:bg-center flex items-center justify-center"
-      style={{ backgroundImage: `url(/images/portfolio/hero_img.png)` }}
-    >
+    // <div
+    //   className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative bg-cover bg-no-repeat wmax_lg:bg-center flex items-center justify-center"
+    //   style={{ backgroundImage: `url(/images/portfolio/showcase_img.png)` }}
+    // >
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:bg-[url(/images/portfolio/hero_img_mobile.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
+    <img
+      className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
+      src="/images/portfolio/hero_img.png"
+      alt=""
+    />
       {/* <div className="wmin_xl:w-full wmax_xl:w-[90%] h-fit flex flex-col items-center gap-[15px]">
         <span className="text-white wmax_xl:text-[20px] wmin_xl:text-[48px] font-bold text-center uppercase">
           our portfolio
