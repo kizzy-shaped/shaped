@@ -277,7 +277,7 @@ function Services() {
             index
           ) => (
             <div
-              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_15rem] justify-start relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
@@ -300,7 +300,7 @@ function Services() {
 
               <div className="w-full h-ful col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1em] px-[2em]">
                 <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                  <div className="wmin_3xl:text-[24px] text-[20px] font-medium text-white uppercase">
+                  <div className="wmin_3xl:text-[24px] text-[20px] font-medium text-white capitalize">
                     {title}
                   </div>
 
@@ -370,7 +370,7 @@ function Services() {
 
                   <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-2 wmin_lg:gap-[1em] justify-between py-1 wmin_lg:py-[1em] px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                      <div className="text-[18px] font-bold text-white uppercase">
+                      <div className="text-[18px] font-bold text-white capitalize">
                         {title}
                       </div>
 
