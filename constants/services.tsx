@@ -306,10 +306,10 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/alteration/hero_img.png",
     galleryImages: [
-      "/images/services/alteration/gallery1.png",
-      "/images/services/alteration/gallery2.png",
-      "/images/services/bespoke/hero_img.png",
-      "/images/services/alteration/gallery4.png",
+      // "/images/services/alteration/gallery1.png",
+      // "/images/services/alteration/gallery2.png",
+      // "/images/services/bespoke/hero_img.png",
+      // "/images/services/alteration/gallery4.png",
     ],
   },
   // Alteration

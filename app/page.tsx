@@ -251,7 +251,7 @@ function Services() {
       className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]"
     >
       {/* Deskop */}
-      <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[32px] wmin_lg:wmax_3xl:gap-x-[16px] wmin_lg:wmax_3xl:gap-y-[20px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
+      <Container className="wmax_md:hidden grid wmin_lg:grid-cols-3 wmin_3xl:gap-[14px] wmin_lg:wmax_3xl:gap-x-[10px] wmin_lg:wmax_3xl:gap-y-[12px] wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[5em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
           <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-medium text-white">
             OUR SERVICES
@@ -277,7 +277,7 @@ function Services() {
             index
           ) => (
             <div
-              className={`col-span-1 wmin_md:h-[65vh] wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[4.5fr_5.5fr] justify-start relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_15rem] justify-start relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
@@ -290,15 +290,15 @@ function Services() {
                 //   "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
               }}
             >
-              <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+              <div className="w-full h-ful overflow-hidden col-span-1 row-start-1 row-end-2">
                 <img
-                  className="w-full h-ful max-h-full object-cover"
+                  className="w-full h-full max-h-full object-cover"
                   src={thumbnail}
                   alt=""
                 />
               </div>
 
-              <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1em] px-[2em]">
+              <div className="w-full h-ful col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col justify-between py-[1em] px-[2em]">
                 <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                   <div className="wmin_3xl:text-[24px] text-[20px] font-medium text-white uppercase">
                     {title}
