@@ -97,7 +97,7 @@ export const services: IService[] = [
 {
   link: "personalisation_gifting",
   title: "personalisation & gifting",
-  thumbnail: '/images/home/services/personalisation.png',
+  thumbnail: '/images/services/personalisation/hero_img.png',
   overview: 'We ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever',
  desc: {
     title: "Gifts as Unique as You.",
@@ -142,8 +142,8 @@ export const services: IService[] = [
   },
   heroImage: "/images/services/sourcing/hero_img.png",
   galleryImages: [
-    "/images/services/sourcing/gallery1.png",
-    "/images/services/sourcing/gallery2.png",
+    // "/images/services/sourcing/gallery1.png",
+    // "/images/services/sourcing/gallery2.png",
   ],
   formHeadline:'Let Us Source the Extraordinary for You'
 },
@@ -264,10 +264,10 @@ export const fashion_services: IService[] = [
     // heroImage: "/images/services/personal/hero_img.png",
     heroImage: "/images/services/personal/hero_img.png",
     galleryImages: [
-      "/images/services/personal/gallery1.png",
-      "/images/services/personal/gallery2.png",
-      "/images/services/personal/gallery3.png",
-      "/images/services/personal/gallery4.png",
+      // "/images/services/personal/gallery1.png",
+      // "/images/services/personal/gallery2.png",
+      // "/images/services/personal/gallery3.png",
+      // "/images/services/personal/gallery4.png",
     ],
     formHeadline: 'Find Your Perfect Style Match Today'
   },
