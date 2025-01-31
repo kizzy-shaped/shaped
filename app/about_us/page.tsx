@@ -87,7 +87,7 @@ function AboutDesc() {
 
 function Gallery() {
   return (
-    <div className="w-full h-fit bg-black min_md:pt-[5em]">
+    <div className="w-full h-fit bg-black wmin_md:pt-[5em]">
       {/* <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
         <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white">
@@ -139,13 +139,13 @@ function Gallery() {
 We create seamless, luxurious experiences tailored to your needs, providing access to the finest services and exclusive opportunities. Whether it’s a red-carpet look or a private getaway, we simplify your life with impeccable service and attention to every detail.`
         ].map((item, index) => (
           <div
-            className={`col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[470px] relative ${index ==  2? 'wmax_lg:order-4':'wmax_lg:order-2'} ${index ==  3? 'wmax_lg:order-3':'wmax_lg:order-1'}`}
+            className={`col-span-1 wmin_390:h-fit wmin_lg:h-[470px] relative ${index ==  2? 'wmax_lg:order-4':'wmax_lg:order-2'} ${index ==  3? 'wmax_lg:order-3':'wmax_lg:order-1'}`}
             key={index}
           >
             {item.includes("/images/about/") ? (
-              <img className={`w-full h-full object-cove`} src={item} alt="" />
+              <img className={`w-full h-auto wmin_lg:h-full object-cove`} src={item} alt="" />
             ) : (
-              <div className={`w-full h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10`}>
+              <div className={`w-full h-fit wmin_lg:h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10`}>
                 <div className="text-white text-center w-fit h-fit">{item}</div>
               </div>
             )}
