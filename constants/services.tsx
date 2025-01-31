@@ -10,6 +10,7 @@ export interface IService {
   heroImage: string;
   heroImageMobile?: string;
   galleryImages: string[];
+  galleryImagesMobile?: string[];
   thumbnail: string;
   formHeadline?: string;
 }
@@ -34,6 +35,10 @@ export const services: IService[] = [
     "/images/services/private/gallery1.png",
     "/images/services/private/gallery2.png"
   ],
+  galleryImagesMobile: [
+    "/images/services/private/gallery1.png",
+    "/images/services/private/gallery2.png"
+  ],
   formHeadline: 'Crafting Moments That Matter'
 },
 //   Private & corporate events 
@@ -49,9 +54,13 @@ export const services: IService[] = [
     desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
   },
   heroImage: "/images/services/travel/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/travel/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/travel_jet.jpg",
   galleryImages: [
+    "/images/services/travel/gallery1.png",
+    "/images/services/travel/gallery2.png"
+  ],
+  galleryImagesMobile: [
     "/images/services/travel/gallery1.png",
     "/images/services/travel/gallery2.png"
   ],
@@ -91,7 +100,7 @@ export const services: IService[] = [
     desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
   },
   heroImage: "/images/services/intimate/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/intimate/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/intimate.jpg",
   galleryImages: [
   ],
@@ -110,7 +119,7 @@ export const services: IService[] = [
     desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
   },
   heroImage: "/images/services/personalisation/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
   ],
@@ -129,7 +138,7 @@ export const services: IService[] = [
     desc: "At SHAPED, we believe every detail counts when it comes to crafting unforgettable experiences. Whether you’re hosting an intimate gathering, a grand celebration, or a corporate event, we specialise in designing bespoke events that perfectly reflect your vision and style. From exclusive venue selection to personalised experiences, we handle every aspect with precision and elegance, ensuring that your event unfolds flawlessly. With SHAPED, you can relax and immerse yourself in the moments that matter most, knowing every detail is taken care of.",
   },
   heroImage: "/images/services/events/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/events/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/event.jpg",
   galleryImages: [
   ],
@@ -148,6 +157,7 @@ export const services: IService[] = [
     desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it",
   },
   heroImage: "/images/services/sourcing/hero_img.png",
+  heroImageMobile: "/images/services/sourcing/hero_img_mobile.png",
   galleryImages: [
     // "/images/services/sourcing/gallery1.png",
     // "/images/services/sourcing/gallery2.png",
@@ -167,7 +177,7 @@ export const services: IService[] = [
     desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
   },
   heroImage: "/images/services/lifestyle/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/lifestyle/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/lifestyle.jpg",
   galleryImages: [
   ],
@@ -186,9 +196,15 @@ export const services: IService[] = [
     desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
   },
   heroImage: "/images/services/home/hero_img.png",
-  heroImageMobile: "/images/services/private/hero_img_mobile.png",
+  heroImageMobile: "/images/services/home/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/home_property.jpg",
   galleryImages: [
+    "/images/services/home/gallery1.png",
+    "/images/services/home/gallery2.png",
+    "/images/services/home/gallery3.png",
+    "/images/services/home/gallery4.png",
+  ],
+  galleryImagesMobile: [
     "/images/services/home/gallery1.png",
     "/images/services/home/gallery2.png",
     "/images/services/home/gallery3.png",
@@ -209,6 +225,7 @@ export const services: IService[] = [
     desc: "From grocery shopping to appointments and everything in between, SHAPED takes care of the small tasks so you can focus on what truly matters. Our team provides discreet, efficient, and thoughtful service, ensuring your daily life runs smoothly without lifting a finger.",
   },
   heroImage: "/images/services/errand/hero_img.png",
+  heroImageMobile: "/images/services/errand/hero_img_mobile.png",
   formHeadline:'Simplify Your Life, One Task at a Time',
   // heroImage: "/images/services_base_imgs/errands.jpg",
   galleryImages: [
@@ -228,10 +245,17 @@ desc: {
 `By perfecting the art of styling and personal shopping, SHAPED Education empowers retail staff to elevate their craft and exceed the highest expectations in luxury service. To learn more about how SHAPED Education can enhance your team's expertise, contact us today and take the first step towards elevating your service.`]
 },
 heroImage: "/images/services/education/hero_img.png",
+heroImageMobile: '/images/services/education/hero_img_mobile.png',
 galleryImages: [
   "/images/services/education/gallery1.png",
   "/images/services/education/gallery2.png",
   "/images/services/education/gallery3.png",
+  "/images/services/education/gallery4.png",
+],
+galleryImagesMobile: [
+  "/images/services/education/gallery1.png",
+  "/images/services/education/gallery2.png",
+  "/images/services/education/gallery3_mobile.png",
   "/images/services/education/gallery4.png",
 ],
 formHeadline:'Let’s Shape the Future of Your Team'
@@ -317,6 +341,7 @@ export const fashion_services: IService[] = [
       desc: "No wardrobe is complete without the perfect fit. SHAPED’s alteration services are designed to ensure your clothes fit you like they were made for you. From simple adjustments to complex tailoring, our expert team will refine every garment to enhance its shape and style, ensuring your clothing is a true reflection of your taste and body. Experience the art of tailoring with precision, care, and a perfect fit.",
     },
     heroImage: "/images/services/alteration/hero_img.png",
+    heroImageMobile: "/images/services/alteration/hero_img_mobile.png",
     galleryImages: [
       // "/images/services/alteration/gallery1.png",
       // "/images/services/alteration/gallery2.png",

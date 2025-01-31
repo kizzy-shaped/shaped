@@ -103,7 +103,8 @@ function Gallery({ service }: { service: IService }) {
 
   return (
     <div className="w-full h-fit bg-black">
-      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
+      {/* Desktop */}
+      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 wmax_lg:hidden ${Number(service?.galleryImages?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
         {service?.galleryImages.map((item, index) => (
           <div
             // className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[500px] relative"
@@ -114,6 +115,21 @@ function Gallery({ service }: { service: IService }) {
           </div>
         ))}
       </Container>
+      {/* Desktop */}
+
+      {/* Mobile */}
+      <Container className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 wmin_lg:hidden ${Number(service?.galleryImagesMobile?.length) == 2 ? 'wmin_md:grid-rows-1':'wmin_md:grid-rows-2'}`}>
+        {service?.galleryImagesMobile?.map((item, index) => (
+          <div
+            // className="col-span-1 wmin_390:h-[430px] wmax_390:h-[350px] wmin_lg:h-[500px] relative"
+            className="col-span-1 wmin_390:h-[430px] wmax_390:h-fit wmin_lg:h-[500px] relative"
+            key={index}
+          >
+            <img className={`w-full h-full object-cove`} src={item} alt="" />
+          </div>
+        ))}
+      </Container>
+      {/* Mobile */}
     </div>
   );
 }
