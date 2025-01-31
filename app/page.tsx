@@ -251,7 +251,7 @@ function Services() {
       className="w-full h-fit bg-black wmin_lg:bg-whit wmax_lg:bg-[#F3F3F3BF wmin_lg:my-[3em] wmax_lg:mt-[0em]"
     >
       {/* Deskop */}
-      <Container className="wmax_md:hidden wmin_lg:grid wmin_lg:grid-cols-3 wmin_3xl:gap-6 wmin_lg:gap-y-7  wmin_lg:wmax_3xl:gap-x-3 wmin_lg:wmax_3xl:gap-y-3 wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[4em] wmax_lg:py-[3em]">
+      <Container className="wmax_md:hidden wmin_lg:grid wmin_lg:grid-cols-3 wmin_3xl:gap-6 wmin_lg:gap-y-14  wmin_lg:wmax_3xl:gap-x-3 wmin_lg:wmax_3xl:gap-y- wmax_lg:grid-cols-1 wmax_lg:gap-[8px] wmin_lg:py-[4em] wmax_lg:py-[3em]">
         <div className="col-span-full flex wmin_md:flex-row wmax_md:flex-col wmin_md:justify-between wmax_md:gap-[8px]">
           <div className="col-span-1 h-fit wmin_md:text-[40px] wmax_md:text-[24px] font-medium text-white">
             OUR SERVICES
@@ -351,7 +351,7 @@ function Services() {
                 index
               ) => (
                 <div
-                  className={`w-[90vw] h-[20em] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[0.5fr_0.6fr] relative overflow-hidden rounded-[24px]`}
+                  className={`w-[90vw] h-fit wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[306px_9em] relative overflow-hidden rounded-[24px]`}
                   key={index}
                   id={`service-${index}`}
                   data-reveal-on-scroll
@@ -361,7 +361,7 @@ function Services() {
                       "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
                   }}
                 >
-                  <div className="w-full h-full overflow-hidden col-span-1 row-start-1 row-end-2">
+                  <div className="w-full h-ful overflow-hidden col-span-1 row-start-1 row-end-2">
                     <img
                       className="w-full h-full max-h-full object-cover"
                       src={thumbnail}
@@ -369,13 +369,13 @@ function Services() {
                     />
                   </div>
 
-                  <div className="w-full h-full col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap-2 wmin_lg:gap-[1em] justify-between py-1 wmin_lg:py-[1em] px-[1.5em]">
+                  <div className="w-full h-ful col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap- wmin_lg:gap-[1em] justify-between wmin_lg:py-[1em] py-4 px-[1.5em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
-                      <div className="text-[18px] font-bold text-white capitalize">
+                      <div className="text-[16px] font-medium text-white capitalize">
                         {title}
                       </div>
 
-                      <div className="text-[14px] font-bold text-[#9C9C9C]">
+                      <div className="text-[12px] font-normal text-[#9C9C9C]">
                         {overview}
                       </div>
                     </div>
@@ -387,7 +387,7 @@ function Services() {
                         setHovered(hovered == index ? null : index)
                       }
                       href={`/services?serviceId=${link}`}
-                      className="text-[18px] font-bold bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                      className="text-[18px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
                     >
                       Learn More
                       <FiArrowRight

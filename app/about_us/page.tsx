@@ -87,7 +87,7 @@ function AboutDesc() {
 
 function Gallery() {
   return (
-    <div className="w-full h-fit bg-black wmin_md:pt-[5em]">
+    <div className="w-full h-fit bg-black wmin_md:py-[5em]">
       {/* <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
         <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white">
@@ -128,7 +128,7 @@ function Gallery() {
         </div>
       </Container> */}{" "}
       <Container
-        className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-3 wmin_md:grid-rows-2`}
+        className={`w-full h-fit grid wmin_md:grid-cols-2 wmax_md:grid-cols-1 gap-1 wmin_lg:gap-6 wmin_md:grid-rows-2`}
       >
         {[
           `
