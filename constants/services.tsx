@@ -273,6 +273,7 @@ export const fashion_services: IService[] = [
     },
     // heroImage: "/images/services/personal/hero_img.png",
     heroImage: "/images/services/personal/hero_img.png",
+    heroImageMobile: "/images/services/personal/hero_img_mobile.png",
     galleryImages: [
       // "/images/services/personal/gallery1.png",
       // "/images/services/personal/gallery2.png",
@@ -294,6 +295,7 @@ export const fashion_services: IService[] = [
       desc: "When off-the-rack doesn’t cut it, SHAPED offers bespoke garment creation that is tailored to your exact specifications. From luxurious fabrics to custom silhouettes, we craft each garment to fit your body and your vision. Whether it’s for a wedding, a corporate event, or a milestone celebration, we create one-of-a-kind pieces designed to make you stand out. Every stitch, every detail, made just for you.",
     },
     heroImage: "/images/services/bespoke/hero_img.png",
+    heroImageMobile: "/images/services/bespoke/hero_img_mobile.png",
     galleryImages: [
       // "/images/services/bespoke/gallery1.png",
       // "/images/services/bespoke/gallery2.png",
