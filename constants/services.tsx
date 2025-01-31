@@ -28,6 +28,7 @@ export const services: IService[] = [
     desc: "From private parties to high-profile corporate events, SHAPED delivers exceptional event management services. Our team works closely with you to create an experience that is perfectly tailored to your needs. Whether it’s sourcing the ideal location, designing the perfect ambiance, or curating unforgettable experiences, we make sure every aspect of your event is executed to perfection, with you at the center of it all.",
   },
   heroImage: "/images/services/private/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/private_corporate.jpg",
   galleryImages: [
     "/images/services/private/gallery1.png",
@@ -48,6 +49,7 @@ export const services: IService[] = [
     desc: "Experience seamless travel with SHAPED’s luxury travel services. From private jet charters to exclusive holiday planning, we handle every detail of your journey, ensuring it’s as luxurious and effortless as possible. Whether you’re traveling for business or leisure, we create the perfect travel experience tailored to your needs.",
   },
   heroImage: "/images/services/travel/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/travel_jet.jpg",
   galleryImages: [
     "/images/services/travel/gallery1.png",
@@ -89,6 +91,7 @@ export const services: IService[] = [
     desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
   },
   heroImage: "/images/services/intimate/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/intimate.jpg",
   galleryImages: [
   ],
@@ -107,6 +110,7 @@ export const services: IService[] = [
     desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
   },
   heroImage: "/images/services/personalisation/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
   ],
@@ -125,6 +129,7 @@ export const services: IService[] = [
     desc: "At SHAPED, we believe every detail counts when it comes to crafting unforgettable experiences. Whether you’re hosting an intimate gathering, a grand celebration, or a corporate event, we specialise in designing bespoke events that perfectly reflect your vision and style. From exclusive venue selection to personalised experiences, we handle every aspect with precision and elegance, ensuring that your event unfolds flawlessly. With SHAPED, you can relax and immerse yourself in the moments that matter most, knowing every detail is taken care of.",
   },
   heroImage: "/images/services/events/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/event.jpg",
   galleryImages: [
   ],
@@ -162,6 +167,7 @@ export const services: IService[] = [
     desc: "At SHAPED, our concierge services are crafted to enhance your lifestyle, taking care of the details so you don’t have to. From day-to-day errands to luxury travel arrangements, our team is here to ensure your life runs smoothly, with a level of service that is unparalleled. Whether it’s planning family holidays, organising business travel, or finding exclusive experiences, we ensure that no request is too big or too small.",
   },
   heroImage: "/images/services/lifestyle/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/lifestyle.jpg",
   galleryImages: [
   ],
@@ -180,6 +186,7 @@ export const services: IService[] = [
     desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
   },
   heroImage: "/images/services/home/hero_img.png",
+  heroImageMobile: "/images/services/private/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/home_property.jpg",
   galleryImages: [
     "/images/services/home/gallery1.png",
