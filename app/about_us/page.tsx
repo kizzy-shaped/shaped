@@ -87,7 +87,7 @@ function AboutDesc() {
 
 function Gallery() {
   return (
-    <div className="w-full h-fit bg-black wmin_md:py-[5em]">
+    <div className="w-full h-fit bg-black wmin_md:py-[5em] pb-[3em]">
       {/* <Container className="grid wmin_lg:grid-cols-2 wmax_lg:grid-cols-1 gap-[1em] py-[3vh]">
         <div className="col-span-1 h-full flex flex-col wmin_lg:gap-[32px] wmax_lg:gap-[24px] justify-center wmax_lg:order-2">
           <div className="wmin_lg:text-[24px] wmax_lg:text-[14px] font-medium text-white">
@@ -143,10 +143,10 @@ We create seamless, luxurious experiences tailored to your needs, providing acce
             key={index}
           >
             {item.includes("/images/about/") ? (
-              <img className={`w-full h-auto wmin_lg:h-full object-cove`} src={item} alt="" />
+              <img className={`w-full h-auto wmin_lg:h-full object-cove pb- border-b-[#060606 border-b-[#9c9c9c border-b-[1px`} src={item} alt="" />
             ) : (
               <div className={`w-full h-fit wmin_lg:h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10`}>
-                <div className="text-white text-center w-fit h-fit">{item}</div>
+                <div className="text-white text-[14px] font-normal text-center w-fit h-fit wmax_lg:py-6">{item}</div>
               </div>
             )}
           </div>
@@ -161,10 +161,10 @@ function HowWeWork() {
 
   return (
     <div className="w-full h-fit bg-whit wmin_lg:py-[7.5vh] wmax_lg:py-[3vh] bg-white">
-    <Container className="flex flex-col gap-4">
+    <Container className="flex flex-col gap-2">
      <div className="text-[24px] wmin_lg:text-[38px] font-semibold">How We Work</div>
 
-     <div className="wmin_lg:w-[80%] text-[14px] wmin_lg:text-[20px] font-semibold">
+     <div className="wmin_lg:w-[80%] text-[12px] wmin_lg:text-[20px] font-medium">
      At SHAPED, you’ll have a dedicated lifestyle manager committed to making life effortless. From personal shopping to exclusive event planning, we handle every detail with care, so you can enjoy the luxury you deserve.
      </div>
 

@@ -8,6 +8,7 @@ export interface IService {
     list?: boolean
   };
   heroImage: string;
+  heroImageMobile?: string;
   galleryImages: string[];
   thumbnail: string;
   formHeadline?: string;
@@ -238,13 +239,14 @@ export const fashion_services: IService[] = [
     link: "styling_services",
     title: "styling services",
     thumbnail: '/images/home/services/styling.png',
-    overview: 'From casual to elegant, we craft looks that exude confidence and style.',
+    overview: 'From casual to elegant, we craft looks that exude confidence and style',
     desc: {
       title: "Unleash Your Signature Style.",
       // desc: "At SHAPED, we believe that your style should be as unique as you are. Our Fashion Services are designed to give you a seamless, luxurious experience—whether you're seeking expert styling, personal shopping, or the perfect bespoke garment. Explore our range of services below, each tailored to elevate your wardrobe and enhance your lifestyle.",
       desc: "Let SHAPED help you unlock your personal style with our exclusive styling services. Whether you're looking to refine your look, update your wardrobe, or experiment with new trends, our expert stylists curate outfits that reflect your individuality and bring out the best in you. From casual chic to formal elegance, we ensure every look is crafted to perfection, leaving you confident and effortlessly stylish.",
     },
     heroImage: "/images/services/styling/hero_img.png",
+    heroImageMobile: "/images/services/styling/hero_img_mobile.png",
     galleryImages: [
       // "/images/services/styling/gallery3.png",
       // "/images/services/styling/gallery1.png",
@@ -256,7 +258,7 @@ export const fashion_services: IService[] = [
     link: "personal_shopping",
     title: "personal shopping",
     thumbnail: '/images/services/personal/hero_img.png',
-    overview: 'From essentials to statement pieces, we keep you ahead of the trends.',
+    overview: 'From essentials to statement pieces, we keep you ahead of the trends',
    desc: {
       title: "The Perfect Piece, Every Time",
       // desc: "Let SHAPED help you unlock your personal style with our exclusive styling services. Whether you're looking to refine your look, update your wardrobe, or experiment with new trends, our expert stylists curate outfits that reflect your individuality and bring out the best in you. From casual chic to formal elegance, we ensure every look is crafted to perfection, leaving you confident and effortlessly stylish.",
@@ -279,7 +281,7 @@ export const fashion_services: IService[] = [
     // title: "The Perfect Piece, Every Time.",
     title: "Bespoke Garment Creation",
     thumbnail: '/images/home/services/bespoke_garment.png',
-    overview: 'Unique pieces crafted to make you stand out, tailored to every detail.',
+    overview: 'Unique pieces crafted to make you stand out, tailored to every detail',
    desc: {
       title: "One-of-a-Kind, Just for You",
       desc: "When off-the-rack doesn’t cut it, SHAPED offers bespoke garment creation that is tailored to your exact specifications. From luxurious fabrics to custom silhouettes, we craft each garment to fit your body and your vision. Whether it’s for a wedding, a corporate event, or a milestone celebration, we create one-of-a-kind pieces designed to make you stand out. Every stitch, every detail, made just for you.",
@@ -299,7 +301,7 @@ export const fashion_services: IService[] = [
     link: "alteration_services",
     title: "alteration services",
     thumbnail: '/images/home/services/alteration.png',
-    overview: 'Experience the art of tailoring with precision, care, and a perfect fit.',
+    overview: 'Experience the art of tailoring with precision, care, and a perfect fit',
    desc: {
       title: "Flawless Fit, Every Time",
       // desc: "When off-the-rack doesn’t cut it, SHAPED offers bespoke garment creation that is tailored to your exact specifications. From luxurious fabrics to custom silhouettes, we craft each garment to fit your body and your vision. Whether it’s for a wedding, a corporate event, or a milestone celebration, we create one-of-a-kind pieces designed to make you stand out. Every stitch, every detail, made just for you.",
