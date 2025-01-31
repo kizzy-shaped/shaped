@@ -338,10 +338,10 @@ function Services() {
             OUR SERVICES
           </div>
 
-          <div className="wmin_md:text-[24px] wmax_xl:text-[14px] font-medium text-white">
+          {/* <div className="wmin_md:text-[24px] wmax_xl:text-[14px] font-medium text-white">
             From styling to bespoke services, we've got you <br />
             covered for every occasion.
-          </div>
+          </div> */}
         </div>
         <div className="w-full h-fit  overflow-scroll pb-[1.5em]">
           <div className="w-fit h-fit flex gap-[20px]">
@@ -369,7 +369,7 @@ function Services() {
                     />
                   </div>
 
-                  <div className="w-full h-ful col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap- wmin_lg:gap-[1em] justify-between wmin_lg:py-[1em] py-4 px-[1.5em]">
+                  <div className="w-full h-ful col-span-1 row-start-2 row-end-3 bg-[#1a1a1a] flex flex-col gap- wmin_lg:gap-[1em] justify-between wmin_lg:py-[1em] py-4 px-[0.85em]">
                     <div className="w-full h-fit flex flex-col gap-[4px] justify-end relative">
                       <div className="text-[16px] font-medium text-white capitalize">
                         {title}
@@ -387,11 +387,11 @@ function Services() {
                         setHovered(hovered == index ? null : index)
                       }
                       href={`/services?serviceId=${link}`}
-                      className="text-[18px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white capitalize w-fit h-fit flex items-center gap-[10px]"
+                      className="text-[16px] font-medium bg-gradien-to-b from-[#00000000] to-[#000000] text-white opacity-[0.6] capitalize w-fit h-fit flex items-center gap-[10px]"
                     >
                       Learn More
                       <FiArrowRight
-                        className={`w-[28px] h-[28px] text-white ${
+                        className={`w-[25px] h-[25px] text-white ${
                           hovered == index ? "ml-[4px]" : ""
                         }`}
                       />
