@@ -53,6 +53,12 @@ export function Partners() {
             { img: "/images/portfolio/sony.jpeg" },
             { img: "/images/portfolio/vogue.jpeg" },
             { img: "/images/portfolio/rocnation.jpeg" },
+            { img: "/images/portfolio/america.jpeg" },
+            { img: "/images/portfolio/itv.jpeg" },
+            { img: "/images/portfolio/mtv.jpeg" },
+            { img: "/images/portfolio/ok.jpeg" },
+            { img: "/images/portfolio/paris.jpeg" },
+            { img: "/images/portfolio/london.jpeg" },
           ].map(({ img }, index) => (
             <img
               className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px]"
