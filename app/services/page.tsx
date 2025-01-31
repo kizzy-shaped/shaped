@@ -66,7 +66,7 @@ function Hero({ service }: { service: IService }) {
       </div>
 
       {/* Overlay */}
-      <div className="w-full h-full bg-black bg-opacity-50"></div>
+      <div className="w-full h-full absolute top-0 left-0 z-[2] bg-black bg-opacity-50"></div>
       {/* Overlay */}
     </div>
   );
