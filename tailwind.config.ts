@@ -260,6 +260,15 @@ export default {
 				large_desktop: {
 					raw: '(min-width: 1920px)'
 				},
+				'1440_1024': {
+					raw: '(min-width: 1025px) and (max-width: 1440px)'
+				},
+				'1920_1440': {
+					raw: '(min-width: 1441px) and (max-width: 1920px)'
+				},
+				'2560_1920': {
+					raw: '(min-width: 1921px) and (max-width: 2560px)'
+				},
 				hmax_800: {
 					raw: '(max-height: 799px)'
 				},

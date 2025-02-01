@@ -278,7 +278,7 @@ function Services() {
           ) => (
             <div
               // className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[370px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
-              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[300px_10rem] justify-start relative overflow-hidden rounded-[24px]`}
+              className={`col-span-1 wmin_md:h-[65vh wmin_md:h-fit wmax_md:h-[55vh] wmax_lg:mt-[20px] grid grid-cols-1 grid-rows-[minmax(300px,360px)_13rem] 2560_1920:grid-rows-[minmax(360px,380px)_11rem] 1920_1440:grid-rows-[minmax(300px,360px)_12rem] hmin justify-start relative overflow-hidden rounded-[24px]`}
               key={index}
               id={`service-${index}`}
               data-reveal-on-scroll
