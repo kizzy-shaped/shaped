@@ -756,7 +756,7 @@ export function ContactForm({
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.name ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.name
@@ -770,7 +770,7 @@ export function ContactForm({
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.email ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.email
@@ -784,7 +784,7 @@ export function ContactForm({
               onChange={handleChange("phoneNumber")}
               onBlur={handleBlur("phoneNumber")}
               value={values.phoneNumber}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Phone Number"}
               type="number"
             />
@@ -792,7 +792,7 @@ export function ContactForm({
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.country ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.country
@@ -806,7 +806,7 @@ export function ContactForm({
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Your Favorite Brand"}
               type="text"
             />
@@ -960,7 +960,7 @@ export function ContactFormModal() {
               onChange={handleChange("name")}
               onBlur={handleBlur("name")}
               value={values.name}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.name ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.name
@@ -974,7 +974,7 @@ export function ContactFormModal() {
               onChange={handleChange("email")}
               onBlur={handleBlur("email")}
               value={values.email}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.email ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.email
@@ -988,7 +988,7 @@ export function ContactFormModal() {
               onChange={handleChange("phoneNumber")}
               onBlur={handleBlur("phoneNumber")}
               value={values.phoneNumber}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Phone Number"}
               type="number"
             />
@@ -996,7 +996,7 @@ export function ContactFormModal() {
               onChange={handleChange("country")}
               onBlur={handleBlur("country")}
               value={values.country}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] ${
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] ${
                 errors?.country ? "border-b-red-600" : "border-b-[#D5D5D5]"
               } outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] ${
                 errors?.country
@@ -1010,7 +1010,7 @@ export function ContactFormModal() {
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
-              className={`w-full h-[55px] bg-transparent text-[#373737] font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Your Favorite Brand"}
               type="text"
             />
