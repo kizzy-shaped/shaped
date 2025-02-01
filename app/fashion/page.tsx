@@ -106,7 +106,7 @@ function Gallery() {
   return (
     <div className="w-full h-fit bg-black">
       {/* Desktop */}
-      <Container className="w-full h-fit grid grid-rows-[464px_464px] grid-cols-[1fr_0.5fr_0.5fr_1fr] gap-[0.5em] wmax_lg:hidden">
+      <Container className="w-full h-fit grid grid-rows-[400px_400px] wmin_1920:grid-rows-[540px_540px] 1920_1440:grid-rows-[480px_480px] grid-cols-[1fr_0.5fr_0.5fr_1fr] gap-[0.5em] wmax_lg:hidden">
         <div
           onMouseEnter={() => setCurrentGalleyIndex(0)}
           onMouseLeave={() => setCurrentGalleyIndex(null)}
