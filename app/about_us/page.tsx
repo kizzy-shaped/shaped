@@ -32,7 +32,7 @@ function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:bg-[url(/images/about/showcase_img_mobile.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[60vh] wmin_360:wmax_md:!h-[65vh] bg-[#373737] relative wmax_lg:bg-[url(/images/about/showcase_img_mobile.png)] wmax_lg:bg-cover wmax_lg:bg-[30%_90%]">
       <img
         className="w-full h-full mx-auto  z-[2] object-cover wmax_lg:hidden"
         src="/images/about/showcase_img.png"
@@ -168,8 +168,8 @@ function HowWeWork() {
      At SHAPED, you’ll have a dedicated lifestyle manager committed to making life effortless. From personal shopping to exclusive event planning, we handle every detail with care, so you can enjoy the luxury you deserve.
      </div>
 
-     <div className="w-full h-[430px] wmin_lg:h-[550px] flex items-center justify-center">
-        <img className="w-full h-full object-cover hidden wmin_lg:inline-block" src="/images/about/how_we_work.png" alt=""/>
+     <div className="w-full h-[430px] wmin_lg:h-[620px] flex items-center justify-center">
+        <img className="w-full h-full max-h-full object-cover hidden wmin_lg:inline-block" src="/images/about/how_we_work.png" alt=""/>
         <img className="w-full h-auto wmin_lg:hidden inline-block" src="/images/about/how_we_work_mobile.png" alt=""/>
      </div>
     </Container>

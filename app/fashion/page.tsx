@@ -80,12 +80,18 @@ function AboutDesc() {
           Curated, Bespoke Fashion, Tailored Just for You
         </div>
 
+        <div className="w-full flex flex-col gap-3 wmin_lg:gap-3">
         <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
-          At SHAPED, we believe that your style should be as unique as you are.
-          Our Fashion Services are designed to give you a seamless, luxurious
-          experience—whether you're seeking expert styling, personal shopping,
-          or the perfect bespoke garment. Explore our range of services below,
-          each tailored to elevate your wardrobe and enhance your lifestyle.
+        With over a decade of global expertise in fashion management, SHAPED has established itself as a premier luxury concierge service, renowned for its impeccable styling and tailored experiences.
+        We specialise in curating extraordinary moments for a discerning clientele, including award-winning musicians, internationally acclaimed actors, and influential figures in music, entertainment, and fashion.
+        </div>
+        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
+        Our work has been featured digitally in Vogue and showcased at the world's most exclusive events, including London Fashion Week, where we have had the privilege of being part of the must-have show, Burberry, as well as Paris Fashion Week and the British Fashion Awards.
+        SHAPED has also contributed to historic occasions such as the King's Coronation, executed prestigious campaigns such as Pepsi, and been part of iconic events such as the Made in America festival.
+        </div>
+        <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
+        SHAPED has built a reputation for discreet elegance, offering tailored luxury with unrivalled service, curating one-of-a-kind moments that define an elevated lifestyle.
+        </div>
         </div>
       </Container>
     </div>
@@ -143,7 +149,7 @@ function Gallery() {
         </div>
         <div className="col-span-1 row-span-1 w-full h-full flex items-center justify-center">
           <div className="italic font-medium text-white w-[90%] m-auto text-center">
-            Elevate your wardrobe with personalized services that blend
+            Elevate your wardrobe with personalised services that blend
             craftsmanship, style, and precision—tailored to bring your vision to
             life.
           </div>

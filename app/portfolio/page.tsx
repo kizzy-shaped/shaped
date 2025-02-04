@@ -14,7 +14,7 @@ function Page() {
 
       <Partners />
 
-      <ContactForm />
+      <ContactForm headline="Your style journey begins here Explore our fashion expertise" />
     </div>
   );
 }

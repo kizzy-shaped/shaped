@@ -61,8 +61,8 @@ export const services: IService[] = [
     "/images/services/travel/gallery2.png"
   ],
   galleryImagesMobile: [
-    "/images/services/travel/gallery1.png",
-    "/images/services/travel/gallery2.png"
+    "/images/services/travel/gallery1_mobile.png",
+    "/images/services/travel/gallery2_mobile.png"
   ],
   formHeadline:'Experience Seamless Luxury Travel'
 },
@@ -119,7 +119,8 @@ export const services: IService[] = [
     desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
   },
   heroImage: "/images/services/personalisation/hero_img.png",
-  heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
+  // heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
+  heroImageMobile: "/images/services/personalisation/hero_img.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
   ],
@@ -154,7 +155,7 @@ export const services: IService[] = [
  desc: {
     title: "Access the Unobtainable",
     // desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
-    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it",
+    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
   },
   heroImage: "/images/services/sourcing/hero_img.png",
   heroImageMobile: "/images/services/sourcing/hero_img_mobile.png",
@@ -168,7 +169,7 @@ export const services: IService[] = [
 // Lifestyle & concierge 
 {
   link: "lifestyle_concierge",
-  title: "lifestyle concierge",
+  title: "lifestyle & concierge",
   thumbnail: '/images/home/services/lifestyle.png',
   overview: 'From family holidays to business travel, no request is too big or small',
  desc: {
@@ -278,6 +279,7 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/styling/hero_img.png",
     heroImageMobile: "/images/services/styling/hero_img_mobile.png",
+    formHeadline:'Elevate your style - let’s create your signature look',
     galleryImages: [
       // "/images/services/styling/gallery3.png",
       // "/images/services/styling/gallery1.png",
@@ -304,7 +306,7 @@ export const fashion_services: IService[] = [
       // "/images/services/personal/gallery3.png",
       // "/images/services/personal/gallery4.png",
     ],
-    formHeadline: 'Find Your Perfect Style Match Today'
+    formHeadline: 'Your dream wardrobe, curated for you - let’s shop'
   },
   // Personal Shopping
   // Bespoke
@@ -326,7 +328,7 @@ export const fashion_services: IService[] = [
       // "/images/services/bespoke/hero_img.png",
       // "/images/services/bespoke/gallery4.png",
     ],
-    formHeadline: 'Step into Style with Custom Creations'
+    formHeadline: 'Exclusively yours - let’s bring your vision to life'
   },
   // Bespoke
   // Alteration
@@ -342,6 +344,7 @@ export const fashion_services: IService[] = [
     },
     heroImage: "/images/services/alteration/hero_img.png",
     heroImageMobile: "/images/services/alteration/hero_img_mobile.png",
+    formHeadline:'Flawless fit, impeccable finish - Schedule your alteration',
     galleryImages: [
       // "/images/services/alteration/gallery1.png",
       // "/images/services/alteration/gallery2.png",
