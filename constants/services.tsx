@@ -120,7 +120,7 @@ export const services: IService[] = [
   },
   heroImage: "/images/services/personalisation/hero_img.png",
   // heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
-  heroImageMobile: "/images/services/personalisation/hero_img.png",
+  heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs",
   galleryImages: [
   ],
