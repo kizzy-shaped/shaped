@@ -53,7 +53,7 @@ export default function Providers({
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Shaped Servics" />
         <meta name="twitter:description" content="Delivering bespoke fashion concierge services" />
-        <meta name="twitter:image" content="/image.jpg" />
+        <meta name="twitter:image" content="/image.png" />
       </Head>
                     <ModalProvider>
                         <HeaderProvider>
