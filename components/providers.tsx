@@ -54,7 +54,7 @@ export default function Providers({
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Shaped Servics" />
         <meta name="twitter:description" content="Delivering bespoke fashion concierge services" />
-        <meta name="twitter:image" content="/image.png" />
+        <meta property="og:image" content="https://www.shapedservices.com/image.png" />
       </Head>
                     <ModalProvider>
                         <HeaderProvider>
