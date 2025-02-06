@@ -46,7 +46,7 @@ export default function Providers({
         <meta property="og:title" content="Shaped Servics" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.shapedservices.com" />
-        <meta property="og:image" content="/image.jpg" />
+        <meta property="og:image" content="/image.png" />
         <meta property="og:description" content="Delivering bespoke fashion concierge services" />
 
         {/* Twitter Card Meta Tags */}
