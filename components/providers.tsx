@@ -40,7 +40,7 @@ export default function Providers({
 
           <meta property="og:url" content="https://www.shapedservices.com" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="" />
+          <meta property="og:title" content="Shaped Services" />
           <meta property="og:description" content="" />
           <meta property="og:image" content="https://www.shapedservices.com/image.png" />
 
@@ -50,8 +50,8 @@ export default function Providers({
             property="twitter:url"
             content="https://www.shapedservices.com"
           />
-          <meta name="twitter:title" content="" />
-          <meta name="twitter:description" content="" />
+          <meta name="twitter:title" content="Shaped Services" />
+          <meta name="twitter:description" content="Shaped Services" />
           <meta name="twitter:image" content="https://www.shapedservices.com/image.png" />
         </Head>
         <ModalProvider>
