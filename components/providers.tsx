@@ -40,7 +40,7 @@ export default function Providers({
         <meta name="description" content="Delivering bespoke fashion concierge services" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Shaped Servics" />
