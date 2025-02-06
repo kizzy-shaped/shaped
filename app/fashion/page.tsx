@@ -19,6 +19,8 @@ const Fashion = () => {
 
       <Gallery />
 
+      <AboutUs />
+
       {/* <MonthStyle /> */}
 
       <ContactForm />
@@ -322,18 +324,18 @@ function AboutUs() {
   return (
     <div className="w-full h-fit bg-black">
     <Container className="wmin_lg:py-[6vh] wmax_lg:py-[3vh] flex flex-col wmin_lg:gap-[28px] wmax_lg:gap-[14px]">
-      <div className="wmin_xl:w-[65%] wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white text-center">
+      <div className="wmin_lg:text-[40px] wmax_lg:text-[20px] font-medium text-white text-center">
         About Us
       </div>
 
       <div className="w-full flex flex-col gap-3 wmin_lg:gap-3">
-      <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
+      <div className="wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
       With over a decade of global expertise in fashion management, SHAPED has established itself as a premier luxury concierge service, renowned for its impeccable styling and tailored experiences. We specialise in curating extraordinary moments for a discerning clientele, including award-winning musicians, internationally acclaimed actors, and influential figures in music, entertainment, and fashion.
       </div>
-      <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
+      <div className="wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
       Our work has been featured digitally in Vogue and showcased at the world’s most exclusive events, including London Fashion Week, where we have had the privilege of being part of the must-have show, Burberry, as well as Paris Fashion Week and the British Fashion Awards. SHAPED has also contributed to historic occasions such as the King’s Coronation, executed prestigious campaigns such as Pepsi, and been part of iconic events such as the Made in America festival.
       </div>
-      <div className="wmin_lg:w-[80%] wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
+      <div className="wmax_lg:w-full wmin_lg:text-[18px] wmax_lg:text-[14px] font-medium text-[#9c9c9c]">
       SHAPED has built a reputation for discreet elegance, offering tailored luxury with unrivalled service, curating one-of-a-kind moments that define an elevated lifestyle.
       </div>
       </div>

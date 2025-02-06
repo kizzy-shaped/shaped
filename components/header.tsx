@@ -112,6 +112,13 @@ function Header({ className = "" }: { className?: string }) {
                           {title}
                         </Link>
                       ))}
+
+                      <Link
+                        className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
+                        href={`/services?serviceId=${'about'}`}
+                      >
+                        {'about'}
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -141,7 +148,7 @@ function Header({ className = "" }: { className?: string }) {
         <div className="wmin_xl:hidden">
           <Sheet
             onOpenChange={(data) => {
-              if(data == false) setdDrawerVisible(false);
+              if (data == false) setdDrawerVisible(false);
             }}
             open={drawerVisible}
           >
@@ -154,7 +161,7 @@ function Header({ className = "" }: { className?: string }) {
             >
               {/* <button className="w-[50px] h-[48px]"> */}
               <button className="w-[35px] h-[35px]">
-              <RxHamburgerMenu className="text-white w-full h-full" />
+                <RxHamburgerMenu className="text-white w-full h-full" />
                 {/* <svg
                   className="w-full h-full"
                   viewBox="0 0 60 52"
@@ -218,7 +225,7 @@ function Header({ className = "" }: { className?: string }) {
                     >
                       {!dropdown ? (
                         <Link
-                        onClick={() => setdDrawerVisible(false)}
+                          onClick={() => setdDrawerVisible(false)}
                           href={link}
                           className={`text-white font-semibold wmin_lg:text-[22px] wmax_lg:text-[18px]`}
                         >
@@ -242,13 +249,19 @@ function Header({ className = "" }: { className?: string }) {
                       )}
 
                       {dropdown && (
-                        <FaChevronDown  onClick={() => {
-                          // !dropdown && setdDrawerVisible(false);
-                          // dropdown && setDropdownVisible(!dropdownVisible);
-                          // setDropdownVisible(!dropdownVisible);
-                          setDropdownVisible(true);
-                          setDropdownState((prev) => ({ ...prev, index: id === dropdownState.index ? null : id }));
-                        }} className="w-[16px] h-[16px] text-white" />
+                        <FaChevronDown
+                          onClick={() => {
+                            // !dropdown && setdDrawerVisible(false);
+                            // dropdown && setDropdownVisible(!dropdownVisible);
+                            // setDropdownVisible(!dropdownVisible);
+                            setDropdownVisible(true);
+                            setDropdownState((prev) => ({
+                              ...prev,
+                              index: id === dropdownState.index ? null : id,
+                            }));
+                          }}
+                          className="w-[16px] h-[16px] text-white"
+                        />
                       )}
 
                       {/* Dropdown */}
