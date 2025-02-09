@@ -8,9 +8,20 @@ import { ContactForm, MonthStyle } from "@/components/homeComponents";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
-const Fashion = () => {
+
+function Fashion() {
+  
+
+   return (
+      <Suspense fallback={<div>Loading...</div>}>
+      <FashionPage />
+      </Suspense>
+    );
+}
+
+const FashionPage = () => {
   return (
     <div className="bg-white">
       <Hero />

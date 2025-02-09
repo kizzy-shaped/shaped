@@ -2,8 +2,20 @@
 
 import Container from "@/components/container";
 import { ContactForm, MonthStyle, Partners } from "@/components/homeComponents";
+import { Suspense } from "react";
+
 
 function Page() {
+  
+
+   return (
+      <Suspense fallback={<div>Loading...</div>}>
+      <PortfoilioPage />
+      </Suspense>
+    );
+}
+
+function PortfoilioPage() {
   return (
     <div className="bg-black">
       <Hero />

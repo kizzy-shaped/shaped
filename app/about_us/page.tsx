@@ -6,9 +6,20 @@ import {
   Partners,
 } from "@/components/homeComponents";
 import Link from "next/link";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
-const About = () => {
+
+function About() {
+  
+
+   return (
+      <Suspense fallback={<div>Loading...</div>}>
+      <AboutPage />
+      </Suspense>
+    );
+}
+
+const AboutPage = () => {
   return (
     <div className="bg-white">
       <Hero />
