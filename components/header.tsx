@@ -113,12 +113,12 @@ function Header({ className = "" }: { className?: string }) {
                         </Link>
                       ))}
 
-                      <Link
+                      {dropdown && label.toLowerCase() == "fashion" && <Link
                         className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
                         href={`/fashion#about_us`}
                       >
                         {'about'}
-                      </Link>
+                      </Link>}
                     </div>
                   </div>
                 )}
@@ -302,6 +302,16 @@ function Header({ className = "" }: { className?: string }) {
                                 {title}
                               </Link>
                             ))}
+
+                            {dropdown && label.toLowerCase() == "fashion" && (
+                              <Link
+                              onClick={() => setdDrawerVisible(false)}
+                              className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
+                              href={`/fashion#about_us`}
+                            >
+                              about
+                            </Link>
+                            )}
                           </div>
                         </div>
                       )}
