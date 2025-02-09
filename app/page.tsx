@@ -43,7 +43,7 @@ function Home() {
   
 
    return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="w-0 h-0" />}>
         <>
         {/* <Head>
         <title>{title}</title>

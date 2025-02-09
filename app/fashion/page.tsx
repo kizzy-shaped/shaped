@@ -15,7 +15,7 @@ function Fashion() {
   
 
    return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="w-0 h-0" />}>
       <FashionPage />
       </Suspense>
     );
