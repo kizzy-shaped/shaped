@@ -9,6 +9,7 @@ import {
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
   MutableRefObject,
+  Suspense,
   useEffect,
   useRef,
   useState,
@@ -37,7 +38,19 @@ import { services } from "@/constants/services";
 import AnimationHandler from "@/utils/animations";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
+
 export default function Home() {
+  
+
+   return (
+      <Suspense fallback={<div>Loading...</div>}>
+      <HomePage />
+      </Suspense>
+    );
+}
+
+
+export  function HomePage() {
   const { showModal, hideModal } = useModal();
   const timeout = 20000;
 
