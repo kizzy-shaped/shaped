@@ -39,25 +39,25 @@ import AnimationHandler from "@/utils/animations";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
 
-// export default function Home() {
+function Home() {
   
 
-//    return (
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <>
-//         {/* <Head>
-//         <title>{title}</title>
-//         <meta name="description" content={description} />
-//         <meta name="viewport" content="width=device-width, initial-scale=1" />
-//       </Head> */}
-//       <HomePage />
-//         </>
-//       </Suspense>
-//     );
-// }
+   return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <>
+        {/* <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head> */}
+      <HomeComponent />
+        </>
+      </Suspense>
+    );
+}
 
 
-export default function Home() {
+function HomeComponent() {
   const { showModal, hideModal } = useModal();
   const timeout = 20000;
 
@@ -67,10 +67,13 @@ export default function Home() {
   );
 
   useEffect(() => {
-    setTimeout(() => {
-      showModal(<ContactFormModal />);
-    }, timeout);
-  }, []);
+    // Ensure window is available before accessing it
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        showModal(<ContactFormModal />);
+      }, timeout)
+    }
+    },[])
 
   // useEffect(()=> {
   //   if(typeof window !== 'undefined'){
@@ -111,6 +114,8 @@ export default function Home() {
     </>
   );
 }
+
+export default Home
 
 function Hero() {
   const [hovered, setHovered] = useState(false);
