@@ -848,6 +848,9 @@ export function ClientsFeedbackContactForm() {
 
 export function ContactFormModal() {
   const { showModal, hideModal } = useModal();
+  const searchParams = useSearchParams();
+  const serviceId = searchParams.get("serviceId") as keyof typeof services;
+
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
@@ -1008,14 +1011,14 @@ export function ContactFormModal() {
               placeholder={"Your Country *"}
               type="text"
             />
-            <input
+           {(serviceId && serviceId == ("styling_services" as any)) && <input
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
               className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
               placeholder={"Your Favorite Brand"}
               type="text"
-            />
+            />}
 
             <button
               onClick={() => handleSubmit()}
