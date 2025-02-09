@@ -717,6 +717,7 @@ export function ContactForm({
   const { showModal, hideModal } = useModal();
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
+  const path = usePathname()
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
@@ -804,7 +805,13 @@ export function ContactForm({
               placeholder={"Your Country *"}
               type="text"
             />
-            {(serviceId && serviceId == ("styling_services" as any)) && <input
+            {(
+            (serviceId &&
+            (serviceId == ("styling_services" as any)) ||
+            (serviceId == ("personal_shopping" as any)) ||
+            (serviceId == ("bespoke_garment_creation" as any)) ||
+            (serviceId == ("alteration_services" as any))
+          ) || path == '/fashion') && <input
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
@@ -850,6 +857,7 @@ export function ContactFormModal() {
   const { showModal, hideModal } = useModal();
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
+  const path = usePathname()
 
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
@@ -1011,7 +1019,15 @@ export function ContactFormModal() {
               placeholder={"Your Country *"}
               type="text"
             />
-           {(serviceId && serviceId == ("styling_services" as any)) && <input
+           {(
+            (serviceId &&
+            (serviceId == ("styling_services" as any)) ||
+            (serviceId == ("personal_shopping" as any)) ||
+            (serviceId == ("bespoke_garment_creation" as any)) ||
+            (serviceId == ("alteration_services" as any))
+          ) || path == '/fashion')
+           
+           && <input
               onChange={handleChange("favouriteBrand")}
               onBlur={handleBlur("favouriteBrand")}
               value={values.favouriteBrand}
