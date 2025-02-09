@@ -39,18 +39,25 @@ import AnimationHandler from "@/utils/animations";
 import { useMultiRevealOnScroll } from "@/components/hooks/useMultiRevealOnScroll";
 
 
-export default function Home() {
+// export default function Home() {
   
 
-   return (
-      <Suspense fallback={<div>Loading...</div>}>
-      <HomePage />
-      </Suspense>
-    );
-}
+//    return (
+//       <Suspense fallback={<div>Loading...</div>}>
+//         <>
+//         {/* <Head>
+//         <title>{title}</title>
+//         <meta name="description" content={description} />
+//         <meta name="viewport" content="width=device-width, initial-scale=1" />
+//       </Head> */}
+//       <HomePage />
+//         </>
+//       </Suspense>
+//     );
+// }
 
 
-export  function HomePage() {
+export default function Home() {
   const { showModal, hideModal } = useModal();
   const timeout = 20000;
 
@@ -75,11 +82,7 @@ export  function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      
       <div className="bg-black">
         <Hero />
 
