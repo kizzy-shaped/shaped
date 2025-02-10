@@ -117,7 +117,7 @@ function Header({ className = "" }: { className?: string }) {
                         className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
                         href={`/fashion#about_us`}
                       >
-                        {'about'}
+                        {'about us'}
                       </Link>}
                     </div>
                   </div>
@@ -309,7 +309,7 @@ function Header({ className = "" }: { className?: string }) {
                               className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
                               href={`/fashion#about_us`}
                             >
-                              about
+                              about us
                             </Link>
                             )}
                           </div>
