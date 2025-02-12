@@ -30,10 +30,7 @@ import { useMultiRevealOnScroll } from "./hooks/useMultiRevealOnScroll";
 import is from "@/utils/viewport";
 import { clients_feedbacks } from "@/constants/clients_feedbacks";
 import Modal from "./modal";
-// import sendGrid from "@sendgrid/mail";
-import * as sendGrid from '@sendgrid/mail';
 import { toast } from "react-toastify";
-
 
 const partners = [
   // { img: "/images/home/partners/caf.png" },
@@ -739,29 +736,37 @@ export function ContactForm({
         country: string().required("Country is required"),
         favouriteBrand: string(),
       }),
-      onSubmit: async ({ country, email, favouriteBrand, name, phoneNumber }) => {
-        // hideModal();
-        // showModal(<MessageSentModal />);
-
+      onSubmit: async ({
+        country,
+        email,
+        favouriteBrand,
+        name,
+        phoneNumber,
+      }) => {
         try {
-          const response = await fetch('/api/sendGrid', {
-            method: 'POST',
+          const response = await fetch("/api/sendGrid", {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name, email, phoneNumber, country, favouriteBrand }),
+            body: JSON.stringify({
+              name,
+              email,
+              phoneNumber,
+              country,
+              favouriteBrand,
+            }),
           });
-  
+
           const result = await response.json();
-  
+
           if (response.ok) {
-            console.log({'response.ok': response.ok})
-            // Optionally, show a modal or redirect to a "Thank You" page.
+            showModal(<MessageSentModal />);
           } else {
-            console.log({'!response.ok': response.ok})
+            toast.error("Message not sent!");
           }
-        } catch (error) {
-          console.log({'error': error});
+        } catch (error: any) {
+          toast.error(error?.message);
         }
       },
     });
@@ -899,19 +904,43 @@ export function ContactFormModal() {
         country: string().required("Country is required"),
         favouriteBrand: string(),
       }),
-      onSubmit: (data) => {
-        console.log({ data });
-        // hideModal();
-        showModal(<MessageSentModal />);
+      onSubmit: async ({
+        country,
+        email,
+        favouriteBrand,
+        name,
+        phoneNumber,
+      }) => {
+        try {
+          const response = await fetch("/api/sendGrid", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              phoneNumber,
+              country,
+              favouriteBrand,
+            }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            showModal(<MessageSentModal />);
+          } else {
+            toast.error("Message not sent!");
+          }
+        } catch (error: any) {
+          toast.error(error?.message);
+        }
       },
     });
 
   const [hovered, setHovered] = useState(false);
 
-  // const submit = () => {
-  //   hideModal();
-  //   showModal(<MessageSentModal />);
-  // };
 
   return (
     <div className="wmin_md:w-[680px] wmax_md:w-full h-fit bg-black">

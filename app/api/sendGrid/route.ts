@@ -1,9 +1,7 @@
 import sendgridMail from '@sendgrid/mail';
 
 
-// SENDGRID_API_KEY='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'
-// SENDGRID_CLIENT_EMAIL='kizzy@shapedservices.com'
-sendgridMail.setApiKey('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');
+sendgridMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 interface ContactFormData {
   name: string;
@@ -13,15 +11,16 @@ interface ContactFormData {
   favouriteBrand?: string;
 }
 
+const SENDGRID_API_KEY = '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';
+
+const SENDGRID_CLIENT_EMAIL = 'Info@shapedservices.com';
+
 export async function POST(request: Request) {
   const { name, email, phoneNumber, country, favouriteBrand }: ContactFormData = await request.json();
 
   const message = {
-      from: email, 
-      to: process.env.SENDGRID_CLIENT_EMAIL as string, 
-    // from: 'Info@shapedservices.com', // Replace with a verified email address on SendGrid
-    // to: 'Info@shapedservices.com',  // Replace with your email address
-    // from: email, // Replace with a verified email address on SendGrid
+    to: [SENDGRID_CLIENT_EMAIL], 
+    from: SENDGRID_CLIENT_EMAIL as string, 
     subject: `Form Submission - Client Information`,
     // text: `
     //   Name: ${name}
