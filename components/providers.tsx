@@ -37,13 +37,18 @@ export default function Providers({
       >
         <Head>
           <title>Shaped Services</title>
-          <meta name="description" content="" />
+          <meta name="description" content="Your luxury concierge" />
 
           <meta property="og:url" content="https://www.shapedservices.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Shaped Services" />
-          <meta property="og:description" content="" />
+          <meta property="og:description" content="Your luxury concierge" />
           <meta property="og:image" content="https://www.shapedservices.com/image.png" />
+          <meta property="og:domain" content="shapedservices.com" />
+          <meta
+            property="og:url"
+            content="https://www.shapedservices.com"
+          />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="shapedservices.com" />
@@ -52,7 +57,7 @@ export default function Providers({
             content="https://www.shapedservices.com"
           />
           <meta name="twitter:title" content="Shaped Services" />
-          <meta name="twitter:description" content="Shaped Services" />
+          <meta name="twitter:description" content="Your luxury concierge" />
           <meta name="twitter:image" content="https://www.shapedservices.com/image.png" />
         </Head>
         <ToastContainer />
