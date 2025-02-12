@@ -10,6 +10,7 @@ import Header from "./header";
 import { raleway } from "@/app/layout";
 import { usePathname } from "next/navigation";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
 
 export default function Providers({
   children,
@@ -54,6 +55,7 @@ export default function Providers({
           <meta name="twitter:description" content="Shaped Services" />
           <meta name="twitter:image" content="https://www.shapedservices.com/image.png" />
         </Head>
+        <ToastContainer />
         <ModalProvider>
           <HeaderProvider>
             <Header className="bg-black wmax_390:h-[65px] wmin_390:h-[80px] fixed top-0 left-0 z-[40]" />

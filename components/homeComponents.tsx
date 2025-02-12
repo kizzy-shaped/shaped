@@ -30,6 +30,10 @@ import { useMultiRevealOnScroll } from "./hooks/useMultiRevealOnScroll";
 import is from "@/utils/viewport";
 import { clients_feedbacks } from "@/constants/clients_feedbacks";
 import Modal from "./modal";
+// import sendGrid from "@sendgrid/mail";
+import * as sendGrid from '@sendgrid/mail';
+import { toast } from "react-toastify";
+
 
 const partners = [
   // { img: "/images/home/partners/caf.png" },
@@ -717,7 +721,7 @@ export function ContactForm({
   const { showModal, hideModal } = useModal();
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
-  const path = usePathname()
+  const path = usePathname();
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
@@ -735,10 +739,30 @@ export function ContactForm({
         country: string().required("Country is required"),
         favouriteBrand: string(),
       }),
-      onSubmit: (data) => {
-        console.log({ data });
+      onSubmit: async ({ country, email, favouriteBrand, name, phoneNumber }) => {
         // hideModal();
-        showModal(<MessageSentModal />);
+        // showModal(<MessageSentModal />);
+
+        try {
+          const response = await fetch('/api/sendGrid', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, phoneNumber, country, favouriteBrand }),
+          });
+  
+          const result = await response.json();
+  
+          if (response.ok) {
+            console.log({'response.ok': response.ok})
+            // Optionally, show a modal or redirect to a "Thank You" page.
+          } else {
+            console.log({'!response.ok': response.ok})
+          }
+        } catch (error) {
+          console.log({'error': error});
+        }
       },
     });
 
@@ -805,20 +829,20 @@ export function ContactForm({
               placeholder={"Your Country *"}
               type="text"
             />
-            {(
-            (serviceId &&
-            (serviceId == ("styling_services" as any)) ||
-            (serviceId == ("personal_shopping" as any)) ||
-            (serviceId == ("bespoke_garment_creation" as any)) ||
-            (serviceId == ("alteration_services" as any))
-          ) || path == '/fashion') && <input
-              onChange={handleChange("favouriteBrand")}
-              onBlur={handleBlur("favouriteBrand")}
-              value={values.favouriteBrand}
-              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
-              placeholder={"Your Favorite Brand"}
-              type="text"
-            />}
+            {((serviceId && serviceId == ("styling_services" as any)) ||
+              serviceId == ("personal_shopping" as any) ||
+              serviceId == ("bespoke_garment_creation" as any) ||
+              serviceId == ("alteration_services" as any) ||
+              path == "/fashion") && (
+              <input
+                onChange={handleChange("favouriteBrand")}
+                onBlur={handleBlur("favouriteBrand")}
+                value={values.favouriteBrand}
+                className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+                placeholder={"Your Favorite Brand"}
+                type="text"
+              />
+            )}
 
             <button
               onClick={() => handleSubmit()}
@@ -857,8 +881,7 @@ export function ContactFormModal() {
   const { showModal, hideModal } = useModal();
   const searchParams = useSearchParams();
   const serviceId = searchParams.get("serviceId") as keyof typeof services;
-  const path = usePathname()
-
+  const path = usePathname();
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
@@ -1019,22 +1042,20 @@ export function ContactFormModal() {
               placeholder={"Your Country *"}
               type="text"
             />
-           {(
-            (serviceId &&
-            (serviceId == ("styling_services" as any)) ||
-            (serviceId == ("personal_shopping" as any)) ||
-            (serviceId == ("bespoke_garment_creation" as any)) ||
-            (serviceId == ("alteration_services" as any))
-          ) || path == '/fashion')
-           
-           && <input
-              onChange={handleChange("favouriteBrand")}
-              onBlur={handleBlur("favouriteBrand")}
-              value={values.favouriteBrand}
-              className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
-              placeholder={"Your Favorite Brand"}
-              type="text"
-            />}
+            {((serviceId && serviceId == ("styling_services" as any)) ||
+              serviceId == ("personal_shopping" as any) ||
+              serviceId == ("bespoke_garment_creation" as any) ||
+              serviceId == ("alteration_services" as any) ||
+              path == "/fashion") && (
+              <input
+                onChange={handleChange("favouriteBrand")}
+                onBlur={handleBlur("favouriteBrand")}
+                value={values.favouriteBrand}
+                className={`w-full h-[55px] bg-transparent text-[#373737] focus:text-white font-semibold border-b-[0.5px] border-b-[#D5D5D5] outline-none focus:outline-none focus:border-b-[0.5px] focus:border-b-[#D5D5D5] placeholder:text-[#9C9C9C]`}
+                placeholder={"Your Favorite Brand"}
+                type="text"
+              />
+            )}
 
             <button
               onClick={() => handleSubmit()}
