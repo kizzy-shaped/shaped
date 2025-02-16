@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   try {
     await sendgridMail.send(message);
     return new Response(JSON.stringify({ message: 'Message sent successfully!' }), { status: 200 });
-  } catch (error: {message: string, code: number, response: any}) {
+  } catch (error: any) {
     console.error(error);
     return new Response(JSON.stringify({ errorMsg: error?.message, cod: error?.code, response: error?.response }), { status: error?.code });
   }

@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     if(subscribed) return new Response(JSON.stringify({ message: "Successfully subscribed!" }), { status: 200 });
 
     else return new Response(JSON.stringify({ message: "Not yet subscribed!" }), { status: 400 });    
-  }catch (error: {message: string, code: number, response: any}) {
+  }catch (error: any) {
     console.error(error);
     return new Response(JSON.stringify({ errorMsg: error?.message, cod: error?.code, response: error?.response }), { status: error?.code });
   }
