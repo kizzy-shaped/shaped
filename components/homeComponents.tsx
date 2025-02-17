@@ -834,10 +834,11 @@ export function ContactForm({
               placeholder={"Your Country *"}
               type="text"
             />
-            {((serviceId && serviceId == ("styling_services" as any)) ||
-              serviceId == ("personal_shopping" as any) ||
-              serviceId == ("bespoke_garment_creation" as any) ||
-              serviceId == ("alteration_services" as any) ||
+            {(
+      // (serviceId && serviceId == ("styling_services" as any)) ||
+      //         serviceId == ("personal_shopping" as any) ||
+      //         serviceId == ("bespoke_garment_creation" as any) ||
+      //         serviceId == ("alteration_services" as any) ||
               path == "/fashion") && (
               <input
                 onChange={handleChange("favouriteBrand")}
@@ -1071,10 +1072,11 @@ export function ContactFormModal() {
               placeholder={"Your Country *"}
               type="text"
             />
-            {((serviceId && serviceId == ("styling_services" as any)) ||
-              serviceId == ("personal_shopping" as any) ||
-              serviceId == ("bespoke_garment_creation" as any) ||
-              serviceId == ("alteration_services" as any) ||
+            {(
+      // (serviceId && serviceId == ("styling_services" as any)) ||
+      //         serviceId == ("personal_shopping" as any) ||
+      //         serviceId == ("bespoke_garment_creation" as any) ||
+      //         serviceId == ("alteration_services" as any) ||
               path == "/fashion") && (
               <input
                 onChange={handleChange("favouriteBrand")}
