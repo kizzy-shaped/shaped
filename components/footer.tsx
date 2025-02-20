@@ -137,7 +137,7 @@ function Footer() {
                 value={values.email}
                 onChange={handleChange("email")}
                 onBlur={handleBlur("email")}
-                className={`col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#1a1a1a] px-[16px] border-[1px] border-transparent outline-none focus:border-none focus:outline-none focus:text-white  ${errors?.email != '' ? "border-b-red-600 placeholder:text-red-500" : "border-b-[#D5D5D5]"}`}
+                className={`col-start-1 col-end-3 row-start-1 row-end-2 h-full bg-[#1a1a1a] px-[16px] border-[1px] border-transparent outline-none focus:border-none focus:outline-none focus:text-white  ${errors?.email != '' ? "border-b-red-600 placeholder:text-red-500" : "border-b-[#D5D5D5] placeholder:text-white"}`}
                 type="text"
                 placeholder="Email Address"
               />
