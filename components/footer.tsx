@@ -159,7 +159,7 @@ function Footer() {
               link="/terms_conditions"
               text="Terms & Conditions"
             />
-{/*             <LinkSubtitleTile link="/privacy_policy" text="Privacy Policy" /> */}
+            <LinkSubtitleTile link="/privacy_policy" text="Privacy Policy" />
           </div>
           &copy;{" "}
           <SubtitleTile
