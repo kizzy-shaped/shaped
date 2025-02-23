@@ -155,10 +155,10 @@ function Footer() {
 
         <div className="w-full h-fit flex wmin_lg:justify-between wmax_lg:justify-center wmax_lg:gap-[20px] mt-[4vh] border-t-[1.5px] border-t-[#D3D3D3] pt-[16px]">
           <div className="flex gap-[56px]">
-            <LinkSubtitleTile
+{/*             <LinkSubtitleTile
               link="/terms_conditions"
               text="Terms & Conditions"
-            />
+            /> */}
             <LinkSubtitleTile link="/privacy_policy" text="Privacy Policy" />
           </div>
           &copy;{" "}
