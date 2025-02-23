@@ -22,7 +22,7 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-semibold text-white ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-medium text-white ${className}`}>{children}</div>;
   
   export const BoldText = ({
     children,
