@@ -23,7 +23,7 @@ function PrivacyPolicy() {
             your personal information and your right to privacy. If you have any
             questions or concerns about our policy, or our practices with
             regards to your personal information, please contact us at
-            <Link href='mailto:info@shapedservices.com.' target='_blank'>info@shapedservices.com.</Link>
+             <Link href='mailto:info@shapedservices.com.' target='_blank'>info@shapedservices.com.</Link>
           </Text>
 
           <Text>
