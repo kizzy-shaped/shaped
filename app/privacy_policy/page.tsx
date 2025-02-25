@@ -273,10 +273,10 @@ function PrivacyPolicy() {
             SHAPED Services
           </BoldText>
           <Text>
-            <BoldText>Email:</BoldText> <Link href='mailto:info@shapedservices.com' target="_blank">info@shapedservices.com</Link>
+           Email: <BoldText><Link href='mailto:info@shapedservices.com' target="_blank">info@shapedservices.com</Link></BoldText>
           </Text>
           <Text>
-            <BoldText>Website:</BoldText> <Link href='www.shapedservices.com' target="_blank">www.shapedservices.com</Link>
+            Website: <BoldText><Link href='www.shapedservices.com' target="_blank">www.shapedservices.com</Link></BoldText>
           </Text>
         </div>
       </Container>
