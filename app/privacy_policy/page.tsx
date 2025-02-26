@@ -14,7 +14,7 @@ function PrivacyPolicy() {
       <Container className="flex flex-col wmin_md:gap-[30px] wmax_md:gap-[20px] wmin_md:pt-[30px] wmax_md:pt-[20px]">
         <Heading>Privacy Policy</Heading>
 
-        <Text>Last updated 02/01/2025</Text>
+        <Text>Last updated: 02/01/2025</Text>
 
         <div className="w-full h-fit flex flex-col wmin_md:gap-[20px] wmax_md:gap-[15px]">
           <Text>
@@ -39,7 +39,7 @@ function PrivacyPolicy() {
             website, services, sales, marketing, and events (collectively, the "Services").
           </Text>
 
-          <Subheading>WHAT INFORMATION DO WE COLLECT?</Subheading>
+          <Subheading>1. WHAT INFORMATION DO WE COLLECT?</Subheading>
 
           <Text>Personal information you disclose to us</Text>
 
@@ -194,7 +194,7 @@ function PrivacyPolicy() {
            Our services are not directed at children under 18 years of age, and we do not knowingly 
             collect data from minors. If we become aware that personal data from a minor has been 
             collected, we will take appropriate action to delete such information. If you believe 
-            we may have collected data from a minor, please contact us at <Link href='mailto:info@shapedservices.com' target='_blank'>info@shapedservices.com</Link>.
+            we may have collected data from a minor, please contact us at <BoldText><Link href='mailto:info@shapedservices.com' target='_blank'>info@shapedservices.com</Link>.</BoldText>
           </Text>
 
           <Subheading>
@@ -230,11 +230,11 @@ function PrivacyPolicy() {
            </ul>
 
           <Text>
-           To exercise any of these rights, contact us at <Link href='mailto:info@shapedservices.com' target='_blank'>info@shapedservices.com</Link>. We aim to respond within <BoldText>one (1) month</BoldText>.
+           To exercise any of these rights, contact us at <BoldText><Link href='mailto:info@shapedservices.com' target='_blank'>info@shapedservices.com</Link>.</BoldText> We aim to respond within <BoldText>one (1) month</BoldText>.
           </Text>
 
           <Text>
-           If you are not satisfied with our response, you can contact the UK Information Commissioner’s Office (ICO) at <Link href='www.ico.org.uk' target="_blank">www.ico.org.uk</Link>.
+           If you are not satisfied with our response, you can contact the UK Information Commissioner’s Office (ICO) at <BoldText><Link href='www.ico.org.uk' target="_blank">www.ico.org.uk</Link>.</BoldText>
           </Text>
 
           <Subheading>
