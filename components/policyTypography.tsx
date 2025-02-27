@@ -6,7 +6,7 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[32px] wmax_md:text-[28px] font-bold text-white ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[22px] wmax_md:text-[20px] font-medium text-white ${className}`}>{children}</div>;
   
   export const Subheading = ({
     children,
@@ -14,7 +14,7 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[28px] wmax_md:text-[24px] font-bold text-white uppercase ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-medium text-white uppercase ${className}`}>{children}</div>;
   
   export const Text = ({
     children,
@@ -22,7 +22,7 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-semibold text-white ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[16px] wmax_md:text-[14px] font-regular text-white ${className}`}>{children}</div>;
   
   export const BoldText = ({
     children,
@@ -30,5 +30,5 @@ export const Heading = ({
   }: {
     children: ReactNode;
     className?: string;
-  }) => <div className={`wmin_md:text-[20px] wmax_md:text-[18px] font-bold text-white inline-block ${className}`}>{children}</div>;
+  }) => <div className={`wmin_md:text-[16px] wmax_md:text-[14px] font-medium text-white inline-block ${className}`}>{children}</div>;
   
