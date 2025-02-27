@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow: /
+Allow: /
+
+# Host
+Host: https://www.shapedservices.com
+
+# Sitemaps
+Sitemap: https://www.shapedservices.com/sitemap.xml

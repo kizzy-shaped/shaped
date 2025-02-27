@@ -22,7 +22,7 @@ function PrivacyPolicy() {
             (“Company”, “we”, “us”, or “our”). We are committed to protecting
             your personal information and your right to privacy. If you have any
             questions or concerns about our policy, or our practices with
-            regards to your personal information, please contact us <span>at</span> 
+            regards to your personal information, please contact us <span className="pr-2">at</span> 
             
              <BoldText><Link href='mailto:info@shapedservices.com.' target='_blank'>info@shapedservices.com.</Link></BoldText>
           </Text>
