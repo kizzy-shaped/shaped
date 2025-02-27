@@ -102,7 +102,13 @@ function Header({ className = "" }: { className?: string }) {
                 {/* {(dropdownState.hovered && dropdownState.index === id) && ( */}
                 {dropdownVisible && dropdownState.index === id && (
                   <div className="w-[100%] bg-black p-[2em] fixed top-[80px] left-[0vw]">
-                    <div className={`w-full ${label.toLowerCase() == "fashion" ? 'flex flex-row gap-[1em]':'grid grid-cols-4 wmin_3xl:gap-x-[2em] wmin_xl:wmax_3xl:gap-x-[1.5em]'} justify-between`}>
+                    <div
+                      className={`w-full ${
+                        label.toLowerCase() == "fashion"
+                          ? "flex flex-row gap-[1em]"
+                          : "grid grid-cols-4 wmin_3xl:gap-x-[2em] wmin_xl:wmax_3xl:gap-x-[1.5em]"
+                      } justify-between`}
+                    >
                       {dropdown?.map(({ link, title }, index) => (
                         <Link
                           className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
@@ -113,12 +119,14 @@ function Header({ className = "" }: { className?: string }) {
                         </Link>
                       ))}
 
-                      {dropdown && label.toLowerCase() == "fashion" && <Link
-                        className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
-                        href={`/fashion#about_us`}
-                      >
-                        {'about us'}
-                      </Link>}
+                      {dropdown && label.toLowerCase() == "fashion" && (
+                        <Link
+                          className={`col-span-1 w-fit font-bold text-[18px] text-white  capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
+                          href={`/fashion#about_us`}
+                        >
+                          {"about us"}
+                        </Link>
+                      )}
                     </div>
                   </div>
                 )}
@@ -305,12 +313,12 @@ function Header({ className = "" }: { className?: string }) {
 
                             {dropdown && label.toLowerCase() == "fashion" && (
                               <Link
-                              onClick={() => setdDrawerVisible(false)}
-                              className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
-                              href={`/fashion#about_us`}
-                            >
-                              about us
-                            </Link>
+                                onClick={() => setdDrawerVisible(false)}
+                                className={`col-span-1 w-fit wmin_lg:text-[20px] wmax_lg:text-[16px] text-white font-semibold capitalize pt-[0.5em] pb-[1em] border-b-[1px] border-b-transparent hover:border-b-white`}
+                                href={`/fashion#about_us`}
+                              >
+                                about us
+                              </Link>
                             )}
                           </div>
                         </div>
