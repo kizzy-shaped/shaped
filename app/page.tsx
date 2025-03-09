@@ -118,8 +118,9 @@ function Hero() {
     }
   }, []);
 
+  // bg-[#373737]
   return (
-    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] bg-[#373737] relative wmax_lg:flex wmax_lg:items-center wmax_lg:justify-center">
+    <div className="w-full wmin_390:h-[calc(100vh-80px)] wmax_360:!h-[65vh] wmin_360:wmax_md:!h-[70vh] relative wmax_lg:flex wmax_lg:items-center wmax_lg:justify-center">
       {/* Using Hero Img */}
       {/* Mobile */}
       {/* <img
