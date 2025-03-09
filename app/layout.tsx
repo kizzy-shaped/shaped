@@ -28,6 +28,10 @@ export default function RootLayout({
           content="Tailored luxury experiences and personalised concierge services designed to enhance your lifestyle."
         />
         <meta
+          name="keywords"
+          content="luxury concierge, lifestyle management, exclusive experiences, private events, corporate events, event planning, travel concierge, jet services, luxury travel, personal concierge, day-to-day errands, bespoke gifting, personalisation services, sourcing luxury goods, home management, property management, intimate gatherings, celebration planning, VIP services, premium lifestyle, high-end concierge, elite experiences, luxury event planning, tailored luxury services"
+        />
+        <meta
           property="og:title"
           content="SHAPED Services – Bespoke Lifestyle & Concierge Experiences"
         />
@@ -64,6 +68,7 @@ export default function RootLayout({
           type="image/x-icon"
           sizes="271x291"
         />
+        <link rel="canonical" href="https://www.shapedservices.com" />
         <meta name="next-size-adjust" />
       </head>
 
