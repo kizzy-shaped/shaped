@@ -29,7 +29,7 @@ export default function RootLayout({
         />
         <meta
           name="keywords"
-          content="luxury concierge, lifestyle management, exclusive experiences, private events, corporate events, event planning, travel concierge, jet services, luxury travel, personal concierge, day-to-day errands, bespoke gifting, personalisation services, sourcing luxury goods, home management, property management, intimate gatherings, celebration planning, VIP services, premium lifestyle, high-end concierge, elite experiences, luxury event planning, tailored luxury services"
+          content="luxury concierge, lifestyle management, exclusive experiences, private events, corporate events, event planning, travel concierge, jet services, luxury travel, personal concierge, day-to-day errands, bespoke gifting, personalisation services, sourcing luxury goods, home management, property management, intimate gatherings, celebration planning, VIP services, premium lifestyle, high-end concierge, elite experiences, luxury event planning, tailored luxury services, Luxury Lifestyle, VIP Concierge, Bespoke services, Luxury events, Ultra luxury, Wealth Management, London concierge, Uk concierge, Luxury shopping, Discreet services, Executive concierge, Luxury gifting, Five star service, Premium lifestyle, Elite experiences, Ultra luxury, Bespoke gifting, Luxury shopping, Luxury gifting"
         />
         <meta
           property="og:title"
