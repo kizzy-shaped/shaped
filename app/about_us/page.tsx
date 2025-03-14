@@ -157,7 +157,7 @@ We create seamless, luxurious experiences tailored to your needs, providing acce
               <img className={`w-full h-auto wmin_lg:h-full object-cove pb- border-b-[#060606 border-b-[#9c9c9c border-b-[1px`} src={item} alt="" />
             ) : (
               <div className={`w-full h-fit wmin_lg:h-full bg-black flex items-center justify-center p-3 wmin_lg:p-10`}>
-                <div className="text-white text-[14px] font-normal text-center w-fit h-fit wmax_lg:py-6">{item}</div>
+                <div className="text-white wmin_xl:text-[22px] wmax_xl:text-[14px] font-normal text-center w-fit h-fit wmax_lg:py-6">{item}</div>
               </div>
             )}
           </div>

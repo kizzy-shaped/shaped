@@ -588,7 +588,7 @@ export function ClientsFeedback() {
     <div className="w-full h-fit bg-black">
       <div className="w-full h-fit wmin_md:py-[7vh] wmax_md:pt-[3vh] wmax_md:pb-[1vh] flex flex-col wmin_md:gap-[5vh] wmax_md:gap-[3vh]">
         <div className="wmin_md:text-[40px] wmax_md:text-[24px] text-white font-bold text-center">
-          CLIENTS' FEEDBACK
+          CLIENT'S FEEDBACK
         </div>
 
         {/* Desktop */}

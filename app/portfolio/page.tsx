@@ -26,7 +26,7 @@ function PortfoilioPage() {
 
       <Partners />
 
-      <ContactForm headline="Your style journey begins here Explore our fashion expertise" />
+      <ContactForm headline="Your style journey begins here. Explore our fashion expertise" />
     </div>
   );
 }

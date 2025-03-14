@@ -97,14 +97,14 @@ export const services: IService[] = [
  desc: {
     title: "Small Moments, Grand Impact",
     // desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
-    desc: "For those truly special moments—whether it’s a proposal, an anniversary celebration, or an intimate gathering—SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
+    desc: "For those truly special moments whether it’s a proposal, an anniversary celebration, or an intimate gathering, SHAPED creates unforgettable experiences with unmatched attention to detail. From the venue selection to the final touches, every element is designed to make your celebration extraordinary.",
   },
   heroImage: "/images/services/intimate/hero_img.png",
   heroImageMobile: "/images/services/intimate/hero_img_mobile.png",
   // heroImage: "/images/services_base_imgs/intimate.jpg",
   galleryImages: [
   ],
-  formHeadline: 'Create Memories, We Handle the Details'
+  formHeadline: 'Extraordinary Moments Start Here. Let’s Bring Your Vision to Life'
 },
 // Intimate gathering & celebration 
 // Personalisation & gifting 
@@ -112,11 +112,11 @@ export const services: IService[] = [
   link: "personalisation_gifting",
   title: "personalisation & gifting",
   thumbnail: '/images/services/personalisation/hero_img.png',
-  overview: 'We ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever',
+  overview: 'We ensure that every gesture is as unforgettable as the person receiving it',
  desc: {
     title: "Gifts as Unique as You",
     // desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
-    desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it—crafted to be cherished forever.",
+    desc: "At SHAPED, we take personalised gifting to the next level. From bespoke gifts to curated experiences, we specialise in creating luxurious, one-of-a-kind offerings that are meaningful, exceptional, and crafted with care. Whether you’re seeking the perfect gift for a loved one or designing a memorable experience, we ensure that every gesture is as unforgettable as the person receiving it",
   },
   heroImage: "/images/services/personalisation/hero_img.png",
   // heroImageMobile: "/images/services/personalisation/hero_img_mobile.png",
@@ -155,7 +155,7 @@ export const services: IService[] = [
  desc: {
     title: "Access the Unobtainable",
     // desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
-    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen—ensuring that you get exactly what you’re looking for, when you want it.",
+    desc: "With SHAPED, you gain access to the inaccessible. Our sourcing & procurement services are designed to find rare, limited-edition, or hard-to-get items that align with your desires. Whether it’s a collector’s item, luxury accessory, or unique experience, we make the impossible happen ensuring that you get exactly what you’re looking for, when you want it.",
   },
   heroImage: "/images/services/sourcing/hero_img.png",
   heroImageMobile: "/images/services/sourcing/hero_img_mobile.png",
@@ -194,7 +194,7 @@ export const services: IService[] = [
  desc: {
     title: "Your Home, Perfectly Curated",
     // desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
-    desc: "SHAPED's home management services offer you peace of mind with a range of personalised services for your home or property. From interior design consultations and landscaping to maintenance and renovation projects, we ensure that your home is always in pristine condition, reflecting your unique style and standards of luxury.",
+    desc: "SHAPED’s home management services provide peace of mind with a bespoke approach to maintaining your home or property. From interior design consultations and landscaping to maintenance and renovations, we ensure your residence remains in pristine condition, effortlessly reflecting your style and standards of luxury.",
   },
   heroImage: "/images/services/home/hero_img.png",
   heroImageMobile: "/images/services/home/hero_img_mobile.png",
@@ -340,7 +340,7 @@ export const fashion_services: IService[] = [
    desc: {
       title: "Flawless Fit, Every Time",
       // desc: "When off-the-rack doesn’t cut it, SHAPED offers bespoke garment creation that is tailored to your exact specifications. From luxurious fabrics to custom silhouettes, we craft each garment to fit your body and your vision. Whether it’s for a wedding, a corporate event, or a milestone celebration, we create one-of-a-kind pieces designed to make you stand out. Every stitch, every detail, made just for you.",
-      desc: "No wardrobe is complete without the perfect fit. SHAPED’s alteration services are designed to ensure your clothes fit you like they were made for you. From simple adjustments to complex tailoring, our expert team will refine every garment to enhance its shape and style, ensuring your clothing is a true reflection of your taste and body. Experience the art of tailoring with precision, care, and a perfect fit.",
+      desc: "The perfect fit is essential to impeccable style. SHAPED’s expert alteration services ensure your garments are precisely tailored for a flawless silhouette. From subtle refinements to intricate adjustments, our skilled specialists tailor each piece to enhance its fit, comfort, and elegance. Experience craftsmanship that ensures your clothing feels as exceptional as it looks.",
     },
     heroImage: "/images/services/alteration/hero_img.png",
     heroImageMobile: "/images/services/alteration/hero_img_mobile.png",
