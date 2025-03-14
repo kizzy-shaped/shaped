@@ -52,7 +52,7 @@ const partners = [
   { img: "/images/portfolio/itv.jpeg" },
   { img: "/images/portfolio/mtv.jpeg" },
   { img: "/images/portfolio/ok.jpeg" },
-  { img: "/images/portfolio/paris.jpeg" },
+  { img: "/images/portfolio/paris.png" },
   { img: "/images/portfolio/london.jpeg" },
 ];
 
@@ -63,7 +63,7 @@ export function Partners() {
         <Marquee loop={0} speed={50} className="w-full h-fit flex">
           {partners.map(({ img }, index) => (
             <img
-              className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px]"
+              className="w-auto wmin_lg:h-[72px] wmax_lg:h-[48px] wmin_lg:mr-[72px] wmax_lg:mr-[20px] bg-black"
               src={img}
               alt=""
               key={index}
