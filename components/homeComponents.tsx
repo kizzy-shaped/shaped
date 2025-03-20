@@ -42,7 +42,7 @@ const partners = [
   // { img: "/images/home/partners/smart.png" },
   { img: "/images/portfolio/bbc.jpeg" },
   { img: "/images/portfolio/vogue.jpeg" },
-  { img: "/images/portfolio/crown.jpeg" },
+  // { img: "/images/portfolio/crown.jpeg" },
   { img: "/images/portfolio/good_morning.jpeg" },
   { img: "/images/portfolio/bet_star.jpeg" },
   { img: "/images/portfolio/universal.jpeg" },
